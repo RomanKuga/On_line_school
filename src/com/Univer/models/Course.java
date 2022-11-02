@@ -7,10 +7,10 @@ public class Course {
     public String subject;
     public Teacher teacher;
     public Lectures lecture;
-    public Add_materials add_material;
+    public AddMaterials add_material;
     public HomeWork home_work;
 
-    public Course(String subject, Teacher teacher, Lectures lecture, Add_materials add_material, HomeWork home_work){
+    public Course(String subject, Teacher teacher, Lectures lecture, AddMaterials add_material, HomeWork home_work){
         this.subject=subject;
         this.teacher=teacher;
         this.lecture=lecture;
