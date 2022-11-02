@@ -22,6 +22,9 @@ public class Main {
         Lectures twoLectures = new Lectures("equations");
         Lectures threeLectures = new Lectures("line equations part 1");
 
+        Lectures fourLectures = new Lectures("line equations part 2");
+        Lectures fiveLectures = new Lectures("line equations part 3");
+
         System.out.println(Lectures.calc);
 
 
