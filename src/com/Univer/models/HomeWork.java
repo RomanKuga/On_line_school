@@ -5,9 +5,9 @@ public class HomeWork {
     private static long id;
 
     public String name_Home_Work;
-    public Lectures lectures;
+    public Lecture lectures;
     public Course course;
-    public HomeWork(String name_Home_Work, Lectures lectures, Course course) {
+    public HomeWork(String name_Home_Work, Lecture lectures, Course course) {
         this.name_Home_Work=name_Home_Work;
         this.lectures=lectures;
         this.course=course;

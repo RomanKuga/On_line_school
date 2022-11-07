@@ -2,7 +2,7 @@ package com.Univer;
 
 
 import com.Univer.models.Course;
-import com.Univer.models.Lectures;
+import com.Univer.models.Lecture;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,12 +20,12 @@ public class Main {
         System.out.println(Course.calc1);*/
         Course id = new Course();
         int idCourse = id.Course(245);
-        Lectures oneLectures = new Lectures( idCourse,"quadratic equations");
-        Lectures twoLectures = new Lectures( idCourse++,"equations");
-        Lectures threeLectures = new Lectures( idCourse++,"line equations part 1");
-        Lectures fourLectures = new Lectures( idCourse++,"line equations part 2");
-        Lectures fiveLectures = new Lectures( idCourse++,"line equations part 3");
-        Lectures sixLectures = new Lectures( idCourse++,"line equations part 4");
+        Lecture oneLectures = new Lecture( idCourse,"quadratic equations");
+        Lecture twoLectures = new Lecture( idCourse,"equations");
+        Lecture threeLectures = new Lecture( idCourse,"line equations part 1");
+        Lecture fourLectures = new Lecture( idCourse,"line equations part 2");
+        Lecture fiveLectures = new Lecture( idCourse,"line equations part 3");
+        Lecture sixLectures = new Lecture( idCourse,"line equations part 4");
 
 
 
@@ -33,7 +33,7 @@ public class Main {
 
 
         System.out.println("id - 6-ї лекцій = " + idCourse);
-        System.out.println("Кількість лекцій  = " + Lectures.calc);
+        System.out.println("Кількість лекцій  = " + Lecture.calc);
 
 
 

@@ -1,6 +1,6 @@
 package com.Univer.models;
 
-public class Lectures {
+public class Lecture {
     public static int calc;
    // private static long id;
     public Course id;
@@ -8,7 +8,7 @@ public class Lectures {
 
     public Course course;
     public Teacher teacher;
-    public  Lectures(int id, String nameLecture) {
+    public Lecture(int id, String nameLecture) {
         this.nameLecture=nameLecture;
         this.id=new Course();
 
