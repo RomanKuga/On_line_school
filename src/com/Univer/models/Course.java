@@ -3,18 +3,20 @@ package com.Univer.models;
 public class Course {
     public static int calc;
 
-    private static int id;
+    private  int courseID;
     public String subject;
     public Teacher teacher;
     public Lecture lecture;
     public AddMaterial add_material;
     public HomeWork home_work;
 
-    public int Course(int id){
+    public  Course(int courseID){
         calc++;
-       return id;
+        this.courseID = courseID;
 
-
+    }
+    public int getCourseID() {
+        return courseID;
     }
 
    /* public Course() {

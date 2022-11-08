@@ -2,16 +2,14 @@ package com.Univer.models;
 
 public class Lecture {
     public static int calc;
-   // private static long id;
-    public Course id;
+    private  int id;
+    public int courseID;
     public String nameLecture;
-
     public Course course;
     public Teacher teacher;
-    public Lecture(int id, String nameLecture) {
+    public Lecture( int courseID, String nameLecture) {
         this.nameLecture=nameLecture;
-        this.id=new Course();
-
+        this.courseID=courseID;
 
         calc++;
     }
