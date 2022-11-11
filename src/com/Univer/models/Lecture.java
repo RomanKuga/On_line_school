@@ -7,10 +7,12 @@ public class Lecture {
     public String nameLecture;
     public Course course;
     public Teacher teacher;
-    public Lecture( int courseID, String nameLecture) {
+    public Lecture( int id, int courseID, String nameLecture) {
+        this.id=id;
         this.nameLecture=nameLecture;
         this.courseID=courseID;
 
         calc++;
     }
+    
 }
