@@ -4,15 +4,10 @@ package com.Univer;
 import com.Univer.models.Course;
 import com.Univer.models.Lecture;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-       /* Teacher teacher= new Teacher("Ivan", "Ivanov", "engineer");
-        Teacher oldTeacher= new Teacher("Petro", "Petrov", "chemist");
-        Teacher docent = new Teacher("Semen", "Ivanov", "philosopher");
-        Course oneCourse= new Course();
-        Course twoCourse= new Course();
-        System.out.println(Teacher.calc);
-        System.out.println(Course.calc1);*/
 
         Course course = new Course(1);
 
@@ -28,6 +23,71 @@ public class Main {
 
         System.out.println("id курсу - 6-ї лекцій = " + lectureExample.courseID);
         System.out.println("Кількість лекцій  = " + Lecture.calc);
+
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Виберіть номер категорії з якою будете працювати:");
+        System.out.println("1. Курс");
+        System.out.println("2. Вчителі");
+        System.out.println("3. Студенти");
+        System.out.println("4. Лекції");
+
+        int number = scanner.nextInt();
+
+        switch (number)
+        {
+            case 1:
+                System.out.println("Ви вибрали категорію : Курс");
+                break;
+            case 2:
+                System.out.println("Ви вибрали категорію : Вчителі");
+                break;
+            case 3:
+                System.out.println("Ви вибрали категорію : Студенти");
+                break;
+            case 4:
+                System.out.println("Ви вибрали категорію : Лекції");
+
+                int numberNext =1;
+                while (numberNext < 2) {
+                System.out.println("id курсу -"+ lectureExample.courseID+"  Кількість лекцій  = " + Lecture.calc );
+
+                // Scanner scanner = new Scanner(System.in);
+
+                System.out.println("Добавити лекцію?");
+                System.out.println("1. Так");
+                System.out.println("2. Ні");
+
+                numberNext = scanner.nextInt();
+
+                switch (numberNext) {
+                    case 1:
+                        // Scanner scanner = new Scanner(System.in);
+                        System.out.println("Введіть ID курсу");
+                        int courseNumber = scanner.nextInt();
+                        Course courseNext = new Course(courseNumber);
+
+                        System.out.println("Введіть назву лекції");
+                        String nameLecture = scanner.next();
+                        System.out.println("Введіть ID лекції");
+                        int lectureId = scanner.nextInt();
+
+                        //System.out.println("Введіть назву лекції");
+                        //String nameLecture = scanner.next();
+
+                        Lecture lectureNext = new Lecture(lectureId, course.getCourseID(), nameLecture);
+                        lectureExample.courseID = course.getCourseID();
+                        break;
+                    case 2:
+                        numberNext =2;
+                        break;
+                }
+                }
+                break;
+            default:
+                System.out.println("Такої категорії не існує");
+        }
+
 
     }
 }
