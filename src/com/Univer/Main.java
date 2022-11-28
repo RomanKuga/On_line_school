@@ -3,6 +3,7 @@ package com.Univer;
 
 import com.Univer.models.Course;
 import com.Univer.models.Lecture;
+import com.Univer.models.Teacher;
 
 import java.util.Scanner;
 
@@ -23,6 +24,7 @@ public class Main {
 
         System.out.println("id курсу - 6-ї лекцій = " + lectureExample.courseID);
         System.out.println("Кількість лекцій  = " + Lecture.calc);
+
 
 
         Scanner scanner = new Scanner(System.in);
@@ -52,8 +54,6 @@ public class Main {
                 while (numberNext < 2) {
                 System.out.println("id курсу -"+ lectureExample.courseID+"  Кількість лекцій  = " + Lecture.calc );
 
-                // Scanner scanner = new Scanner(System.in);
-
                 System.out.println("Добавити лекцію?");
                 System.out.println("1. Так");
                 System.out.println("2. Ні");
@@ -62,7 +62,6 @@ public class Main {
 
                 switch (numberNext) {
                     case 1:
-                        // Scanner scanner = new Scanner(System.in);
                         System.out.println("Введіть ID курсу");
                         int courseNumber = scanner.nextInt();
                         Course courseNext = new Course(courseNumber);
@@ -71,9 +70,6 @@ public class Main {
                         String nameLecture = scanner.next();
                         System.out.println("Введіть ID лекції");
                         int lectureId = scanner.nextInt();
-
-                        //System.out.println("Введіть назву лекції");
-                        //String nameLecture = scanner.next();
 
                         Lecture lectureNext = new Lecture(lectureId, course.getCourseID(), nameLecture);
                         lectureExample.courseID = course.getCourseID();
@@ -86,6 +82,7 @@ public class Main {
                 break;
             default:
                 System.out.println("Такої категорії не існує");
+                scanner.close();
         }
 
 
