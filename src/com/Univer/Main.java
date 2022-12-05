@@ -24,67 +24,110 @@ public class Main {
 
         System.out.println("id курсу - 6-ї лекцій = " + lectureExample.courseID);
         System.out.println("Кількість лекцій  = " + Lecture.calc);
-
-
-
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Виберіть номер категорії з якою будете працювати:");
-        System.out.println("1. Курс");
-        System.out.println("2. Вчителі");
-        System.out.println("3. Студенти");
-        System.out.println("4. Лекції");
+        boolean exitBoolean = false;
+        while (exitBoolean == false) {
 
-        int number = scanner.nextInt();
 
-        switch (number)
-        {
+
+            System.out.println("Виберіть номер категорії з якою будете працювати:");
+            System.out.println("1. Курс");
+            System.out.println("2. Вчителі");
+            System.out.println("3. Студенти");
+            System.out.println("4. Лекції");
+            System.out.println("5. Вихід");
+
+            int number = scanner.nextInt();
+
+            switch (number) {
+                case 1:
+                    System.out.println("Ви вибрали категорію : Курс");
+                    exitBoolean = exitProgram();
+                    break;
+                case 2:
+                    System.out.println("Ви вибрали категорію : Вчителі");
+                    exitBoolean = exitProgram();
+                    break;
+                case 3:
+                    System.out.println("Ви вибрали категорію : Студенти");
+                    exitBoolean = exitProgram();
+                    break;
+                case 4:
+                    System.out.println("Ви вибрали категорію : Лекції");
+
+                    int numberNext = 1;
+                    while (numberNext < 2) {
+                        System.out.println("id курсу -" + lectureExample.courseID + "  Кількість лекцій  = " + Lecture.calc);
+
+                        System.out.println("Добавити лекцію?");
+                        System.out.println("1. Так");
+                        System.out.println("2. Ні");
+
+                        numberNext = scanner.nextInt();
+
+
+                        switch (numberNext) {
+                            case 1:
+                                if (Lecture.calc <8) {
+                                System.out.println("Введіть ID курсу");
+                                int courseNumber = scanner.nextInt();
+                                Course courseNext = new Course(courseNumber);
+
+                                System.out.println("Введіть назву лекції");
+                                String nameLecture = scanner.next();
+                                System.out.println("Введіть ID лекції");
+                                int lectureId = scanner.nextInt();
+
+                                Lecture lectureNext = new Lecture(lectureId, course.getCourseID(), nameLecture);
+                                lectureExample.courseID = course.getCourseID();
+                                break;
+                                }
+                                else { System.out.println("Кількість лекцій перевищує 8 ");
+                                    numberNext = 2;
+                                    break;
+                                }
+                            case 2:
+                                numberNext = 2;
+
+                                break;
+                        }
+                    }
+                    exitBoolean = exitProgram();
+                    break;
+                case 5:
+
+                    System.out.println("Дякую");
+                    exitBoolean = true;
+                    break;
+                    default:
+                    System.out.println("Такої категорії не існує");
+                        break;
+
+            }
+        }
+        scanner.close();
+
+
+
+
+    }
+    private static boolean exitProgram(){
+        boolean exitVers = false;
+        Scanner nextScanner = new Scanner(System.in);
+        System.out.println("Бажаєте вийти з програми");
+        System.out.println("1. Так");
+        System.out.println("2. Ні");
+        int nextY=nextScanner.nextInt();
+        switch (nextY){
             case 1:
-                System.out.println("Ви вибрали категорію : Курс");
+                exitVers =true;
                 break;
             case 2:
-                System.out.println("Ви вибрали категорію : Вчителі");
-                break;
-            case 3:
-                System.out.println("Ви вибрали категорію : Студенти");
-                break;
-            case 4:
-                System.out.println("Ви вибрали категорію : Лекції");
-
-                int numberNext =1;
-                while (numberNext < 2) {
-                System.out.println("id курсу -"+ lectureExample.courseID+"  Кількість лекцій  = " + Lecture.calc );
-
-                System.out.println("Добавити лекцію?");
-                System.out.println("1. Так");
-                System.out.println("2. Ні");
-
-                numberNext = scanner.nextInt();
-
-                switch (numberNext) {
-                    case 1:
-                        System.out.println("Введіть ID курсу");
-                        int courseNumber = scanner.nextInt();
-                        Course courseNext = new Course(courseNumber);
-
-                        System.out.println("Введіть назву лекції");
-                        String nameLecture = scanner.next();
-                        System.out.println("Введіть ID лекції");
-                        int lectureId = scanner.nextInt();
-
-                        Lecture lectureNext = new Lecture(lectureId, course.getCourseID(), nameLecture);
-                        lectureExample.courseID = course.getCourseID();
-                        break;
-                    case 2:
-                        numberNext =2;
-                        break;
-                }
-                }
+                exitVers =false;
                 break;
             default:
-                System.out.println("Такої категорії не існує");
-                scanner.close();
+                System.out.println("Ви не вибрали");
         }
-
-
+        return exitVers;
     }
 }
