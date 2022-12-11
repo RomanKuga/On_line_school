@@ -14,4 +14,8 @@ public class Lecture {
 
         calc++;
     }
+    @Override
+    public String toString() {
+        return "Int object with id = " + id + "  CourseID  " + courseID + " NameLecture " + nameLecture;
+    }
 }

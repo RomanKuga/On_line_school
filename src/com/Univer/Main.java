@@ -5,6 +5,7 @@ import com.Univer.models.Course;
 import com.Univer.models.Lecture;
 import com.Univer.models.Teacher;
 import com.Univer.repository.DataLecture;
+import com.Univer.service.LecturesService;
 
 import java.util.Scanner;
 
@@ -15,20 +16,19 @@ public class Main {
 
         Lecture lectureExample = new Lecture(1, course.getCourseID(), "quadratic equations");
         lectureExample.courseID = course.getCourseID();
+        Lecture twoLectures = new Lecture( 2, lectureExample.courseID,"equations");
+        Lecture threeLectures = new Lecture( 3, lectureExample.courseID,"line equations part 1");
+        Lecture fourLectures = new Lecture( 4, lectureExample.courseID,"line equations part 2");
+        Lecture fiveLectures = new Lecture(5, lectureExample.courseID,"line equations part 3");
+        Lecture sixLectures = new Lecture( 6, lectureExample.courseID,"line equations part 4");
 
-       DataLecture dataLecture = new DataLecture();
-
-                Lecture[] dataLectures = {new Lecture(2, lectureExample.courseID, "equations"),
-                new Lecture(3, lectureExample.courseID, "line equations part 1"),
-                new Lecture(4, lectureExample.courseID, "line equations part 2"),
-                new Lecture(5, lectureExample.courseID, "line equations part 3"),
-                new Lecture(6, lectureExample.courseID, "line equations part 4")
-                /*    Lecture twoLectures = new Lecture( 2, lectureExample.courseID,"equations");
-                    Lecture threeLectures = new Lecture( 3, lectureExample.courseID,"line equations part 1");
-                    Lecture fourLectures = new Lecture( 4, lectureExample.courseID,"line equations part 2");
-                    Lecture fiveLectures = new Lecture(5, lectureExample.courseID,"line equations part 3");
-                    Lecture sixLectures = new Lecture( 6, lectureExample.courseID,"line equations part 4"); */
-        };
+        DataLecture dataLecture = new DataLecture();
+        dataLecture.add(lectureExample);
+        dataLecture.add(twoLectures);
+        dataLecture.add(threeLectures);
+        dataLecture.add(fourLectures);
+        dataLecture.add(fiveLectures);
+        dataLecture.add(sixLectures);
 
 
         System.out.println("id курсу - 6-ї лекцій = " + lectureExample.courseID);
@@ -68,6 +68,7 @@ public class Main {
                         System.out.println("Добавити лекцію?");
                         System.out.println("1. Так");
                         System.out.println("2. Ні");
+                        System.out.println("3. Вивести лекції на екран");
 
                         numberNext = scanner.nextInt();
 
@@ -86,6 +87,7 @@ public class Main {
 
                                     Lecture lectureNext = new Lecture(lectureId, course.getCourseID(), nameLecture);
                                     lectureExample.courseID = course.getCourseID();
+                                    dataLecture.add(lectureNext);
                                     break;
                                 } else {
                                     System.out.println("Кількість лекцій перевищує 8 ");
@@ -94,6 +96,11 @@ public class Main {
                                 }
                             case 2:
 
+                                break;
+                            case 3:
+                                /*LecturesService prt = new LecturesService();
+                                prt.printArray();*/
+                                dataLecture.printArray();
                                 break;
                         }
                     }
