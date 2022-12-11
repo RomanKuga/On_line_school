@@ -29,12 +29,12 @@ public class DataLecture {
             }
         }
     }
- /* public Lecture[] lectureArrayPrint = lectureArray ;
-    public  Lecture[] getLectureArray(){
+    public Lecture[] getLectures() {
+
         return lectureArray;
-}*/
- public void printArray() {
+    }
+ /*public void printArray() {
      System.out.println(Arrays.toString(lectureArray));
- }
+ }*/
 }
 

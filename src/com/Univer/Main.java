@@ -98,9 +98,8 @@ public class Main {
 
                                 break;
                             case 3:
-                                /*LecturesService prt = new LecturesService();
-                                prt.printArray();*/
-                                dataLecture.printArray();
+                                LecturesService pt = new LecturesService();
+                                pt.printArray(dataLecture.getLectures());
                                 break;
                         }
                     }
