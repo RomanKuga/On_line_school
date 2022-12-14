@@ -15,12 +15,11 @@ public class Main {
         Course course = new Course(1);
 
         Lecture lectureExample = new Lecture(1, course.getCourseID(), "quadratic equations");
-        lectureExample.courseID = course.getCourseID();
-        Lecture twoLectures = new Lecture( 2, lectureExample.courseID,"equations");
-        Lecture threeLectures = new Lecture( 3, lectureExample.courseID,"line equations part 1");
-        Lecture fourLectures = new Lecture( 4, lectureExample.courseID,"line equations part 2");
-        Lecture fiveLectures = new Lecture(5, lectureExample.courseID,"line equations part 3");
-        Lecture sixLectures = new Lecture( 6, lectureExample.courseID,"line equations part 4");
+        Lecture twoLectures = new Lecture( 2, course.getCourseID(),"equations");
+        Lecture threeLectures = new Lecture( 3, course.getCourseID(),"line equations part 1");
+        Lecture fourLectures = new Lecture( 4, course.getCourseID(),"line equations part 2");
+        Lecture fiveLectures = new Lecture(5, course.getCourseID(),"line equations part 3");
+        Lecture sixLectures = new Lecture( 6, course.getCourseID(),"line equations part 4");
 
         DataLecture dataLecture = new DataLecture();
         dataLecture.add(lectureExample);
@@ -30,9 +29,9 @@ public class Main {
         dataLecture.add(fiveLectures);
         dataLecture.add(sixLectures);
 
-
-        System.out.println("id курсу - 6-ї лекцій = " + lectureExample.courseID);
-        System.out.println("Кількість лекцій  = " + Lecture.calc);
+        Lecture calcLecture = new Lecture();
+        System.out.println("id курсу - 6-ї лекцій = " + sixLectures.getCourseIDLecture());
+        System.out.println("Кількість лекцій  = " +calcLecture.getCalcLecture());
         Scanner scanner = new Scanner(System.in);
         boolean exitBoolean = false;
         while (!exitBoolean) {
@@ -63,7 +62,7 @@ public class Main {
                     System.out.println("Ви вибрали категорію : Лекції");
                     int numberNext = 1;
                     while (numberNext < 2) {
-                        System.out.println("id курсу -" + lectureExample.courseID + "  Кількість лекцій  = " + Lecture.calc);
+                        System.out.println("id курсу -" + course.getCourseID() + "  Кількість лекцій  = " + calcLecture.getCalcLecture());
 
                         System.out.println("Добавити лекцію?");
                         System.out.println("1. Так");
@@ -75,7 +74,7 @@ public class Main {
 
                         switch (numberNext) {
                             case 1:
-                                if (Lecture.calc < 8) {
+                                if (calcLecture.getIdLecture() < 8) {
                                     System.out.println("Введіть ID курсу");
                                     int courseNumber = scanner.nextInt();
                                     Course courseNext = new Course(courseNumber);
@@ -85,9 +84,8 @@ public class Main {
                                     System.out.println("Введіть ID лекції");
                                     int lectureId = scanner.nextInt();
 
-                                    Lecture lectureNext = new Lecture(lectureId, course.getCourseID(), nameLecture);
-                                    lectureExample.courseID = course.getCourseID();
-                                    dataLecture.add(lectureNext);
+                                   // Lecture lectureNext = new Lecture(lectureId, course.getCourseID(), nameLecture);
+                                    dataLecture.add(new Lecture(lectureId, course.getCourseID(), nameLecture));
                                     break;
                                 } else {
                                     System.out.println("Кількість лекцій перевищує 8 ");
@@ -101,6 +99,9 @@ public class Main {
                                 LecturesService pt = new LecturesService();
                                 pt.printArray(dataLecture.getLectures());
                                 break;
+                            default :
+                                System.out.println("Такої категорії не існує");
+
                         }
                     }
                     exitBoolean = exitProgram();

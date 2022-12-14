@@ -6,4 +6,12 @@ public class StudentsService {
     public StudentsService() {
         calc++;
     }
+
+    public static int getCalcStudentsService() {
+        return calc;
+    }
+
+    public static long getIdStudentsService() {
+        return id;
+    }
 }

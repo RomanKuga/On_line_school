@@ -1,12 +1,12 @@
 package com.Univer.models;
 
 public class Lecture {
-    public static int calc;
+    private static int calc;
     private  int id;
-    public int courseID;
-    public String nameLecture;
-    public Course course;
-    public Teacher teacher;
+    private int courseID;
+    private String nameLecture;
+    private Course course;
+    private Teacher teacher;
     public Lecture( int id, int courseID, String nameLecture) {
         this.id=id;
         this.nameLecture=nameLecture;
@@ -14,6 +14,29 @@ public class Lecture {
 
         calc++;
     }
+     public Lecture () {
+
+    }
+    public int getCalcLecture() {
+
+        return calc;
+    }
+
+    public int getIdLecture() {
+
+        return id;
+    }
+
+    public int getCourseIDLecture() {
+
+        return courseID;
+    }
+
+    public String getNameLectureLecture() {
+
+        return nameLecture;
+    }
+
     @Override
     public String toString() {
         return "//  Int object with id = " + id + "/  CourseID  " + courseID + "/ NameLecture " + nameLecture;

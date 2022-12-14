@@ -33,8 +33,6 @@ public class DataLecture {
 
         return lectureArray;
     }
- /*public void printArray() {
-     System.out.println(Arrays.toString(lectureArray));
- }*/
+
 }
 

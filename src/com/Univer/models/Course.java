@@ -4,11 +4,11 @@ public class Course {
     public static int calc;
 
     private  int courseID;
-    public String subject;
-    public Teacher teacher;
-    public Lecture lecture;
-    public AddMaterial add_material;
-    public HomeWork home_work;
+    private String subject;
+    private Teacher teacher;
+    private Lecture lecture;
+    private AddMaterial add_material;
+    private HomeWork home_work;
 
     public  Course(int courseID){
         calc++;
@@ -19,5 +19,7 @@ public class Course {
         return courseID;
     }
 
-
+    public static int getCalcCourse() {
+        return calc;
+    }
 }
