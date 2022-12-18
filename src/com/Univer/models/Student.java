@@ -1,15 +1,16 @@
 package com.Univer.models;
 
-public class Student {
+public class Student extends MasterModels{
     private static int calc;
-    private static long id;
-    private String f_name;
-    private String s_name;
+    private int id;
+    private String firstName;
+    private String secondName;
     private Course course;
     private int age;
-    public Student(String f_name, String s_name, Course course, int age){
-        this.f_name=f_name;
-        this.s_name=s_name;
+    public Student(int id, String firstName, String secondName, Course course, int age){
+        super(id);
+        this.firstName=firstName;
+        this.secondName=secondName;
         this.course=course;
         this.age=age;
         calc++;
@@ -19,16 +20,17 @@ public class Student {
         return calc;
     }
 
-    public static long getIdStudent() {
+    public int getIdStudent() {
         return id;
     }
 
-    public String getF_nameStudent() {
-        return f_name;
+    public String getFirstNameStudent() {
+        return firstName;
     }
 
-    public String getS_nameStudent() {
-        return s_name;
+    public String getSecondNameStudent() {
+
+        return secondName;
     }
 
     public Course getCourseStudent() {

@@ -1,25 +1,30 @@
 package com.Univer.models;
 
-public class Course {
-    public static int calc;
+public class Course extends MasterModels{
+    private static int calc;
 
-    private  int courseID;
+   // private  int courseID;
     private String subject;
     private Teacher teacher;
     private Lecture lecture;
-    private AddMaterial add_material;
-    private HomeWork home_work;
+    private AddMaterial addMaterial;
+    private HomeWork homeWork;
+
+
 
     public  Course(int courseID){
+        super(courseID);
         calc++;
-        this.courseID = courseID;
 
     }
+
     public int getCourseID() {
-        return courseID;
+
+        return super.getID();
     }
 
     public static int getCalcCourse() {
+
         return calc;
     }
 }

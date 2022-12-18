@@ -1,32 +1,34 @@
 package com.Univer.models;
 
-public class Teacher {
+public class Teacher extends MasterModels{
     private static int calc;
-    private static long id;
-    private String f_name;
-    private String s_name;
+    private int id;
+    private String firstName;
+    private String secondName;
     private String subject;
-    public Teacher(String f_name, String s_name, String subject) {
-        this.f_name = f_name;
-        this.s_name = s_name;
+    public Teacher( int id, String firstName, String secondName, String subject) {
+        super(id);
+        this.firstName = firstName;
+        this.secondName = secondName;
         this.subject = subject;
         calc++;
+    }
+
+    public int getIdTeacher() {
+        return id;
     }
 
     public static int getCalcTeacher() {
         return calc;
     }
 
-    public static long getIdTeacher() {
-        return id;
-    }
 
     public String getF_nameTeacher() {
-        return f_name;
+        return firstName;
     }
 
-    public String getS_nameTeacher() {
-        return s_name;
+    public String getSecondNameTeacher() {
+        return secondName;
     }
 
     public String getSubjectTeacher() {

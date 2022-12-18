@@ -1,35 +1,40 @@
 package com.Univer.models;
 
-public class AddMaterial {
+public class AddMaterial extends MasterModels{
     private static int calc;
-    private static long id;
-    private String name_Add_materials;
+    private int id;
+    private String nameAddMaterials;
     private Lecture lectures;
     private Course course;
-    public AddMaterial(String name_Add_materials, Lecture lectures, Course course) {
-        this.name_Add_materials=name_Add_materials;
+    public AddMaterial(int id, String nameAddMaterials, Lecture lectures, Course course) {
+        super(id);
+        this.nameAddMaterials=nameAddMaterials;
         this.lectures=lectures;
         this.course=course;
         calc++;
     }
 
     public static int getCalcAddMaterial() {
+
         return calc;
     }
 
-       public static long getIdAddMaterial() {
+       public int getIdAddMaterial() {
         return id;
     }
 
-    public String getName_Add_materials() {
-        return name_Add_materials;
+
+    public String getNameAddMaterials() {
+        return nameAddMaterials;
     }
 
     public Lecture getLecturesAddMaterial() {
+
         return lectures;
     }
 
     public Course getCourseAddMaterial() {
+
         return course;
     }
 }

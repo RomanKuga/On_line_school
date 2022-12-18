@@ -1,23 +1,24 @@
 package com.Univer.models;
 
-public class Lecture {
-    private static int calc;
-    private  int id;
-    private int courseID;
+public class Lecture extends MasterModels {
+
+    private  static int calc;
+    private int id;
+    private static int courseID;
     private String nameLecture;
     private Course course;
     private Teacher teacher;
     public Lecture( int id, int courseID, String nameLecture) {
-        this.id=id;
-        this.nameLecture=nameLecture;
+        super(courseID);
+        this.id =id;
         this.courseID=courseID;
-
+        this.nameLecture=nameLecture;
         calc++;
     }
-     public Lecture () {
+    public Lecture(){
 
     }
-    public int getCalcLecture() {
+        public int getCalcLecture() {
 
         return calc;
     }
@@ -39,6 +40,6 @@ public class Lecture {
 
     @Override
     public String toString() {
-        return "//  Int object with id = " + id + "/  CourseID  " + courseID + "/ NameLecture " + nameLecture;
+        return "//  Int object with id = " +  getIdLecture()  + "/  CourseID--  " + courseID + "/ NameLecture-- " + nameLecture;
     }
 }
