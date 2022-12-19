@@ -8,19 +8,14 @@ import com.Univer.service.LecturesService;
 
 import java.util.Scanner;
 
+import static com.Univer.service.ExitProgram.exitProgram;
+
 public class Main {
     public static void main(String[] args) {
 
         Course course = new Course(1);
 
            Lecture lectureExample = new Lecture();
-//        Lecture twoLectures = new Lecture( 2, course.getCourseID(),"equations");
-//        Lecture threeLectures = new Lecture( 3, course.getCourseID(),"line equations part 1");
-//        Lecture fourLectures = new Lecture( 4, course.getCourseID(),"line equations part 2");
-//        Lecture fiveLectures = new Lecture(5, course.getCourseID(),"line equations part 3");
-//        System.out.println(fiveLectures.getCalcLecture());
-//        Lecture sixLectures = new Lecture( 6, course.getCourseID(),"line equations part 4");
-//        System.out.println(sixLectures.getCalcLecture());
 
         DataLecture dataLecture = new DataLecture();
         dataLecture.add(new Lecture(1, course.getCourseID(), "quadratic equations"));
@@ -70,7 +65,6 @@ public class Main {
                         System.out.println("4. Вивести лекції на екран");
                         System.out.println("5. Повернутись в основне меню");
 
-
                         int numberLect = scanner.nextInt();
                         LecturesService pt = new LecturesService();
 
@@ -98,7 +92,6 @@ public class Main {
                                                      " / ведіть номер лекції від 1 до "+lectureExample.getCalcLecture());
                                 numberLect = scanner.nextInt();
                                 pt.printArray(dataLecture.getByld(numberLect));
-
                                 break;
                             case 3:
                                 System.out.println("Ви вибрали видалити лекцію, кількість лекцій-"+lectureExample.getCalcLecture()+
@@ -108,7 +101,6 @@ public class Main {
                                 pt.printArray(dataLecture.getLectures());
                                 break;
                             case 4:
-
                                 pt.printArray(dataLecture.getLectures());
                                 break;
                             case 5:
@@ -116,7 +108,6 @@ public class Main {
                                 break;
                             default :
                                 System.out.println("Такої категорії не існує");
-
                         }
                     }
                     exitBoolean = exitProgram();
@@ -129,28 +120,6 @@ public class Main {
             }
         }
         scanner.close();
-
-
-
-
     }
-    private static boolean exitProgram(){
-        boolean exitVers = false;
-        Scanner nextScanner = new Scanner(System.in);
-        System.out.println("Бажаєте вийти з програми");
-        System.out.println("1. Так");
-        System.out.println("2. Ні");
-        int nextY=nextScanner.nextInt();
-        switch (nextY){
-            case 1:
-                exitVers =true;
-                break;
-            case 2:
-                exitVers =false;
-                break;
-            default:
-                System.out.println("Ви не вибрали");
-        }
-        return exitVers;
-    }
+
 }
