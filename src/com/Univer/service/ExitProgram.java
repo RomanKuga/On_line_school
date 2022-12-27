@@ -10,16 +10,20 @@ public class ExitProgram {
         System.out.println("1. Так");
         System.out.println("2. Ні");
         int nextY=nextScanner.nextInt();
-        switch (nextY){
-            case 1:
-                exitVers =true;
-                break;
-            case 2:
-                exitVers =false;
-                break;
-            default:
-                System.out.println("Ви не вибрали");
-        }
+        if (nextY==1){
+            exitVers =true;
+          }
+
+//        switch (nextY){
+//            case 1:
+//                exitVers =true;
+//                break;
+//            case 2:
+//
+//                break;
+//            default:
+//                System.out.println("Ви не вибрали");
+//        }
         return exitVers;
     }
 }

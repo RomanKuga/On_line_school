@@ -8,6 +8,7 @@ public class Lecture extends MasterModels {
     private String nameLecture;
     private Course course;
     private Teacher teacher;
+    private Person personId;
     public Lecture( int id, int courseID, String nameLecture) {
         super(courseID);
         this.id =id;

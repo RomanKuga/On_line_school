@@ -4,6 +4,7 @@ public class CourseService {
     private static int calc;
     private static long id;
     public CourseService() {
+
         calc++;
     }
 
