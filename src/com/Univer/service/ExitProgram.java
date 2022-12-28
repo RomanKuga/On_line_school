@@ -13,17 +13,6 @@ public class ExitProgram {
         if (nextY==1){
             exitVers =true;
           }
-
-//        switch (nextY){
-//            case 1:
-//                exitVers =true;
-//                break;
-//            case 2:
-//
-//                break;
-//            default:
-//                System.out.println("Ви не вибрали");
-//        }
         return exitVers;
     }
 }

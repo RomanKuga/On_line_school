@@ -23,10 +23,11 @@ private MasterModels[] newArray;
        newArray = myArray;
     }
 
-    public MasterModels[] getAll() {
+    public MasterModels getAll(int l) {
 
-        return newArray;
+        return newArray[l];
     }
+
     public int lengthArray(){
         return newArray.length;
     }
