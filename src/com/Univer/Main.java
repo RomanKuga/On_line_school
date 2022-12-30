@@ -1,15 +1,15 @@
 package com.Univer;
 
-
 import com.Univer.models.Course;
+import com.Univer.models.EnumRole;
 import com.Univer.models.Lecture;
 import com.Univer.repository.DataLecture;
+import com.Univer.service.GlobalMenu;
 import com.Univer.service.LecturesService;
 
 import java.util.Scanner;
 
 import static com.Univer.service.ExitProgram.exitProgram;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -27,99 +27,10 @@ public class Main {
 
         System.out.println("id курсу - 6-ї лекцій = " +lectureExample.getCourseIDLecture());
         System.out.println("Кількість лекцій  = " +lectureExample.getCalcLecture());
-        Scanner scanner = new Scanner(System.in);
-        boolean exitBoolean = false;
-        while (!exitBoolean) {
 
-            System.out.println("Виберіть номер категорії з якою будете працювати:");
-            System.out.println("1. Курс");
-            System.out.println("2. Вчителі");
-            System.out.println("3. Студенти");
-            System.out.println("4. Лекції");
-            System.out.println("5. Вихід");
+        GlobalMenu glMenu=new GlobalMenu();
+        glMenu.globalMenu(dataLecture);
 
-            int number = scanner.nextInt();
-
-            switch (number) {
-                case 1 -> {
-                    System.out.println("Ви вибрали категорію : Курс");
-                    exitBoolean = exitProgram();
-                }
-                case 2 -> {
-                    System.out.println("Ви вибрали категорію : Вчителі");
-                    exitBoolean = exitProgram();
-                }
-                case 3 -> {
-                    System.out.println("Ви вибрали категорію : Студенти");
-                    exitBoolean = exitProgram();
-                }
-                case 4 -> {
-                    System.out.println("Ви вибрали категорію : Лекції");
-                    int numberNext = 1;
-                    while (numberNext < 2) {
-                        System.out.println("id курсу -" + course.getCourseID() + "  Кількість лекцій  = " + lectureExample.getCalcLecture());
-
-                        System.out.println("1. Добавити лекцію");
-                        System.out.println("2. Відкрити вибрану лекцію");
-                        System.out.println("3. Видалити вибрану лекцію");
-                        System.out.println("4. Вивести лекції на екран");
-                        System.out.println("5. Повернутись в основне меню");
-
-                        int numberLect = scanner.nextInt();
-                        LecturesService pt = new LecturesService();
-
-                        switch (numberLect) {
-                            case 1:
-                                if (lectureExample.getIdLecture() < 8) {
-                                    System.out.println("Введіть ID курсу");
-                                    int courseNumber = scanner.nextInt();
-                                    Course courseNext = new Course(courseNumber);
-
-                                    System.out.println("Введіть назву лекції");
-                                    String nameLecture = scanner.next();
-                                    System.out.println("Введіть ID лекції");
-                                    int lectureId = scanner.nextInt();
-
-                                    dataLecture.add(new Lecture(lectureId, course.getCourseID(), nameLecture));
-                                    break;
-                                } else {
-                                    System.out.println("Кількість лекцій перевищує 8 ");
-                                    numberNext = 2;
-                                    break;
-                                }
-                            case 2:
-                                System.out.println("Ви вибрали відкрити лекцію, кількість лекцій-"+lectureExample.getCalcLecture()+
-                                                     " / ведіть номер лекції від 1 до "+lectureExample.getCalcLecture());
-                                numberLect = scanner.nextInt();
-                                pt.printArray(dataLecture.getByld(numberLect));
-                                break;
-                            case 3:
-                                System.out.println("Ви вибрали видалити лекцію, кількість лекцій-"+lectureExample.getCalcLecture()+
-                                        " / ведіть номер лекції від 1 до "+lectureExample.getCalcLecture());
-                                numberLect = scanner.nextInt();
-                                dataLecture.deleteByld(numberLect);
-                                pt.printArray(dataLecture.getLectures());
-                                break;
-                            case 4:
-                                pt.printArray(dataLecture.getLectures());
-                                break;
-                            case 5:
-                                numberNext = 2;
-                                break;
-                            default :
-                                System.out.println("Такої категорії не існує");
-                        }
-                    }
-                    exitBoolean = exitProgram();
-                }
-                case 5 -> {
-                    System.out.println("Дякую");
-                    exitBoolean = true;
-                }
-                default -> System.out.println("Такої категорії не існує");
-            }
-        }
-        scanner.close();
     }
 
 }

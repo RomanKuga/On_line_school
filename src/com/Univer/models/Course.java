@@ -5,7 +5,6 @@ public class Course extends MasterModels{
 
    // private  int courseID;
     private String subject;
-    private Teacher teacher;
     private Lecture lecture;
     private AddMaterial addMaterial;
     private HomeWork homeWork;
