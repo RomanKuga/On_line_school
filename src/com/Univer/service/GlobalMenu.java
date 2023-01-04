@@ -4,25 +4,27 @@ import com.Univer.models.Course;
 import com.Univer.models.Lecture;
 import com.Univer.repository.DataLecture;
 import com.Univer.repository.DataMaster;
+import com.Univer.repository.DataPerson;
 
 import java.util.Scanner;
 
 import static com.Univer.service.ExitProgram.exitProgram;
 
 public class GlobalMenu {
-private DataLecture dataMaster;
-public void globalMenu(DataLecture dataMaster) {
-    this.dataMaster=dataMaster;
+private DataLecture dataLecture;
+private DataPerson dataPerson;
+public void globalMenu(DataLecture dataLecture,DataPerson dataPerson) {
+    this.dataLecture=dataLecture;
+    this.dataPerson=dataPerson;
     Scanner scanner = new Scanner(System.in);
     boolean exitBoolean = false;
     while (!exitBoolean) {
 
         System.out.println("Виберіть номер категорії з якою будете працювати:");
         System.out.println("1. Курс");
-        System.out.println("2. Вчителі");
-        System.out.println("3. Студенти");
-        System.out.println("4. Лекції");
-        System.out.println("5. Вихід");
+        System.out.println("2. Персони");
+        System.out.println("3. Лекції");
+        System.out.println("4. Вихід");
 
         int number = scanner.nextInt();
 
@@ -33,18 +35,17 @@ public void globalMenu(DataLecture dataMaster) {
             }
             case 2 -> {
                 System.out.println("Ви вибрали категорію : Вчителі");
+                PersonService serPerson= new PersonService();
+                serPerson.menuPerson(dataPerson);
                 exitBoolean = exitProgram();
             }
+
             case 3 -> {
-                System.out.println("Ви вибрали категорію : Студенти");
-                exitBoolean = exitProgram();
-            }
-            case 4 -> {
                 System.out.println("Ви вибрали категорію : Лекції");
                 LecturesService serLecture = new LecturesService();
-                serLecture.menuLecrute(dataMaster);
+                serLecture.menuLecrute(dataLecture);
             }
-            case 5 -> {
+            case 4 -> {
                 System.out.println("Дякую");
                 exitBoolean = true;
             }

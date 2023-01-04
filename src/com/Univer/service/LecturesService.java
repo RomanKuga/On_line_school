@@ -1,6 +1,7 @@
 package com.Univer.service;
 import com.Univer.models.Course;
 import com.Univer.models.Lecture;
+import com.Univer.models.Person;
 import com.Univer.repository.DataLecture;
 import com.Univer.repository.DataMaster;
 
@@ -21,7 +22,6 @@ private DataLecture dataLecture;
      public void menuLecrute(DataLecture dataMaster){
         this.dataLecture=dataMaster;
         Lecture lectureExample = new Lecture();
-        boolean exitBoolean = false;
         int numberNext = 1;
          while (numberNext < 2) {
 
@@ -40,12 +40,15 @@ private DataLecture dataLecture;
                      if (lectureExample.getIdLecture() < 8) {
                          System.out.println("Введіть ID курсу");
                          int courseNumber = scanner.nextInt();
-                         Course courseNext = new Course(courseNumber);
                          System.out.println("Введіть назву лекції");
                          String nameLecture = scanner.next();
                          System.out.println("Введіть ID лекції");
                          int lectureId = scanner.nextInt();
-                         dataLecture.add(new Lecture(lectureId, courseNumber, nameLecture));
+                         System.out.println("Введіть ID викладача із списку");
+
+                         int personID = scanner.nextInt();
+
+                         dataLecture.add(new Lecture(lectureId, courseNumber, nameLecture,personID));
                          break;
                      } else {
                          System.out.println("Кількість лекцій перевищує 8 ");

@@ -5,7 +5,7 @@ import com.Univer.models.MasterModels;
 public class DataLecture extends DataMaster {
     private  static int size =5;
     private int number;
-    private  static Lecture[] lectureArray;
+    private  Lecture[] lectureArray;
     public DataLecture() {
        this.lectureArray = new Lecture[size];
     }
