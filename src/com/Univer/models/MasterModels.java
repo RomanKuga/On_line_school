@@ -1,7 +1,7 @@
 package com.Univer.models;
 
 public class MasterModels {
-    private  static int ID;
+    private  int ID;
     private int count;
 
     public MasterModels(int ID) {

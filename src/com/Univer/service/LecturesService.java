@@ -1,21 +1,16 @@
 package com.Univer.service;
-import com.Univer.models.Course;
 import com.Univer.models.Lecture;
-import com.Univer.models.Person;
+import com.Univer.models.MasterModels;
 import com.Univer.repository.DataLecture;
-import com.Univer.repository.DataMaster;
 
 import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
-
-import static com.Univer.service.ExitProgram.exitProgram;
 
 public class LecturesService {
     private static int calc;
     private static long id;
 private DataLecture dataLecture;
-    public void printArray(Lecture[] lect) {
+    public void printArray(MasterModels[] lect) {
 
         System.out.println(Arrays.toString(lect));
     }
@@ -37,7 +32,7 @@ private DataLecture dataLecture;
 
              switch (numberLect) {
                  case 1:
-                     if (lectureExample.getIdLecture() < 8) {
+                     if (lectureExample.getID() < 8) {
                          System.out.println("Введіть ID курсу");
                          int courseNumber = scanner.nextInt();
                          System.out.println("Введіть назву лекції");
@@ -59,7 +54,7 @@ private DataLecture dataLecture;
                      System.out.println("Ви вибрали відкрити лекцію, кількість лекцій-"+lectureExample.getCalcLecture()+
                              " / ведіть номер лекції від 1 до "+lectureExample.getCalcLecture());
                      numberLect = scanner.nextInt();
-                     pt.printArray(dataLecture.getByld(numberLect));
+                     dataLecture.getByld(numberLect);
                      break;
                  case 3:
                      System.out.println("Ви вибрали видалити лекцію, кількість лекцій-"+lectureExample.getCalcLecture()+

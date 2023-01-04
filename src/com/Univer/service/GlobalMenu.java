@@ -34,10 +34,10 @@ public void globalMenu(DataLecture dataLecture,DataPerson dataPerson) {
                 exitBoolean = exitProgram();
             }
             case 2 -> {
-                System.out.println("Ви вибрали категорію : Вчителі");
+                System.out.println("Ви вибрали категорію : Вчителі та Студенти");
                 PersonService serPerson= new PersonService();
                 serPerson.menuPerson(dataPerson);
-                exitBoolean = exitProgram();
+
             }
 
             case 3 -> {

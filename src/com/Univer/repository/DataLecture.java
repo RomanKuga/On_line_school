@@ -3,31 +3,30 @@ package com.Univer.repository;
 import com.Univer.models.Lecture;
 import com.Univer.models.MasterModels;
 public class DataLecture extends DataMaster {
-    private  static int size =5;
-    private int number;
-    private  Lecture[] lectureArray;
+    private MasterModels[] lectureArray;
     public DataLecture() {
-       this.lectureArray = new Lecture[size];
+         super.DataMaster();
     }
+
     public void add(Lecture lecture) {
-        if (lectureArray[lectureArray.length - 1] != null){
-            Lecture[] myArrayTemp = lectureArray;
-            lectureArray = new Lecture[lectureArray.length*3/2+1];
-            System.arraycopy(myArrayTemp,0,lectureArray,0,myArrayTemp.length);
-            super.elementToAdd(lecture,lectureArray);
-        } else {
-      super.elementToAdd(lecture,lectureArray);
-        }
+        super.elementToAdd(lecture);
     }
     public Lecture[] getLectures() {
-        return (Lecture[]) super.getAll();
+         this.lectureArray=new Lecture[lengthArray()];
+        for (int i=0; i<lengthArray(); i++){
+         lectureArray[i] = (Lecture) super.getAll()[i];}
+        return (Lecture[]) lectureArray;
     }
-    public Lecture[] getByld(int number) {
-        return new Lecture[]{ lectureArray[number - 1]};
+
+    @Override
+    public void getByld(int number) {
+        super.getByld(number);
+
     }
+
+    @Override
     public void deleteByld(int number) {
-      this.number=number;
-        lectureArray[number - 1]=null;
+        super.deleteByld(number);
     }
 }
 

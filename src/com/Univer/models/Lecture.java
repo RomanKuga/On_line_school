@@ -9,7 +9,7 @@ public class Lecture extends MasterModels {
     private Course course;
     private int personId;
     public Lecture( int id, int courseID, String nameLecture,int personId) {
-        super(courseID);
+        super(id);
         this.id =id;
         this.courseID=courseID;
         this.nameLecture=nameLecture;
@@ -28,14 +28,19 @@ public class Lecture extends MasterModels {
         return personId;
     }
 
+    @Override
+    public int getID() {
+        return super.getID();
+    }
+
     public  void setCalcLecture() {
         calc--;
     }
 
-    public int getIdLecture() {
-
-        return id;
-    }
+//    public int getIdLecture() {
+//
+//        return id;
+//    }
 
     public int getCourseIDLecture() {
 
@@ -49,6 +54,6 @@ public class Lecture extends MasterModels {
 
     @Override
     public String toString() {
-        return "//  Int object with id = " +  getIdLecture()  + "/  CourseID--  " + courseID + "/ NameLecture-- " + nameLecture;
+        return "//  Int object with id = " +  getID()  + "/  CourseID--  " + courseID + "/ NameLecture-- " + nameLecture + "/ PersonID-- " + personId + "//";
     }
 }
