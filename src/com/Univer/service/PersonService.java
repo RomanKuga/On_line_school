@@ -47,26 +47,23 @@ public class PersonService {
                         int roleNumber = scanner.nextInt();
                         if (roleNumber==0) {
                     Role role= Role.Student;
-                            System.out.println(personNumber);
                             dataPerson.personToAdd(new Person(personNumber, courseNumber, role, firstName,secondName));
                 } else {
                     Role role= Role.Teacher;
-                            System.out.println(personNumber);
                             dataPerson.personToAdd(new Person(personNumber, courseNumber, role, firstName,secondName));
                 }
-
                         break;
                 case 2:
                     System.out.println("Ви вибрали відкрити персони, кількість персон-"+personExample.getCalcPerson()+
                             " / ведіть номер лекції від 1 до "+personExample.getCalcPerson());
                     numberPers = scanner.nextInt();
-                    pt.printArray(this.dataPerson.getByldPerson(numberPers));
+                    dataPerson.getByld(numberPers);
                     break;
                 case 3:
                     System.out.println("Ви вибрали видалити персону, кількість персон-"+personExample.getCalcPerson()+
                             " / ведіть номер лекції від 1 до "+personExample.getCalcPerson());
                     numberPers = scanner.nextInt();
-                    this.dataPerson.deleteByldPerson(numberPers);
+                    this.dataPerson.deleteByld(numberPers);
                     pt.printArray(this.dataPerson.getPerson());
                     break;
                 case 4:

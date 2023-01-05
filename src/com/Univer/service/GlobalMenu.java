@@ -37,22 +37,24 @@ public void globalMenu(DataLecture dataLecture,DataPerson dataPerson) {
                 System.out.println("Ви вибрали категорію : Вчителі та Студенти");
                 PersonService serPerson= new PersonService();
                 serPerson.menuPerson(dataPerson);
-
             }
-
             case 3 -> {
                 System.out.println("Ви вибрали категорію : Лекції");
                 LecturesService serLecture = new LecturesService();
-                serLecture.menuLecrute(dataLecture);
+                serLecture.menuLecrute(dataLecture,dataPerson);
             }
             case 4 -> {
+                exitBoolean = exitProgram();
                 System.out.println("Дякую");
-                exitBoolean = true;
             }
             default -> System.out.println("Такої категорії не існує");
         }
     }
     scanner.close();
   }
+
+    public DataPerson getDataPerson() {
+        return dataPerson;
+    }
 }
 

@@ -29,4 +29,9 @@ public class DataPerson extends DataMaster{
     public void deleteByld(int number) {
         super.deleteByld(number);
     }
+
+    @Override
+    public int getIndex() {
+        return super.getIndex();
+    }
 }

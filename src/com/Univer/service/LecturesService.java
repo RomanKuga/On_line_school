@@ -1,8 +1,11 @@
 package com.Univer.service;
 import com.Univer.models.Lecture;
 import com.Univer.models.MasterModels;
+import com.Univer.models.Person;
 import com.Univer.repository.DataLecture;
+import com.Univer.repository.DataPerson;
 
+import com.Univer.models.Role;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -14,8 +17,9 @@ private DataLecture dataLecture;
 
         System.out.println(Arrays.toString(lect));
     }
-     public void menuLecrute(DataLecture dataMaster){
+     public void menuLecrute(DataLecture dataMaster, DataPerson dataPerson){
         this.dataLecture=dataMaster;
+
         Lecture lectureExample = new Lecture();
         int numberNext = 1;
          while (numberNext < 2) {
@@ -40,9 +44,13 @@ private DataLecture dataLecture;
                          System.out.println("Введіть ID лекції");
                          int lectureId = scanner.nextInt();
                          System.out.println("Введіть ID викладача із списку");
-
+                         Role role= Role.Teacher;
+                         for (Person person : dataPerson.getPerson()) {
+                             if ((person!=null)&&(person.getRole()==role)){
+                                 System.out.println(person.toString());
+                             }
+                         }
                          int personID = scanner.nextInt();
-
                          dataLecture.add(new Lecture(lectureId, courseNumber, nameLecture,personID));
                          break;
                      } else {
@@ -55,6 +63,13 @@ private DataLecture dataLecture;
                              " / ведіть номер лекції від 1 до "+lectureExample.getCalcLecture());
                      numberLect = scanner.nextInt();
                      dataLecture.getByld(numberLect);
+                     Lecture lecture = dataLecture.getLectures()[dataLecture.getIndex()];
+                         for (Person person : dataPerson.getPerson()) {
+                             if ((person != null) && (person.getPersonID() == lecture.getLecturePersonId())) {
+                                 System.out.println(person.toString());
+                             }
+                         }
+
                      break;
                  case 3:
                      System.out.println("Ви вибрали видалити лекцію, кількість лекцій-"+lectureExample.getCalcLecture()+

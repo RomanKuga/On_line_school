@@ -1,7 +1,8 @@
 package com.Univer;
-
+import com.Univer.models.Role;
 import com.Univer.models.Course;
 import com.Univer.models.Lecture;
+import com.Univer.models.Person;
 import com.Univer.repository.DataLecture;
 import com.Univer.repository.DataPerson;
 import com.Univer.service.GlobalMenu;
@@ -24,6 +25,9 @@ public class Main {
         System.out.println("id курсу - 6-ї лекцій = " +lectureExample.getCourseIDLecture());
         System.out.println("Кількість лекцій  = " +lectureExample.getCalcLecture());
         DataPerson dataPerson = new DataPerson();
+        dataPerson.personToAdd(new Person(1, 1, Role.Teacher, "sfsdgg", "sdggagas"));
+        dataPerson.personToAdd(new Person(2, 1, Role.Teacher, "hgkgkk", "bvnc"));
+        dataPerson.personToAdd(new Person(4, 1, Role.Teacher, "sooiiiuu", "lkjhg"));
         GlobalMenu glMenu=new GlobalMenu();
         glMenu.globalMenu(dataLecture,dataPerson);
 

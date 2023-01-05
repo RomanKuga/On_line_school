@@ -8,6 +8,7 @@ private T[] newArray;
     private  static int size =5;
     private  T[] myArray;
     private int number;
+    private int index;
     private T[] myArrayTemp;
     public void DataMaster() {
         this.myArray = (T[]) new MasterModels [size];
@@ -37,9 +38,14 @@ private T[] newArray;
                 MasterModels wer = (MasterModels) newArray[i];
                 if (wer.getID() == number) {
                     System.out.println(newArray[i]);
+                    index =i;
                 }
             }
         }
+    }
+
+    public int getIndex() {
+        return index;
     }
 
     public int lengthArray(){
