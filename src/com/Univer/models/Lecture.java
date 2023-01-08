@@ -4,16 +4,18 @@ public class Lecture extends MasterModels {
 
     private  static int calc;
     private int id;
-    private  int courseID;
-    private String nameLecture;
+    private static int courseID;
+    private String name;
+    private String description;
     private Course course;
     private int personId;
-    public Lecture( int id, int courseID, String nameLecture,int personId) {
+    public Lecture( int id, int courseID, String name,int personId,String description) {
         super(id);
         this.id =id;
         this.courseID=courseID;
-        this.nameLecture=nameLecture;
+        this.name=name;
         this.personId=personId;
+        this.description=description;
         calc++;
     }
     public Lecture(){
@@ -42,18 +44,19 @@ public class Lecture extends MasterModels {
 //        return id;
 //    }
 
-    public int getCourseIDLecture() {
+    public static int  getCourseIDLecture() {
 
         return courseID;
     }
 
     public String getNameLecture() {
 
-        return nameLecture;
+        return name;
     }
 
     @Override
     public String toString() {
-        return "//  Int object with id = " +  getID()  + "/  CourseID--  " + courseID + "/ NameLecture-- " + nameLecture + "/ PersonID-- " + personId + "//";
+        return "//  Int object with id = " +  getID()  + "/  CourseID--  " + courseID + "/ NameLecture-- " + name +
+                "/ PersonID-- " + personId +"/ Description-- " + description + "//";
     }
 }

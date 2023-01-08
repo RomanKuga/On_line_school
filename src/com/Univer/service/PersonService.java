@@ -1,7 +1,7 @@
 package com.Univer.service;
 
-import com.Univer.models.Role;
 import com.Univer.models.Person;
+import com.Univer.models.Role;
 import com.Univer.repository.DataPerson;
 
 import java.util.Arrays;
@@ -45,13 +45,39 @@ public class PersonService {
                         String secondName = scanner.next();
                         System.out.println("Ведіть: 0 - Студент або 1 - Викладач");
                         int roleNumber = scanner.nextInt();
+                        Role role= Role.Teacher;
                         if (roleNumber==0) {
-                    Role role= Role.Student;
-                            dataPerson.personToAdd(new Person(personNumber, courseNumber, role, firstName,secondName));
-                } else {
-                    Role role= Role.Teacher;
-                            dataPerson.personToAdd(new Person(personNumber, courseNumber, role, firstName,secondName));
-                }
+                        role= Role.Student; }
+
+                    System.out.println("Введіть мобільний телефон персони, у форматі 0ххххххххх без коду країни");
+                    String phone = scanner.next();
+                    boolean phoneControl=false;
+                    while (phoneControl==false) {
+                        ServiceValidator test =new ServiceValidator();
+                        test.phoneValidator(phone);
+                        if (test.phoneValidator(phone)==false){
+                            System.out.println("Введіть мобільний телефон персони повторно, у форматі хххххххххх без коду країни");
+                            phone = scanner.next();
+                        }else {
+                            phoneControl = true;
+                        }
+                    }
+
+                    System.out.println("Введіть email персони");
+                    String email = scanner.next();
+                    boolean mailControl=false;
+                    while (mailControl==false) {
+                        ServiceValidator test =new ServiceValidator();
+                        test.emailValidator(email);
+                        if (test.emailValidator(email)==false){
+                            System.out.println("Ви ввели не вірний email, повторіть знову:");
+                            email = scanner.next();
+                        }else {
+                            mailControl = true;
+                        }
+                    }
+
+                    dataPerson.personToAdd(new Person(personNumber, courseNumber, role, firstName,secondName,phone,email));
                         break;
                 case 2:
                     System.out.println("Ви вибрали відкрити персони, кількість персон-"+personExample.getCalcPerson()+

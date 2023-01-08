@@ -9,13 +9,17 @@ public class Person extends MasterModels{
     private String firstName;
     private String secondName;
     private int personIDtmp;
+    private String phone;
+    private String email;
 
-    public Person(int personID, int courseId, Role role, String firstName, String secondName ) {
+    public Person(int personID, int courseId, Role role, String firstName, String secondName, String phone, String email ) {
         super(personID);
         this.courseId=courseId;
         this.role= role;
         this.firstName=firstName;
         this.secondName=secondName;
+        this.phone=phone;
+        this.email=email;
         calc++;
         personIDtmp=personID;
 
@@ -50,9 +54,18 @@ public class Person extends MasterModels{
         calc--;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
     @Override
     public String toString() {
         return "//  Person id = " +  getPersonID()  + "/  CourseID--  " + getCourseId() +
-                "/ FirstName-- " + getFirstName() + "/ SecondName-- " + getSecondName() + "/ Role-- " + getRole();
+                "/ FirstName-- " + getFirstName() + "/ SecondName-- " + getSecondName() + "/ Role-- " + getRole()+
+                "/ Phone-- " + getPhone()+  "/ Email-- " + getEmail() + "//";
     }
 }

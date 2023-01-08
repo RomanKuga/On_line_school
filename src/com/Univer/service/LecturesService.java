@@ -51,7 +51,10 @@ private DataLecture dataLecture;
                              }
                          }
                          int personID = scanner.nextInt();
-                         dataLecture.add(new Lecture(lectureId, courseNumber, nameLecture,personID));
+                         System.out.println("Введіть опис лекції");
+                         String description = scanner.next();
+
+                         dataLecture.add(new Lecture(lectureId, courseNumber, nameLecture,personID,description));
                          break;
                      } else {
                          System.out.println("Кількість лекцій перевищує 8 ");
