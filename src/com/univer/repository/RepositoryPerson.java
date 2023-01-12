@@ -1,13 +1,11 @@
-package com.Univer.repository;
+package com.univer.repository;
 
-import com.Univer.models.Lecture;
-import com.Univer.models.MasterModels;
-import com.Univer.models.Person;
+import com.univer.models.Person;
 
-public class DataPerson extends DataMaster{
+public class RepositoryPerson extends RepositoryMaster {
 
     private  Person[] personArray;
-    public DataPerson() {
+    public RepositoryPerson() {
          super.DataMaster();
     }
     public void personToAdd(Person person) {

@@ -1,4 +1,4 @@
-package com.Univer.service;
+package com.univer.service;
 
 import java.util.Scanner;
 

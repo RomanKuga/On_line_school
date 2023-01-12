@@ -1,25 +1,23 @@
-package com.Univer.service;
+package com.univer.service;
 
-import com.Univer.models.Person;
-import com.Univer.models.Role;
-import com.Univer.repository.DataPerson;
+import com.univer.models.Person;
+import com.univer.models.Role;
+import com.univer.repository.RepositoryPerson;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class PersonService {
-    private static int calc;
-    private static long id;
+    private RepositoryPerson dataPerson;
 
-    private DataPerson dataPerson;
     public void printArray(Person[] pers) {
 
         System.out.println(Arrays.toString(pers));
     }
-    public void menuPerson(DataPerson dataPerson){
-       this.dataPerson=dataPerson;
+
+    public void menuPerson(RepositoryPerson dataPerson) {
+        this.dataPerson = dataPerson;
         Person personExample = new Person();
-        boolean exitBoolean = false;
         int numberNext = 1;
         while (numberNext < 2) {
 
@@ -35,59 +33,60 @@ public class PersonService {
 
             switch (numberPers) {
                 case 1:
-                        System.out.println("Введіть ID персони");
-                        int personNumber = scanner.nextInt();
-                        System.out.println("Введіть ID курсу");
-                        int courseNumber = scanner.nextInt();
-                        System.out.println("Введіть ім'я персони");
-                        String firstName = scanner.next();
-                        System.out.println("Введіть прізвище персони");
-                        String secondName = scanner.next();
-                        System.out.println("Ведіть: 0 - Студент або 1 - Викладач");
-                        int roleNumber = scanner.nextInt();
-                        Role role= Role.Teacher;
-                        if (roleNumber==0) {
-                        role= Role.Student; }
+                    System.out.println("Введіть ID персони");
+                    int personNumber = scanner.nextInt();
+                    System.out.println("Введіть ID курсу");
+                    int courseNumber = scanner.nextInt();
+                    System.out.println("Введіть ім'я персони");
+                    String firstName = scanner.next();
+                    System.out.println("Введіть прізвище персони");
+                    String secondName = scanner.next();
+                    System.out.println("Ведіть: 0 - Студент або 1 - Викладач");
+                    int roleNumber = scanner.nextInt();
+                    Role role = Role.Teacher;
+                    if (roleNumber == 0) {
+                        role = Role.Student;
+                    }
 
                     System.out.println("Введіть мобільний телефон персони, у форматі 0ххххххххх без коду країни");
                     String phone = scanner.next();
-                    boolean phoneControl=false;
-                    while (phoneControl==false) {
-                        ServiceValidator test =new ServiceValidator();
-                        test.phoneValidator(phone);
-                        if (test.phoneValidator(phone)==false){
+                    boolean phoneControl = false;
+                    while (!phoneControl) {
+                        ServiceValidator test = new ServiceValidator();
+                        test.validatorPhone(phone);
+                        if (test.validatorPhone(phone) == false) {
                             System.out.println("Введіть мобільний телефон персони повторно, у форматі хххххххххх без коду країни");
                             phone = scanner.next();
-                        }else {
+                        } else {
                             phoneControl = true;
                         }
                     }
 
                     System.out.println("Введіть email персони");
                     String email = scanner.next();
-                    boolean mailControl=false;
-                    while (mailControl==false) {
-                        ServiceValidator test =new ServiceValidator();
-                        test.emailValidator(email);
-                        if (test.emailValidator(email)==false){
+                    boolean mailControl = false;
+                    while (!mailControl) {
+                        ServiceValidator test = new ServiceValidator();
+                        test.validatorEmail(email);
+                        if (test.validatorEmail(email) == false) {
                             System.out.println("Ви ввели не вірний email, повторіть знову:");
                             email = scanner.next();
-                        }else {
+                        } else {
                             mailControl = true;
                         }
                     }
 
-                    dataPerson.personToAdd(new Person(personNumber, courseNumber, role, firstName,secondName,phone,email));
-                        break;
+                    dataPerson.personToAdd(new Person(personNumber, courseNumber, role, firstName, secondName, phone, email));
+                    break;
                 case 2:
-                    System.out.println("Ви вибрали відкрити персони, кількість персон-"+personExample.getCalcPerson()+
-                            " / ведіть номер лекції від 1 до "+personExample.getCalcPerson());
+                    System.out.println("Ви вибрали відкрити персони, кількість персон-" + personExample.getCalcPerson() +
+                            " / ведіть номер лекції від 1 до " + personExample.getCalcPerson());
                     numberPers = scanner.nextInt();
                     dataPerson.getByld(numberPers);
                     break;
                 case 3:
-                    System.out.println("Ви вибрали видалити персону, кількість персон-"+personExample.getCalcPerson()+
-                            " / ведіть номер лекції від 1 до "+personExample.getCalcPerson());
+                    System.out.println("Ви вибрали видалити персону, кількість персон-" + personExample.getCalcPerson() +
+                            " / ведіть номер лекції від 1 до " + personExample.getCalcPerson());
                     numberPers = scanner.nextInt();
                     this.dataPerson.deleteByld(numberPers);
                     pt.printArray(this.dataPerson.getPerson());
@@ -98,7 +97,7 @@ public class PersonService {
                 case 5:
                     numberNext = 2;
                     break;
-                default :
+                default:
                     System.out.println("Такої категорії не існує");
             }
         }

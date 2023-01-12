@@ -1,4 +1,4 @@
-package com.Univer.models;
+package com.univer.models;
 
 public enum Role {
     Student, Teacher;

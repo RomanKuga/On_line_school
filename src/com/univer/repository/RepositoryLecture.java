@@ -1,10 +1,10 @@
-package com.Univer.repository;
+package com.univer.repository;
 
-import com.Univer.models.Lecture;
-import com.Univer.models.MasterModels;
-public class DataLecture extends DataMaster {
+import com.univer.models.Lecture;
+import com.univer.models.MasterModels;
+public class RepositoryLecture extends RepositoryMaster {
     private MasterModels[] lectureArray;
-    public DataLecture() {
+    public RepositoryLecture() {
          super.DataMaster();
     }
 

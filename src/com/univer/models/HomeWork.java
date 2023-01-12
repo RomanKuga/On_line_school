@@ -1,4 +1,4 @@
-package com.Univer.models;
+package com.univer.models;
 
 public class HomeWork extends MasterModels {
     private static int calc;

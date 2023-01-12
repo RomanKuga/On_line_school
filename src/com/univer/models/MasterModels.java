@@ -1,8 +1,7 @@
-package com.Univer.models;
+package com.univer.models;
 
 public class MasterModels {
     private  int ID;
-    private int count;
 
     public MasterModels(int ID) {
         this.ID = ID;

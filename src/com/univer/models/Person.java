@@ -1,4 +1,4 @@
-package com.Univer.models;
+package com.univer.models;
 
 public class Person extends MasterModels{
 
@@ -8,7 +8,7 @@ public class Person extends MasterModels{
     private Role role;
     private String firstName;
     private String secondName;
-    private int personIDtmp;
+    private int personIDTmp;
     private String phone;
     private String email;
 
@@ -21,14 +21,14 @@ public class Person extends MasterModels{
         this.phone=phone;
         this.email=email;
         calc++;
-        personIDtmp=personID;
+        personIDTmp=personID;
 
     }
     public Person(){}
 
     public int getPersonID() {
 
-        return personIDtmp;
+        return personIDTmp;
     }
 
     public int getCourseId() {

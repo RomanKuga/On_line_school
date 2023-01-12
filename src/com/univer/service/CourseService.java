@@ -1,4 +1,4 @@
-package com.Univer.service;
+package com.univer.service;
 
 public class CourseService {
     private static int calc;

@@ -1,9 +1,6 @@
-package com.Univer.repository;
+package com.univer.repository;
 
-import com.Univer.models.Course;
-import com.Univer.models.MasterModels;
-
-public class DataCourse extends DataMaster{
+public class RepositoryCourse extends RepositoryMaster {
     private  static int sizeDataCourse =5;
     private int[] arrayCourse = {1, 2, 3, 4, 5};
 
