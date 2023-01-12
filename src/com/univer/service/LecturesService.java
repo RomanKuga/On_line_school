@@ -2,11 +2,9 @@ package com.univer.service;
 
 import com.univer.models.Lecture;
 import com.univer.models.MasterModels;
-import com.univer.models.Person;
+import com.univer.models.Role;
 import com.univer.repository.RepositoryLecture;
 import com.univer.repository.RepositoryPerson;
-
-import com.univer.models.Role;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -47,11 +45,11 @@ public class LecturesService {
                         int lectureId = scanner.nextInt();
                         System.out.println("Введіть ID викладача із списку");
                         Role role = Role.Teacher;
-                        for (Person person : dataPerson.getPerson()) {
-                            if ((person != null) && (person.getRole() == role)) {
-                                System.out.println(person.toString());
-                            }
-                        }
+//                        for (Person person : dataPerson.getPerson()) {
+//                            if ((person != null) && (person.getRole() == role)) {
+//                                System.out.println(person.toString());
+//                            }
+//                        }
                         int personID = scanner.nextInt();
                         System.out.println("Введіть опис лекції");
                         String description = scanner.next();
@@ -67,21 +65,21 @@ public class LecturesService {
                     System.out.println("Ви вибрали відкрити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
                             " / ведіть номер лекції від 1 до " + lectureExample.getCalcLecture());
                     numberLect = scanner.nextInt();
-                    repositoryLecture.getByld(numberLect);
-                    Lecture lecture = repositoryLecture.getLectures()[repositoryLecture.getIndex()];
-                    for (Person person : dataPerson.getPerson()) {
-                        if ((person != null) && (person.getPersonID() == lecture.getLecturePersonId())) {
-                            System.out.println(person.toString());
-                        }
-                    }
+//                    repositoryLecture.getByld(numberLect);
+//                    Lecture lecture = repositoryLecture.getLectures()[repositoryLecture.getIndex()];
+//                    for (Person person : dataPerson.getPerson()) {
+//                        if ((person != null) && (person.getPersonID() == lecture.getLecturePersonId())) {
+//                            System.out.println(person.toString());
+//                        }
+//                    }
 
                     break;
                 case 3:
                     System.out.println("Ви вибрали видалити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
                             " / ведіть номер лекції від 1 до " + lectureExample.getCalcLecture());
                     numberLect = scanner.nextInt();
-                    repositoryLecture.deleteByld(numberLect);
-                    pt.printArray(repositoryLecture.getLectures());
+//                    repositoryLecture.deleteByld(numberLect);
+//                    pt.printArray(repositoryLecture.getLectures());
                     break;
                 case 4:
                     pt.printArray(repositoryLecture.getLectures());

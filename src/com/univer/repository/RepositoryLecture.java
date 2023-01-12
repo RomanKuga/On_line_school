@@ -17,21 +17,21 @@ public class RepositoryLecture extends RepositoryMaster {
          lectureArray[i] = (Lecture) super.getAll()[i];}
         return (Lecture[]) lectureArray;
     }
-
-    @Override
-    public void getByld(int number) {
-        super.getByld(number);
-
-    }
-
-    @Override
-    public void deleteByld(int number) {
-        super.deleteByld(number);
-    }
-
-    @Override
-    public int getIndex() {
-        return super.getIndex();
-    }
+//
+//    @Override
+//    public void getByld(int number) {
+//        super.getByld(number);
+//
+//    }
+//
+//    @Override
+//    public void deleteByld(int number) {
+//        super.deleteByld(number);
+//    }
+//
+//    @Override
+//    public int getIndex() {
+//        return super.getIndex();
+//    }
 }
 

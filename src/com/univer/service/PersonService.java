@@ -82,17 +82,17 @@ public class PersonService {
                     System.out.println("Ви вибрали відкрити персони, кількість персон-" + personExample.getCalcPerson() +
                             " / ведіть номер лекції від 1 до " + personExample.getCalcPerson());
                     numberPers = scanner.nextInt();
-                    dataPerson.getByld(numberPers);
+//                    dataPerson.getByld(numberPers);
                     break;
                 case 3:
                     System.out.println("Ви вибрали видалити персону, кількість персон-" + personExample.getCalcPerson() +
                             " / ведіть номер лекції від 1 до " + personExample.getCalcPerson());
                     numberPers = scanner.nextInt();
-                    this.dataPerson.deleteByld(numberPers);
-                    pt.printArray(this.dataPerson.getPerson());
+//                    this.dataPerson.deleteByld(numberPers);
+//                    pt.printArray(this.dataPerson.getPerson());
                     break;
                 case 4:
-                    pt.printArray(this.dataPerson.getPerson());
+//                    pt.printArray(this.dataPerson.getPerson());
                     break;
                 case 5:
                     numberNext = 2;
