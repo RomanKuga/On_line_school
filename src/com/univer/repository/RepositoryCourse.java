@@ -46,10 +46,10 @@ public class RepositoryCourse extends RepositoryMaster<Course> {
         super.getByld(number);
     }
 
-//    @Override
-//    public int getIndex() {
-//        return super.getIndex();
-//    }
+    @Override
+    public int getIndex() {
+        return super.getIndex();
+    }
 
     @Override
     public int size() {
@@ -61,8 +61,14 @@ public class RepositoryCourse extends RepositoryMaster<Course> {
         super.remove(number);
     }
 
+    @Override
+    public boolean isEmpty() {
+        return super.isEmpty();
+    }
+
     public static int getSizeDataCourse() {
         return sizeDataCourse;
     }
+
 
 }

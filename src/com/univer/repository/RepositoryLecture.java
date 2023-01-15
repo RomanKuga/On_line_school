@@ -44,5 +44,10 @@ public class RepositoryLecture extends RepositoryMaster<Lecture> {
     public int getIndex() {
         return super.getIndex();
     }
+
+    @Override
+    public boolean isEmpty() {
+        return super.isEmpty();
+    }
 }
 

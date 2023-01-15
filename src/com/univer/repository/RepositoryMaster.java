@@ -61,7 +61,7 @@ public abstract class RepositoryMaster <E>{
         this.number = number;
         for (int i = 0; i < newArray.length; i++) {
             if (newArray[i] != null) {
-                MasterModels wer = (MasterModels) newArray[i];
+                MasterModels wer = newArray[i];
                 if (wer.getID() == number) {
                     System.out.println(newArray[i]);
                     index = i;
@@ -82,7 +82,7 @@ public abstract class RepositoryMaster <E>{
         this.number = number;
         for (int i = 0; i < newArray.length; i++) {
             if (newArray[i] != null) {
-                MasterModels wer = (MasterModels) newArray[i];
+                MasterModels wer =  newArray[i];
                 if (wer.getID() == number) {
                     for (int j = i; j < newArray.length - 1; j++) {
                         newArray[j] = newArray[j + 1];
@@ -91,5 +91,13 @@ public abstract class RepositoryMaster <E>{
             }
         }
 
+    }
+    public boolean isEmpty(){
+        for (int i = 0; i < newArray.length; i++) {
+            if (newArray[i]!=null){
+               return true;
+            }
+        }
+        return false;
     }
 }

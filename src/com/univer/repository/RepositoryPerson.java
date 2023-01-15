@@ -54,4 +54,8 @@ public class RepositoryPerson extends RepositoryMaster<Person> {
         super.remove(number);
     }
 
+    @Override
+    public boolean isEmpty() {
+        return super.isEmpty();
+    }
 }
