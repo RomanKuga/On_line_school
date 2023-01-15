@@ -33,66 +33,23 @@ public class PersonService {
 
             switch (numberPers) {
                 case 1:
-                    System.out.println("Введіть ID персони");
-                    int personNumber = scanner.nextInt();
-                    System.out.println("Введіть ID курсу");
-                    int courseNumber = scanner.nextInt();
-                    System.out.println("Введіть ім'я персони");
-                    String firstName = scanner.next();
-                    System.out.println("Введіть прізвище персони");
-                    String secondName = scanner.next();
-                    System.out.println("Ведіть: 0 - Студент або 1 - Викладач");
-                    int roleNumber = scanner.nextInt();
-                    Role role = Role.Teacher;
-                    if (roleNumber == 0) {
-                        role = Role.Student;
-                    }
-
-                    System.out.println("Введіть мобільний телефон персони, у форматі 0ххххххххх без коду країни");
-                    String phone = scanner.next();
-                    boolean phoneControl = false;
-                    while (!phoneControl) {
-                        ServiceValidator test = new ServiceValidator();
-                        test.validatorPhone(phone);
-                        if (test.validatorPhone(phone) == false) {
-                            System.out.println("Введіть мобільний телефон персони повторно, у форматі хххххххххх без коду країни");
-                            phone = scanner.next();
-                        } else {
-                            phoneControl = true;
-                        }
-                    }
-
-                    System.out.println("Введіть email персони");
-                    String email = scanner.next();
-                    boolean mailControl = false;
-                    while (!mailControl) {
-                        ServiceValidator test = new ServiceValidator();
-                        test.validatorEmail(email);
-                        if (test.validatorEmail(email) == false) {
-                            System.out.println("Ви ввели не вірний email, повторіть знову:");
-                            email = scanner.next();
-                        } else {
-                            mailControl = true;
-                        }
-                    }
-
-                    dataPerson.personToAdd(new Person(personNumber, courseNumber, role, firstName, secondName, phone, email));
+                    pt.personServiceAdd(dataPerson);
                     break;
                 case 2:
                     System.out.println("Ви вибрали відкрити персони, кількість персон-" + personExample.getCalcPerson() +
                             " / ведіть номер лекції від 1 до " + personExample.getCalcPerson());
                     numberPers = scanner.nextInt();
-//                    dataPerson.getByld(numberPers);
+                    dataPerson.get(numberPers);
                     break;
                 case 3:
                     System.out.println("Ви вибрали видалити персону, кількість персон-" + personExample.getCalcPerson() +
                             " / ведіть номер лекції від 1 до " + personExample.getCalcPerson());
                     numberPers = scanner.nextInt();
-//                    this.dataPerson.deleteByld(numberPers);
-//                    pt.printArray(this.dataPerson.getPerson());
+                    this.dataPerson.remove(numberPers);
+                    pt.printArray(this.dataPerson.getPerson());
                     break;
                 case 4:
-//                    pt.printArray(this.dataPerson.getPerson());
+                    pt.printArray(this.dataPerson.getPerson());
                     break;
                 case 5:
                     numberNext = 2;
@@ -102,4 +59,70 @@ public class PersonService {
             }
         }
     }
+
+    public void personServiceAdd(RepositoryPerson dataPerson){
+        this.dataPerson=dataPerson;
+        int arrayNumber = 0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("""
+                        Добавити персону -                        1 
+                       Добавити персону вказавши місце в масиві - 2""");
+        System.out.println("Розмір масива Персони " + dataPerson.size());
+        int numberPers = scanner.nextInt();
+        boolean control = false;
+        while (!control) {
+            if ((numberPers != 1) && (numberPers !=2)) {
+                System.out.println("Ви ввели невірний номер спробуйте знову ");
+                numberPers = scanner.nextInt();
+            } else { control=true;}
+        }
+        if (numberPers ==2){
+            System.out.println("Введіть номер в масиві");
+            arrayNumber = scanner.nextInt();
+        }
+        System.out.println("Введіть ID персони");
+        int personNumber = scanner.nextInt();
+        System.out.println("Введіть ID курсу");
+        int courseNumber = scanner.nextInt();
+        System.out.println("Введіть ім'я персони");
+        String firstName = scanner.next();
+        System.out.println("Введіть прізвище персони");
+        String secondName = scanner.next();
+        System.out.println("Ведіть: 0 - Студент або 1 - Викладач");
+        int roleNumber = scanner.nextInt();
+        Role role = Role.Teacher;
+        if (roleNumber == 0) {
+            role = Role.Student;
+        }
+        System.out.println("Введіть мобільний телефон персони, у форматі 0ххххххххх без коду країни");
+        String phone = scanner.next();
+        boolean phoneControl = false;
+        while (!phoneControl) {
+            ServiceValidator test = new ServiceValidator();
+            test.validatorPhone(phone);
+            if (!test.validatorPhone(phone)) {
+                System.out.println("Введіть мобільний телефон персони повторно, у форматі хххххххххх без коду країни");
+                phone = scanner.next();
+            } else {
+                phoneControl = true;
+            }
+        }
+        System.out.println("Введіть email персони");
+        String email = scanner.next();
+        boolean mailControl = false;
+        while (!mailControl) {
+            ServiceValidator test = new ServiceValidator();
+            test.validatorEmail(email);
+            if (!test.validatorEmail(email)) {
+                System.out.println("Ви ввели не вірний email, повторіть знову:");
+                email = scanner.next();
+            } else {
+                mailControl = true;
+            }
+        }
+        if (numberPers==2){dataPerson.add(arrayNumber,new Person(personNumber, courseNumber, role, firstName, secondName, phone, email));}
+
+        dataPerson.add(new Person(personNumber, courseNumber, role, firstName, secondName, phone, email));
+    }
+
 }

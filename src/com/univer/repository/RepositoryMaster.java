@@ -1,84 +1,95 @@
 package com.univer.repository;
 
 import com.univer.models.MasterModels;
-import com.univer.service.ServiceRepository;
 
-import java.util.Arrays;
-
-public abstract class RepositoryMaster {
+public abstract class RepositoryMaster <E>{
     private MasterModels[] newArray;
     private static int size = 5;
-    private RepositoryMaster myArray;
-    private int number;
+    private MasterModels[] myArray;
+
     private int index;
     private MasterModels[] myArrayTemp;
+    private int number;
+    private int n=1;
 
-    public void DataMaster() {
-        new ServiceRepository<MasterModels>();
+    public void repositoryMaster() {
+        this.myArray = new MasterModels[size];
+    }
+    public   void add(E masterModels) {
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i] == null) {
+                myArray[i] = (MasterModels) masterModels;
+                break;
+            } else if (myArray[i] != null && i == myArray.length - 1) {
+                myArrayTemp = myArray;
+                myArray = new MasterModels[myArray.length * 3 / 2 + 1];
+                System.arraycopy(myArrayTemp, 0, myArray, 0, myArrayTemp.length);//change capacity of array
+            }
+
+        }
+        newArray = myArray;
+    }
+    public   void add(int index, E masterModels) {
+        this.index=index;
+        if (index > newArray.length) {
+            myArrayTemp =  myArray;
+            myArray =  new MasterModels[index];
+            System.arraycopy(myArrayTemp, 0, myArray, 0, myArrayTemp.length);
+            myArray[index] = (MasterModels) masterModels;
+        } else {
+            myArrayTemp = myArray;
+            myArray =  new MasterModels[myArray.length + 1];
+            System.arraycopy(myArrayTemp, 0, myArray, 0, myArrayTemp.length);
+            for (int i = myArray.length-1; i > index; i--) {
+                myArray[i] = myArray[i - 1];
+            }
+            myArray[index] = (MasterModels) masterModels;
+        }
+        newArray = myArray;
+    }
+    public  E  get(int index) {
+        for (int i = 0; i < newArray.length; i++) {
+            if (i==index) {
+                MasterModels wer = newArray[i];
+                return (E) wer;
+            }
+        }
+        return null;
     }
 
-    public void elementToAdd(MasterModels masterModels) {
-      ServiceRepository<MasterModels> wer = new ServiceRepository<>();
-      wer.add(masterModels);
-
-
-
-//        for (int i = 0; i < myArray.length; i++) {
-//            if (myArray[i] == null) {
-//                myArray[i] = (T) masterModels;
-//                break;
-//            } else if (myArray[i] != null && i == myArray.length - 1) {
-//                myArrayTemp = (T[]) myArray;
-//                myArray = (T[]) new Object[myArray.length * 3 / 2 + 1];
-//                System.arraycopy(myArrayTemp, 0, myArray, 0, myArrayTemp.length);//change capacity of array
-//            }
-//
-//        }
-//        newArray = (T[]) myArray;
+    public <E> void getByld(int number) {
+        this.number = number;
+        for (int i = 0; i < newArray.length; i++) {
+            if (newArray[i] != null) {
+                MasterModels wer = (MasterModels) newArray[i];
+                if (wer.getID() == number) {
+                    System.out.println(newArray[i]);
+                    index = i;
+                }
+            }
+        }
     }
 
-    public MasterModels[] getAll() {
-    MasterModels[] sd = (MasterModels[]) new ServiceRepository<>().get();
-        System.out.println(Arrays.toString(sd));
-        return sd;
-    }
-//
-//    public void getByld(int number) {
-//        this.number = number;
-//        for (int i = 0; i < newArray.length; i++) {
-//            if (newArray[i] != null) {
-//                MasterModels wer = (MasterModels) newArray[i];
-//                if (wer.getID() == number) {
-//                    System.out.println(newArray[i]);
-//                    index = i;
-//                }
-//            }
-//        }
-//    }
-//
-//    public int getIndex() {
-//        return index;
-//    }
-//
-    public int lengthArray() {
-        int lengthArray= new ServiceRepository<>().lengthArray();
-        return lengthArray;
+    public int getIndex() {
+        return index;
     }
 
+    public int size() {
+        return myArray.length;
+    }
 
-//
-//    public void deleteByld(int number) {
-//        this.number = number;
-//        for (int i = 0; i < newArray.length; i++) {
-//            if (newArray[i] != null) {
-//                MasterModels wer = (MasterModels) newArray[i];
-//                if (wer.getID() == number) {
-//                    for (int j = i; j < newArray.length - 1; j++) {
-//                        newArray[j] = newArray[j + 1];
-//                    }
-//                }
-//            }
-//        }
-//
-//    }
+    public void remove(int number) {
+        this.number = number;
+        for (int i = 0; i < newArray.length; i++) {
+            if (newArray[i] != null) {
+                MasterModels wer = (MasterModels) newArray[i];
+                if (wer.getID() == number) {
+                    for (int j = i; j < newArray.length - 1; j++) {
+                        newArray[j] = newArray[j + 1];
+                    }
+                }
+            }
+        }
+
+    }
 }
