@@ -1,31 +1,39 @@
 package com.univer.repository;
 
 import com.univer.models.Lecture;
-public class RepositoryLecture extends RepositoryMaster<Lecture> {
+import com.univer.models.MasterModels;
+
+public  class RepositoryLecture extends RepositoryMaster {
     private Lecture[] lectureArray;
     public RepositoryLecture() {
-         super.repositoryMaster();
+         super.InterfaceRepository();
     }
 
     @Override
     public Lecture get(int index) {
-        return super.get(index);
+        return (Lecture) super.get(index);
     }
 
-    @Override
-    public void add(Lecture lecture) {
-        super.add(lecture);
-    }
 
     @Override
-    public void add(int index, Lecture masterModels) {
+    public void add(int index, MasterModels masterModels) {
         super.add(index, masterModels);
+    }
+
+    @Override
+    public void add(MasterModels masterModels) {
+        super.add(masterModels);
+    }
+
+    @Override
+    public int size() {
+        return super.size();
     }
 
     public Lecture[] getLectures() {
          this.lectureArray=new Lecture[size()];
         for (int i=0; i<size(); i++){
-         lectureArray[i] =  super.get(i);}
+         lectureArray[i] = (Lecture) super.get(i);}
         return  lectureArray;
     }
 

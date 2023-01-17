@@ -1,21 +1,30 @@
 package com.univer.repository;
 
+import com.univer.models.HomeWork;
 import com.univer.models.MasterModels;
-import com.univer.models.Person;
 
-public class RepositoryPerson extends RepositoryMaster {
+public class RepositoryHomeWork extends RepositoryMaster {
+    private static RepositoryHomeWork INSTANCE;
+    private HomeWork[] homeWorkArray;
 
-    private Person[] personArray;
-
-
-    public RepositoryPerson() {
+    public  RepositoryHomeWork() {
         super.InterfaceRepository();
     }
+    public static RepositoryHomeWork getInstance() {
+        if(INSTANCE == null) {
+            INSTANCE = new RepositoryHomeWork();
 
-    @Override
-    public Person get(int index) {
-        return (Person) super.get(index);
+        }
+        return INSTANCE;
     }
+    public HomeWork[] getHomeWorkArray() {
+        this.homeWorkArray=new HomeWork[size()];
+        for (int i=0; i<size(); i++){
+            homeWorkArray[i] = (HomeWork) super.get(i);}
+        return  homeWorkArray;
+    }
+
+
 
     @Override
     public void add(int index, MasterModels masterModels) {
@@ -27,12 +36,9 @@ public class RepositoryPerson extends RepositoryMaster {
         super.add(masterModels);
     }
 
-    public Person[] getPerson() {
-        this.personArray = new Person[size()];
-        for (int i = 0; i < size(); i++) {
-            personArray[i] = (Person) super.get(i);
-        }
-        return  personArray;
+    @Override
+    public HomeWork get(int index) {
+        return (HomeWork) super.get(index);
     }
 
     @Override

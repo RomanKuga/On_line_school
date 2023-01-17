@@ -1,9 +1,7 @@
 package com.univer.service;
 
-import com.univer.models.Lecture;
-import com.univer.models.MasterModels;
-import com.univer.models.Person;
-import com.univer.models.Role;
+import com.univer.models.*;
+import com.univer.repository.RepositoryHomeWork;
 import com.univer.repository.RepositoryLecture;
 import com.univer.repository.RepositoryPerson;
 
@@ -13,15 +11,17 @@ import java.util.Scanner;
 public class LecturesService {
     private RepositoryLecture repositoryLecture;
     private RepositoryPerson dataPerson;
+    private RepositoryHomeWork homeWork;
 
     public void printArray(MasterModels[] lect) {
 
         System.out.println(Arrays.toString(lect));
     }
 
-    public void menuLecrute(RepositoryLecture dataMaster, RepositoryPerson dataPerson) {
+    public void menuLecrute(RepositoryLecture dataMaster, RepositoryPerson dataPerson, RepositoryHomeWork homeWork) {
         this.repositoryLecture = dataMaster;
         this.dataPerson=dataPerson;
+        this.homeWork=homeWork;
         Lecture lectureExample = new Lecture();
         int numberNext = 1;
         while (numberNext < 2) {
@@ -38,7 +38,7 @@ public class LecturesService {
 
             switch (numberLect) {
                 case 1:
-                    pt.lectureServiceAdd(repositoryLecture, dataPerson);
+                    pt.lectureServiceAdd(repositoryLecture, dataPerson,homeWork);
 
                         break;
 
@@ -76,8 +76,9 @@ public class LecturesService {
         }
     }
 
-    public  void lectureServiceAdd (RepositoryLecture dataMaster, RepositoryPerson dataPerson){
+    public  void lectureServiceAdd (RepositoryLecture dataMaster, RepositoryPerson dataPerson,RepositoryHomeWork homeWork){
         this.repositoryLecture=dataMaster;
+
         int arrayNumber = 0;
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
@@ -113,9 +114,22 @@ public class LecturesService {
         int personID = scanner.nextInt();
         System.out.println("Введіть опис лекції");
         String description = scanner.next();
-        if (numberLect==2){repositoryLecture.add(arrayNumber,new Lecture(lectureId, courseNumber, nameLecture, personID, description));}
+        System.out.println("""
+                Домашнє завдання до лекції задавати?
+                 Так - 1
+                 Ні  - 2""");
+        int numberWork = scanner.nextInt();
+        ServiceValidator test = new ServiceValidator();
+        if ((test.validatorNumber(numberWork)) && (numberWork==1 )){
+            System.out.println("Введіть ID домашнього завдання");
+            int homeId = scanner.nextInt();
+            System.out.println("Введіть домашнє завтання");
+            String homeTask = scanner.next();
+            homeWork.add(new HomeWork(homeId,lectureId,homeTask));
+        } else { homeWork.add(null);}
+        if (numberLect==2){repositoryLecture.add(arrayNumber,new Lecture(lectureId, courseNumber, nameLecture, personID, description,homeWork));}
 
-        repositoryLecture.add(new Lecture(lectureId, courseNumber, nameLecture, personID, description));
+        repositoryLecture.add(new Lecture(lectureId, courseNumber, nameLecture, personID, description,homeWork));
 
     }
 }

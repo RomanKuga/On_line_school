@@ -1,5 +1,6 @@
 package com.univer.service;
 
+import com.univer.repository.RepositoryHomeWork;
 import com.univer.repository.RepositoryLecture;
 import com.univer.repository.RepositoryPerson;
 
@@ -10,10 +11,12 @@ import static com.univer.service.ExitProgram.exitProgram;
 public class GlobalMenu {
     private RepositoryLecture repositoryLecture;
     private RepositoryPerson dataPerson;
+    private RepositoryHomeWork homeWork;
 
-    public void globalMenu(RepositoryLecture repositoryLecture, RepositoryPerson dataPerson) {
+    public void globalMenu(RepositoryLecture repositoryLecture, RepositoryPerson dataPerson,RepositoryHomeWork homeWork) {
         this.repositoryLecture = repositoryLecture;
         this.dataPerson = dataPerson;
+        this.homeWork=homeWork;
         Scanner scanner = new Scanner(System.in);
         boolean exitBoolean = false;
         while (!exitBoolean) {
@@ -39,7 +42,7 @@ public class GlobalMenu {
                 case 3 -> {
                     System.out.println("Ви вибрали категорію : Лекції");
                     LecturesService serLecture = new LecturesService();
-                    serLecture.menuLecrute(repositoryLecture, dataPerson);
+                    serLecture.menuLecrute(repositoryLecture, dataPerson,homeWork);
                 }
                 case 4 -> {
                     exitBoolean = exitProgram();

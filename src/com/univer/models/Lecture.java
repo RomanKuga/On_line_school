@@ -1,5 +1,7 @@
 package com.univer.models;
 
+import com.univer.repository.RepositoryHomeWork;
+
 public class Lecture extends MasterModels {
 
     private static int calc;
@@ -8,14 +10,15 @@ public class Lecture extends MasterModels {
     private String name;
     private String description;
     private int personId;
+     RepositoryHomeWork homeWork;
 
-    public Lecture(int id, int courseID, String name, int personId, String description) {
+    public Lecture(int id, int courseID, String name, int personId, String description, RepositoryHomeWork homeWork) {
         super(id);
-        this.id = id;
         this.courseID = courseID;
         this.name = name;
         this.personId = personId;
         this.description = description;
+        this.homeWork=homeWork;
         calc++;
     }
 
@@ -44,14 +47,18 @@ public class Lecture extends MasterModels {
         return courseID;
     }
 
-    public String getNameLecture() {
-
-        return name;
+    public RepositoryHomeWork getHomeWork() {
+        return homeWork;
     }
 
     @Override
     public String toString() {
-        return "//  Int object with id = " + getID() + "/  CourseID--  " + courseID + "/ NameLecture-- " + name +
-                "/ PersonID-- " + personId + "/ Description-- " + description + "//";
+       if (getHomeWork()!=null) {
+           return "//  Int object with id = " + getID() + "/  CourseID--  " + courseID + "/ NameLecture-- " + name +
+                   "/ PersonID-- " + personId + "/ Description-- " + description + "/ HomeWork-- є домашнє завдання//";
+       }else {
+           return "//  Int object with id = " + getID() + "/  CourseID--  " + courseID + "/ NameLecture-- " + name +
+                   "/ PersonID-- " + personId + "/ Description-- " + description + "/ HomeWork--домашнє завдання відсутнє//";
+       }
     }
 }

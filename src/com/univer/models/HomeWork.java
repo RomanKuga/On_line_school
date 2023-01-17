@@ -2,36 +2,31 @@ package com.univer.models;
 
 public class HomeWork extends MasterModels {
     private static int calc;
-    private int id;
+    private int lectureId;
+    private String task;
 
-    private String nameHomeWork;
-    private Lecture lectures;
-    private Course courseID;
-    public HomeWork( int id, Course courseID, String nameHomeWork, Lecture lectures ) {
+    public HomeWork(int id, int lectureId, String task) {
         super(id);
-        this.courseID=courseID;
-        this.nameHomeWork=nameHomeWork;
-        this.lectures=lectures;
+        this.lectureId = lectureId;
+        this.task = task;
         calc++;
     }
+    public HomeWork(){}
 
-    public static int getCalcHomeWork() {
+    public static int getCalc() {
         return calc;
     }
 
-    public int getIdHomeWork() {
-        return id;
+    public int getLectureId() {
+        return lectureId;
     }
 
-    public String getNameHomeWork() {
-        return nameHomeWork;
+    public String getTask() {
+        return task;
     }
 
-    public Lecture getLecturesHomeWork() {
-        return lectures;
-    }
-
-    public Course getCourseIDHomeWork() {
-        return courseID;
+    @Override
+    public int getID() {
+        return super.getID();
     }
 }

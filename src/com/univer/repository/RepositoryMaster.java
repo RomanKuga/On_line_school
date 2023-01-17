@@ -2,7 +2,7 @@ package com.univer.repository;
 
 import com.univer.models.MasterModels;
 
-public abstract class RepositoryMaster <E>{
+public abstract class RepositoryMaster implements InterfaceRepository{
     private MasterModels[] newArray;
     private static int size = 5;
     private MasterModels[] myArray;
@@ -12,13 +12,31 @@ public abstract class RepositoryMaster <E>{
     private int number;
     private int n=1;
 
-    public void repositoryMaster() {
-        this.myArray = new MasterModels[size];
+    @Override
+    public void add(int index, MasterModels masterModels) {
+        this.index=index;
+        if (index > newArray.length) {
+            myArrayTemp =  myArray;
+            myArray =  new MasterModels[index];
+            System.arraycopy(myArrayTemp, 0, myArray, 0, myArrayTemp.length);
+            myArray[index] = masterModels;
+        } else {
+            myArrayTemp = myArray;
+            myArray =  new MasterModels[myArray.length + 1];
+            System.arraycopy(myArrayTemp, 0, myArray, 0, myArrayTemp.length);
+            for (int i = myArray.length-1; i > index; i--) {
+                myArray[i] = myArray[i - 1];
+            }
+            myArray[index] = masterModels;
+        }
+        newArray = myArray;
     }
-    public   void add(E masterModels) {
+
+    @Override
+    public void add(MasterModels masterModels) {
         for (int i = 0; i < myArray.length; i++) {
             if (myArray[i] == null) {
-                myArray[i] = (MasterModels) masterModels;
+                myArray[i] = masterModels;
                 break;
             } else if (myArray[i] != null && i == myArray.length - 1) {
                 myArrayTemp = myArray;
@@ -29,29 +47,24 @@ public abstract class RepositoryMaster <E>{
         }
         newArray = myArray;
     }
-    public   void add(int index, E masterModels) {
-        this.index=index;
-        if (index > newArray.length) {
-            myArrayTemp =  myArray;
-            myArray =  new MasterModels[index];
-            System.arraycopy(myArrayTemp, 0, myArray, 0, myArrayTemp.length);
-            myArray[index] = (MasterModels) masterModels;
-        } else {
-            myArrayTemp = myArray;
-            myArray =  new MasterModels[myArray.length + 1];
-            System.arraycopy(myArrayTemp, 0, myArray, 0, myArrayTemp.length);
-            for (int i = myArray.length-1; i > index; i--) {
-                myArray[i] = myArray[i - 1];
-            }
-            myArray[index] = (MasterModels) masterModels;
-        }
-        newArray = myArray;
+
+    @Override
+    public void InterfaceRepository() {
+        this.myArray = new MasterModels[size];
     }
-    public  E  get(int index) {
+
+
+//    public   void add(E masterModels) {
+//
+//    }
+//    public   void add(int index, E masterModels) {
+//
+//    }
+    public MasterModels get(int index) {
         for (int i = 0; i < newArray.length; i++) {
             if (i==index) {
                 MasterModels wer = newArray[i];
-                return (E) wer;
+                return  wer;
             }
         }
         return null;

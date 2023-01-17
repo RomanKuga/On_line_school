@@ -1,5 +1,6 @@
 package com.univer.service;
 
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,5 +22,18 @@ public class ServiceValidator {
             return phone.matches("\\d{10}");
         }
         return false;
+    }
+
+    public boolean validatorNumber(int number){
+        Scanner scanner = new Scanner(System.in);
+        boolean control = false;
+        while (!control) {
+
+            if ((number != 1) && (number!=2)) {
+                System.out.println("Ви ввели невірний номер спробуйте знову ");
+                number = scanner.nextInt();
+            } else { control=true;}
+        }
+        return true;
     }
 }
