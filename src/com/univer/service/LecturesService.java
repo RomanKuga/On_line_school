@@ -33,10 +33,11 @@ public class LecturesService {
             System.out.println("5. Повернутись в основне меню");
 
             Scanner scanner = new Scanner(System.in);
-            int numberLect = scanner.nextInt();
+        //    int numberLect = scanner.nextInt();
             LecturesService pt = new LecturesService();
+            ErrorService test = new ErrorService();
 
-            switch (numberLect) {
+            switch (test.testInt()) {
                 case 1:
                     pt.lectureServiceAdd(repositoryLecture, dataPerson, homeWork);
 
@@ -45,7 +46,7 @@ public class LecturesService {
                 case 2:
                     System.out.println("Ви вибрали відкрити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
                             " / ведіть номер лекції від 1 до " + lectureExample.getCalcLecture());
-                    numberLect = scanner.nextInt();
+                    int numberLect = test.testInt();
                     System.out.println(repositoryLecture.get(numberLect));
                     Lecture lecture = repositoryLecture.get(numberLect);
                     if (repositoryLecture.get(numberLect) != null) {
@@ -60,7 +61,7 @@ public class LecturesService {
                 case 3:
                     System.out.println("Ви вибрали видалити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
                             " / ведіть номер лекції від 1 до " + lectureExample.getCalcLecture());
-                    numberLect = scanner.nextInt();
+                    numberLect = test.testInt();
                     repositoryLecture.remove(numberLect);
                     pt.printArray(repositoryLecture.getLectures());
                     break;
@@ -85,19 +86,20 @@ public class LecturesService {
                  Добавити лекцію -                        1 
                 Добавити лекцію вказавши місце в масиві - 2""");
         System.out.println("Розмір масива лекції " + repositoryLecture.size());
-        int numberLect = scanner.nextInt();
+        ErrorService testing = new ErrorService();
+        int numberLect = testing.testInt();
 
         ServiceValidator test = new ServiceValidator();
         if ((test.validatorNumber(numberLect)) && (numberLect == 2)) {
             System.out.println("Введіть номер в масиві");
-            arrayNumber = scanner.nextInt();
+            arrayNumber = testing.testInt();
         }
         System.out.println("Введіть ID курсу");
-        int courseNumber = scanner.nextInt();
+        int courseNumber = testing.testInt();
         System.out.println("Введіть назву лекції");
         String nameLecture = scanner.next();
         System.out.println("Введіть ID лекції");
-        int lectureId = scanner.nextInt();
+        int lectureId = testing.testInt();
         System.out.println("Введіть ID викладача із списку");
         Role role = Role.Teacher;
         for (Person person : dataPerson.getPerson()) {
@@ -105,18 +107,18 @@ public class LecturesService {
                 System.out.println(person.toString());
             }
         }
-        int personID = scanner.nextInt();
+        int personID = testing.testInt();
         System.out.println("Введіть опис лекції");
         String description = scanner.next();
         System.out.println("""
                 Домашнє завдання до лекції задавати?
                  Так - 1
                  Ні  - 2""");
-        int numberWork = scanner.nextInt();
+        int numberWork = testing.testInt();
 
         if ((test.validatorNumber(numberWork)) && (numberWork == 1)) {
             System.out.println("Введіть ID домашнього завдання");
-            int homeId = scanner.nextInt();
+            int homeId = testing.testInt();
             System.out.println("Введіть домашнє завтання");
             String homeTask = scanner.next();
             homeWork.add(new HomeWork(homeId, lectureId, homeTask));

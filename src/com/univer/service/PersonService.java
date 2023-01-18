@@ -26,9 +26,9 @@ public class PersonService {
             System.out.println("3. Видалити вибрану персону");
             System.out.println("4. Вивести список персон на екран");
             System.out.println("5. Повернутись в основне меню");
-
+            ErrorService testing = new ErrorService();
             Scanner scanner = new Scanner(System.in);
-            int numberPers = scanner.nextInt();
+            int numberPers = testing.testInt();
             PersonService pt = new PersonService();
 
             switch (numberPers) {
@@ -37,14 +37,14 @@ public class PersonService {
                     break;
                 case 2:
                     System.out.println("Ви вибрали відкрити персони, кількість персон-" + personExample.getCalcPerson() +
-                            " / ведіть номер лекції від 1 до " + personExample.getCalcPerson());
-                    numberPers = scanner.nextInt();
-                    dataPerson.get(numberPers);
+                            " / ведіть номер персони від 1 до " + personExample.getCalcPerson());
+                    numberPers = testing.testInt();
+                    System.out.println(dataPerson.get(numberPers));
                     break;
                 case 3:
                     System.out.println("Ви вибрали видалити персону, кількість персон-" + personExample.getCalcPerson() +
-                            " / ведіть номер лекції від 1 до " + personExample.getCalcPerson());
-                    numberPers = scanner.nextInt();
+                            " / ведіть номер персони від 1 до " + personExample.getCalcPerson());
+                    numberPers = testing.testInt();
                     this.dataPerson.remove(numberPers);
                     pt.printArray(this.dataPerson.getPerson());
                     break;
@@ -68,22 +68,23 @@ public class PersonService {
                         Добавити персону -                        1 
                        Добавити персону вказавши місце в масиві - 2""");
         System.out.println("Розмір масива Персони " + dataPerson.size());
-        int numberPers = scanner.nextInt();
+        ErrorService testing = new ErrorService();
+        int numberPers = testing.testInt();
         ServiceValidator test = new ServiceValidator();
         if ((test.validatorNumber(numberPers)) && (numberPers ==2)) {
             System.out.println("Введіть номер в масиві");
-            arrayNumber = scanner.nextInt();
+            arrayNumber = testing.testInt();
         }
         System.out.println("Введіть ID персони");
-        int personNumber = scanner.nextInt();
+        int personNumber = testing.testInt();
         System.out.println("Введіть ID курсу");
-        int courseNumber = scanner.nextInt();
+        int courseNumber = testing.testInt();
         System.out.println("Введіть ім'я персони");
         String firstName = scanner.next();
         System.out.println("Введіть прізвище персони");
         String secondName = scanner.next();
         System.out.println("Ведіть: 0 - Студент або 1 - Викладач");
-        int roleNumber = scanner.nextInt();
+        int roleNumber = testing.testInt();
         Role role = Role.Teacher;
         if (roleNumber == 0) {
             role = Role.Student;
