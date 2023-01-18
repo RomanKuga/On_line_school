@@ -54,12 +54,6 @@ public abstract class RepositoryMaster implements InterfaceRepository{
     }
 
 
-//    public   void add(E masterModels) {
-//
-//    }
-//    public   void add(int index, E masterModels) {
-//
-//    }
     public MasterModels get(int index) {
         for (int i = 0; i < newArray.length; i++) {
             if (i==index) {

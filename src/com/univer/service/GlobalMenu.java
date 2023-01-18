@@ -13,10 +13,10 @@ public class GlobalMenu {
     private RepositoryPerson dataPerson;
     private RepositoryHomeWork homeWork;
 
-    public void globalMenu(RepositoryLecture repositoryLecture, RepositoryPerson dataPerson,RepositoryHomeWork homeWork) {
+    public void globalMenu(RepositoryLecture repositoryLecture, RepositoryPerson dataPerson, RepositoryHomeWork homeWork) {
         this.repositoryLecture = repositoryLecture;
         this.dataPerson = dataPerson;
-        this.homeWork=homeWork;
+        this.homeWork = homeWork;
         Scanner scanner = new Scanner(System.in);
         boolean exitBoolean = false;
         while (!exitBoolean) {
@@ -26,10 +26,9 @@ public class GlobalMenu {
             System.out.println("2. Персони");
             System.out.println("3. Лекції");
             System.out.println("4. Вихід");
+            ErrorService number = new ErrorService();
 
-            int number = scanner.nextInt();
-
-            switch (number) {
+            switch (number.testInt()) {
                 case 1 -> {
                     System.out.println("Ви вибрали категорію : Курс");
                     exitBoolean = exitProgram();
@@ -42,7 +41,7 @@ public class GlobalMenu {
                 case 3 -> {
                     System.out.println("Ви вибрали категорію : Лекції");
                     LecturesService serLecture = new LecturesService();
-                    serLecture.menuLecrute(repositoryLecture, dataPerson,homeWork);
+                    serLecture.menuLecrute(repositoryLecture, dataPerson, homeWork);
                 }
                 case 4 -> {
                     exitBoolean = exitProgram();
