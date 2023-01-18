@@ -69,14 +69,8 @@ public class PersonService {
                        Добавити персону вказавши місце в масиві - 2""");
         System.out.println("Розмір масива Персони " + dataPerson.size());
         int numberPers = scanner.nextInt();
-        boolean control = false;
-        while (!control) {
-            if ((numberPers != 1) && (numberPers !=2)) {
-                System.out.println("Ви ввели невірний номер спробуйте знову ");
-                numberPers = scanner.nextInt();
-            } else { control=true;}
-        }
-        if (numberPers ==2){
+        ServiceValidator test = new ServiceValidator();
+        if ((test.validatorNumber(numberPers)) && (numberPers ==2)) {
             System.out.println("Введіть номер в масиві");
             arrayNumber = scanner.nextInt();
         }
@@ -98,7 +92,6 @@ public class PersonService {
         String phone = scanner.next();
         boolean phoneControl = false;
         while (!phoneControl) {
-            ServiceValidator test = new ServiceValidator();
             test.validatorPhone(phone);
             if (!test.validatorPhone(phone)) {
                 System.out.println("Введіть мобільний телефон персони повторно, у форматі хххххххххх без коду країни");
@@ -111,7 +104,6 @@ public class PersonService {
         String email = scanner.next();
         boolean mailControl = false;
         while (!mailControl) {
-            ServiceValidator test = new ServiceValidator();
             test.validatorEmail(email);
             if (!test.validatorEmail(email)) {
                 System.out.println("Ви ввели не вірний email, повторіть знову:");

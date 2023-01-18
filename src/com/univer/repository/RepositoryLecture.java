@@ -6,7 +6,7 @@ import com.univer.models.MasterModels;
 public  class RepositoryLecture extends RepositoryMaster {
     private Lecture[] lectureArray;
     public RepositoryLecture() {
-         super.InterfaceRepository();
+         super.interfaceRepository();
     }
 
     @Override

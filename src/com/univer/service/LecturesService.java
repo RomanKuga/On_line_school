@@ -20,8 +20,8 @@ public class LecturesService {
 
     public void menuLecrute(RepositoryLecture dataMaster, RepositoryPerson dataPerson, RepositoryHomeWork homeWork) {
         this.repositoryLecture = dataMaster;
-        this.dataPerson=dataPerson;
-        this.homeWork=homeWork;
+        this.dataPerson = dataPerson;
+        this.homeWork = homeWork;
         Lecture lectureExample = new Lecture();
         int numberNext = 1;
         while (numberNext < 2) {
@@ -38,9 +38,9 @@ public class LecturesService {
 
             switch (numberLect) {
                 case 1:
-                    pt.lectureServiceAdd(repositoryLecture, dataPerson,homeWork);
+                    pt.lectureServiceAdd(repositoryLecture, dataPerson, homeWork);
 
-                        break;
+                    break;
 
                 case 2:
                     System.out.println("Ви вибрали відкрити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
@@ -48,7 +48,7 @@ public class LecturesService {
                     numberLect = scanner.nextInt();
                     System.out.println(repositoryLecture.get(numberLect));
                     Lecture lecture = repositoryLecture.get(numberLect);
-                    if (repositoryLecture.get(numberLect)!=null) {
+                    if (repositoryLecture.get(numberLect) != null) {
                         for (Person person : dataPerson.getPerson()) {
                             if ((person != null) && (person.getPersonID() == lecture.getLecturePersonId())) {
                                 System.out.println(person.toString());
@@ -76,25 +76,19 @@ public class LecturesService {
         }
     }
 
-    public  void lectureServiceAdd (RepositoryLecture dataMaster, RepositoryPerson dataPerson,RepositoryHomeWork homeWork){
-        this.repositoryLecture=dataMaster;
+    public void lectureServiceAdd(RepositoryLecture dataMaster, RepositoryPerson dataPerson, RepositoryHomeWork homeWork) {
+        this.repositoryLecture = dataMaster;
 
         int arrayNumber = 0;
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
-                        Добавити лекцію -                        1 
-                       Добавити лекцію вказавши місце в масиві - 2""");
+                 Добавити лекцію -                        1 
+                Добавити лекцію вказавши місце в масиві - 2""");
         System.out.println("Розмір масива лекції " + repositoryLecture.size());
         int numberLect = scanner.nextInt();
-        boolean control = false;
-        while (!control) {
 
-            if ((numberLect != 1) && (numberLect!=2)) {
-                System.out.println("Ви ввели невірний номер спробуйте знову ");
-                numberLect = scanner.nextInt();
-            } else { control=true;}
-        }
-        if (numberLect==2){
+        ServiceValidator test = new ServiceValidator();
+        if ((test.validatorNumber(numberLect)) && (numberLect == 2)) {
             System.out.println("Введіть номер в масиві");
             arrayNumber = scanner.nextInt();
         }
@@ -106,7 +100,7 @@ public class LecturesService {
         int lectureId = scanner.nextInt();
         System.out.println("Введіть ID викладача із списку");
         Role role = Role.Teacher;
-        for (Person person :  dataPerson.getPerson()) {
+        for (Person person : dataPerson.getPerson()) {
             if ((person != null) && (person.getRole() == role)) {
                 System.out.println(person.toString());
             }
@@ -119,17 +113,21 @@ public class LecturesService {
                  Так - 1
                  Ні  - 2""");
         int numberWork = scanner.nextInt();
-        ServiceValidator test = new ServiceValidator();
-        if ((test.validatorNumber(numberWork)) && (numberWork==1 )){
+
+        if ((test.validatorNumber(numberWork)) && (numberWork == 1)) {
             System.out.println("Введіть ID домашнього завдання");
             int homeId = scanner.nextInt();
             System.out.println("Введіть домашнє завтання");
             String homeTask = scanner.next();
-            homeWork.add(new HomeWork(homeId,lectureId,homeTask));
-        } else { homeWork.add(null);}
-        if (numberLect==2){repositoryLecture.add(arrayNumber,new Lecture(lectureId, courseNumber, nameLecture, personID, description,homeWork));}
+            homeWork.add(new HomeWork(homeId, lectureId, homeTask));
+        } else {
+            homeWork.add(null);
+        }
+        if (numberLect == 2) {
+            repositoryLecture.add(arrayNumber, new Lecture(lectureId, courseNumber, nameLecture, personID, description, homeWork));
+        }
 
-        repositoryLecture.add(new Lecture(lectureId, courseNumber, nameLecture, personID, description,homeWork));
+        repositoryLecture.add(new Lecture(lectureId, courseNumber, nameLecture, personID, description, homeWork));
 
     }
 }

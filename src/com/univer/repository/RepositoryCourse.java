@@ -9,7 +9,7 @@ public  class RepositoryCourse extends RepositoryMaster {
     private static RepositoryCourse INSTANCE;
 
     public RepositoryCourse (){
-        super.InterfaceRepository();
+        super.interfaceRepository();
     }
     public static RepositoryCourse getInstance() {
         if(INSTANCE == null) {

@@ -8,7 +8,7 @@ public class RepositoryHomeWork extends RepositoryMaster {
     private HomeWork[] homeWorkArray;
 
     public  RepositoryHomeWork() {
-        super.InterfaceRepository();
+        super.interfaceRepository();
     }
     public static RepositoryHomeWork getInstance() {
         if(INSTANCE == null) {

@@ -8,7 +8,7 @@ public interface InterfaceRepository<T extends MasterModels> {
 
     void add(T masterModels);
 
-    void InterfaceRepository();
+    void interfaceRepository();
 
     T get(int index);
 

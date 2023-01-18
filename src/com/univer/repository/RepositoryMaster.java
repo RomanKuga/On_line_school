@@ -49,7 +49,7 @@ public abstract class RepositoryMaster implements InterfaceRepository{
     }
 
     @Override
-    public void InterfaceRepository() {
+    public void interfaceRepository() {
         this.myArray = new MasterModels[size];
     }
 

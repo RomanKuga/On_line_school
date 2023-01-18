@@ -9,7 +9,7 @@ public class RepositoryPerson extends RepositoryMaster {
 
 
     public RepositoryPerson() {
-        super.InterfaceRepository();
+        super.interfaceRepository();
     }
 
     @Override
