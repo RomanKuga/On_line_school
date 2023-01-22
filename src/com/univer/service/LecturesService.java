@@ -33,7 +33,7 @@ public class LecturesService {
             System.out.println("5. Повернутись в основне меню");
 
             Scanner scanner = new Scanner(System.in);
-        //    int numberLect = scanner.nextInt();
+
             LecturesService pt = new LecturesService();
             ErrorService test = new ErrorService();
 
@@ -132,4 +132,6 @@ public class LecturesService {
         repositoryLecture.add(new Lecture(lectureId, courseNumber, nameLecture, personID, description, homeWork));
 
     }
+
+
 }

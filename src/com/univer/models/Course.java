@@ -22,4 +22,9 @@ public class Course extends MasterModels{
 
         return calc;
     }
+
+    @Override
+    public String toString() {
+        return "//  Course id = " +  getCourseID()  + "/ Name Course--  " + getName() + "//";
+    }
 }

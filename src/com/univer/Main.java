@@ -13,13 +13,12 @@ public class Main {
 
         RepositoryCourse.getInstance().add(course);
 
-
         Lecture lectureExample = new Lecture();
 
          HomeWork homeWor= (new HomeWork(1, 1, "test"));
          RepositoryHomeWork tempHomeWork = new RepositoryHomeWork() ;
          tempHomeWork.add(homeWor);
-
+    
      //   homeWork.add(new HomeWork(1, 1, "test"));
 
         RepositoryLecture repositoryLecture = new RepositoryLecture();

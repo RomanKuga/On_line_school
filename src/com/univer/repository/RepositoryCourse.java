@@ -24,8 +24,6 @@ public  class RepositoryCourse extends RepositoryMaster {
         return INSTANCE;
     }
 
-
-
     @Override
     public void add(MasterModels masterModels) {
         super.add(masterModels);
