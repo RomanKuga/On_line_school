@@ -75,6 +75,7 @@ public class LecturesService {
                     System.out.println("Такої категорії не існує");
             }
         }
+
     }
 
     public void lectureServiceAdd(RepositoryLecture dataMaster, RepositoryPerson dataPerson, RepositoryHomeWork homeWork) {

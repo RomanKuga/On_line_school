@@ -1,6 +1,7 @@
 package com.univer.repository;
 
 import com.univer.models.MasterModels;
+import com.univer.service.EntityNotFoundException;
 
 public abstract class RepositoryMaster implements InterfaceRepository {
     private MasterModels[] newArray;
@@ -57,7 +58,7 @@ public abstract class RepositoryMaster implements InterfaceRepository {
     public MasterModels get(int index) {
 
        if (index>myArray.length){
-           throw new ArrayIndexOutOfBoundsException("EntityNotFoundException");
+           throw new EntityNotFoundException("Елемент за межами масиву");
        }
 
 //        for (int i = 0; i < newArray.length; i++) {
