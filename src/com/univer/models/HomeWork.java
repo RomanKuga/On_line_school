@@ -1,11 +1,11 @@
 package com.univer.models;
 
 public class HomeWork extends MasterModels {
-    private static int calc;
-    private int lectureId;
+    private static Integer calc;
+    private Integer lectureId;
     private String task;
 
-    public HomeWork(int id, int lectureId, String task) {
+    public HomeWork(Integer id, Integer lectureId, String task) {
         super(id);
         this.lectureId = lectureId;
         this.task = task;

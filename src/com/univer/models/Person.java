@@ -2,9 +2,9 @@ package com.univer.models;
 
 public class Person extends MasterModels{
 
-    private  static int calc;
+    private  static Integer calc;
 
-    private int courseId;
+    private Integer courseId;
     private Role role;
     private String firstName;
     private String secondName;
@@ -12,7 +12,7 @@ public class Person extends MasterModels{
     private String phone;
     private String email;
 
-    public Person(int personID, int courseId, Role role, String firstName, String secondName, String phone, String email ) {
+    public Person(Integer personID, Integer courseId, Role role, String firstName, String secondName, String phone, String email ) {
         super(personID);
         this.courseId=courseId;
         this.role= role;

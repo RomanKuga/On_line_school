@@ -1,10 +1,10 @@
 package com.univer.models;
 
 public class Course extends MasterModels{
-    private static int calc;
+    private static Integer calc;
     private String name;
 
-    public  Course(int courseID, String name){
+    public  Course(Integer courseID, String name){
         super(courseID);
         this.name=name;
         calc++;

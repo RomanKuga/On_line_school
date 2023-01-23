@@ -1,9 +1,9 @@
 package com.univer.models;
 
 public abstract class MasterModels {
-    private int ID;
+    private Integer ID;
 
-    public MasterModels(int ID) {
+    public MasterModels(Integer ID) {
         this.ID = ID;
     }
 
