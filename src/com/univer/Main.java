@@ -15,6 +15,7 @@ public class Main {
 
         Lecture lectureExample = new Lecture();
 
+
          HomeWork homeWor= (new HomeWork(1, 1, "test"));
          RepositoryHomeWork tempHomeWork = new RepositoryHomeWork() ;
          tempHomeWork.add(homeWor);
@@ -23,12 +24,13 @@ public class Main {
 
         RepositoryLecture repositoryLecture = new RepositoryLecture();
         repositoryLecture.add(new Lecture(1, course.getCourseID(), "quadratic equations", 1, "Wers1", tempHomeWork));
-
         repositoryLecture.add(new Lecture(2, course.getCourseID(), "equations", 1, "Wers2", null));
         repositoryLecture.add(new Lecture(3, course.getCourseID(), "line equations part 1", 12, "Wers3", null));
         repositoryLecture.add(new Lecture(4, course.getCourseID(), "line equations part 2", 11, "Wers4", null));
         repositoryLecture.add(new Lecture(5, course.getCourseID(), "line equations part 3", 2, "Wers5", null));
         repositoryLecture.add(new Lecture(6, course.getCourseID(), "line equations part 4", 2, "Wers6", null));
+
+        repositoryLecture.add(2,null);
 
         System.out.println("id курсу - 6-ї лекцій = " + Lecture.getCourseIDLecture());
         System.out.println("Кількість лекцій  = " + lectureExample.getCalcLecture());

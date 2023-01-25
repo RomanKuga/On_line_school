@@ -7,7 +7,6 @@ import com.univer.utilities.Simpleiterator;
 public class RepositoryPerson extends RepositoryMaster {
 
     private Person[] personArray;
-    private Person[] personArrayTmp;
 
 
     public RepositoryPerson() {
