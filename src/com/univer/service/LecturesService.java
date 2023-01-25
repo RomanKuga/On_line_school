@@ -30,9 +30,8 @@ public class LecturesService {
             System.out.println("2. Відкрити вибрану лекцію");
             System.out.println("3. Видалити вибрану лекцію");
             System.out.println("4. Вивести лекції на екран");
-            System.out.println("5. Повернутись в основне меню");
-
-            Scanner scanner = new Scanner(System.in);
+            System.out.println("5. Вивести список лекцій на екран ,без елементів масива із значенням null ");
+            System.out.println("6. Повернутись в основне меню");
 
             LecturesService pt = new LecturesService();
             ErrorService test = new ErrorService();
@@ -40,9 +39,7 @@ public class LecturesService {
             switch (test.testInt()) {
                 case 1:
                     pt.lectureServiceAdd(repositoryLecture, dataPerson, homeWork);
-
                     break;
-
                 case 2:
                     System.out.println("Ви вибрали відкрити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
                             " / ведіть номер лекції від 1 до " + lectureExample.getCalcLecture());
@@ -69,6 +66,9 @@ public class LecturesService {
                     pt.printArray(repositoryLecture.getLectures());
                     break;
                 case 5:
+                    pt.printArray( repositoryLecture.findAll());
+                    break;
+                case 6:
                     numberNext = 2;
                     break;
                 default:

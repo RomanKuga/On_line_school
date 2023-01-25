@@ -1,7 +1,7 @@
 package com.univer.models;
 
 public class HomeWork extends MasterModels {
-    private static Integer calc;
+    private static int calc;
     private Integer lectureId;
     private String task;
 

@@ -25,9 +25,9 @@ public class PersonService {
             System.out.println("2. Відкрити вибрану персону");
             System.out.println("3. Видалити вибрану персону");
             System.out.println("4. Вивести список персон на екран");
-            System.out.println("5. Повернутись в основне меню");
+            System.out.println("5. Вивести список персон на екран ,без елементів масива із значенням null ");
+            System.out.println("6. Повернутись в основне меню");
             ErrorService testing = new ErrorService();
-            Scanner scanner = new Scanner(System.in);
             int numberPers = testing.testInt();
             PersonService pt = new PersonService();
 
@@ -52,6 +52,9 @@ public class PersonService {
                     pt.printArray(this.dataPerson.getPerson());
                     break;
                 case 5:
+                    pt.printArray( this.dataPerson.findAll());
+                    break;
+                case 6:
                     numberNext = 2;
                     break;
                 default:

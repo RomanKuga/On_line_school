@@ -2,16 +2,15 @@ package com.univer.repository;
 
 import com.univer.models.MasterModels;
 import com.univer.service.EntityNotFoundException;
+import com.univer.utilities.Simpleiterator;
 
-public abstract class RepositoryMaster implements InterfaceRepository {
+public abstract class RepositoryMaster implements InterfaceRepository<MasterModels>  {
     private MasterModels[] newArray;
     private static int size = 5;
     private MasterModels[] myArray;
 
     private int index;
     private MasterModels[] myArrayTemp;
-    private int number;
-    private int n = 1;
 
     @Override
     public void add(int index, MasterModels masterModels) {
@@ -60,29 +59,11 @@ public abstract class RepositoryMaster implements InterfaceRepository {
        if (index>myArray.length){
            throw new EntityNotFoundException("Елемент за межами масиву");
        }
-
-//        for (int i = 0; i < newArray.length; i++) {
-//            if (i == index) {
-//                MasterModels wer = newArray[i];
-//                return wer;
-//            }
-//        }
-        return myArray[index];
+       return myArray[index];
     }
 
 
-    public <E> void getByld(int number) {
-        this.number = number;
-        for (int i = 0; i < newArray.length; i++) {
-            if (newArray[i] != null) {
-                MasterModels wer = newArray[i];
-                if (wer.getID() == number) {
-                    System.out.println(newArray[i]);
-                    index = i;
-                }
-            }
-        }
-    }
+
 
     public int getIndex() {
         return index;
@@ -93,7 +74,6 @@ public abstract class RepositoryMaster implements InterfaceRepository {
     }
 
     public void remove(int number) {
-        this.number = number;
         for (int i = 0; i < newArray.length; i++) {
             if (newArray[i] != null) {
                 MasterModels wer = newArray[i];
@@ -114,5 +94,17 @@ public abstract class RepositoryMaster implements InterfaceRepository {
             }
         }
         return false;
+    }
+
+    @Override
+    public MasterModels[] findAll() {
+        Simpleiterator iterator = new Simpleiterator(newArray);
+        while (iterator.hesNext()){
+            if (iterator.next()==null){
+                iterator.remove();
+            }
+        }
+        return  iterator.getModel();
+
     }
 }

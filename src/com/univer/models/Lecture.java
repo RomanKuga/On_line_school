@@ -4,7 +4,7 @@ import com.univer.repository.RepositoryHomeWork;
 
 public class Lecture extends MasterModels {
 
-    private static Integer calc;
+    private static int calc;
     private Integer id;
     private static Integer courseID;
     private String name;

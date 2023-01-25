@@ -2,7 +2,7 @@ package com.univer.models;
 
 public class Person extends MasterModels{
 
-    private  static Integer calc;
+    private  static int calc;
 
     private Integer courseId;
     private Role role;

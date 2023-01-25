@@ -2,10 +2,12 @@ package com.univer.repository;
 
 import com.univer.models.MasterModels;
 import com.univer.models.Person;
+import com.univer.utilities.Simpleiterator;
 
 public class RepositoryPerson extends RepositoryMaster {
 
     private Person[] personArray;
+    private Person[] personArrayTmp;
 
 
     public RepositoryPerson() {
@@ -13,7 +15,7 @@ public class RepositoryPerson extends RepositoryMaster {
     }
 
     @Override
-    public Person get(int index) {
+    public MasterModels get(int index) {
         return (Person) super.get(index);
     }
 
@@ -35,10 +37,6 @@ public class RepositoryPerson extends RepositoryMaster {
         return  personArray;
     }
 
-    @Override
-    public void getByld(int number) {
-        super.getByld(number);
-    }
 
     @Override
     public int getIndex() {
@@ -58,5 +56,26 @@ public class RepositoryPerson extends RepositoryMaster {
     @Override
     public boolean isEmpty() {
         return super.isEmpty();
+    }
+
+//    @Override
+//    public Person[] findAll() {
+//        this.personArrayTmp = new Person[super.findAll().length];
+//        personArrayTmp= (Person[]) super.findAll();
+//        return personArrayTmp;
+//    }
+
+    public Person[] findAll() {
+            Simpleiterator iterator = new Simpleiterator(getPerson());
+            while (iterator.hesNext()){
+                if (iterator.next()==null){
+                    iterator.remove();
+                }
+            }
+        this.personArray = new Person[iterator.getModel().length];
+        for (int i = 0; i < iterator.getModel().length; i++) {
+            personArray[i] = (Person) iterator.getModel()[i];
+        }
+        return  personArray;
     }
 }

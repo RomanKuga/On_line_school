@@ -41,10 +41,6 @@ public class RepositoryHomeWork extends RepositoryMaster {
         return (HomeWork) super.get(index);
     }
 
-    @Override
-    public void getByld(int number) {
-        super.getByld(number);
-    }
 
     @Override
     public int getIndex() {

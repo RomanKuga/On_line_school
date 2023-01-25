@@ -2,6 +2,7 @@ package com.univer.repository;
 
 import com.univer.models.Lecture;
 import com.univer.models.MasterModels;
+import com.univer.utilities.Simpleiterator;
 
 public  class RepositoryLecture extends RepositoryMaster {
     private Lecture[] lectureArray;
@@ -37,10 +38,18 @@ public  class RepositoryLecture extends RepositoryMaster {
         return  lectureArray;
     }
 
-    @Override
-    public void getByld(int number) {
-        super.getByld(number);
-
+    public Lecture[] findAll() {
+        Simpleiterator iterator = new Simpleiterator(getLectures());
+        while (iterator.hesNext()){
+            if (iterator.next()==null){
+                iterator.remove();
+            }
+        }
+        this.lectureArray = new Lecture[iterator.getModel().length];
+        for (int i = 0; i < iterator.getModel().length; i++) {
+            lectureArray[i] = (Lecture) iterator.getModel()[i];
+        }
+        return  lectureArray;
     }
 
     @Override

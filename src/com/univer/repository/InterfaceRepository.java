@@ -18,4 +18,6 @@ public interface InterfaceRepository<T extends MasterModels> {
 
     boolean isEmpty();
 
+     T[] findAll() ;
+
 }

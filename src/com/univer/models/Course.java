@@ -1,7 +1,7 @@
 package com.univer.models;
 
 public class Course extends MasterModels{
-    private static Integer calc;
+    private static int calc;
     private String name;
 
     public  Course(Integer courseID, String name){

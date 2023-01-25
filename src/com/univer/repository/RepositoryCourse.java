@@ -13,17 +13,10 @@ public  class RepositoryCourse extends RepositoryMaster {
     }
     public static RepositoryCourse getInstance() {
         if(INSTANCE == null) {
-            INSTANCE = new RepositoryCourse() {
-                @Override
-                public void add(int index, MasterModels masterModels) {
-
-                }
-            };
+            INSTANCE = new RepositoryCourse();
         }
-
         return INSTANCE;
     }
-
     @Override
     public void add(MasterModels masterModels) {
         super.add(masterModels);
@@ -41,10 +34,7 @@ public  class RepositoryCourse extends RepositoryMaster {
         return  courseArray;
     }
 
-    @Override
-    public <E> void getByld(int number) {
-        super.getByld(number);
-    }
+
 
     @Override
     public int getIndex() {

@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ServiceValidator {
-    public boolean validatorEmail(String email) {
+    public static boolean validatorEmail(String email) {
         if (email == null) {
             return false;
         }
