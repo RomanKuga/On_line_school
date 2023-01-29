@@ -1,5 +1,6 @@
 package com.univer.service;
 
+import com.univer.repository.RepositoryAddMaterial;
 import com.univer.repository.RepositoryHomeWork;
 import com.univer.repository.RepositoryLecture;
 import com.univer.repository.RepositoryPerson;
@@ -12,11 +13,13 @@ public class GlobalMenu {
     private RepositoryLecture repositoryLecture;
     private RepositoryPerson dataPerson;
     private RepositoryHomeWork homeWork;
+    private RepositoryAddMaterial addMaterial;
 
-    public void globalMenu(RepositoryLecture repositoryLecture, RepositoryPerson dataPerson, RepositoryHomeWork homeWork) {
+    public void globalMenu(RepositoryLecture repositoryLecture, RepositoryPerson dataPerson, RepositoryHomeWork homeWork, RepositoryAddMaterial addMaterial) {
         this.repositoryLecture = repositoryLecture;
         this.dataPerson = dataPerson;
         this.homeWork = homeWork;
+        this.addMaterial=addMaterial;
         Scanner scanner = new Scanner(System.in);
         boolean exitBoolean = false;
         while (!exitBoolean) {
@@ -25,7 +28,8 @@ public class GlobalMenu {
             System.out.println("1. Курс");
             System.out.println("2. Персони");
             System.out.println("3. Лекції");
-            System.out.println("4. Вихід");
+            System.out.println("4. Додаткові матеріали");
+            System.out.println("5. Вихід");
             ErrorService number = new ErrorService();
 
             switch (number.testInt()) {
@@ -44,6 +48,11 @@ public class GlobalMenu {
                     serLecture.menuLecrute(repositoryLecture, dataPerson, homeWork);
                 }
                 case 4 -> {
+                    System.out.println("Ви вибрали категорію : Додаткові матеріали");
+                    AddMaterialsService serAddMaterial = new AddMaterialsService();
+                    serAddMaterial.menuAddMaterials(addMaterial);
+                }
+                case 5 -> {
                     exitBoolean = exitProgram();
                     System.out.println("Дякую");
                 }

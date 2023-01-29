@@ -1,18 +1,18 @@
 package com.univer.service;
 
+import com.univer.models.MasterModels;
 import com.univer.models.Person;
 import com.univer.models.Role;
 import com.univer.repository.RepositoryPerson;
 
-import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class PersonService {
     private RepositoryPerson dataPerson;
 
-    public void printArray(Person[] pers) {
-
-        System.out.println(Arrays.toString(pers));
+    public void printArray(List<MasterModels> pers) {
+        System.out.println(pers);
     }
 
     public void menuPerson(RepositoryPerson dataPerson) {
@@ -37,19 +37,19 @@ public class PersonService {
                     break;
                 case 2:
                     System.out.println("Ви вибрали відкрити персони, кількість персон-" + personExample.getCalcPerson() +
-                            " / ведіть номер персони від 1 до " + personExample.getCalcPerson());
+                            " / ведіть номер персони від 0 до " + (personExample.getCalcPerson()-1));
                     numberPers = testing.testInt();
-                    System.out.println(dataPerson.get(numberPers));
+                    System.out.println(dataPerson.getModelsList().get(numberPers));
                     break;
                 case 3:
                     System.out.println("Ви вибрали видалити персону, кількість персон-" + personExample.getCalcPerson() +
-                            " / ведіть номер персони від 1 до " + personExample.getCalcPerson());
+                            " / ведіть номер персони від 0 до " + (personExample.getCalcPerson()-1));
                     numberPers = testing.testInt();
-                    this.dataPerson.remove(numberPers);
-                    pt.printArray(this.dataPerson.getPerson());
+                    this.dataPerson.getModelsList().remove(numberPers);
+                    pt.printArray(this.dataPerson.getModelsList());
                     break;
                 case 4:
-                    pt.printArray(this.dataPerson.getPerson());
+                    pt.printArray(this.dataPerson.getModelsList());
                     break;
                 case 5:
                     pt.printArray( this.dataPerson.findAll());
@@ -70,7 +70,7 @@ public class PersonService {
         System.out.println("""
                         Добавити персону -                        1 
                        Добавити персону вказавши місце в масиві - 2""");
-        System.out.println("Розмір масива Персони " + dataPerson.size());
+        System.out.println("Розмір масива Персони " + dataPerson.getModelsList().size());
         ErrorService testing = new ErrorService();
         int numberPers = testing.testInt();
         ServiceValidator test = new ServiceValidator();
@@ -116,9 +116,9 @@ public class PersonService {
                 mailControl = true;
             }
         }
-        if (numberPers==2){dataPerson.add(arrayNumber,new Person(personNumber, courseNumber, role, firstName, secondName, phone, email));}
+        if (numberPers==2){dataPerson.getModelsList().add(arrayNumber,new Person(personNumber, courseNumber, role, firstName, secondName, phone, email));}
 
-        dataPerson.add(new Person(personNumber, courseNumber, role, firstName, secondName, phone, email));
+        dataPerson.getModelsList().add(new Person(personNumber, courseNumber, role, firstName, secondName, phone, email));
     }
 
 }

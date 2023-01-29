@@ -5,7 +5,8 @@ import com.univer.repository.RepositoryHomeWork;
 import com.univer.repository.RepositoryLecture;
 import com.univer.repository.RepositoryPerson;
 
-import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class LecturesService {
@@ -13,10 +14,10 @@ public class LecturesService {
     private RepositoryPerson dataPerson;
     private RepositoryHomeWork homeWork;
 
-    public void printArray(MasterModels[] lect) {
-
-        System.out.println(Arrays.toString(lect));
+    public void printArray(List<MasterModels> lect) {
+        System.out.println(lect);
     }
+
 
     public void menuLecrute(RepositoryLecture dataMaster, RepositoryPerson dataPerson, RepositoryHomeWork homeWork) {
         this.repositoryLecture = dataMaster;
@@ -42,14 +43,16 @@ public class LecturesService {
                     break;
                 case 2:
                     System.out.println("Ви вибрали відкрити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
-                            " / ведіть номер лекції від 1 до " + lectureExample.getCalcLecture());
+                            " / ведіть номер лекції від 0 до " + (lectureExample.getCalcLecture()-1));
                     int numberLect = test.testInt();
-                    System.out.println(repositoryLecture.get(numberLect));
-                    Lecture lecture = repositoryLecture.get(numberLect);
-                    if (repositoryLecture.get(numberLect) != null) {
-                        for (Person person : dataPerson.getPerson()) {
-                            if ((person != null) && (person.getPersonID() == lecture.getLecturePersonId())) {
-                                System.out.println(person.toString());
+                    System.out.println(repositoryLecture.getModelsList().get(numberLect));
+                    Lecture lecture = (Lecture) repositoryLecture.getModelsList().get(numberLect);
+                    if (repositoryLecture.getModelsList().get(numberLect) != null) {
+                        Iterator<MasterModels> iterator= dataPerson.getModelsList().iterator();
+                        while (iterator.hasNext()){
+                            Person personTmp= (Person) iterator.next();
+                            if ((personTmp != null) && (personTmp.getID() == lecture.getLecturePersonId())) {
+                                System.out.println(personTmp);
                             }
                         }
                     }
@@ -57,13 +60,13 @@ public class LecturesService {
                     break;
                 case 3:
                     System.out.println("Ви вибрали видалити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
-                            " / ведіть номер лекції від 1 до " + lectureExample.getCalcLecture());
+                            " / ведіть номер лекції від 0 до " + (lectureExample.getCalcLecture()-1));
                     numberLect = test.testInt();
-                    repositoryLecture.remove(numberLect);
-                    pt.printArray(repositoryLecture.getLectures());
+                    repositoryLecture.getModelsList().remove(numberLect);
+                    pt.printArray(repositoryLecture.getModelsList());
                     break;
                 case 4:
-                    pt.printArray(repositoryLecture.getLectures());
+                    pt.printArray(repositoryLecture.getModelsList());
                     break;
                 case 5:
                     pt.printArray( repositoryLecture.findAll());
@@ -86,7 +89,7 @@ public class LecturesService {
         System.out.println("""
                  Добавити лекцію -                        1 
                 Добавити лекцію вказавши місце в масиві - 2""");
-        System.out.println("Розмір масива лекції " + repositoryLecture.size());
+        System.out.println("Розмір масива лекції " + repositoryLecture.getModelsList().size());
         ErrorService testing = new ErrorService();
         int numberLect = testing.testInt();
 
@@ -103,9 +106,11 @@ public class LecturesService {
         int lectureId = testing.testInt();
         System.out.println("Введіть ID викладача із списку");
         Role role = Role.Teacher;
-        for (Person person : dataPerson.getPerson()) {
-            if ((person != null) && (person.getRole() == role)) {
-                System.out.println(person.toString());
+        Iterator<MasterModels> iterator= dataPerson.getModelsList().iterator();
+        while (iterator.hasNext()){
+            Person personTmp= (Person) iterator.next();
+            if ((personTmp != null) && (personTmp.getRole() == role)) {
+                System.out.println(personTmp.toString());
             }
         }
         int personID = testing.testInt();
@@ -122,15 +127,15 @@ public class LecturesService {
             int homeId = testing.testInt();
             System.out.println("Введіть домашнє завтання");
             String homeTask = scanner.next();
-            homeWork.add(new HomeWork(homeId, lectureId, homeTask));
+            homeWork.getModelsList().add(new HomeWork(homeId, lectureId, homeTask));
         } else {
-            homeWork.add(null);
+            homeWork.getModelsList().add(null);
         }
         if (numberLect == 2) {
-            repositoryLecture.add(arrayNumber, new Lecture(lectureId, courseNumber, nameLecture, personID, description, homeWork));
+            repositoryLecture.getModelsList().add(arrayNumber, new Lecture(lectureId, courseNumber, nameLecture, personID, description, homeWork));
         }
 
-        repositoryLecture.add(new Lecture(lectureId, courseNumber, nameLecture, personID, description, homeWork));
+        repositoryLecture.getModelsList().add(new Lecture(lectureId, courseNumber, nameLecture, personID, description, homeWork));
 
     }
 

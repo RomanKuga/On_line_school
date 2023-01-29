@@ -1,40 +1,46 @@
 package com.univer.models;
 
-public class AddMaterial extends MasterModels{
+public class AddMaterial extends MasterModels {
     private static int calc;
     private Integer id;
     private String nameAddMaterials;
-    private Lecture lectures;
-    private Course course;
-    public AddMaterial(Integer id, String nameAddMaterials, Lecture lectures, Course course) {
+    private Integer lecturesId;
+    private ResourceType resourceType;
+
+    public AddMaterial(Integer id, String nameAddMaterials, Integer lecturesId, ResourceType resourceType) {
         super(id);
-        this.nameAddMaterials=nameAddMaterials;
-        this.lectures=lectures;
-        this.course=course;
+        this.nameAddMaterials = nameAddMaterials;
+        this.lecturesId = lecturesId;
+        this.resourceType = resourceType;
         calc++;
     }
 
-    public static int getCalcAddMaterial() {
-
+    public static int getCalc() {
         return calc;
     }
 
-       public int getIdAddMaterial() {
+    public Integer getId() {
         return id;
     }
-
 
     public String getNameAddMaterials() {
         return nameAddMaterials;
     }
 
-    public Lecture getLecturesAddMaterial() {
-
-        return lectures;
+    public Integer getLecturesId() {
+        return lecturesId;
     }
 
-    public Course getCourseAddMaterial() {
+    public ResourceType getResourceType() {
+        return resourceType;
+    }
 
-        return course;
+    public AddMaterial() {
+    }
+
+    @Override
+    public String toString() {
+        return "//  AddMaterials id = " + getID() + "/  Назва додаткових матеріалів--  " + getNameAddMaterials() +
+                "/ ID лекції-- " + getLecturesId() + "/ Залучені типи додаткових завдань-- " + getResourceType() + "//";
     }
 }

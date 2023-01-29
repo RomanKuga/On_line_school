@@ -26,6 +26,11 @@ public class Person extends MasterModels{
     }
     public Person(){}
 
+    @Override
+    public int getID() {
+        return super.getID();
+    }
+
     public int getPersonID() {
 
         return personIDTmp;
