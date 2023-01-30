@@ -1,9 +1,9 @@
-package com.univer.service;
+package com.univer.errorMenuService;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class ErrorService {
+public class ErrorTestNumber {
 
     public int testInt(){
         Scanner scanner = new Scanner(System.in);

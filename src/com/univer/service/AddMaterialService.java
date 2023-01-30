@@ -1,5 +1,6 @@
 package com.univer.service;
 
+import com.univer.errorMenuService.ErrorTestNumber;
 import com.univer.models.AddMaterial;
 import com.univer.models.MasterModels;
 import com.univer.models.ResourceType;
@@ -8,7 +9,7 @@ import com.univer.repository.RepositoryAddMaterial;
 import java.util.List;
 import java.util.Scanner;
 
-public class AddMaterialsService {
+public class AddMaterialService {
     private RepositoryAddMaterial addMaterial;
 
     public void printArray(List<MasterModels> pers) {
@@ -27,9 +28,9 @@ public class AddMaterialsService {
             System.out.println("4. Вивести список додаткових матеріалів на екран");
             System.out.println("5. Вивести список додаткових матеріалів на екран ,без елементів масива із значенням null ");
             System.out.println("6. Повернутись в основне меню");
-            ErrorService testing = new ErrorService();
+            ErrorTestNumber testing = new ErrorTestNumber();
             int numberPers = testing.testInt();
-            AddMaterialsService pt = new AddMaterialsService();
+            AddMaterialService pt = new AddMaterialService();
 
             switch (numberPers) {
                 case 1:
@@ -71,7 +72,7 @@ public class AddMaterialsService {
                 Добавити додаткові матеріали -                         1 
                 Добавити додаткові матеріали вказавши місце в масиві - 2""");
         System.out.println("Розмір масива додаткові матеріали " + addMaterial.getModelsList().size());
-        ErrorService testing = new ErrorService();
+        ErrorTestNumber testing = new ErrorTestNumber();
         int numberAdd = testing.testInt();
         ServiceValidator test = new ServiceValidator();
         if ((test.validatorNumber(numberAdd)) && (numberAdd == 2)) {

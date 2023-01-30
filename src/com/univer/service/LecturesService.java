@@ -1,5 +1,6 @@
 package com.univer.service;
 
+import com.univer.errorMenuService.ErrorTestNumber;
 import com.univer.models.*;
 import com.univer.repository.RepositoryHomeWork;
 import com.univer.repository.RepositoryLecture;
@@ -35,11 +36,11 @@ public class LecturesService {
             System.out.println("6. Повернутись в основне меню");
 
             LecturesService pt = new LecturesService();
-            ErrorService test = new ErrorService();
+            ErrorTestNumber test = new ErrorTestNumber();
 
             switch (test.testInt()) {
                 case 1:
-                    pt.lectureServiceAdd(repositoryLecture, dataPerson, homeWork);
+                    pt.lectureServiceAdd(repositoryLecture);
                     break;
                 case 2:
                     System.out.println("Ви вибрали відкрити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
@@ -81,7 +82,7 @@ public class LecturesService {
 
     }
 
-    public void lectureServiceAdd(RepositoryLecture dataMaster, RepositoryPerson dataPerson, RepositoryHomeWork homeWork) {
+    public void lectureServiceAdd(RepositoryLecture dataMaster) {
         this.repositoryLecture = dataMaster;
 
         int arrayNumber = 0;
@@ -90,7 +91,7 @@ public class LecturesService {
                  Добавити лекцію -                        1 
                 Добавити лекцію вказавши місце в масиві - 2""");
         System.out.println("Розмір масива лекції " + repositoryLecture.getModelsList().size());
-        ErrorService testing = new ErrorService();
+        ErrorTestNumber testing = new ErrorTestNumber();
         int numberLect = testing.testInt();
 
         ServiceValidator test = new ServiceValidator();

@@ -1,5 +1,6 @@
 package com.univer.service;
 
+import com.univer.errorMenuService.ErrorTestNumber;
 import com.univer.repository.RepositoryAddMaterial;
 import com.univer.repository.RepositoryHomeWork;
 import com.univer.repository.RepositoryLecture;
@@ -30,7 +31,7 @@ public class GlobalMenu {
             System.out.println("3. Лекції");
             System.out.println("4. Додаткові матеріали");
             System.out.println("5. Вихід");
-            ErrorService number = new ErrorService();
+            ErrorTestNumber number = new ErrorTestNumber();
 
             switch (number.testInt()) {
                 case 1 -> {
@@ -49,7 +50,7 @@ public class GlobalMenu {
                 }
                 case 4 -> {
                     System.out.println("Ви вибрали категорію : Додаткові матеріали");
-                    AddMaterialsService serAddMaterial = new AddMaterialsService();
+                    AddMaterialService serAddMaterial = new AddMaterialService();
                     serAddMaterial.menuAddMaterials(addMaterial);
                 }
                 case 5 -> {
@@ -62,8 +63,5 @@ public class GlobalMenu {
         scanner.close();
     }
 
-    public RepositoryPerson getDataPerson() {
-        return dataPerson;
-    }
 }
 

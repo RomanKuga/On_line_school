@@ -7,7 +7,7 @@ import java.util.List;
 public class RepositoryAddMaterial extends RepositoryMaster{
     private static RepositoryAddMaterial INSTANCE;
 
-    public  RepositoryAddMaterial() {
+    private   RepositoryAddMaterial() {
         super.interfaceRepository();
     }
 

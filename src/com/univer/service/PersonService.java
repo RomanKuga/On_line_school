@@ -1,5 +1,6 @@
 package com.univer.service;
 
+import com.univer.errorMenuService.ErrorTestNumber;
 import com.univer.models.MasterModels;
 import com.univer.models.Person;
 import com.univer.models.Role;
@@ -27,7 +28,7 @@ public class PersonService {
             System.out.println("4. Вивести список персон на екран");
             System.out.println("5. Вивести список персон на екран ,без елементів масива із значенням null ");
             System.out.println("6. Повернутись в основне меню");
-            ErrorService testing = new ErrorService();
+            ErrorTestNumber testing = new ErrorTestNumber();
             int numberPers = testing.testInt();
             PersonService pt = new PersonService();
 
@@ -71,7 +72,7 @@ public class PersonService {
                         Добавити персону -                        1 
                        Добавити персону вказавши місце в масиві - 2""");
         System.out.println("Розмір масива Персони " + dataPerson.getModelsList().size());
-        ErrorService testing = new ErrorService();
+        ErrorTestNumber testing = new ErrorTestNumber();
         int numberPers = testing.testInt();
         ServiceValidator test = new ServiceValidator();
         if ((test.validatorNumber(numberPers)) && (numberPers ==2)) {
