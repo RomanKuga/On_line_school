@@ -8,12 +8,18 @@ import com.univer.repository.RepositoryAddMaterial;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class AddMaterialService {
     private RepositoryAddMaterial addMaterial;
+    private static int numberTestComperble;
 
     public void printArray(List<MasterModels> pers) {
         System.out.println(pers);
+    }
+
+    public void printTreeSet(TreeSet<MasterModels> addMaterial) {
+        System.out.println(addMaterial);
     }
 
     public void menuAddMaterials(RepositoryAddMaterial addMaterial) {
@@ -27,7 +33,8 @@ public class AddMaterialService {
             System.out.println("3. Видалити вибрані додаткові матеріали");
             System.out.println("4. Вивести список додаткових матеріалів на екран");
             System.out.println("5. Вивести список додаткових матеріалів на екран ,без елементів масива із значенням null ");
-            System.out.println("6. Повернутись в основне меню");
+            System.out.println("6. Відсортувати додаткові матеріали");
+            System.out.println("7. Повернутись в основне меню");
             ErrorTestNumber testing = new ErrorTestNumber();
             int numberPers = testing.testInt();
             AddMaterialService pt = new AddMaterialService();
@@ -56,12 +63,35 @@ public class AddMaterialService {
                     pt.printArray(this.addMaterial.findAll());
                     break;
                 case 6:
+                    int numberSort = 1;
+                    while (numberSort < 2) {
+
+                        System.out.println("1. Сортувати за ідентифікатором додаткові матеріали");
+                        System.out.println("2. Сортувати за номером лекцій додаткові матеріали");
+                        System.out.println("3. Сортувати за видом додаткові матеріали");
+                        numberTestComperble = testing.testInt();
+                        if ((numberTestComperble > 0) && (numberTestComperble < 4)) {
+                            TreeSet<MasterModels> sortAddMaterialList = new TreeSet<>();
+                            sortAddMaterialList.addAll(addMaterial.getModelsList());
+                            pt.printTreeSet(sortAddMaterialList);
+                            numberSort = 2;
+                        } else {
+                            System.out.println("Спробуйте знову");}
+
+                    }
+                    break;
+
+                case 7:
                     numberNext = 2;
                     break;
                 default:
                     System.out.println("Такої категорії не існує");
             }
         }
+    }
+
+    public int getNumberTestComperble() {
+        return numberTestComperble;
     }
 
     public void addMaterialsServiceAdd(RepositoryAddMaterial addMaterial) {

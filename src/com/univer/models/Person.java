@@ -1,8 +1,8 @@
 package com.univer.models;
 
-public class Person extends MasterModels{
+public class Person extends MasterModels implements Comparable {
 
-    private  static int calc;
+    private static int calc;
 
     private Integer courseId;
     private Role role;
@@ -12,19 +12,21 @@ public class Person extends MasterModels{
     private String phone;
     private String email;
 
-    public Person(Integer personID, Integer courseId, Role role, String firstName, String secondName, String phone, String email ) {
+    public Person(Integer personID, Integer courseId, Role role, String firstName, String secondName, String phone, String email) {
         super(personID);
-        this.courseId=courseId;
-        this.role= role;
-        this.firstName=firstName;
-        this.secondName=secondName;
-        this.phone=phone;
-        this.email=email;
+        this.courseId = courseId;
+        this.role = role;
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.phone = phone;
+        this.email = email;
         calc++;
-        personIDTmp=personID;
+        personIDTmp = personID;
 
     }
-    public Person(){}
+
+    public Person() {
+    }
 
     @Override
     public int getID() {
@@ -52,9 +54,10 @@ public class Person extends MasterModels{
         return secondName;
     }
 
-    public  int getCalcPerson() {
+    public int getCalcPerson() {
         return calc;
     }
+
     public void setCalcCorect() {
         calc--;
     }
@@ -69,8 +72,31 @@ public class Person extends MasterModels{
 
     @Override
     public String toString() {
-        return "//  Person id = " +  getPersonID()  + "/  CourseID--  " + getCourseId() +
-                "/ FirstName-- " + getFirstName() + "/ SecondName-- " + getSecondName() + "/ Role-- " + getRole()+
-                "/ Phone-- " + getPhone()+  "/ Email-- " + getEmail() + "//";
+        return "//  Person id = " + getPersonID() + "/  CourseID--  " + getCourseId() +
+                "/ FirstName-- " + getFirstName() + "/ SecondName-- " + getSecondName() + "/ Role-- " + getRole() +
+                "/ Phone-- " + getPhone() + "/ Email-- " + getEmail() + "//";
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Person input = (Person) o;
+        if (secondName.length() > input.secondName.length()) {
+            for (int i = 0; i < secondName.length() - 1; i++) {
+                if (this.secondName.charAt(i) > input.secondName.charAt(i)) {
+                    return 1;
+                } else if (this.secondName.charAt(i) < input.secondName.charAt(i)) {
+                    return -1;
+                }
+            }
+        }else {
+            for (int i = 0; i < input.secondName.length() - 1; i++) {
+                if (this.secondName.charAt(i) > input.secondName.charAt(i)) {
+                    return 1;
+                } else if (this.secondName.charAt(i) < input.secondName.charAt(i)) {
+                    return -1;
+                }
+            }
+        }
+        return 0;
     }
 }

@@ -1,10 +1,7 @@
 package com.univer.service;
 
 import com.univer.errorMenuService.ErrorTestNumber;
-import com.univer.repository.RepositoryAddMaterial;
-import com.univer.repository.RepositoryHomeWork;
-import com.univer.repository.RepositoryLecture;
-import com.univer.repository.RepositoryPerson;
+import com.univer.repository.*;
 
 import java.util.Scanner;
 
@@ -15,12 +12,14 @@ public class GlobalMenu {
     private RepositoryPerson dataPerson;
     private RepositoryHomeWork homeWork;
     private RepositoryAddMaterial addMaterial;
+    private RepositoryCourse dataCourse;
 
-    public void globalMenu(RepositoryLecture repositoryLecture, RepositoryPerson dataPerson, RepositoryHomeWork homeWork, RepositoryAddMaterial addMaterial) {
+    public void globalMenu(RepositoryLecture repositoryLecture, RepositoryPerson dataPerson, RepositoryHomeWork homeWork, RepositoryAddMaterial addMaterial, RepositoryCourse dataCourse) {
         this.repositoryLecture = repositoryLecture;
         this.dataPerson = dataPerson;
         this.homeWork = homeWork;
         this.addMaterial=addMaterial;
+        this.dataCourse=dataCourse;
         Scanner scanner = new Scanner(System.in);
         boolean exitBoolean = false;
         while (!exitBoolean) {
@@ -36,7 +35,8 @@ public class GlobalMenu {
             switch (number.testInt()) {
                 case 1 -> {
                     System.out.println("Ви вибрали категорію : Курс");
-                    exitBoolean = exitProgram();
+                    CourseService serCourse=new CourseService();
+                    serCourse.menuCourse(dataCourse);
                 }
                 case 2 -> {
                     System.out.println("Ви вибрали категорію : Вчителі та Студенти");

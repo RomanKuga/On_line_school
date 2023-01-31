@@ -7,9 +7,11 @@ import com.univer.service.GlobalMenu;
 public class Main {
     public static void main(String[] args) {
         Course course = new Course(1, "History");
-        RepositoryCourse wer= RepositoryCourse.getInstance();
-        wer.getCourseList().add(course);
-
+        RepositoryCourse dataCourse = RepositoryCourse.getInstance();
+        dataCourse.getCourseList().add(course);
+        dataCourse.getCourseList().add(new Course(2,"Ukraine history"));
+        dataCourse.getCourseList().add(new Course(3,"Algebra"));
+        dataCourse.getCourseList().add(new Course(4,"Geometry"));
 
         Lecture lectureExample = new Lecture();
 
@@ -18,7 +20,6 @@ public class Main {
          RepositoryHomeWork tempHomeWork = RepositoryHomeWork.getInstance() ;
          tempHomeWork.getModelsList().add(homeWor);
     
-     //   homeWork.add(new HomeWork(1, 1, "test"));
 
         RepositoryLecture repositoryLecture = RepositoryLecture.getInstance();
         repositoryLecture.getModelsList().add(new Lecture(1, course.getCourseID(), "quadratic equations", 1, "Wers1", tempHomeWork));
@@ -38,10 +39,12 @@ public class Main {
         dataPerson.getModelsList().add(new Person(4, 1, Role.Teacher, "sooiiiuu", "lkjhg", "0502345328", "asd12f@gmail.com"));
 
         RepositoryAddMaterial addMaterial = RepositoryAddMaterial.getInstance();
-        addMaterial.getModelsList().add(new AddMaterial(1, "quadratic equations",1,ResourceType.BOOK));
+        addMaterial.getModelsList().add(new AddMaterial(3, "quadratic equations",1,ResourceType.BOOK));
+        addMaterial.getModelsList().add(new AddMaterial(2, " equations",3,ResourceType.URL));
+        addMaterial.getModelsList().add(new AddMaterial(1, "quadratic equations 2",2,ResourceType.VIDEO));
 
         GlobalMenu glMenu = new GlobalMenu();
-        glMenu.globalMenu(repositoryLecture, dataPerson,tempHomeWork,addMaterial);
+        glMenu.globalMenu(repositoryLecture, dataPerson,tempHomeWork,addMaterial, dataCourse);
 
     }
 
