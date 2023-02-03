@@ -46,6 +46,8 @@ public class Main {
         addMaterial.getModelsList().add(new AddMaterial(3, "quadratic equations",1,ResourceType.BOOK));
         addMaterial.getModelsList().add(new AddMaterial(2, " equations",3,ResourceType.URL));
         addMaterial.getModelsList().add(new AddMaterial(1, "quadratic equations 2",2,ResourceType.VIDEO));
+        addMaterial.getModelsList().add(new AddMaterial(1, "agssfs",2,ResourceType.VIDEO));
+        addMaterial.getModelsList().add(new AddMaterial(2, " aequations",3,ResourceType.URL));
 
         GlobalMenu glMenu = new GlobalMenu();
         glMenu.globalMenu(repositoryLecture, dataPerson,tempHomeWork,addMaterial, dataCourse);

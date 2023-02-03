@@ -54,7 +54,7 @@ public  class AddMaterial extends MasterModels implements Comparable {
         switch (typeSort.getNumberTestComperble()) {
             case 1:
                 System.out.println(this.getID());
-                if (this.getID() > input.getID()) {
+                if (this.getID() >= input.getID()) {
                     return 1;
                 } else if (this.getID() < input.getID()) {
                     return -1;
@@ -62,7 +62,7 @@ public  class AddMaterial extends MasterModels implements Comparable {
 
             break;
             case 2:
-                if (this.lectureId > input.lectureId) {
+                if (this.lectureId >= input.lectureId) {
                     return 1;
                 } else if (this.lectureId < input.lectureId) {
                     return -1;
@@ -70,11 +70,12 @@ public  class AddMaterial extends MasterModels implements Comparable {
 
             break;
             case 3:
-                if (this.getResourceType().ordinal() > input.getResourceType().ordinal()) {
+                if (this.getResourceType().ordinal() >= input.getResourceType().ordinal()) {
                     return 1;
                 } else if (this.getResourceType().ordinal() < input.getResourceType().ordinal()) {
                     return -1;
                 }
+
 
             break;
         }
