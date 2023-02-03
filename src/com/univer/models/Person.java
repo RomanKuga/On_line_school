@@ -33,6 +33,11 @@ public class Person extends MasterModels implements Comparable {
         return super.getID();
     }
 
+    @Override
+    public Integer getLectureId() {
+        return 0;
+    }
+
     public int getPersonID() {
 
         return personIDTmp;

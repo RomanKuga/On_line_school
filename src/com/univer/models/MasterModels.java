@@ -17,4 +17,5 @@ public abstract class MasterModels {
     }
 
 
+    public abstract Integer getLectureId();
 }

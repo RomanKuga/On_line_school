@@ -2,28 +2,27 @@ package com.univer.service;
 
 import com.univer.errorMenuService.ErrorTestNumber;
 import com.univer.models.*;
-import com.univer.repository.RepositoryHomeWork;
-import com.univer.repository.RepositoryLecture;
-import com.univer.repository.RepositoryPerson;
+import com.univer.repository.*;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class LecturesService {
     private RepositoryLecture repositoryLecture;
     private RepositoryPerson dataPerson;
     private RepositoryHomeWork homeWork;
+    private RepositoryAddMaterial addMaterial;
+    private RepositoryMaster master;
 
     public void printArray(List<MasterModels> lect) {
         System.out.println(lect);
     }
 
 
-    public void menuLecrute(RepositoryLecture dataMaster, RepositoryPerson dataPerson, RepositoryHomeWork homeWork) {
+    public void menuLecrute(RepositoryLecture dataMaster, RepositoryPerson dataPerson, RepositoryHomeWork homeWork, RepositoryAddMaterial addMaterial) {
         this.repositoryLecture = dataMaster;
         this.dataPerson = dataPerson;
         this.homeWork = homeWork;
+        this.addMaterial=addMaterial;
         Lecture lectureExample = new Lecture();
         int numberNext = 1;
         while (numberNext < 2) {
@@ -49,13 +48,15 @@ public class LecturesService {
                     System.out.println(repositoryLecture.getModelsList().get(numberLect));
                     Lecture lecture = (Lecture) repositoryLecture.getModelsList().get(numberLect);
                     if (repositoryLecture.getModelsList().get(numberLect) != null) {
-                        Iterator<MasterModels> iterator= dataPerson.getModelsList().iterator();
-                        while (iterator.hasNext()){
-                            Person personTmp= (Person) iterator.next();
-                            if ((personTmp != null) && (personTmp.getID() == lecture.getLecturePersonId())) {
-                                System.out.println(personTmp);
-                            }
-                        }
+                        System.out.println(createMapHomeWork(homeWork).get(numberLect+1));
+                        System.out.println(createMapHomeWork(addMaterial).get(numberLect+1));
+//                        Iterator<MasterModels> iterator= dataPerson.getModelsList().iterator();
+//                        while (iterator.hasNext()){
+//                            Person personTmp= (Person) iterator.next();
+//                            if ((personTmp != null) && (personTmp.getID() == lecture.getLecturePersonId())) {
+//                                System.out.println(personTmp);
+//                            }
+//                        }
                     }
 
                     break;
@@ -64,6 +65,16 @@ public class LecturesService {
                             " / ведіть номер лекції від 0 до " + (lectureExample.getCalcLecture()-1));
                     numberLect = test.testInt();
                     repositoryLecture.getModelsList().remove(numberLect);
+                    for (int i=0; i<addMaterial.getModelsList().size(); i++){
+                        if ((numberLect+1)==addMaterial.getModelsList().get(i).getLectureId()){
+                            addMaterial.getModelsList().remove(i);
+                        }
+                    }
+                    for (int i=0; i<homeWork.getModelsList().size(); i++){
+                        if ((numberLect+1)==homeWork.getModelsList().get(i).getLectureId()){
+                            homeWork.getModelsList().remove(i);
+                        }
+                    }
                     pt.printArray(repositoryLecture.getModelsList());
                     break;
                 case 4:
@@ -138,7 +149,27 @@ public class LecturesService {
 
         repositoryLecture.getModelsList().add(new Lecture(lectureId, courseNumber, nameLecture, personID, description, homeWork));
 
+
     }
+     public Map<Integer,List <MasterModels>> createMapHomeWork (RepositoryMaster master){
+        this.master=master;
+        Map<Integer, List<MasterModels>> mapHomeWork = new HashMap<>();
+        for(int i=0; i<repositoryLecture.getModelsList().size(); i++) {
+            List<MasterModels> tempList = new ArrayList<>();
+            if (repositoryLecture.getModelsList().get(i)!= null) {
+            for (int j=0; j<master.getModelsList().size(); j++) {
+                MasterModels tempHome =  master.getModelsList().get(j);
+
+                    if (repositoryLecture.getModelsList().get(i).getID() == tempHome.getLectureId()) {
+                        tempList.add(master.getModelsList().get(j));
+                    }
+                }
+            mapHomeWork.put(repositoryLecture.getModelsList().get(i).getID(), tempList);
+            }
+        }
+        return mapHomeWork;
+     }
+
 
 
 }

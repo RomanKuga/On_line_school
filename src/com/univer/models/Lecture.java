@@ -38,6 +38,11 @@ public class Lecture extends MasterModels {
         return super.getID();
     }
 
+    @Override
+    public Integer getLectureId() {
+        return 0;
+    }
+
     public void setCalcLecture() {
         calc--;
     }

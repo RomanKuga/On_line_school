@@ -16,9 +16,13 @@ public class Main {
         Lecture lectureExample = new Lecture();
 
 
-         HomeWork homeWor= (new HomeWork(1, 1, "test"));
+        HomeWork homeWork= (new HomeWork(1, 1, "test"));
          RepositoryHomeWork tempHomeWork = RepositoryHomeWork.getInstance() ;
-         tempHomeWork.getModelsList().add(homeWor);
+        tempHomeWork.getModelsList().add(homeWork);
+         tempHomeWork.getModelsList().add(new HomeWork(2, 2, "test1"));
+        tempHomeWork.getModelsList().add(new HomeWork(3, 1, "test2"));
+        tempHomeWork.getModelsList().add(new HomeWork(4, 2, "test3"));
+        tempHomeWork.getModelsList().add(new HomeWork(5, 1, "test4"));
     
 
         RepositoryLecture repositoryLecture = RepositoryLecture.getInstance();

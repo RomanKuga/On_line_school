@@ -14,6 +14,11 @@ public class Course extends MasterModels implements Comparable{
 
     }
 
+    @Override
+    public Integer getLectureId() {
+        return 0;
+    }
+
     public String getName() {
         return name;
     }

@@ -17,7 +17,7 @@ public class HomeWork extends MasterModels {
         return calc;
     }
 
-    public int getLectureId() {
+    public Integer getLectureId() {
         return lectureId;
     }
 
@@ -28,5 +28,10 @@ public class HomeWork extends MasterModels {
     @Override
     public int getID() {
         return super.getID();
+    }
+
+    @Override
+    public String toString() {
+        return "//  HomeWork id = " +  getID()  + "/ Lecture--  " + getLectureId() + "/ Опис--  " + getTask() + "//";
     }
 }

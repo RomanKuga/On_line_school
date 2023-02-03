@@ -46,7 +46,7 @@ public class GlobalMenu {
                 case 3 -> {
                     System.out.println("Ви вибрали категорію : Лекції");
                     LecturesService serLecture = new LecturesService();
-                    serLecture.menuLecrute(repositoryLecture, dataPerson, homeWork);
+                    serLecture.menuLecrute(repositoryLecture, dataPerson, homeWork,addMaterial);
                 }
                 case 4 -> {
                     System.out.println("Ви вибрали категорію : Додаткові матеріали");

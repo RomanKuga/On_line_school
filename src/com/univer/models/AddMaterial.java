@@ -2,17 +2,17 @@ package com.univer.models;
 
 import com.univer.service.AddMaterialService;
 
-public class AddMaterial extends MasterModels implements Comparable {
+public  class AddMaterial extends MasterModels implements Comparable {
     private static int calc;
     private Integer id;
     private String nameAddMaterials;
-    private Integer lecturesId;
+    private Integer lectureId;
     private ResourceType resourceType;
 
-    public AddMaterial(Integer id, String nameAddMaterials, Integer lecturesId, ResourceType resourceType) {
+    public AddMaterial(Integer id, String nameAddMaterials, Integer lectureId, ResourceType resourceType) {
         super(id);
         this.nameAddMaterials = nameAddMaterials;
-        this.lecturesId = lecturesId;
+        this.lectureId = lectureId;
         this.resourceType = resourceType;
         calc++;
     }
@@ -30,8 +30,8 @@ public class AddMaterial extends MasterModels implements Comparable {
         return nameAddMaterials;
     }
 
-    public Integer getLecturesId() {
-        return lecturesId;
+    public Integer getLectureId() {
+        return lectureId;
     }
 
     public ResourceType getResourceType() {
@@ -44,7 +44,7 @@ public class AddMaterial extends MasterModels implements Comparable {
     @Override
     public String toString() {
         return "//  AddMaterials id = " + getID() + "/  Назва додаткових матеріалів--  " + getNameAddMaterials() +
-                "/ ID лекції-- " + getLecturesId() + "/ Залучені типи додаткових завдань-- " + getResourceType() + "//";
+                "/ ID лекції-- " + getLectureId() + "/ Залучені типи додаткових завдань-- " + getResourceType() + "//";
     }
 
     @Override
@@ -62,9 +62,9 @@ public class AddMaterial extends MasterModels implements Comparable {
 
             break;
             case 2:
-                if (this.lecturesId > input.lecturesId) {
+                if (this.lectureId > input.lectureId) {
                     return 1;
-                } else if (this.lecturesId < input.lecturesId) {
+                } else if (this.lectureId < input.lectureId) {
                     return -1;
                 }
 
