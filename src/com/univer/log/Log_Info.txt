@@ -1,0 +1,13 @@
+
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-05T19:23:27.629423400   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-05T19:23:27.676288800   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-05T19:23:27.676288800   null
+ com.univer.service.PersonService  INFO  Перехід до меню персони   2023-02-05T19:23:35.004137700   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-05T19:23:35.004137700   null
+ com.univer.log.LogWriter  ERROR  Error during io example  2023-02-05T19:23:40.622721300   [Ljava.lang.StackTraceElement;@306a30c7
+ com.univer.service.PersonService  INFO  Перехід до меню персони   2023-02-05T19:23:51.061264100   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-05T19:23:51.061264100   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-05T19:23:53.073178900   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-05T19:23:53.073178900   null
+ com.univer.service.ExitProgram  INFO  Перехід меню завершення програми   2023-02-05T19:23:54.620034500   null
+ com.univer.service.ExitProgram  INFO  Програма завершила роботу   2023-02-05T19:23:56.136950600   null

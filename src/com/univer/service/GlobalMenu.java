@@ -1,11 +1,13 @@
 package com.univer.service;
 
 import com.univer.errorMenuService.ErrorTestNumber;
+import com.univer.log.LogCreateObject;
+import com.univer.log.LogLevel;
 import com.univer.repository.*;
 
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Scanner;
-
-import static com.univer.service.ExitProgram.exitProgram;
 
 public class GlobalMenu {
     private RepositoryLecture repositoryLecture;
@@ -14,7 +16,7 @@ public class GlobalMenu {
     private RepositoryAddMaterial addMaterial;
     private RepositoryCourse dataCourse;
 
-    public void globalMenu(RepositoryLecture repositoryLecture, RepositoryPerson dataPerson, RepositoryHomeWork homeWork, RepositoryAddMaterial addMaterial, RepositoryCourse dataCourse) {
+    public void globalMenu(RepositoryLecture repositoryLecture, RepositoryPerson dataPerson, RepositoryHomeWork homeWork, RepositoryAddMaterial addMaterial, RepositoryCourse dataCourse) throws IOException {
         this.repositoryLecture = repositoryLecture;
         this.dataPerson = dataPerson;
         this.homeWork = homeWork;
@@ -23,6 +25,7 @@ public class GlobalMenu {
         Scanner scanner = new Scanner(System.in);
         boolean exitBoolean = false;
         while (!exitBoolean) {
+            LogCreateObject.logInfo(this.getClass().getName(), LogLevel.INFO.name(), "Перехід до загального меню програми ", LocalDateTime.now());
 
             System.out.println("Виберіть номер категорії з якою будете працювати:");
             System.out.println("1. Курс");
@@ -54,7 +57,7 @@ public class GlobalMenu {
                     serAddMaterial.menuAddMaterials(addMaterial);
                 }
                 case 5 -> {
-                    exitBoolean = exitProgram();
+                    exitBoolean = ExitProgram.exitProgram();
                     System.out.println("Дякую");
                 }
                 default -> System.out.println("Такої категорії не існує");

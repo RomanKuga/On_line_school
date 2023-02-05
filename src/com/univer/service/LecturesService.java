@@ -1,9 +1,13 @@
 package com.univer.service;
 
 import com.univer.errorMenuService.ErrorTestNumber;
+import com.univer.log.LogCreateObject;
+import com.univer.log.LogLevel;
 import com.univer.models.*;
 import com.univer.repository.*;
 
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class LecturesService {
@@ -18,7 +22,7 @@ public class LecturesService {
     }
 
 
-    public void menuLecrute(RepositoryLecture dataMaster, RepositoryPerson dataPerson, RepositoryHomeWork homeWork, RepositoryAddMaterial addMaterial) {
+    public void menuLecrute(RepositoryLecture dataMaster, RepositoryPerson dataPerson, RepositoryHomeWork homeWork, RepositoryAddMaterial addMaterial) throws IOException {
         this.repositoryLecture = dataMaster;
         this.dataPerson = dataPerson;
         this.homeWork = homeWork;
@@ -26,6 +30,7 @@ public class LecturesService {
         Lecture lectureExample = new Lecture();
         int numberNext = 1;
         while (numberNext < 2) {
+            LogCreateObject.logInfo(this.getClass().getName(), LogLevel.INFO.name(), "Перехід до меню Лекцій ", LocalDateTime.now());
 
             System.out.println("1. Добавити лекцію");
             System.out.println("2. Відкрити вибрану лекцію");
@@ -93,8 +98,9 @@ public class LecturesService {
 
     }
 
-    public void lectureServiceAdd(RepositoryLecture dataMaster) {
+    public void lectureServiceAdd(RepositoryLecture dataMaster) throws IOException {
         this.repositoryLecture = dataMaster;
+        LogCreateObject.logInfo(this.getClass().getName(), LogLevel.INFO.name(), "Добавлення нової лекції ", LocalDateTime.now());
 
         int arrayNumber = 0;
         Scanner scanner = new Scanner(System.in);

@@ -5,6 +5,7 @@ import com.univer.models.Course;
 import com.univer.models.MasterModels;
 import com.univer.repository.RepositoryCourse;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.TreeSet;
@@ -20,7 +21,7 @@ public class CourseService {
         System.out.println(cours);
     }
 
-    public void menuCourse(RepositoryCourse dataCourse) {
+    public void menuCourse(RepositoryCourse dataCourse) throws IOException {
         this.dataCourse = dataCourse;
         Course courseExample = new Course();
         int numberNext = 1;
@@ -74,7 +75,7 @@ public class CourseService {
         }
     }
 
-    public void courseServiceAdd(RepositoryCourse dataCourse) {
+    public void courseServiceAdd(RepositoryCourse dataCourse) throws IOException {
         this.dataCourse = dataCourse;
         int arrayNumber = 0;
         Scanner scanner = new Scanner(System.in);

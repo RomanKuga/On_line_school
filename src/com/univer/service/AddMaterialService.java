@@ -6,6 +6,7 @@ import com.univer.models.MasterModels;
 import com.univer.models.ResourceType;
 import com.univer.repository.RepositoryAddMaterial;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.TreeSet;
@@ -22,7 +23,7 @@ public class AddMaterialService {
         System.out.println(addMaterial);
     }
 
-    public void menuAddMaterials(RepositoryAddMaterial addMaterial) {
+    public void menuAddMaterials(RepositoryAddMaterial addMaterial) throws IOException {
         this.addMaterial = addMaterial;
         AddMaterial addMaterialExample = new AddMaterial();
         int numberNext = 1;
@@ -94,7 +95,7 @@ public class AddMaterialService {
         return numberTestComperble;
     }
 
-    public void addMaterialsServiceAdd(RepositoryAddMaterial addMaterial) {
+    public void addMaterialsServiceAdd(RepositoryAddMaterial addMaterial) throws IOException {
         this.addMaterial = addMaterial;
         int arrayNumber = 0;
         Scanner scanner = new Scanner(System.in);

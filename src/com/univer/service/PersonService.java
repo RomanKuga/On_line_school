@@ -1,11 +1,15 @@
 package com.univer.service;
 
 import com.univer.errorMenuService.ErrorTestNumber;
+import com.univer.log.LogCreateObject;
+import com.univer.log.LogLevel;
 import com.univer.models.MasterModels;
 import com.univer.models.Person;
 import com.univer.models.Role;
 import com.univer.repository.RepositoryPerson;
 
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class PersonService {
@@ -18,11 +22,12 @@ public class PersonService {
         System.out.println(pers);
     }
 
-    public void menuPerson(RepositoryPerson dataPerson) {
+    public void menuPerson(RepositoryPerson dataPerson) throws IOException {
         this.dataPerson = dataPerson;
         Person personExample = new Person();
         int numberNext = 1;
         while (numberNext < 2) {
+            LogCreateObject.logInfo(this.getClass().getName(), LogLevel.INFO.name(), "Перехід до меню персони ", LocalDateTime.now());
 
             System.out.println("1. Добавити персону");
             System.out.println("2. Відкрити вибрану персону");
@@ -72,7 +77,8 @@ public class PersonService {
         }
     }
 
-    public void personServiceAdd(RepositoryPerson dataPerson){
+    public void personServiceAdd(RepositoryPerson dataPerson) throws IOException {
+        LogCreateObject.logInfo(this.getClass().getName(), LogLevel.INFO.name(), "Перехід меню добавлення персони ", LocalDateTime.now());
         this.dataPerson=dataPerson;
         int arrayNumber = 0;
         Scanner scanner = new Scanner(System.in);
