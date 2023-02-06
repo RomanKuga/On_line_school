@@ -1,6 +1,29 @@
 package com.univer.depricated;
 
 public class oldMetod {
+
+//     case 2:
+//             System.out.println("Ви вибрали відкрити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
+//             " / ведіть номер лекції від 0 до " + (lectureExample.getCalcLecture()-1));
+//    int numberLect = test.testInt();
+//                    System.out.println(repositoryLecture.getModelsList().get(numberLect));
+//    Lecture lecture = (Lecture) repositoryLecture.getModelsList().get(numberLect);
+//                    if (repositoryLecture.getModelsList().get(numberLect) != null) {
+//        System.out.println(createMapHomeWork(homeWork).get(numberLect+1));
+//        System.out.println(createMapHomeWork(addMaterial).get(numberLect+1));
+//                        Iterator<MasterModels> iterator= dataPerson.getModelsList().iterator();
+//                        while (iterator.hasNext()){
+//                            Person personTmp= (Person) iterator.next();
+//                            if ((personTmp != null) && (personTmp.getID() == lecture.getLecturePersonId())) {
+//                                System.out.println(personTmp);
+//                            }
+//                        }
+//    }
+
+    //break;
+
+
+
     //    @Override
 //    public void add(int index, MasterModels masterModels) {
 //        this.index = index;

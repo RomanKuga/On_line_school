@@ -13,7 +13,7 @@ public class ErrorTestNumber {
 
     public int testInt() throws IOException {
         Scanner scanner = new Scanner(System.in);
-     LogCreateObject.logInfo(this.getClass().getName(), LogLevel.DEBUG.name(), "Перевірка числа на вміст символа ", LocalDateTime.now());
+     LogCreateObject.logDebug(this.getClass().getName(), LogLevel.DEBUG.name(), "Перевірка числа на вміст символа ", LocalDateTime.now());
 
         int number = 0;
         int r = 1;
@@ -23,10 +23,9 @@ public class ErrorTestNumber {
 
                 r = 2;
             } catch (InputMismatchException ex) {
-                LogCreateObject.error(LogWriter.class.getName(),LogLevel.ERROR.name(),
-                        "Error during io example", LocalDateTime.now(),
-                        ex.getStackTrace());
-                System.out.println("Ви набрали символ замість числа, спробуйте знову!");
+                System.out.println(LogCreateObject.error(LogWriter.class.getName(),LogLevel.ERROR.name(),
+                        "Ви набрали символ замість числа, спробуйте знову!", LocalDateTime.now(),
+                        ex.getStackTrace()));
                 String stop=scanner.next();
             }
         }

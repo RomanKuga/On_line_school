@@ -17,8 +17,9 @@ public class LecturesService {
     private RepositoryAddMaterial addMaterial;
     private RepositoryMaster master;
 
-    public void printArray(List<MasterModels> lect) {
+    public void printArray(List<MasterModels> lect) throws IOException {
         System.out.println(lect);
+        LogCreateObject.logDebug(this.getClass().getName(), LogLevel.DEBUG.name(), "Вивід списку на екран ", LocalDateTime.now());
     }
 
 
@@ -55,15 +56,7 @@ public class LecturesService {
                     if (repositoryLecture.getModelsList().get(numberLect) != null) {
                         System.out.println(createMapHomeWork(homeWork).get(numberLect+1));
                         System.out.println(createMapHomeWork(addMaterial).get(numberLect+1));
-//                        Iterator<MasterModels> iterator= dataPerson.getModelsList().iterator();
-//                        while (iterator.hasNext()){
-//                            Person personTmp= (Person) iterator.next();
-//                            if ((personTmp != null) && (personTmp.getID() == lecture.getLecturePersonId())) {
-//                                System.out.println(personTmp);
-//                            }
-//                        }
                     }
-
                     break;
                 case 3:
                     System.out.println("Ви вибрали видалити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
@@ -157,8 +150,9 @@ public class LecturesService {
 
 
     }
-     public Map<Integer,List <MasterModels>> createMapHomeWork (RepositoryMaster master){
+     public Map<Integer,List <MasterModels>> createMapHomeWork (RepositoryMaster master) throws IOException {
         this.master=master;
+         LogCreateObject.logInfo(this.getClass().getName(), LogLevel.INFO.name(), "Побудова Map ", LocalDateTime.now());
         Map<Integer, List<MasterModels>> mapHomeWork = new HashMap<>();
         for(int i=0; i<repositoryLecture.getModelsList().size(); i++) {
             List<MasterModels> tempList = new ArrayList<>();
@@ -173,6 +167,7 @@ public class LecturesService {
             mapHomeWork.put(repositoryLecture.getModelsList().get(i).getID(), tempList);
             }
         }
+         LogCreateObject.logDebug(this.getClass().getName(), LogLevel.DEBUG.name(), "Map - побудована ", LocalDateTime.now());
         return mapHomeWork;
      }
 

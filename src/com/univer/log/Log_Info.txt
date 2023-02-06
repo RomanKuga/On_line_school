@@ -11,3 +11,6 @@
  com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-05T19:23:53.073178900   null
  com.univer.service.ExitProgram  INFO  Перехід меню завершення програми   2023-02-05T19:23:54.620034500   null
  com.univer.service.ExitProgram  INFO  Програма завершила роботу   2023-02-05T19:23:56.136950600   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-06T11:23:14.566357100   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-06T11:23:14.642154200   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-06T11:23:14.644148100   null

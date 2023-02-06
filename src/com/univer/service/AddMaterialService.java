@@ -1,12 +1,15 @@
 package com.univer.service;
 
 import com.univer.errorMenuService.ErrorTestNumber;
+import com.univer.log.LogCreateObject;
+import com.univer.log.LogLevel;
 import com.univer.models.AddMaterial;
 import com.univer.models.MasterModels;
 import com.univer.models.ResourceType;
 import com.univer.repository.RepositoryAddMaterial;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
 import java.util.TreeSet;
@@ -15,12 +18,14 @@ public class AddMaterialService {
     private RepositoryAddMaterial addMaterial;
     private static int numberTestComperble;
 
-    public void printArray(List<MasterModels> pers) {
+    public void printArray(List<MasterModels> pers) throws IOException {
         System.out.println(pers);
+        LogCreateObject.logDebug(this.getClass().getName(), LogLevel.DEBUG.name(), "Вивід списку на екран ", LocalDateTime.now());
     }
 
-    public void printTreeSet(TreeSet<MasterModels> addMaterial) {
+    public void printTreeSet(TreeSet<MasterModels> addMaterial) throws IOException {
         System.out.println(addMaterial);
+        LogCreateObject.logDebug(this.getClass().getName(), LogLevel.DEBUG.name(), "Вивід списку на екран ", LocalDateTime.now());
     }
 
     public void menuAddMaterials(RepositoryAddMaterial addMaterial) throws IOException {
@@ -28,7 +33,7 @@ public class AddMaterialService {
         AddMaterial addMaterialExample = new AddMaterial();
         int numberNext = 1;
         while (numberNext < 2) {
-
+            LogCreateObject.logInfo(this.getClass().getName(), LogLevel.INFO.name(), "Перехід до меню Додаткові матеріали ", LocalDateTime.now());
             System.out.println("1. Добавити додаткові матеріали");
             System.out.println("2. Відкрити вибрані додаткові матеріали");
             System.out.println("3. Видалити вибрані додаткові матеріали");
