@@ -1,5 +1,6 @@
 package com.univer.service;
 
+import com.univer.controlWork.ControlWork;
 import com.univer.errorMenuService.ErrorTestNumber;
 import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
@@ -8,6 +9,10 @@ import com.univer.repository.*;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Scanner;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class GlobalMenu {
     private RepositoryLecture repositoryLecture;
@@ -16,7 +21,7 @@ public class GlobalMenu {
     private RepositoryAddMaterial addMaterial;
     private RepositoryCourse dataCourse;
 
-    public void globalMenu(RepositoryLecture repositoryLecture, RepositoryPerson dataPerson, RepositoryHomeWork homeWork, RepositoryAddMaterial addMaterial, RepositoryCourse dataCourse) throws IOException {
+    public void globalMenu(RepositoryLecture repositoryLecture, RepositoryPerson dataPerson, RepositoryHomeWork homeWork, RepositoryAddMaterial addMaterial, RepositoryCourse dataCourse) throws IOException, InterruptedException {
         this.repositoryLecture = repositoryLecture;
         this.dataPerson = dataPerson;
         this.homeWork = homeWork;
@@ -32,7 +37,8 @@ public class GlobalMenu {
             System.out.println("2. Персони");
             System.out.println("3. Лекції");
             System.out.println("4. Додаткові матеріали");
-            System.out.println("5. Вихід");
+            System.out.println("5. Контрольна робота");
+            System.out.println("6. Вихід");
             ErrorTestNumber number = new ErrorTestNumber();
 
             switch (number.testInt()) {
@@ -57,6 +63,19 @@ public class GlobalMenu {
                     serAddMaterial.menuAddMaterials(addMaterial);
                 }
                 case 5 -> {
+                    new ControlWork().rundomStudent();
+                    ExecutorService executorService = Executors.newFixedThreadPool(10);
+
+                    for (int i = 0; i < 10; i++) {
+                        executorService.execute(new ControlWork(i));
+                    }
+
+                    executorService.awaitTermination(12, SECONDS);
+
+                    executorService.shutdownNow();
+                    System.out.println(executorService);
+                }
+                case 6 -> {
                     exitBoolean = ExitProgram.exitProgram();
                     System.out.println("Дякую");
                 }

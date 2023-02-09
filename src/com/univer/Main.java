@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Course course = new Course(1, "History");
         RepositoryCourse dataCourse = RepositoryCourse.getInstance();
         dataCourse.getCourseList().add(course);
@@ -57,6 +57,9 @@ public class Main {
 
         GlobalMenu glMenu = new GlobalMenu();
         glMenu.globalMenu(repositoryLecture, dataPerson,tempHomeWork,addMaterial, dataCourse);
+
+
+
 
     }
 
