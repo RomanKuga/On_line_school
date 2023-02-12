@@ -29,7 +29,8 @@ public class GlobalMenu {
             System.out.println("3. Лекції");
             System.out.println("4. Додаткові матеріали");
             System.out.println("5. Контрольна робота");
-            System.out.println("6. Вихід");
+            System.out.println("6. Виберіть LEVEL для запису логів у файл");
+            System.out.println("7. Вихід");
             ErrorTestNumber number = new ErrorTestNumber();
 
             switch (number.testInt()) {
@@ -67,6 +68,10 @@ public class GlobalMenu {
                     System.out.println(executorService);
                 }
                 case 6 -> {
+                    AdjustmentLogFile menuALF= new AdjustmentLogFile();
+                    menuALF.AdjustmentLogFile();
+                }
+                case 7 -> {
                     exitBoolean = ExitProgram.exitProgram();
                     System.out.println("Дякую");
                 }

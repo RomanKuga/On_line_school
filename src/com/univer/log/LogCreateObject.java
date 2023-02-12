@@ -11,27 +11,27 @@ public class LogCreateObject {
     public static Log error(String name, String logLevel, String massage, LocalDateTime localDateTime, StackTraceElement[] stackTrace) throws IOException {
         Log errorLog = new Log(name, logLevel, massage,localDateTime, stackTrace);
         logsStorage.add(errorLog);
-        LogWriter.writeDataToFile(errorLog);
+        LogWriter.writeDataToFile(errorLog,logLevel);
         return errorLog;
     }
 
     public  Log warning(String name, String logLevel, String massage, LocalDateTime localDateTime,StackTraceElement[] stackTrace) throws IOException {
         Log errorLog = new Log(name, logLevel, massage,localDateTime, stackTrace);
         logsStorage.add(errorLog);
-        LogWriter.writeDataToFile(errorLog);
+        LogWriter.writeDataToFile(errorLog,logLevel);
         return errorLog;
     }
 
     public static Log logInfo(String name, String logLevel, String massage, LocalDateTime localDateTime) throws IOException {
         Log infoLog = new Log(name, logLevel, massage, localDateTime);
         logsStorage.add(infoLog);
-        LogWriter.writeDataToFile(infoLog);
+        LogWriter.writeDataToFile(infoLog,logLevel);
         return infoLog;
     }
     public static Log logDebug(String name, String logLevel, String massage, LocalDateTime localDateTime) throws IOException {
         Log infoLog = new Log(name, logLevel, massage, localDateTime);
         logsStorage.add(infoLog);
-        LogWriter.writeDataToFile(infoLog);
+        LogWriter.writeDataToFile(infoLog,logLevel);
         return infoLog;
     }
 

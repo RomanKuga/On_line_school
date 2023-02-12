@@ -40,7 +40,8 @@ public class AddMaterialService {
             System.out.println("4. Вивести список додаткових матеріалів на екран");
             System.out.println("5. Вивести список додаткових матеріалів на екран ,без елементів масива із значенням null ");
             System.out.println("6. Відсортувати додаткові матеріали");
-            System.out.println("7. Повернутись в основне меню");
+            System.out.println("7. Виберіть LEVEL для запису логів у файл");
+            System.out.println("8. Повернутись в основне меню");
             ErrorTestNumber testing = new ErrorTestNumber();
             int numberPers = testing.testInt();
             AddMaterialService pt = new AddMaterialService();
@@ -82,11 +83,13 @@ public class AddMaterialService {
                             numberSort = 2;
                         } else {
                             System.out.println("Спробуйте знову");}
-
                     }
                     break;
-
                 case 7:
+                    AdjustmentLogFile menuALF= new AdjustmentLogFile();
+                    menuALF.AdjustmentLogFile();
+                    break;
+                case 8:
                     numberNext = 2;
                     break;
                 default:

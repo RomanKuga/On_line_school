@@ -35,7 +35,8 @@ public class PersonService {
             System.out.println("4. Вивести список персон на екран");
             System.out.println("5. Вивести список персон на екран ,без елементів масива із значенням null ");
             System.out.println("6. Відсортувати список за прізвищем");
-            System.out.println("7. Повернутись в основне меню");
+            System.out.println("7. Виберіть LEVEL для запису логів у файл");
+            System.out.println("8. Повернутись в основне меню");
             ErrorTestNumber testing = new ErrorTestNumber();
             int numberPers = testing.testInt();
             PersonService pt = new PersonService();
@@ -68,6 +69,10 @@ public class PersonService {
                     pt.printTreeSet(sortPersonList);
                     break;
                 case 7:
+                    AdjustmentLogFile menuALF= new AdjustmentLogFile();
+                    menuALF.AdjustmentLogFile();
+                    break;
+                case 8:
                     numberNext = 2;
                     break;
                 default:

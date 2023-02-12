@@ -36,7 +36,8 @@ public class LecturesService {
             System.out.println("3. Видалити вибрану лекцію");
             System.out.println("4. Вивести лекції на екран");
             System.out.println("5. Вивести список лекцій на екран ,без елементів масива із значенням null ");
-            System.out.println("6. Повернутись в основне меню");
+            System.out.println("6. Виберіть LEVEL для запису логів у файл");
+            System.out.println("7. Повернутись в основне меню");
 
             LecturesService pt = new LecturesService();
             ErrorTestNumber test = new ErrorTestNumber();
@@ -81,6 +82,10 @@ public class LecturesService {
                     pt.printArray( repositoryLecture.findAll());
                     break;
                 case 6:
+                    AdjustmentLogFile menuALF= new AdjustmentLogFile();
+                    menuALF.AdjustmentLogFile();
+                    break;
+                case 7:
                     numberNext = 2;
                     break;
                 default:

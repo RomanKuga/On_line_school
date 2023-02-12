@@ -276,3 +276,52 @@
  com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T15:22:30.565235700   null
  com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-12T15:22:45.946828700   null
  com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T15:22:45.946828700   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-12T17:10:19.124344700   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-12T17:10:19.178200600   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:10:19.181194800   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-12T17:11:12.347047400   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:11:12.398904500   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-12T17:11:23.598746600   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:11:23.600740700   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-12T17:15:38.866475700   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:15:38.905369100   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:15:42.253916   null
+ com.univer.log.LogWriter  ERROR  Ви набрали символ замість числа, спробуйте знову!  2023-02-12T17:15:49.119169   [Ljava.lang.StackTraceElement;@2ef1e4fa
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-12T17:15:58.580436   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:15:58.581432100   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-12T17:25:46.910549100   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:25:46.958420900   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-12T17:25:52.074734700   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:25:52.075731400   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:25:55.991589500   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-12T17:25:59.247250   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:25:59.249279300   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:26:04.375055700   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-12T17:26:25.698285100   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:26:25.700288100   null
+ com.univer.service.PersonService  INFO  Перехід до меню персони   2023-02-12T17:26:31.309146300   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:26:31.311140300   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:26:39.074617900   null
+ com.univer.service.PersonService  INFO  Перехід до меню персони   2023-02-12T17:26:42.285619700   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T17:26:42.286615600   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-12T18:29:32.876763600   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T18:29:32.917654100   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-12T18:32:42.090951100   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T18:32:42.140818600   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-12T18:41:51.058818200   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T18:41:51.120649600   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-12T18:47:18.366926900   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T18:47:18.416794   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-12T18:50:24.034482800   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T18:50:24.085346300   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-12T18:53:37.567456200   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T18:53:37.611341   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-12T19:34:43.732224500   null
+ com.univer.errorMenuService.ErrorTestNumber  DEBUG  Перевірка числа на вміст символа   2023-02-12T19:34:43.774112700   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-12T19:35:29.742805100   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-02-12T19:35:34.323878   null
+ com.univer.log.LogWriter  ERROR  Ви набрали символ замість числа, спробуйте знову!  2023-02-12T19:35:38.471566700   [Ljava.lang.StackTraceElement;@7aec35a
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-02-12T19:35:47.697253100   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-12T19:35:52.029480   null
+ com.univer.service.ExitProgram  INFO  Перехід меню завершення програми   2023-02-12T19:36:23.018805500   null
+ com.univer.service.ExitProgram  INFO  Програма завершила роботу   2023-02-12T19:36:24.488063500   null
