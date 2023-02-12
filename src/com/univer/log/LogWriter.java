@@ -36,7 +36,6 @@ public class LogWriter {
                     break;
                 }
             }
-  //         System.out.println(logAdjustment.equals(LogLevel.DEBUG.name()));
             if (logAdjustment.equals(LogLevel.DEBUG.name())) {
                 writer.write(log.toString());
             }
