@@ -2,7 +2,7 @@ package com.univer.models;
 
 import com.univer.service.AddMaterialService;
 
-public  class AddMaterial extends MasterModels implements Comparable {
+public  class AddMaterial extends MasterModels implements Comparable<AddMaterial> {
     private static int calc;
     private Integer id;
     private String nameAddMaterials;
@@ -48,8 +48,8 @@ public  class AddMaterial extends MasterModels implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        AddMaterial input = (AddMaterial) o;
+    public int compareTo(AddMaterial o) {
+        AddMaterial input =  o;
         AddMaterialService typeSort = new AddMaterialService();
         switch (typeSort.getNumberTestComperble()) {
             case 1:

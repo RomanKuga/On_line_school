@@ -1,13 +1,13 @@
 package com.univer.controlWork;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.univer.models.Person;
+import com.univer.models.Role;
+import com.univer.repository.RepositoryPerson;
+
 import java.util.concurrent.TimeUnit;
 
 public class ControlWork implements Runnable{
-
     Integer [] student = new Integer[10];
-    List<Thread> threads = new ArrayList<>(10);
     private int taskNumber;
     private int rundomTime;
 
@@ -28,27 +28,37 @@ public class ControlWork implements Runnable{
                TimeUnit.SECONDS.sleep(rundomTime);
             } catch (InterruptedException e) {
                 Thread.interrupted();
-                System.out.println("Студент №" + (taskNumber+1) + "  не встиг завершити завдання");
+                System.out.println("Студент №" + (taskNumber+1) + "  не встиг завершити завдання, час виконання  "+ rundomTime);
 
             }
-        System.out.println("Студент №" + (taskNumber+1) + " завершив завдання");
+        System.out.println("Студент №" + (taskNumber+1) + " завершив завдання, час виконання  "+ rundomTime);
 
 
     }
-public  void rundomStudent(){
-    for (int i=0; i<student.length; i++){
-        int index =1;
-        while (index==1){
-            student[i]=(int) (Math.random() * 10+1);
-            int k=0;
-            for (int j=0; j<i; j++){
-                if ((student[i]==student[j])&&(i!=j)){
-                    k=1;
+public  void rundomStudent(RepositoryPerson repositoryPerson){
+
+            for (int i=0; i<student.length; i++) {
+                int index = 1;
+                while (index == 1) {
+                    student[i] = (int) (Math.random() * 10 + 1);
+                    int k = 0;
+                    for (int j = 0; j < i; j++) {
+                        if ((student[i] == student[j]) && (i != j)) {
+                            k = 1;
+                        }
+                    }
+                    if (k != 1) {
+                        index = 2;
+                    }
                 }
             }
-            if (k!=1){index=2;}
+            int k=0;
+            for (int i=0; i<repositoryPerson.getModelsList().size(); i++) {
+                Person person = (Person) repositoryPerson.getModelsList().get(i);
+                if (Role.Student == person.getRole()) {
+            System.out.println("Студент-" + person.getFirstName()+" "+person.getSecondName()+ " отримав білет -" + student[k]);
+            k++;
         }
-        System.out.println("Студент-"+(i+1)+ " отримав білет -"+ student[i]);
     }
 }
 

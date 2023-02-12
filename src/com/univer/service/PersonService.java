@@ -64,8 +64,7 @@ public class PersonService {
                     pt.printArray( this.dataPerson.findAll());
                     break;
                 case 6:
-                    TreeSet<MasterModels> sortPersonList= new TreeSet<>();
-                    sortPersonList.addAll( dataPerson.getModelsList());
+                    TreeSet<MasterModels> sortPersonList= new TreeSet<>(dataPerson.getModelsList());
                     pt.printTreeSet(sortPersonList);
                     break;
                 case 7:

@@ -77,8 +77,7 @@ public class AddMaterialService {
                         System.out.println("3. Сортувати за видом додаткові матеріали");
                         numberTestComperble = testing.testInt();
                         if ((numberTestComperble > 0) && (numberTestComperble < 4)) {
-                            TreeSet<MasterModels> sortAddMaterialList = new TreeSet<>();
-                            sortAddMaterialList.addAll(addMaterial.getModelsList());
+                            TreeSet<MasterModels> sortAddMaterialList = new TreeSet<>(addMaterial.getModelsList());
                             pt.printTreeSet(sortAddMaterialList);
                             numberSort = 2;
                         } else {

@@ -15,18 +15,9 @@ import java.util.concurrent.Executors;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class GlobalMenu {
-    private RepositoryLecture repositoryLecture;
-    private RepositoryPerson dataPerson;
-    private RepositoryHomeWork homeWork;
-    private RepositoryAddMaterial addMaterial;
-    private RepositoryCourse dataCourse;
+
 
     public void globalMenu(RepositoryLecture repositoryLecture, RepositoryPerson dataPerson, RepositoryHomeWork homeWork, RepositoryAddMaterial addMaterial, RepositoryCourse dataCourse) throws IOException, InterruptedException {
-        this.repositoryLecture = repositoryLecture;
-        this.dataPerson = dataPerson;
-        this.homeWork = homeWork;
-        this.addMaterial=addMaterial;
-        this.dataCourse=dataCourse;
         Scanner scanner = new Scanner(System.in);
         boolean exitBoolean = false;
         while (!exitBoolean) {
@@ -63,7 +54,7 @@ public class GlobalMenu {
                     serAddMaterial.menuAddMaterials(addMaterial);
                 }
                 case 5 -> {
-                    new ControlWork().rundomStudent();
+                    new ControlWork().rundomStudent(dataPerson);
                     ExecutorService executorService = Executors.newFixedThreadPool(10);
 
                     for (int i = 0; i < 10; i++) {

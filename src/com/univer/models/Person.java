@@ -1,6 +1,6 @@
 package com.univer.models;
 
-public class Person extends MasterModels implements Comparable {
+public class Person extends MasterModels implements Comparable<Person> {
 
     private static int calc;
 
@@ -83,8 +83,8 @@ public class Person extends MasterModels implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        Person input = (Person) o;
+    public int compareTo(Person o) {
+        Person input =  o;
         if (secondName.length() > input.secondName.length()) {
             for (int i = 0; i < secondName.length() - 1; i++) {
                 if (this.secondName.charAt(i) > input.secondName.charAt(i)) {

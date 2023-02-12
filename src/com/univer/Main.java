@@ -45,7 +45,17 @@ public class Main {
         RepositoryPerson dataPerson = RepositoryPerson.getInstance();
         dataPerson.getModelsList().add(new Person(1, 1, Role.Teacher, "sfsdgg", "sdggagas", "0991234567", "wert@gmail.com"));
         dataPerson.getModelsList().add(new Person(2, 1, Role.Teacher, "hgkgkk", "bvnc", "0502345678", "asdf@gmail.com"));
-        dataPerson.getModelsList().add(new Person(4, 1, Role.Teacher, "sooiiiuu", "lkjhg", "0502345328", "asd12f@gmail.com"));
+        dataPerson.getModelsList().add(new Person(3, 1, Role.Teacher, "sooiiiuu", "lkjhg", "0502345328", "asd12f@gmail.com"));
+        dataPerson.getModelsList().add(new Person(4, 1, Role.Student, "Petro", "sdggagas", "0991234567", "wert@gmail.com"));
+        dataPerson.getModelsList().add(new Person(5, 1, Role.Student, "Ivan", "bvnc", "0502345678", "asdf@gmail.com"));
+        dataPerson.getModelsList().add(new Person(6, 1, Role.Student, "Vasil", "lkjhg", "0502345328", "asd12f@gmail.com"));
+        dataPerson.getModelsList().add(new Person(7, 1, Role.Student, "Oksana", "sdggagas", "0991234567", "wert@gmail.com"));
+        dataPerson.getModelsList().add(new Person(8, 1, Role.Student, "Roman", "bvnc", "0502345678", "asdf@gmail.com"));
+        dataPerson.getModelsList().add(new Person(9, 1, Role.Student, "Nataliya", "lkjhg", "0502345328", "asd12f@gmail.com"));
+        dataPerson.getModelsList().add(new Person(10, 1, Role.Student, "Olena", "sdggagas", "0991234567", "wert@gmail.com"));
+        dataPerson.getModelsList().add(new Person(11, 1, Role.Student, "Boris", "lkjhg", "0502345328", "asd12f@gmail.com"));
+        dataPerson.getModelsList().add(new Person(12, 1, Role.Student, "Misha", "lkjhg", "0502345328", "asd12f@gmail.com"));
+        dataPerson.getModelsList().add(new Person(13, 1, Role.Student, "Jana", "lkjhg", "0502345328", "asd12f@gmail.com"));
 
         RepositoryAddMaterial addMaterial = RepositoryAddMaterial.getInstance();
         addMaterial.getModelsList().add(new AddMaterial(3, "quadratic equations",1,ResourceType.BOOK));

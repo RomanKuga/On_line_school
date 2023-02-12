@@ -8,14 +8,14 @@ import java.util.List;
 public class LogCreateObject {
     private static List<Log> logsStorage = new ArrayList<>();
 
-    public static Log error(String name, String logLevel, String massage, LocalDateTime localDateTime,StackTraceElement[] stackTrace) throws IOException {
+    public static Log error(String name, String logLevel, String massage, LocalDateTime localDateTime, StackTraceElement[] stackTrace) throws IOException {
         Log errorLog = new Log(name, logLevel, massage,localDateTime, stackTrace);
         logsStorage.add(errorLog);
         LogWriter.writeDataToFile(errorLog);
         return errorLog;
     }
 
-    public static Log warning(String name, String logLevel, String massage, LocalDateTime localDateTime,StackTraceElement[] stackTrace) throws IOException {
+    public  Log warning(String name, String logLevel, String massage, LocalDateTime localDateTime,StackTraceElement[] stackTrace) throws IOException {
         Log errorLog = new Log(name, logLevel, massage,localDateTime, stackTrace);
         logsStorage.add(errorLog);
         LogWriter.writeDataToFile(errorLog);

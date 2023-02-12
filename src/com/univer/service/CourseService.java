@@ -62,8 +62,7 @@ public class CourseService {
                     pt.printArray(this.dataCourse.findAll());
                     break;
                 case 6:
-                    TreeSet<MasterModels> sortCourseList = new TreeSet<>();
-                    sortCourseList.addAll(dataCourse.getModelsList());
+                    TreeSet<MasterModels> sortCourseList = new TreeSet<>(dataCourse.getModelsList());
                     pt.printTreeSet(sortCourseList);
                     break;
                 case 7:

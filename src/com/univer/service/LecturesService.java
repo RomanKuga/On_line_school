@@ -14,8 +14,7 @@ public class LecturesService {
     private RepositoryLecture repositoryLecture;
     private RepositoryPerson dataPerson;
     private RepositoryHomeWork homeWork;
-    private RepositoryAddMaterial addMaterial;
-    private RepositoryMaster master;
+
 
     public void printArray(List<MasterModels> lect) throws IOException {
         System.out.println(lect);
@@ -27,7 +26,6 @@ public class LecturesService {
         this.repositoryLecture = dataMaster;
         this.dataPerson = dataPerson;
         this.homeWork = homeWork;
-        this.addMaterial=addMaterial;
         Lecture lectureExample = new Lecture();
         int numberNext = 1;
         while (numberNext < 2) {
@@ -52,7 +50,6 @@ public class LecturesService {
                             " / ведіть номер лекції від 0 до " + (lectureExample.getCalcLecture()-1));
                     int numberLect = test.testInt();
                     System.out.println(repositoryLecture.getModelsList().get(numberLect));
-                    Lecture lecture = (Lecture) repositoryLecture.getModelsList().get(numberLect);
                     if (repositoryLecture.getModelsList().get(numberLect) != null) {
                         System.out.println(createMapHomeWork(homeWork).get(numberLect+1));
                         System.out.println(createMapHomeWork(addMaterial).get(numberLect+1));
@@ -66,11 +63,13 @@ public class LecturesService {
                     for (int i=0; i<addMaterial.getModelsList().size(); i++){
                         if ((numberLect+1)==addMaterial.getModelsList().get(i).getLectureId()){
                             addMaterial.getModelsList().remove(i);
+                            i--;
                         }
                     }
                     for (int i=0; i<homeWork.getModelsList().size(); i++){
                         if ((numberLect+1)==homeWork.getModelsList().get(i).getLectureId()){
                             homeWork.getModelsList().remove(i);
+                            i--;
                         }
                     }
                     pt.printArray(repositoryLecture.getModelsList());
@@ -151,7 +150,6 @@ public class LecturesService {
 
     }
      public Map<Integer,List <MasterModels>> createMapHomeWork (RepositoryMaster master) throws IOException {
-        this.master=master;
          LogCreateObject.logInfo(this.getClass().getName(), LogLevel.INFO.name(), "Побудова Map ", LocalDateTime.now());
         Map<Integer, List<MasterModels>> mapHomeWork = new HashMap<>();
         for(int i=0; i<repositoryLecture.getModelsList().size(); i++) {

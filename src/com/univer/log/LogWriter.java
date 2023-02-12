@@ -13,15 +13,16 @@ public class LogWriter {
         try (Writer writer = new OutputStreamWriter(new FileOutputStream(LOG_STORAGE_FILE,true)))
         {
             File file = new File(LOG_STORAGE_FILE);
-            if (!file.exists()){ file.createNewFile();}
-
-                String c;
-                c= log.toString();
-                writer.write(c);
-
-
-
-
+            int k=0;
+            while (!file.exists()){
+            file.createNewFile();
+            k++;
+            if (k==2){
+                System.out.println("Проблема зі створенням фала");
+                break;
+            }
+            }
+                writer.write(log.toString());
 
     } catch (IOException e) {
             LogCreateObject.error(LogWriter.class.getName(),LogLevel.ERROR.name(),
