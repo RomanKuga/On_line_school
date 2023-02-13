@@ -36,22 +36,24 @@ public class LogWriter {
                     break;
                 }
             }
-            if (logAdjustment.equals(LogLevel.DEBUG.name())) {
-                writer.write(log.toString());
-            }
-            if (logAdjustment.equals(LogLevel.INFO.name())) {
-                if (!logLevel.equals(LogLevel.DEBUG.name())) {
+            if (!logAdjustment.equals("OFF")) {
+                if (logAdjustment.equals(LogLevel.DEBUG.name())) {
                     writer.write(log.toString());
                 }
-            }
-            if (logAdjustment.equals(LogLevel.WARNING.name())) {
-                if ((!logLevel.equals(LogLevel.DEBUG.name()))&&(!logLevel.equals(LogLevel.INFO.name()))) {
-                    writer.write(log.toString());
+                if (logAdjustment.equals(LogLevel.INFO.name())) {
+                    if (!logLevel.equals(LogLevel.DEBUG.name())) {
+                        writer.write(log.toString());
+                    }
                 }
-            }
-            if (logAdjustment.equals(LogLevel.ERROR.name())) {
-                if (logLevel.equals(LogLevel.ERROR.name())) {
-                    writer.write(log.toString());
+                if (logAdjustment.equals(LogLevel.WARNING.name())) {
+                    if ((!logLevel.equals(LogLevel.DEBUG.name())) && (!logLevel.equals(LogLevel.INFO.name()))) {
+                        writer.write(log.toString());
+                    }
+                }
+                if (logAdjustment.equals(LogLevel.ERROR.name())) {
+                    if (logLevel.equals(LogLevel.ERROR.name())) {
+                        writer.write(log.toString());
+                    }
                 }
             }
 

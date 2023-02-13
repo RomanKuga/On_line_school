@@ -325,3 +325,4 @@
  com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-12T19:35:52.029480   null
  com.univer.service.ExitProgram  INFO  Перехід меню завершення програми   2023-02-12T19:36:23.018805500   null
  com.univer.service.ExitProgram  INFO  Програма завершила роботу   2023-02-12T19:36:24.488063500   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-13T14:34:22.648926700   null

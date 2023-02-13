@@ -15,7 +15,8 @@ public class AdjustmentLogFile {
                      DEBUG  - 1
                      INFO   - 2
                      WARNING- 3
-                     ERROR  - 4""");
+                     ERROR  - 4
+                     OFF    - 5""");
             ErrorTestNumber number = new ErrorTestNumber();
             switch (number.testInt()) {
                 case 1 -> {
@@ -36,6 +37,11 @@ public class AdjustmentLogFile {
                 case 4 -> {
                     System.out.println("Рівень логування:   ERROR");
                     LogWriter.writeAdjustmentFile(LogLevel.ERROR.name());
+                    df=2;
+                }
+                case 5 -> {
+                    System.out.println("Рівень логування:   OFF");
+                    LogWriter.writeAdjustmentFile("OFF");
                     df=2;
                 }
 
