@@ -1,6 +1,6 @@
 package com.univer.service;
 
-import com.univer.errorMenuService.ErrorTestNumber;
+import com.univer.errorMenuService.ValidationUtil;
 import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.models.MasterModels;
@@ -37,7 +37,7 @@ public class PersonService {
             System.out.println("6. Відсортувати список за прізвищем");
             System.out.println("7. Виберіть LEVEL для запису логів у файл");
             System.out.println("8. Повернутись в основне меню");
-            ErrorTestNumber testing = new ErrorTestNumber();
+            ValidationUtil testing = new ValidationUtil();
             int numberPers = testing.testInt();
             PersonService pt = new PersonService();
 
@@ -90,7 +90,7 @@ public class PersonService {
                         Добавити персону -                        1 
                        Добавити персону вказавши місце в масиві - 2""");
         System.out.println("Розмір масива Персони " + dataPerson.getModelsList().size());
-        ErrorTestNumber testing = new ErrorTestNumber();
+        ValidationUtil testing = new ValidationUtil();
         int numberPers = testing.testInt();
         ServiceValidator test = new ServiceValidator();
         if ((test.validatorNumber(numberPers)) && (numberPers ==2)) {

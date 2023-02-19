@@ -1,6 +1,6 @@
 package com.univer.service;
 
-import com.univer.errorMenuService.ErrorTestNumber;
+import com.univer.errorMenuService.ValidationUtil;
 import com.univer.log.LogLevel;
 import com.univer.log.LogWriter;
 
@@ -17,7 +17,7 @@ public class AdjustmentLogFile {
                      WARNING- 3
                      ERROR  - 4
                      OFF    - 5""");
-            ErrorTestNumber number = new ErrorTestNumber();
+            ValidationUtil number = new ValidationUtil();
             switch (number.testInt()) {
                 case 1 -> {
                     System.out.println("Рівень логування:  DEBUG < INFO < WARNING < ERROR");

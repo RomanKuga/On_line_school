@@ -1,6 +1,6 @@
 package com.univer.service;
 
-import com.univer.errorMenuService.ErrorTestNumber;
+import com.univer.errorMenuService.ValidationUtil;
 import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.models.*;
@@ -40,7 +40,7 @@ public class LecturesService {
             System.out.println("7. Повернутись в основне меню");
 
             LecturesService pt = new LecturesService();
-            ErrorTestNumber test = new ErrorTestNumber();
+            ValidationUtil test = new ValidationUtil();
 
             switch (test.testInt()) {
                 case 1:
@@ -105,7 +105,7 @@ public class LecturesService {
                  Добавити лекцію -                        1 
                 Добавити лекцію вказавши місце в масиві - 2""");
         System.out.println("Розмір масива лекції " + repositoryLecture.getModelsList().size());
-        ErrorTestNumber testing = new ErrorTestNumber();
+        ValidationUtil testing = new ValidationUtil();
         int numberLect = testing.testInt();
 
         ServiceValidator test = new ServiceValidator();

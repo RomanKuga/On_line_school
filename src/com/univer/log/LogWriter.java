@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 public class LogWriter {
     private static final int B_SIZE = 1024;
 
-    private static final String LOG_STORAGE_FILE = "src/com/univer/log/Log_Info.txt";
-    private static final String LOG_ADJUSTMENT_FILE = "src/com/univer/log/AdjustmentLog.txt";
+    private static final String LOG_STORAGE_FILE = "src/com/univer/Log_Info.txt";
+    private static final String LOG_ADJUSTMENT_FILE = "src/com/univer/AdjustmentLog.txt";
 
 
     protected static void writeDataToFile(Log log, String logLevel) throws IOException {

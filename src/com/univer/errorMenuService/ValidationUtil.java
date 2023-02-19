@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class ErrorTestNumber {
+public class ValidationUtil {
 
     public int testInt() throws IOException {
         Scanner scanner = new Scanner(System.in);

@@ -1,7 +1,7 @@
 package com.univer.service;
 
 import com.univer.controlWork.ControlWork;
-import com.univer.errorMenuService.ErrorTestNumber;
+import com.univer.errorMenuService.ValidationUtil;
 import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.repository.*;
@@ -31,7 +31,7 @@ public class GlobalMenu {
             System.out.println("5. Контрольна робота");
             System.out.println("6. Виберіть LEVEL для запису логів у файл");
             System.out.println("7. Вихід");
-            ErrorTestNumber number = new ErrorTestNumber();
+            ValidationUtil number = new ValidationUtil();
 
             switch (number.testInt()) {
                 case 1 -> {

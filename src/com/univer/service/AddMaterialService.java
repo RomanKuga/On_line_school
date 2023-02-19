@@ -1,6 +1,6 @@
 package com.univer.service;
 
-import com.univer.errorMenuService.ErrorTestNumber;
+import com.univer.errorMenuService.ValidationUtil;
 import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.models.AddMaterial;
@@ -42,7 +42,7 @@ public class AddMaterialService {
             System.out.println("6. Відсортувати додаткові матеріали");
             System.out.println("7. Виберіть LEVEL для запису логів у файл");
             System.out.println("8. Повернутись в основне меню");
-            ErrorTestNumber testing = new ErrorTestNumber();
+            ValidationUtil testing = new ValidationUtil();
             int numberPers = testing.testInt();
             AddMaterialService pt = new AddMaterialService();
 
@@ -110,7 +110,7 @@ public class AddMaterialService {
                 Добавити додаткові матеріали -                         1 
                 Добавити додаткові матеріали вказавши місце в масиві - 2""");
         System.out.println("Розмір масива додаткові матеріали " + addMaterial.getModelsList().size());
-        ErrorTestNumber testing = new ErrorTestNumber();
+        ValidationUtil testing = new ValidationUtil();
         int numberAdd = testing.testInt();
         ServiceValidator test = new ServiceValidator();
         if ((test.validatorNumber(numberAdd)) && (numberAdd == 2)) {

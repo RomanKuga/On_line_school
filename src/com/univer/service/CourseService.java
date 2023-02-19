@@ -1,6 +1,6 @@
 package com.univer.service;
 
-import com.univer.errorMenuService.ErrorTestNumber;
+import com.univer.errorMenuService.ValidationUtil;
 import com.univer.models.Course;
 import com.univer.models.MasterModels;
 import com.univer.repository.RepositoryCourse;
@@ -35,7 +35,7 @@ public class CourseService {
             System.out.println("6. Відсортувати список курсів за назвою");
             System.out.println("7. Виберіть LEVEL для запису логів у файл");
             System.out.println("8. Повернутись в основне меню");
-            ErrorTestNumber testing = new ErrorTestNumber();
+            ValidationUtil testing = new ValidationUtil();
             int numberPers = testing.testInt();
             CourseService pt = new CourseService();
 
@@ -87,7 +87,7 @@ public class CourseService {
                  Добавити курс -                        1 
                 Добавити курс вказавши місце в масиві - 2""");
         System.out.println("Розмір масива Курс " + dataCourse.getModelsList().size());
-        ErrorTestNumber testing = new ErrorTestNumber();
+        ValidationUtil testing = new ValidationUtil();
         int number = testing.testInt();
         ServiceValidator test = new ServiceValidator();
         if ((test.validatorNumber(number)) && (number == 2)) {

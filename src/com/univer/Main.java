@@ -4,6 +4,7 @@ import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.models.*;
 import com.univer.repository.*;
+import com.univer.serverANDclient.MenuServAndClient;
 import com.univer.service.AdjustmentLogFile;
 import com.univer.service.GlobalMenu;
 
@@ -12,6 +13,8 @@ import java.time.LocalDateTime;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
+       new MenuServAndClient();
+
         Course course = new Course(1, "History");
         RepositoryCourse dataCourse = RepositoryCourse.getInstance();
         dataCourse.getCourseList().add(course);
@@ -41,8 +44,7 @@ public class Main {
 
         repositoryLecture.getModelsList().add(2,null);
 
-        System.out.println("id курсу - 6-ї лекцій = " + Lecture.getCourseIDLecture());
-        System.out.println("Кількість лекцій  = " + lectureExample.getCalcLecture());
+
         RepositoryPerson dataPerson = RepositoryPerson.getInstance();
         dataPerson.getModelsList().add(new Person(1, 1, Role.Teacher, "sfsdgg", "sdggagas", "0991234567", "wert@gmail.com"));
         dataPerson.getModelsList().add(new Person(2, 1, Role.Teacher, "hgkgkk", "bvnc", "0502345678", "asdf@gmail.com"));

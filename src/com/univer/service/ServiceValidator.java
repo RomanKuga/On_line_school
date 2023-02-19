@@ -46,4 +46,16 @@ public class ServiceValidator {
         }
         return true;
     }
+    public boolean validatorIP(String adressIP){
+        String formIPchapter = "(\\d{1,2}|(0|1)\\d{2}|2[0-4]\\d|25[0-5])";
+        String formAllIP= formIPchapter+"\\."+formIPchapter+"\\."+formIPchapter+"\\."+formIPchapter;
+        if ((adressIP==null)||(adressIP.contains("[a-zA-Z]"))){
+            System.out.println("IP адрес введений неправильно спробуте знов");
+            return false;
+        }
+        Pattern pattern = Pattern.compile(formAllIP);
+        Matcher matcher = pattern.matcher(adressIP);
+        return matcher.matches();
+
+    }
 }
