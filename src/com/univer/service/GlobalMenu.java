@@ -5,6 +5,7 @@ import com.univer.errorMenuService.ValidationUtil;
 import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.repository.*;
+import com.univer.serverANDclient.MenuServAndClient;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -30,7 +31,8 @@ public class GlobalMenu {
             System.out.println("4. Додаткові матеріали");
             System.out.println("5. Контрольна робота");
             System.out.println("6. Виберіть LEVEL для запису логів у файл");
-            System.out.println("7. Вихід");
+            System.out.println("7. Редагувати BlackList адрес");
+            System.out.println("8. Вихід");
             ValidationUtil number = new ValidationUtil();
 
             switch (number.testInt()) {
@@ -72,6 +74,10 @@ public class GlobalMenu {
                     menuALF.AdjustmentLogFile();
                 }
                 case 7 -> {
+                    MenuServAndClient menuBlackLis=  new MenuServAndClient();
+                    menuBlackLis.menuBlackList();
+                }
+                case 8 -> {
                     exitBoolean = ExitProgram.exitProgram();
                     System.out.println("Дякую");
                 }

@@ -10,11 +10,10 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 
-public class ServerRun implements Runnable{
+public class ServerRun implements Runnable {
     private static final int SERVER_PORT = 1234;
     private ByteBuffer buffer = ByteBuffer.allocateDirect(1024);
-private boolean stanSelector;
-
+    private boolean stanSelector;
 
 
     public boolean isStanSelector() {
@@ -28,11 +27,12 @@ private boolean stanSelector;
 
         ServerSocket serverSocket = serverSocketChannel.socket();
         Selector selector = Selector.open();
-        stanSelector=selector.isOpen();
+        stanSelector = selector.isOpen();
         serverSocket.bind(new InetSocketAddress(SERVER_PORT));
         serverSocketChannel.configureBlocking(false);
 
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+
 
         while (true) {
             int n = selector.select();
@@ -51,9 +51,17 @@ private boolean stanSelector;
                     ServerSocketChannel server = (ServerSocketChannel) key.channel();
                     SocketChannel channel = serverSocketChannel.accept();
 
+                    String formIPchapter = "\\:\\d{4,5}";
+                    String channelIp = String.valueOf(channel.getLocalAddress());
+                    String channelIpTest = channelIp.substring(1);
+                    channelIpTest=channelIpTest.replaceAll(formIPchapter, "");
+                    if (!BlackListWriteRemove.printBlackList().contains(channelIpTest)){
                     registerChannel(selector, channel, n);
+                    }else {
+                    channel.close();
+                    System.out.println("IP клієнта знаходиться в BlackList");}
 
-                    readData(key);
+                    //  readData(key);
                 }
             }
         }
@@ -98,7 +106,7 @@ private boolean stanSelector;
 
 
     @Override
-    public  void run() {
+    public void run() {
         try {
 
             new ServerRun().start();

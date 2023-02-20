@@ -7,7 +7,8 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class MenuServAndClient {
-    public MenuServAndClient() throws IOException {
+
+    public void menuServAndClient() throws IOException {
         int df = 1;
         while (df == 1) {
             System.out.println("""
@@ -15,25 +16,24 @@ public class MenuServAndClient {
                      Запустити сервер             - 1
                      Запустити клієнтсервер       - 2
                      Редагувати BlackList адрес   - 3
+                     Вихід з меню                 - 4
                      """);
             ValidationUtil number = new ValidationUtil();
             switch (number.testInt()) {
                 case 1 -> {
                     Thread thread = new Thread(new ServerRun());
                     thread.start();
-
                 }
                 case 2 -> {
-                    Thread thread = new Thread(new ClientRun());
-                    thread.start();
-
+                    Thread chanelClient = new Thread(new ClientRun());
+                    chanelClient.start();
                 }
                 case 3 -> {
                     menuBlackList();
-
+                 }
+                case 4 -> {
                     df = 2;
                 }
-
 
                 default -> System.out.println("Такої категорії не існує");
             }
@@ -62,6 +62,7 @@ public class MenuServAndClient {
                         if (testIPerror.validatorIP(adressIP)) {
                             BlackListWriteRemove.writeBlackList(adressIP);
                             kf = 2;
+
                         }
                     }
                 }
@@ -73,11 +74,12 @@ public class MenuServAndClient {
                         if (testIPerror.validatorIP(addressIP)) {
                             BlackListWriteRemove.removeBlackList(addressIP);
                             kf = 2;
+
                         }
                     }
                 }
                 case 3 -> {
-                    BlackListWriteRemove.printBlackList();
+                    System.out.println(BlackListWriteRemove.printBlackList());
 
                 }
                 case 4 -> {

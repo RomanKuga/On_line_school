@@ -13,7 +13,8 @@ import java.time.LocalDateTime;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
-       new MenuServAndClient();
+     MenuServAndClient menuServAndClient=new MenuServAndClient();
+     menuServAndClient.menuServAndClient();
 
         Course course = new Course(1, "History");
         RepositoryCourse dataCourse = RepositoryCourse.getInstance();

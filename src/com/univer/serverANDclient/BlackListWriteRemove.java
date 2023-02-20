@@ -99,7 +99,7 @@ public class BlackListWriteRemove {
         }
     }
 
-    public static void printBlackList() throws IOException {
+    public static String printBlackList() throws IOException {
 
         try (FileChannel fileReader = new FileInputStream(BlackList_STORAGE_FILE).getChannel()) {
             File file = new File(BlackList_STORAGE_FILE);
@@ -122,11 +122,12 @@ public class BlackListWriteRemove {
                     chars[j] = (char) buffer.get();
                     j++;
                 }
-                System.out.println(String.copyValueOf(chars));
+                return String.copyValueOf(chars);
             }
             else {
                 System.out.println("Файл пустий");
             }
         }
+        return null;
     }
 }
