@@ -57,7 +57,7 @@ public class GlobalMenu {
                     serAddMaterial.menuAddMaterials(addMaterial);
                 }
                 case 5 -> {
-                    new ControlWork().rundomStudent(dataPerson);
+                    new ControlWork().randomStudent(dataPerson);
                     ExecutorService executorService = Executors.newFixedThreadPool(10);
 
                     for (int i = 0; i < 10; i++) {
@@ -69,10 +69,8 @@ public class GlobalMenu {
                     executorService.shutdownNow();
                     System.out.println(executorService);
                 }
-                case 6 -> {
-                    AdjustmentLogFile menuALF= new AdjustmentLogFile();
-                    menuALF.AdjustmentLogFile();
-                }
+                case 6 ->  new AdjustmentLogFile().menuAdjustmentLogFile();
+
                 case 7 -> {
                     MenuServAndClient menuBlackLis=  new MenuServAndClient();
                     menuBlackLis.menuBlackList();

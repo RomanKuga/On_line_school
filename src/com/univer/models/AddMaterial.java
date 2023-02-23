@@ -4,7 +4,7 @@ import com.univer.service.AddMaterialService;
 
 public  class AddMaterial extends MasterModels implements Comparable<AddMaterial> {
     private static int calc;
-    private Integer id;
+
     private String nameAddMaterials;
     private Integer lectureId;
     private ResourceType resourceType;
@@ -49,30 +49,28 @@ public  class AddMaterial extends MasterModels implements Comparable<AddMaterial
 
     @Override
     public int compareTo(AddMaterial o) {
-        AddMaterial input =  o;
         AddMaterialService typeSort = new AddMaterialService();
         switch (typeSort.getNumberTestComperble()) {
             case 1:
                 System.out.println(this.getID());
-                if (this.getID() >= input.getID()) {
+                if (this.getID() >= o.getID()) {
                     return 1;
-                } else if (this.getID() < input.getID()) {
+                } else if (this.getID() < o.getID()) {
                     return -1;
                 }
 
             break;
             case 2:
-                if (this.lectureId >= input.lectureId) {
+                if (this.lectureId >= o.lectureId) {
                     return 1;
-                } else if (this.lectureId < input.lectureId) {
+                } else {
                     return -1;
                 }
 
-            break;
             case 3:
-                if (this.getResourceType().ordinal() >= input.getResourceType().ordinal()) {
+                if (this.getResourceType().ordinal() >= o.getResourceType().ordinal()) {
                     return 1;
-                } else if (this.getResourceType().ordinal() < input.getResourceType().ordinal()) {
+                } else if (this.getResourceType().ordinal() < o.getResourceType().ordinal()) {
                     return -1;
                 }
 

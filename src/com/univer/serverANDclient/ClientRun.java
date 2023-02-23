@@ -10,7 +10,7 @@ public class ClientRun implements Runnable{
 
     private static final String SERVER_ADDRESS = "127.0.0.1";
     private static final int SERVER_PORT = 1234;
-    private static final int B_SIZE = 32;
+
 
 
     public static void startClientRun() throws IOException {
@@ -27,7 +27,7 @@ public class ClientRun implements Runnable{
         InputStream in = socket.getInputStream();
         OutputStream out = socket.getOutputStream();
 
-        //out.write(data);
+
 
         int totalDataGot = 0;
         int bytesResived = 0; // Bytes recived in last read
@@ -49,9 +49,7 @@ public class ClientRun implements Runnable{
 
         socket.close();
 
-        //<JAVA_HOME>/jre/lib
-        //<JAVA_HOME>/jre/lib/ext java.ext.dirs
-        // sun.mics.Loader
+
     }
 
 

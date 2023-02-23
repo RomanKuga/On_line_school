@@ -5,7 +5,6 @@ import com.univer.log.LogLevel;
 import com.univer.models.*;
 import com.univer.repository.*;
 import com.univer.serverANDclient.MenuServAndClient;
-import com.univer.service.AdjustmentLogFile;
 import com.univer.service.GlobalMenu;
 
 import java.io.IOException;
@@ -68,8 +67,7 @@ public class Main {
         addMaterial.getModelsList().add(new AddMaterial(1, "agssfs",2,ResourceType.VIDEO));
         addMaterial.getModelsList().add(new AddMaterial(2, " aequations",3,ResourceType.URL));
         LogCreateObject.logInfo(Main.class.getName(), LogLevel.INFO.name(), "Внесення початкових даних ", LocalDateTime.now());
-        AdjustmentLogFile menuALF= new AdjustmentLogFile();
-menuALF.AdjustmentLogFile();
+
         GlobalMenu glMenu = new GlobalMenu();
         glMenu.globalMenu(repositoryLecture, dataPerson,tempHomeWork,addMaterial, dataCourse);
 

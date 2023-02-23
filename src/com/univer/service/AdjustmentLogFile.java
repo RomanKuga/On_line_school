@@ -7,7 +7,7 @@ import com.univer.log.LogWriter;
 import java.io.IOException;
 
 public class AdjustmentLogFile {
-    public void AdjustmentLogFile() throws IOException {
+    public void menuAdjustmentLogFile() throws IOException {
         int df = 1;
         while (df == 1) {
             System.out.println("""

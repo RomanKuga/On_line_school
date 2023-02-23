@@ -1,6 +1,7 @@
 package com.univer.log;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 
 public class Log {
     private String name;
@@ -27,6 +28,6 @@ public class Log {
 
     @Override
     public String toString() {
-        return " "+name+"  "+logLevel+"  "+massage+ "  " +localDate+"   "+ stackTrace+"\n";
+        return " "+name+"  "+logLevel+"  "+massage+ "  " +localDate+"   "+ Arrays.toString(stackTrace) +"\n";
     }
 }

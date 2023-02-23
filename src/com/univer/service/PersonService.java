@@ -69,8 +69,7 @@ public class PersonService {
                     pt.printTreeSet(sortPersonList);
                     break;
                 case 7:
-                    AdjustmentLogFile menuALF= new AdjustmentLogFile();
-                    menuALF.AdjustmentLogFile();
+                    new AdjustmentLogFile().menuAdjustmentLogFile();
                     break;
                 case 8:
                     numberNext = 2;
@@ -91,9 +90,8 @@ public class PersonService {
                        Добавити персону вказавши місце в масиві - 2""");
         System.out.println("Розмір масива Персони " + dataPerson.getModelsList().size());
         ValidationUtil testing = new ValidationUtil();
-        int numberPers = testing.testInt();
-        ServiceValidator test = new ServiceValidator();
-        if ((test.validatorNumber(numberPers)) && (numberPers ==2)) {
+        int numberPers = new ServiceValidator().validatorNumber();
+        if (numberPers ==2) {
             System.out.println("Введіть номер в масиві");
             arrayNumber = testing.testInt();
         }
@@ -113,6 +111,7 @@ public class PersonService {
         }
         System.out.println("Введіть мобільний телефон персони, у форматі 0ххххххххх без коду країни");
         String phone = scanner.next();
+        ServiceValidator test = new ServiceValidator();
         boolean phoneControl = false;
         while (!phoneControl) {
             test.validatorPhone(phone);

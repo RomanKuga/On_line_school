@@ -40,20 +40,20 @@ public class Course extends MasterModels implements Comparable<Course>{
 
     @Override
     public int compareTo(Course o) {
-        Course input =  o;
-        if (name.length() > input.name.length()) {
+
+        if (name.length() > o.name.length()) {
             for (int i = 0; i < name.length() - 1; i++) {
-                if (this.name.charAt(i) > input.name.charAt(i)) {
+                if (this.name.charAt(i) > o.name.charAt(i)) {
                     return 1;
-                } else if (this.name.charAt(i) < input.name.charAt(i)) {
+                } else if (this.name.charAt(i) < o.name.charAt(i)) {
                     return -1;
                 }
             }
         }else {
-            for (int i = 0; i < input.name.length() - 1; i++) {
-                if (this.name.charAt(i) > input.name.charAt(i)) {
+            for (int i = 0; i < o.name.length() - 1; i++) {
+                if (this.name.charAt(i) > o.name.charAt(i)) {
                     return 1;
-                } else if (this.name.charAt(i) < input.name.charAt(i)) {
+                } else if (this.name.charAt(i) < o.name.charAt(i)) {
                     return -1;
                 }
             }

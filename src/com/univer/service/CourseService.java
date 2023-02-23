@@ -67,8 +67,8 @@ public class CourseService {
                     pt.printTreeSet(sortCourseList);
                     break;
                 case 7:
-                    AdjustmentLogFile menuALF= new AdjustmentLogFile();
-                    menuALF.AdjustmentLogFile();
+                    new AdjustmentLogFile().menuAdjustmentLogFile();
+
                     break;
                 case 8:
                     numberNext = 2;
@@ -88,9 +88,9 @@ public class CourseService {
                 Добавити курс вказавши місце в масиві - 2""");
         System.out.println("Розмір масива Курс " + dataCourse.getModelsList().size());
         ValidationUtil testing = new ValidationUtil();
-        int number = testing.testInt();
-        ServiceValidator test = new ServiceValidator();
-        if ((test.validatorNumber(number)) && (number == 2)) {
+        int number = new ServiceValidator().validatorNumber();
+
+        if (number == 2) {
             System.out.println("Введіть номер в масиві");
             arrayNumber = testing.testInt();
         }

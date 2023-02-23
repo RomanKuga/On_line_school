@@ -82,8 +82,7 @@ public class LecturesService {
                     pt.printArray( repositoryLecture.findAll());
                     break;
                 case 6:
-                    AdjustmentLogFile menuALF= new AdjustmentLogFile();
-                    menuALF.AdjustmentLogFile();
+                    new AdjustmentLogFile().menuAdjustmentLogFile();
                     break;
                 case 7:
                     numberNext = 2;
@@ -106,10 +105,10 @@ public class LecturesService {
                 Добавити лекцію вказавши місце в масиві - 2""");
         System.out.println("Розмір масива лекції " + repositoryLecture.getModelsList().size());
         ValidationUtil testing = new ValidationUtil();
-        int numberLect = testing.testInt();
+        int numberLect = new ServiceValidator().validatorNumber();
 
-        ServiceValidator test = new ServiceValidator();
-        if ((test.validatorNumber(numberLect)) && (numberLect == 2)) {
+
+        if (numberLect == 2) {
             System.out.println("Введіть номер в масиві");
             arrayNumber = testing.testInt();
         }
@@ -125,7 +124,7 @@ public class LecturesService {
         while (iterator.hasNext()){
             Person personTmp= (Person) iterator.next();
             if ((personTmp != null) && (personTmp.getRole() == role)) {
-                System.out.println(personTmp.toString());
+                System.out.println(personTmp);
             }
         }
         int personID = testing.testInt();
@@ -135,9 +134,9 @@ public class LecturesService {
                 Домашнє завдання до лекції задавати?
                  Так - 1
                  Ні  - 2""");
-        int numberWork = testing.testInt();
+        int numberWork = new ServiceValidator().validatorNumber();
 
-        if ((test.validatorNumber(numberWork)) && (numberWork == 1)) {
+        if (numberWork == 1) {
             System.out.println("Введіть ID домашнього завдання");
             int homeId = testing.testInt();
             System.out.println("Введіть домашнє завтання");

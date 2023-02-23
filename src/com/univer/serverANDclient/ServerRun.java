@@ -1,18 +1,26 @@
 package com.univer.serverANDclient;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
+import java.net.SocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 public class ServerRun implements Runnable {
     private static final int SERVER_PORT = 1234;
     private ByteBuffer buffer = ByteBuffer.allocateDirect(1024);
+    private static final String BlackList_STORAGE_FILE = "src/com/univer/BlackList.txt";
     private boolean stanSelector;
 
 
@@ -42,20 +50,18 @@ public class ServerRun implements Runnable {
             }
 
 
-            Iterator it = selector.selectedKeys().iterator();
+            Iterator<SelectionKey> it = selector.selectedKeys().iterator();
 
 
             while (it.hasNext()) {
-                SelectionKey key = (SelectionKey) it.next();
+                SelectionKey key =  it.next();
                 if (key.isAcceptable()) {
                     ServerSocketChannel server = (ServerSocketChannel) key.channel();
                     SocketChannel channel = serverSocketChannel.accept();
 
-                    String formIPchapter = "\\:\\d{4,5}";
-                    String channelIp = String.valueOf(channel.getLocalAddress());
-                    String channelIpTest = channelIp.substring(1);
-                    channelIpTest=channelIpTest.replaceAll(formIPchapter, "");
-                    if (!BlackListWriteRemove.printBlackList().contains(channelIpTest)){
+
+
+                    if (!isInBlacklist(channel.getLocalAddress(),loadBlacklistFromFile())){
                     registerChannel(selector, channel, n);
                     }else {
                     channel.close();
@@ -86,7 +92,7 @@ public class ServerRun implements Runnable {
 
     }
 
-    //reading data from channel
+
     private void readData(SelectionKey key) throws IOException {
         SocketChannel socketChannel = (SocketChannel) key.channel();
 
@@ -103,6 +109,24 @@ public class ServerRun implements Runnable {
         }
 
     }
+    private static Set<String> loadBlacklistFromFile() throws IOException {
+        Set<String> blacklist = new HashSet<>();
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(BlackList_STORAGE_FILE), StandardCharsets.UTF_8)) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                blacklist.add(line.trim());
+            }
+        } catch (IOException e) {
+            System.err.println("Error loading blacklist from file: " + e.getMessage());
+            throw e;
+        }
+        return blacklist;
+    }
+
+    private static boolean isInBlacklist(SocketAddress socketAddress, Set<String> blacklist) {
+        String ip = ((InetSocketAddress) socketAddress).getAddress().getHostAddress();
+        return blacklist.contains(ip);
+    }
 
 
     @Override
@@ -110,6 +134,7 @@ public class ServerRun implements Runnable {
         try {
 
             new ServerRun().start();
+
 
         } catch (IOException e) {
             System.out.println("Помилка запуску сервера");

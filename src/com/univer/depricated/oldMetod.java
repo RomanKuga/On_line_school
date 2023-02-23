@@ -1,5 +1,9 @@
 package com.univer.depricated;
-
+//                    String formIPchapter = "\\:\\d{4,5}";
+//                    String channelIp = String.valueOf(channel.getLocalAddress());
+//                    String channelIpTest = channelIp.substring(1);
+//                    channelIpTest=channelIpTest.replaceAll(formIPchapter, "");
+//                    !BlackListWriteRemove.printBlackList().contains(channelIpTest)
 public class oldMetod {
 
 //     case 2:

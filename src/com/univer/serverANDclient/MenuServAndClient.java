@@ -26,14 +26,13 @@ public class MenuServAndClient {
                 }
                 case 2 -> {
                     Thread chanelClient = new Thread(new ClientRun());
+                    chanelClient.setDaemon(true);
                     chanelClient.start();
                 }
-                case 3 -> {
-                    menuBlackList();
-                 }
-                case 4 -> {
-                    df = 2;
-                }
+                case 3 ->  menuBlackList();
+
+                case 4 ->  df = 2;
+
 
                 default -> System.out.println("Такої категорії не існує");
             }

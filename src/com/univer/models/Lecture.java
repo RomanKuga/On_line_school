@@ -5,7 +5,7 @@ import com.univer.repository.RepositoryHomeWork;
 public class Lecture extends MasterModels {
 
     private static int calc;
-    private Integer id;
+
     private static Integer courseID;
     private String name;
     private String description;
@@ -14,7 +14,7 @@ public class Lecture extends MasterModels {
 
     public Lecture(Integer id, Integer courseID, String name, Integer personId, String description, RepositoryHomeWork homeWork) {
         super(id);
-        this.courseID = courseID;
+        Lecture.courseID = courseID;
         this.name = name;
         this.personId = personId;
         this.description = description;

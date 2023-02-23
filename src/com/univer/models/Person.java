@@ -84,20 +84,20 @@ public class Person extends MasterModels implements Comparable<Person> {
 
     @Override
     public int compareTo(Person o) {
-        Person input =  o;
-        if (secondName.length() > input.secondName.length()) {
+
+        if (secondName.length() > o.secondName.length()) {
             for (int i = 0; i < secondName.length() - 1; i++) {
-                if (this.secondName.charAt(i) > input.secondName.charAt(i)) {
+                if (this.secondName.charAt(i) > o.secondName.charAt(i)) {
                     return 1;
-                } else if (this.secondName.charAt(i) < input.secondName.charAt(i)) {
+                } else if (this.secondName.charAt(i) < o.secondName.charAt(i)) {
                     return -1;
                 }
             }
         }else {
-            for (int i = 0; i < input.secondName.length() - 1; i++) {
-                if (this.secondName.charAt(i) > input.secondName.charAt(i)) {
+            for (int i = 0; i < o.secondName.length() - 1; i++) {
+                if (this.secondName.charAt(i) > o.secondName.charAt(i)) {
                     return 1;
-                } else if (this.secondName.charAt(i) < input.secondName.charAt(i)) {
+                } else if (this.secondName.charAt(i) < o.secondName.charAt(i)) {
                     return -1;
                 }
             }

@@ -1,11 +1,11 @@
 package com.univer.service;
 
+import com.univer.errorMenuService.ValidationUtil;
 import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,17 +34,17 @@ public class ServiceValidator {
         return false;
     }
 
-    public boolean validatorNumber(int number){
-        Scanner scanner = new Scanner(System.in);
+    public int validatorNumber() throws IOException {
+        int number = new ValidationUtil().testInt();
         boolean control = false;
         while (!control) {
 
             if ((number != 1) && (number!=2)) {
                 System.out.println("Ви ввели невірний номер спробуйте знову ");
-                number = scanner.nextInt();
+                number = new ValidationUtil().testInt();
             } else { control=true;}
         }
-        return true;
+        return number;
     }
     public boolean validatorIP(String adressIP){
         String formIPchapter = "(\\d{1,2}|(0|1)\\d{2}|2[0-4]\\d|25[0-5])";

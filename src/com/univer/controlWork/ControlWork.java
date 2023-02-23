@@ -4,6 +4,7 @@ import com.univer.models.Person;
 import com.univer.models.Role;
 import com.univer.repository.RepositoryPerson;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class ControlWork implements Runnable{
@@ -35,7 +36,7 @@ public class ControlWork implements Runnable{
 
 
     }
-public  void rundomStudent(RepositoryPerson repositoryPerson){
+public  void randomStudent(RepositoryPerson repositoryPerson){
 
             for (int i=0; i<student.length; i++) {
                 int index = 1;
@@ -43,8 +44,9 @@ public  void rundomStudent(RepositoryPerson repositoryPerson){
                     student[i] = (int) (Math.random() * 10 + 1);
                     int k = 0;
                     for (int j = 0; j < i; j++) {
-                        if ((student[i] == student[j]) && (i != j)) {
+                        if (Objects.equals(student[i], student[j])) {
                             k = 1;
+                            break;
                         }
                     }
                     if (k != 1) {

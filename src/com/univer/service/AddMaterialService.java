@@ -86,8 +86,8 @@ public class AddMaterialService {
                     }
                     break;
                 case 7:
-                    AdjustmentLogFile menuALF= new AdjustmentLogFile();
-                    menuALF.AdjustmentLogFile();
+                    new AdjustmentLogFile().menuAdjustmentLogFile();
+
                     break;
                 case 8:
                     numberNext = 2;
@@ -111,9 +111,9 @@ public class AddMaterialService {
                 Добавити додаткові матеріали вказавши місце в масиві - 2""");
         System.out.println("Розмір масива додаткові матеріали " + addMaterial.getModelsList().size());
         ValidationUtil testing = new ValidationUtil();
-        int numberAdd = testing.testInt();
-        ServiceValidator test = new ServiceValidator();
-        if ((test.validatorNumber(numberAdd)) && (numberAdd == 2)) {
+        int numberAdd = new ServiceValidator().validatorNumber();
+
+        if  (numberAdd == 2) {
             System.out.println("Введіть номер в масиві");
             arrayNumber = testing.testInt();
         }
@@ -135,10 +135,8 @@ public class AddMaterialService {
             int resourceNumber = testing.testInt();
 
             switch (resourceNumber) {
-                case 0 -> {
-                    resourceType = ResourceType.URL;
-                    temp = 2;
-                }
+                case 0 ->  temp = 2;
+
                 case 1 -> {
                     resourceType = ResourceType.VIDEO;
                     temp = 2;
@@ -147,10 +145,8 @@ public class AddMaterialService {
                     resourceType = ResourceType.BOOK;
                     temp = 2;
                 }
-                default -> {
-                    System.out.println("Такої категорії не існує");
-                    temp = 1;
-                }
+                default ->  System.out.println("Такої категорії не існує");
+
             }
         }
         if (numberAdd == 2) {
