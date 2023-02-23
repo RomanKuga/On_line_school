@@ -64,10 +64,10 @@ public class GlobalMenu {
                         executorService.execute(new ControlWork(i));
                     }
 
-                    executorService.awaitTermination(12, SECONDS);
+                    if (executorService.awaitTermination(12, SECONDS)){
 
                     executorService.shutdownNow();
-                    System.out.println(executorService);
+                    System.out.println(executorService);}
                 }
                 case 6 ->  new AdjustmentLogFile().menuAdjustmentLogFile();
 

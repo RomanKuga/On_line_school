@@ -21,13 +21,15 @@ public class BlackListWriteRemove {
              FileChannel fileReader = new FileInputStream(BlackList_STORAGE_FILE).getChannel()) {
             File file = new File(BlackList_STORAGE_FILE);
             int k = 0;
-            while (!file.exists()) {
-                file.createNewFile();
-                k++;
-                if (k == 2) {
-                    System.out.println("Проблема зі створенням фала");
-                    break;
+            if(!file.exists()) {
+                while (!file.createNewFile()) {
+                    k++;
+                    if (k == 2) {
+                        System.out.println("Проблема зі створенням фала");
+                        break;
+                    }
                 }
+
             }
             ByteBuffer buffer = ByteBuffer.allocate(B_SIZE);
             fileReader.read(buffer);
@@ -58,18 +60,20 @@ public class BlackListWriteRemove {
 
     }
 
+
     public static void removeBlackList(String BlackListIP) throws IOException {
 
         try (FileChannel fileReader = new FileInputStream(BlackList_STORAGE_FILE).getChannel()) {
-            File file = new File(BlackList_STORAGE_FILE);
+            File file= new File(BlackList_STORAGE_FILE);
             int k = 0;
-            while (!file.exists()) {
-                System.out.println("Cndjhtyyz fjh");
-                file.createNewFile();
-                k++;
-                if (k == 2) {
-                    System.out.println("Проблема зі створенням фала");
-                    break;
+            if (!file.exists()) {
+
+                while (file.createNewFile()) {
+                    k++;
+                    if (k == 2) {
+                        System.out.println("Проблема зі створенням фала");
+                        break;
+                    }
                 }
             }
             ByteBuffer buffer = ByteBuffer.allocate(B_SIZE);
@@ -92,6 +96,7 @@ public class BlackListWriteRemove {
                 }
             }
 
+
         } catch (IOException e) {
             LogCreateObject.error(LogWriter.class.getName(), LogLevel.ERROR.name(),
                     "Error during io example", LocalDateTime.now(),
@@ -102,14 +107,16 @@ public class BlackListWriteRemove {
     public static String printBlackList() throws IOException {
 
         try (FileChannel fileReader = new FileInputStream(BlackList_STORAGE_FILE).getChannel()) {
+
             File file = new File(BlackList_STORAGE_FILE);
             int k = 0;
-            while (!file.exists()) {
-                file.createNewFile();
-                k++;
-                if (k == 2) {
-                    System.out.println("Проблема зі створенням фала");
-                    break;
+            if (!file.exists()) {
+                while (file.createNewFile()) {
+                    k++;
+                    if (k == 2) {
+                        System.out.println("Проблема зі створенням фала");
+                        break;
+                    }
                 }
             }
             ByteBuffer buffer = ByteBuffer.allocate(B_SIZE);

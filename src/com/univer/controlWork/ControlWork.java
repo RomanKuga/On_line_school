@@ -28,8 +28,8 @@ public class ControlWork implements Runnable{
 
                TimeUnit.SECONDS.sleep(rundomTime);
             } catch (InterruptedException e) {
-                Thread.interrupted();
-                System.out.println("Студент №" + (taskNumber+1) + "  не встиг завершити завдання, час виконання  "+ rundomTime);
+               if( Thread.interrupted()){
+                System.out.println("Студент №" + (taskNumber+1) + "  не встиг завершити завдання, час виконання  "+ rundomTime);}
 
             }
         System.out.println("Студент №" + (taskNumber+1) + " завершив завдання, час виконання  "+ rundomTime);

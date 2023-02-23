@@ -28,12 +28,14 @@ public class LogWriter {
             String logAdjustment = String.copyValueOf(chars);
             File file = new File(LOG_STORAGE_FILE);
             int k = 0;
-            while (!file.exists()) {
-                file.createNewFile();
-                k++;
-                if (k == 2) {
-                    System.out.println("Проблема зі створенням фала");
-                    break;
+            if (!file.exists()) {
+
+                while (file.createNewFile()) {
+                    k++;
+                    if (k == 2) {
+                        System.out.println("Проблема зі створенням фала");
+                        break;
+                    }
                 }
             }
             if (!logAdjustment.equals("OFF")) {
@@ -69,14 +71,16 @@ public class LogWriter {
     public static void writeAdjustmentFile(String logLevel) throws IOException {
 
         try (Writer writer = new OutputStreamWriter(new FileOutputStream(LOG_ADJUSTMENT_FILE))) {
-            File file = new File(LOG_ADJUSTMENT_FILE);
+            File fileLogAdjustment = new File(LOG_ADJUSTMENT_FILE);
             int k = 0;
-            while (!file.exists()) {
-                file.createNewFile();
-                k++;
-                if (k == 2) {
-                    System.out.println("Проблема зі створенням фала");
-                    break;
+            if (!fileLogAdjustment.exists()) {
+
+                while (fileLogAdjustment.createNewFile()) {
+                    k++;
+                    if (k == 2) {
+                        System.out.println("Проблема зі створенням фала");
+                        break;
+                    }
                 }
             }
             writer.write(logLevel);
