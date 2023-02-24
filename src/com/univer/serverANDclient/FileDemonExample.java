@@ -17,7 +17,9 @@ public class FileDemonExample {
             path.getParent().register(watchService, StandardWatchEventKinds.ENTRY_MODIFY);
 
             while (true) {
+
                 WatchKey watchKey = watchService.take();
+
                 for (WatchEvent<?> event : watchKey.pollEvents()) {
                     if(event.context().equals(path.getFileName())) {
                         try(Stream<String> lines = Files.lines(path)) {
@@ -32,9 +34,7 @@ public class FileDemonExample {
                     break;
                 }
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
 

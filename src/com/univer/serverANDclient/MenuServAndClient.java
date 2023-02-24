@@ -26,7 +26,6 @@ public class MenuServAndClient {
                 }
                 case 2 -> {
                     Thread chanelClient = new Thread(new ClientRun());
-                    chanelClient.setDaemon(true);
                     chanelClient.start();
                 }
                 case 3 ->  menuBlackList();
