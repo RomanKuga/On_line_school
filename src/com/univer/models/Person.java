@@ -1,7 +1,12 @@
 package com.univer.models;
 
-public class Person extends MasterModels implements Comparable<Person> {
+import java.io.Serial;
+import java.io.Serializable;
 
+public class Person extends MasterModels implements Comparable<Person>, Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 0xf427d7a2328852a0L;
     private static int calc;
 
     private Integer courseId;
@@ -79,7 +84,7 @@ public class Person extends MasterModels implements Comparable<Person> {
     public String toString() {
         return "//  Person id = " + getPersonID() + "/  CourseID--  " + getCourseId() +
                 "/ FirstName-- " + getFirstName() + "/ SecondName-- " + getSecondName() + "/ Role-- " + getRole() +
-                "/ Phone-- " + getPhone() + "/ Email-- " + getEmail() + "//";
+                "/ Phone-- " + getPhone() + "/ Email-- " + getEmail() + "//"+"\n";
     }
 
     @Override

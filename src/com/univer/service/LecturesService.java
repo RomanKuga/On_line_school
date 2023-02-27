@@ -52,8 +52,8 @@ public class LecturesService {
                     int numberLect = test.testInt();
                     System.out.println(repositoryLecture.getModelsList().get(numberLect));
                     if (repositoryLecture.getModelsList().get(numberLect) != null) {
-                        System.out.println(createMapHomeWork(homeWork).get(numberLect+1));
-                        System.out.println(createMapHomeWork(addMaterial).get(numberLect+1));
+                        System.out.println(RepositoryHomeWork.getInstance().createMapHomeWork().get(numberLect+1));
+                        System.out.println(RepositoryAddMaterial.getInstance().createMapAddMaterial().get(numberLect+1));
                     }
                     break;
                 case 3:
@@ -153,26 +153,5 @@ public class LecturesService {
 
 
     }
-     public Map<Integer,List <MasterModels>> createMapHomeWork (RepositoryMaster master) throws IOException {
-         LogCreateObject.logInfo(this.getClass().getName(), LogLevel.INFO.name(), "Побудова Map ", LocalDateTime.now());
-        Map<Integer, List<MasterModels>> mapHomeWork = new HashMap<>();
-        for(int i=0; i<repositoryLecture.getModelsList().size(); i++) {
-            List<MasterModels> tempList = new ArrayList<>();
-            if (repositoryLecture.getModelsList().get(i)!= null) {
-            for (int j=0; j<master.getModelsList().size(); j++) {
-                MasterModels tempHome =  master.getModelsList().get(j);
-
-                    if (repositoryLecture.getModelsList().get(i).getID() == tempHome.getLectureId()) {
-                        tempList.add(master.getModelsList().get(j));
-                    }
-                }
-            mapHomeWork.put(repositoryLecture.getModelsList().get(i).getID(), tempList);
-            }
-        }
-         LogCreateObject.logDebug(this.getClass().getName(), LogLevel.DEBUG.name(), "Map - побудована ", LocalDateTime.now());
-        return mapHomeWork;
-     }
-
-
 
 }

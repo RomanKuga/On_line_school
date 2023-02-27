@@ -2,10 +2,15 @@ package com.univer.models;
 
 import com.univer.repository.RepositoryHomeWork;
 
-public class Lecture extends MasterModels {
+import java.io.Serial;
+import java.io.Serializable;
 
+public class Lecture extends MasterModels implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1766929690445523022L;
     private static int calc;
-
+    private   Integer id;
     private static Integer courseID;
     private String name;
     private String description;
@@ -13,7 +18,7 @@ public class Lecture extends MasterModels {
      RepositoryHomeWork homeWork;
 
     public Lecture(Integer id, Integer courseID, String name, Integer personId, String description, RepositoryHomeWork homeWork) {
-        super(id);
+        this.id=id;
         Lecture.courseID = courseID;
         this.name = name;
         this.personId = personId;
@@ -21,6 +26,8 @@ public class Lecture extends MasterModels {
         this.homeWork=homeWork;
         calc++;
     }
+
+
 
     public Lecture() {
     }
@@ -33,21 +40,21 @@ public class Lecture extends MasterModels {
         return personId;
     }
 
-    @Override
+
     public int getID() {
-        return super.getID();
+        return id;
     }
 
     @Override
     public Integer getLectureId() {
-        return 0;
+        return super.getID();
     }
 
     public void setCalcLecture() {
         calc--;
     }
 
-    public static int getCourseIDLecture() {
+    public  int getCourseIDLecture() {
 
         return courseID;
     }
@@ -60,10 +67,10 @@ public class Lecture extends MasterModels {
     public String toString() {
        if (getHomeWork()!=null) {
            return "//  Int object with id = " + getID() + "/  CourseID--  " + courseID + "/ NameLecture-- " + name +
-                   "/ PersonID-- " + personId + "/ Description-- " + description + "/ HomeWork-- є домашнє завдання//";
+                   "/ PersonID-- " + personId + "/ Description-- " + description + "/ HomeWork-- є домашнє завдання//"+"\n";
        }else {
            return "//  Int object with id = " + getID() + "/  CourseID--  " + courseID + "/ NameLecture-- " + name +
-                   "/ PersonID-- " + personId + "/ Description-- " + description + "/ HomeWork--домашнє завдання відсутнє//";
+                   "/ PersonID-- " + personId + "/ Description-- " + description + "/ HomeWork--домашнє завдання відсутнє//"+"\n";
        }
     }
 }

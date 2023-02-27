@@ -2,15 +2,20 @@ package com.univer.models;
 
 import com.univer.service.AddMaterialService;
 
-public  class AddMaterial extends MasterModels implements Comparable<AddMaterial> {
-    private static int calc;
+import java.io.Serial;
+import java.io.Serializable;
 
+public  class AddMaterial extends MasterModels implements Comparable<AddMaterial>, Serializable {
+    @Serial
+    private static final long serialVersionUID = 0x9bf68927f1e6c00aL;
+    private static int calc;
+private  Integer id;
     private String nameAddMaterials;
     private Integer lectureId;
     private ResourceType resourceType;
 
     public AddMaterial(Integer id, String nameAddMaterials, Integer lectureId, ResourceType resourceType) {
-        super(id);
+        this.id=id;
         this.nameAddMaterials = nameAddMaterials;
         this.lectureId = lectureId;
         this.resourceType = resourceType;
@@ -21,9 +26,9 @@ public  class AddMaterial extends MasterModels implements Comparable<AddMaterial
         return calc;
     }
 
-    @Override
+
     public int getID() {
-        return super.getID();
+        return id;
     }
 
     public String getNameAddMaterials() {
@@ -44,7 +49,7 @@ public  class AddMaterial extends MasterModels implements Comparable<AddMaterial
     @Override
     public String toString() {
         return "//  AddMaterials id = " + getID() + "/  Назва додаткових матеріалів--  " + getNameAddMaterials() +
-                "/ ID лекції-- " + getLectureId() + "/ Залучені типи додаткових завдань-- " + getResourceType() + "//";
+                "/ ID лекції-- " + getLectureId() + "/ Залучені типи додаткових завдань-- " + getResourceType() + "//"+ "\n";
     }
 
     @Override
