@@ -49,12 +49,20 @@ public class CourseService {
                     System.out.println("Ви вибрали відкрити курс, кількість курсів-" + courseExample.getCalcCourse() +
                             " / ведіть номер курсу від 0 до " + (courseExample.getCalcCourse() - 1));
                     numberPers = testing.testInt();
+                    while  (numberPers > courseExample.getCalcCourse()-1) {
+                        System.out.println("Ввели номер, який не є впроміжку номерів курсу, спробуйте ще");
+                        numberPers = testing.testInt();
+                    }
                     System.out.println(dataCourse.getModelsList().get(numberPers));
                     break;
                 case 3:
                     System.out.println("Ви вибрали видалити курс, кількість курсів-" + courseExample.getCalcCourse() +
                             " / ведіть номер курсу від 0 до " + (courseExample.getCalcCourse() - 1));
                     numberPers = testing.testInt();
+                    while  (numberPers > courseExample.getCalcCourse()-1) {
+                        System.out.println("Ввели номер, який не є впроміжку номерів курсу, спробуйте ще");
+                        numberPers = testing.testInt();
+                    }
                     this.dataCourse.getModelsList().remove(numberPers);
                     pt.printArray(this.dataCourse.getModelsList());
                     break;
@@ -77,7 +85,6 @@ public class CourseService {
                         System.out.println("Ввели номер, який не є впроміжку номерів курсу, спробуйте ще");
                         numberPers = testing.testInt();
                     }
-
                     List<Lecture> tempLecture = RepositoryLecture.getInstance().createMapLecture().get(numberPers);
                     List<HomeWork> newTempHomeWork = new ArrayList<>();
                     List<AddMaterial> newTempAddMaterial = new ArrayList<>();
