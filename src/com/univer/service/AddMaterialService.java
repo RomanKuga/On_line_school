@@ -10,9 +10,7 @@ import com.univer.repository.RepositoryAddMaterial;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Scanner;
-import java.util.TreeSet;
+import java.util.*;
 
 public class AddMaterialService {
     private RepositoryAddMaterial addMaterial;
@@ -30,14 +28,14 @@ public class AddMaterialService {
 
     public void menuAddMaterials(RepositoryAddMaterial addMaterial) throws IOException {
         this.addMaterial = addMaterial;
-        AddMaterial addMaterialExample = new AddMaterial();
+
         int numberNext = 1;
         while (numberNext < 2) {
             LogCreateObject.logInfo(this.getClass().getName(), LogLevel.INFO.name(), "Перехід до меню Додаткові матеріали ", LocalDateTime.now());
             System.out.println("1. Добавити додаткові матеріали");
             System.out.println("2. Відкрити вибрані додаткові матеріали");
             System.out.println("3. Видалити вибрані додаткові матеріали");
-            System.out.println("4. Вивести список додаткових матеріалів на екран");
+            System.out.println("4. Вивести список додаткових матеріалів на екран відсортованих за лекціями");
             System.out.println("5. Вивести список додаткових матеріалів на екран ,без елементів масива із значенням null ");
             System.out.println("6. Відсортувати додаткові матеріали");
             System.out.println("7. Виберіть LEVEL для запису логів у файл");
@@ -51,20 +49,23 @@ public class AddMaterialService {
                     pt.addMaterialsServiceAdd(addMaterial);
                     break;
                 case 2:
-                    System.out.println("Ви вибрали відкрити персони, кількість персон-" + addMaterialExample.getCalc() +
-                            " / ведіть номер персони від 0 до " + (addMaterialExample.getCalc() - 1));
+                    System.out.println("Ви вибрали відкрити персони, кількість персон-" + AddMaterial.getCalc() +
+                            " / ведіть номер персони від 0 до " + (AddMaterial.getCalc() - 1));
                     numberPers = testing.testInt();
                     System.out.println(addMaterial.getModelsList().get(numberPers));
                     break;
                 case 3:
-                    System.out.println("Ви вибрали видалити персону, кількість персон-" + addMaterialExample.getCalc() +
-                            " / ведіть номер персони від 0 до " + (addMaterialExample.getCalc() - 1));
+                    System.out.println("Ви вибрали видалити персону, кількість персон-" + AddMaterial.getCalc() +
+                            " / ведіть номер персони від 0 до " + (AddMaterial.getCalc() - 1));
                     numberPers = testing.testInt();
                     this.addMaterial.getModelsList().remove(numberPers);
                     pt.printArray(this.addMaterial.getModelsList());
                     break;
                 case 4:
-                    pt.printArray(this.addMaterial.getModelsList());
+                    Map<Integer,List <AddMaterial>> listMap =RepositoryAddMaterial.getInstance().createMapAddMaterial();
+                    Collection<List<AddMaterial>> ters =listMap.values();
+                    ters.forEach(System.out::println);
+
                     break;
                 case 5:
                     pt.printArray(this.addMaterial.findAll());

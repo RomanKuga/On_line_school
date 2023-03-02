@@ -3,9 +3,13 @@ package com.univer.service;
 import com.univer.errorMenuService.ValidationUtil;
 import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
+import com.univer.log.LogWriter;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -39,17 +43,20 @@ public class ServiceValidator {
         boolean control = false;
         while (!control) {
 
-            if ((number != 1) && (number!=2)) {
+            if ((number != 1) && (number != 2)) {
                 System.out.println("Ви ввели невірний номер спробуйте знову ");
                 number = new ValidationUtil().testInt();
-            } else { control=true;}
+            } else {
+                control = true;
+            }
         }
         return number;
     }
-    public boolean validatorIP(String adressIP){
+
+    public boolean validatorIP(String adressIP) {
         String formIPchapter = "(\\d{1,2}|(0|1)\\d{2}|2[0-4]\\d|25[0-5])";
-        String formAllIP= formIPchapter+"\\."+formIPchapter+"\\."+formIPchapter+"\\."+formIPchapter;
-        if ((adressIP==null)||(adressIP.contains("[a-zA-Z]"))){
+        String formAllIP = formIPchapter + "\\." + formIPchapter + "\\." + formIPchapter + "\\." + formIPchapter;
+        if ((adressIP == null) || (adressIP.contains("[a-zA-Z]"))) {
             System.out.println("IP адрес введений неправильно спробуте знов");
             return false;
         }
@@ -57,5 +64,27 @@ public class ServiceValidator {
         Matcher matcher = pattern.matcher(adressIP);
         return matcher.matches();
 
+    }
+
+    public LocalDateTime validatorTime(String strTimeDate) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        LocalDateTime localDateTime = null;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+        boolean valid = false;
+        while (!valid) {
+            try {
+                strTimeDate = strTimeDate.trim();
+                localDateTime = LocalDateTime.parse(strTimeDate, formatter);
+
+                valid = true;
+            } catch (DateTimeParseException ex) {
+                System.out.println(LogCreateObject.error(LogWriter.class.getName(), LogLevel.ERROR.name(),
+                        "Ви набрали Дату і Час не відповідного формату, спробуйте знов!", LocalDateTime.now(),
+                        ex.getStackTrace()));
+                strTimeDate = scanner.nextLine();
+            }
+
+        }
+        return localDateTime;
     }
 }

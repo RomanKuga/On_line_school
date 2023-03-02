@@ -6,6 +6,7 @@ import com.univer.models.*;
 import com.univer.repository.*;
 import com.univer.serverANDclient.MenuServAndClient;
 import com.univer.service.GlobalMenu;
+import com.univer.service.ServiceValidator;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -35,12 +36,12 @@ public class Main {
     
 
         RepositoryLecture repositoryLecture = RepositoryLecture.getInstance();
-        repositoryLecture.getModelsList().add(new Lecture(1, course.getCourseID(), "quadratic equations", 1, "Wers1", tempHomeWork));
-        repositoryLecture.getModelsList().add(new Lecture(2, course.getCourseID(), "equations", 1, "Wers2", null));
-        repositoryLecture.getModelsList().add(new Lecture(3, course.getCourseID(), "line equations part 1", 12, "Wers3", null));
-        repositoryLecture.getModelsList().add(new Lecture(4, course.getCourseID(), "line equations part 2", 11, "Wers4", null));
-        repositoryLecture.getModelsList().add(new Lecture(5, course.getCourseID(), "line equations part 3", 2, "Wers5", null));
-        repositoryLecture.getModelsList().add(new Lecture(6, course.getCourseID(), "line equations part 4", 2, "Wers6", null));
+        repositoryLecture.getModelsList().add(new Lecture(1, course.getCourseID(), "quadratic equations", 1, "Wers1", tempHomeWork, new ServiceValidator().validatorTime("10.02.2022 12:30")));
+        repositoryLecture.getModelsList().add(new Lecture(2, course.getCourseID(), "equations", 1, "Wers2", null,new ServiceValidator().validatorTime("12.02.2022 12:30")));
+        repositoryLecture.getModelsList().add(new Lecture(3, course.getCourseID(), "line equations part 1", 12, "Wers3", null,new ServiceValidator().validatorTime("13.02.2022 12:30")));
+        repositoryLecture.getModelsList().add(new Lecture(4, course.getCourseID(), "line equations part 2", 11, "Wers4", null,new ServiceValidator().validatorTime("15.02.2022 12:30")));
+        repositoryLecture.getModelsList().add(new Lecture(5, course.getCourseID(), "line equations part 3", 2, "Wers5", null,new ServiceValidator().validatorTime("17.02.2022 12:30")));
+        repositoryLecture.getModelsList().add(new Lecture(6, course.getCourseID(), "line equations part 4", 2, "Wers6", null,new ServiceValidator().validatorTime("22.02.2022 12:30")));
 
         repositoryLecture.getModelsList().add(2,null);
 

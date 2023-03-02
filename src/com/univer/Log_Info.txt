@@ -482,3 +482,301 @@
  com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-20T18:54:34.099071700   null
  com.univer.Main  INFO  Внесення початкових даних   2023-02-20T18:57:31.269861900   null
  com.univer.log.LogWriter  ERROR  Ви набрали символ замість числа, спробуйте знову!  2023-02-23T21:03:26.129412600   [java.base/java.util.Scanner.throwFor(Scanner.java:939), java.base/java.util.Scanner.next(Scanner.java:1594), java.base/java.util.Scanner.nextInt(Scanner.java:2258), java.base/java.util.Scanner.nextInt(Scanner.java:2212), com.univer.errorMenuService.ValidationUtil.testInt(ValidationUtil.java:22), com.univer.serverANDclient.MenuServAndClient.menuServAndClient(MenuServAndClient.java:22), com.univer.Main.main(Main.java:16)]
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-02-28T15:04:12.296845300   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-28T15:04:23.894284700   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-02-28T15:04:23.894284700   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-02-28T15:04:29.573331800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-02-28T15:04:29.573331800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-02-28T15:04:33.995353400   null
+ com.univer.repository.RepositoryHomeWork  INFO  Побудова Map   2023-02-28T15:04:37.020707900   null
+ com.univer.repository.RepositoryHomeWork  DEBUG  Map - побудована   2023-02-28T15:04:37.020707900   null
+ com.univer.repository.RepositoryAddMaterial  INFO  Побудова Map   2023-02-28T15:04:37.036327700   null
+ com.univer.repository.RepositoryAddMaterial  DEBUG  Map - побудована   2023-02-28T15:04:37.036327700   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-02-28T15:04:37.036327700   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-02-28T15:04:37.036327700   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-28T15:04:46.773557900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-02-28T15:04:46.773557900   null
+ com.univer.service.ExitProgram  INFO  Перехід меню завершення програми   2023-02-28T15:04:49.980210800   null
+ com.univer.service.ExitProgram  INFO  Програма завершила роботу   2023-02-28T15:04:53.372175200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-02-28T15:17:59.868156900   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-02-28T15:20:01.184746400   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-02-28T15:20:01.187534900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-02-28T15:20:01.188519800   null
+ com.univer.service.ExitProgram  INFO  Перехід меню завершення програми   2023-02-28T15:20:04.858711800   null
+ com.univer.service.ExitProgram  INFO  Програма завершила роботу   2023-02-28T15:20:06.812979200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:01:32.594728800   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T14:01:40.331685200   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T14:01:40.347315200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:01:40.347315200   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T14:01:42.864992500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:01:42.864992500   null
+ com.univer.service.LecturesService  DEBUG  Вивід списку на екран   2023-03-02T14:01:48.724958900   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T14:01:48.724958900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:01:48.740580800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:05:13.359857200   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T14:05:15.962355200   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T14:05:15.962355200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:05:15.962355200   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T14:05:21.782860900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:05:21.782860900   null
+ com.univer.service.LecturesService  DEBUG  Вивід списку на екран   2023-03-02T14:05:24.488810   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T14:05:24.488810   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:05:24.488810   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:25:55.300433400   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T14:26:00.392037300   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T14:26:00.392037300   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:26:00.392037300   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T14:26:02.147977   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:26:02.147977   null
+ com.univer.service.LecturesService  INFO  Добавлення нової лекції   2023-03-02T14:26:04.849440700   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:26:04.864741100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:26:10.202698500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:26:21.032528400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:30:40.553550500   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T14:30:42.374980400   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T14:30:42.374980400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:30:42.374980400   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T14:30:44.405097500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:30:44.405097500   null
+ com.univer.service.LecturesService  INFO  Добавлення нової лекції   2023-03-02T14:30:48.889467900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:30:48.889467900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:30:50.992821900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:30:56.492003200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:31:02.116428300   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:31:17.108807800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:32:42.488344100   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T14:32:45.916921600   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T14:32:45.916921600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:32:45.916921600   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T14:32:48.128077200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:32:48.128077200   null
+ com.univer.service.LecturesService  INFO  Добавлення нової лекції   2023-03-02T14:32:50.280014400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:32:50.280014400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:32:52.111789600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:32:59.747128200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:33:01.968952200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:33:07.398892800   null
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:33:32.015978600   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:72), com.univer.service.LecturesService.lectureServiceAdd(LecturesService.java:150), com.univer.service.LecturesService.menuLecrute(LecturesService.java:47), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:34:11.297605900   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:72), com.univer.service.LecturesService.lectureServiceAdd(LecturesService.java:150), com.univer.service.LecturesService.menuLecrute(LecturesService.java:47), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:34:11.297605900   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:72), com.univer.service.LecturesService.lectureServiceAdd(LecturesService.java:150), com.univer.service.LecturesService.menuLecrute(LecturesService.java:47), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:35:06.191831600   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:72), com.univer.service.LecturesService.lectureServiceAdd(LecturesService.java:150), com.univer.service.LecturesService.menuLecrute(LecturesService.java:47), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:35:06.191831600   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:72), com.univer.service.LecturesService.lectureServiceAdd(LecturesService.java:150), com.univer.service.LecturesService.menuLecrute(LecturesService.java:47), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:42:36.511094800   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T14:42:39.530918800   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T14:42:39.530918800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:42:39.530918800   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T14:42:41.671976800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:42:41.671976800   null
+ com.univer.service.LecturesService  INFO  Добавлення нової лекції   2023-03-02T14:42:43.674085900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:42:43.674085900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:42:45.477568100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:42:48.948481100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:42:50.910933800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:44:02.592457500   null
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:44:19.360215100   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:73), com.univer.service.LecturesService.lectureServiceAdd(LecturesService.java:150), com.univer.service.LecturesService.menuLecrute(LecturesService.java:47), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:44:44.190511800   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:73), com.univer.service.LecturesService.lectureServiceAdd(LecturesService.java:150), com.univer.service.LecturesService.menuLecrute(LecturesService.java:47), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:44:44.190511800   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:73), com.univer.service.LecturesService.lectureServiceAdd(LecturesService.java:150), com.univer.service.LecturesService.menuLecrute(LecturesService.java:47), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:45:33.508120400   null
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:45:39.460727   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:479), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:73), com.univer.Main.main(Main.java:39)]
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:45:45.416785300   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:479), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:73), com.univer.Main.main(Main.java:39)]
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T14:45:54.916664100   null
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:45:57.859663300   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:479), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:73), com.univer.Main.main(Main.java:39)]
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:46:08.365377700   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:479), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:73), com.univer.Main.main(Main.java:39)]
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:46:10.001820900   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:479), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:73), com.univer.Main.main(Main.java:39)]
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T14:46:12.187796300   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:479), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:73), com.univer.Main.main(Main.java:39)]
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:18:16.657660100   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T15:18:19.855646500   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T15:18:19.855646500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:18:19.855646500   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T15:18:23.815472600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:18:23.815472600   null
+ com.univer.service.LecturesService  INFO  Добавлення нової лекції   2023-03-02T15:18:26.791637400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:18:26.791637400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:18:30.804995900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:18:36.168282600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:18:38.409254800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:18:43.286525400   null
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T15:19:02.620303200   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:74), com.univer.service.LecturesService.lectureServiceAdd(LecturesService.java:150), com.univer.service.LecturesService.menuLecrute(LecturesService.java:47), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T15:20:29.302080900   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:74), com.univer.service.LecturesService.lectureServiceAdd(LecturesService.java:150), com.univer.service.LecturesService.menuLecrute(LecturesService.java:47), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T15:20:59.384633200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:20:59.384633200   null
+ com.univer.service.LecturesService  DEBUG  Вивід списку на екран   2023-03-02T15:21:17.791144800   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T15:21:17.791144800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:21:17.791144800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:30:04.063775400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:33:04.412831300   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T15:33:07.292617900   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T15:33:07.292617900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:33:07.292617900   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T15:33:09.594642900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:33:09.594642900   null
+ com.univer.service.LecturesService  INFO  Добавлення нової лекції   2023-03-02T15:33:14.207219900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:33:14.207219900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:33:15.990863600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:33:19.984840500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:33:22.653668500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:33:27.458051   null
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T15:33:29.992021500   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:77), com.univer.service.LecturesService.lectureServiceAdd(LecturesService.java:150), com.univer.service.LecturesService.menuLecrute(LecturesService.java:47), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:43:08.962818   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T15:43:11.639222800   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T15:43:11.639222800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:43:11.654841   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T15:43:14.259125700   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:43:14.259125700   null
+ com.univer.service.LecturesService  INFO  Добавлення нової лекції   2023-03-02T15:43:17.078959   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:43:17.078959   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:43:18.900987   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:43:22.099763500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:43:24.168072800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:43:28.070628800   null
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T15:43:49.501225500   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:77), com.univer.service.LecturesService.lectureServiceAdd(LecturesService.java:151), com.univer.service.LecturesService.menuLecrute(LecturesService.java:47), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T15:44:26.473532400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:44:26.473532400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:48:34.289814   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T15:48:38.208440200   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T15:48:38.208440200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:48:38.208440200   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T15:48:41.063393500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:48:41.065391100   null
+ com.univer.service.LecturesService  INFO  Добавлення нової лекції   2023-03-02T15:48:43.188254900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:48:43.195242800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:48:48.055270500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:48:51.879972800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:48:53.809915800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:48:57.846504400   null
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T15:49:18.796233700   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:78), com.univer.service.LecturesService.lectureServiceAdd(LecturesService.java:151), com.univer.service.LecturesService.menuLecrute(LecturesService.java:47), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:51:02.155918400   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T15:51:05.253563   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T15:51:05.255608100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:51:05.255608100   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T15:51:10.213933900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:51:10.213933900   null
+ com.univer.service.LecturesService  INFO  Добавлення нової лекції   2023-03-02T15:51:12.469367   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:51:12.484568900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:51:15.762902400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:51:19.666212300   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:51:21.562500100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:51:26.220885100   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T15:51:50.004007400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:51:50.019301900   null
+ com.univer.service.LecturesService  DEBUG  Вивід списку на екран   2023-03-02T15:52:31.771632100   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T15:52:31.771632100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T15:52:31.771632100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T19:11:35.734222500   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T19:11:38.853267800   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T19:11:38.853267800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T19:11:38.853267800   null
+ com.univer.service.AddMaterialService  INFO  Перехід до меню Додаткові матеріали   2023-03-02T19:11:43.258357600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T19:11:43.258357600   null
+ com.univer.repository.RepositoryAddMaterial  INFO  Побудова Map   2023-03-02T19:11:49.921557500   null
+ com.univer.repository.RepositoryAddMaterial  DEBUG  Map - побудована   2023-03-02T19:11:49.921557500   null
+ com.univer.service.AddMaterialService  INFO  Перехід до меню Додаткові матеріали   2023-03-02T19:11:49.936797400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T19:11:49.936797400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T19:13:38.657143500   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T19:13:41.257431900   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T19:13:41.257431900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T19:13:41.257431900   null
+ com.univer.service.AddMaterialService  INFO  Перехід до меню Додаткові матеріали   2023-03-02T19:13:47.997359100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T19:13:47.997359100   null
+ com.univer.repository.RepositoryAddMaterial  INFO  Побудова Map   2023-03-02T19:13:51.108673900   null
+ com.univer.repository.RepositoryAddMaterial  DEBUG  Map - побудована   2023-03-02T19:13:51.108673900   null
+ com.univer.service.AddMaterialService  INFO  Перехід до меню Додаткові матеріали   2023-03-02T19:13:51.123908   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T19:13:51.123908   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:32:42.093999900   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T20:32:45.592949800   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T20:32:45.592949800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:32:45.592949800   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T20:32:51.690407200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:32:51.692402700   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T20:32:59.685829500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:32:59.685829500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:33:38.898171500   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T20:33:41.373845900   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T20:33:41.373845900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:33:41.373845900   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T20:33:43.979473900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:33:43.979473900   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T20:33:47.396524700   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:33:47.396524700   null
+ com.univer.log.LogWriter  ERROR  Ви набрали Дату і Час не відповідного формату, спробуйте знов!  2023-03-02T20:34:59.139472600   [java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052), java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954), java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494), com.univer.service.ServiceValidator.validatorTime(ServiceValidator.java:77), com.univer.service.LecturesService.sortLectureForTime(LecturesService.java:183), com.univer.service.LecturesService.menuLecrute(LecturesService.java:90), com.univer.service.GlobalMenu.globalMenu(GlobalMenu.java:52), com.univer.Main.main(Main.java:73)]
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:37:24.467225600   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T20:37:27.010598500   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T20:37:27.026218700   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:37:27.026218700   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T20:37:29.387815600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:37:29.387815600   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T20:37:33.183901300   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:37:33.183901300   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:39:58.120359300   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:40:18.813999500   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T20:40:21.871236100   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T20:40:21.871236100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:40:21.871236100   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T20:40:28.093240900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:40:28.093240900   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T20:40:31.621235500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:40:31.621235500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:41:35.548726   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T20:41:38.130742600   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T20:41:38.130742600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:41:38.130742600   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T20:41:41.076861900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:41:41.076861900   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T20:41:43.993001800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:41:43.993001800   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T20:41:59.216358700   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:41:59.216358700   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:51:17.593675300   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T20:51:20.850682800   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T20:51:20.850682800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:51:20.850682800   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T20:51:25.572353   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:51:25.587694800   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T20:51:28.568808900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:51:28.568808900   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T20:51:45.548443200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:51:45.548443200   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T20:52:11.180712   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T20:52:11.180712   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:10:25.039154400   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T21:10:27.446019800   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T21:10:27.461649200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:10:27.461649200   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T21:10:29.959797800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:10:29.959797800   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T21:10:33.778157300   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:10:33.778157300   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T21:10:35.974902   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:10:35.975869400   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T21:10:38.512645900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:10:38.513646700   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:11:52.998358600   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T21:11:55.541770100   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T21:11:55.541770100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:11:55.541770100   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T21:11:58.206886100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:11:58.206886100   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T21:12:01.311994500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:12:01.311994500   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T21:12:03.832912600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:12:03.833912400   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T21:12:07.191052300   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:12:07.191052300   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій Дата  2023-03-02T21:12:47.421388   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:12:47.421388   null
+ com.univer.service.LecturesService  INFO  Перехід до меню Лекцій   2023-03-02T21:13:07.631801900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:13:07.631801900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:29:33.966610300   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-02T21:29:36.337139500   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T21:29:36.337139500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:29:36.337139500   null
+ com.univer.service.AddMaterialService  INFO  Перехід до меню Додаткові матеріали   2023-03-02T21:29:39.910834800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:29:39.910834800   null
+ com.univer.repository.RepositoryAddMaterial  INFO  Побудова Map   2023-03-02T21:29:50.306522200   null
+ com.univer.repository.RepositoryAddMaterial  DEBUG  Map - побудована   2023-03-02T21:29:50.306522200   null
+ com.univer.service.AddMaterialService  INFO  Перехід до меню Додаткові матеріали   2023-03-02T21:29:50.321684900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:29:50.321684900   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-02T21:30:48.067636600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-02T21:30:48.067636600   null
+ com.univer.service.ExitProgram  INFO  Перехід меню завершення програми   2023-03-02T21:30:50.058140800   null
+ com.univer.service.ExitProgram  INFO  Програма завершила роботу   2023-03-02T21:30:53.398217500   null
