@@ -3,6 +3,7 @@ package com.univer.service;
 import com.univer.controlWork.ControlWork;
 import com.univer.errorMenuService.ValidationUtil;
 import com.univer.homeWork27.HomeWorK27;
+import com.univer.homeWork28.HomeWork28;
 import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.repository.*;
@@ -34,7 +35,8 @@ public class GlobalMenu {
             System.out.println("6. Виберіть LEVEL для запису логів у файл");
             System.out.println("7. Редагувати BlackList адрес");
             System.out.println("8. Дмашня робота 27");
-            System.out.println("9. Вихід");
+            System.out.println("9. Дмашня робота 28");
+            System.out.println("10. Вихід");
             ValidationUtil number = new ValidationUtil();
 
             switch (number.testInt()) {
@@ -82,6 +84,10 @@ public class GlobalMenu {
                     new HomeWorK27().homeWork27Task3();
                 }
                 case 9 -> {
+                    new HomeWork28().logFileMessageInfo();
+                    new HomeWork28().minDateMaxAddMaterialLecture();
+                }
+                case 10 -> {
                     exitBoolean = ExitProgram.exitProgram();
                     System.out.println("Дякую");
                 }

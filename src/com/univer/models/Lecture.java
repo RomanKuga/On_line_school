@@ -16,7 +16,7 @@ public class Lecture extends MasterModels implements Serializable {
     private String name;
     private String description;
     private Integer personId;
-    private LocalDateTime holdingTimeLecture;
+    private  LocalDateTime holdingTimeLecture;
      RepositoryHomeWork homeWork;
 
     public Lecture(Integer id, Integer courseID, String name, Integer personId, String description, RepositoryHomeWork homeWork, LocalDateTime holdingTimeLecture) {
@@ -30,7 +30,7 @@ public class Lecture extends MasterModels implements Serializable {
         calc++;
     }
 
-    public LocalDateTime getHoldingTimeLecture() {
+    public  LocalDateTime getHoldingTimeLecture() {
         return holdingTimeLecture;
     }
 

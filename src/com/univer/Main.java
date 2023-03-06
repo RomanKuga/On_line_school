@@ -13,7 +13,9 @@ import java.time.LocalDateTime;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
-     MenuServAndClient menuServAndClient=new MenuServAndClient();
+
+
+       MenuServAndClient menuServAndClient=new MenuServAndClient();
      menuServAndClient.menuServAndClient();
 
         Course course = new Course(1, "History");
@@ -43,7 +45,7 @@ public class Main {
         repositoryLecture.getModelsList().add(new Lecture(5, course.getCourseID(), "line equations part 3", 2, "Wers5", null,new ServiceValidator().validatorTime("17.02.2022 12:30")));
         repositoryLecture.getModelsList().add(new Lecture(6, course.getCourseID(), "line equations part 4", 2, "Wers6", null,new ServiceValidator().validatorTime("22.02.2022 12:30")));
 
-        repositoryLecture.getModelsList().add(2,null);
+       // repositoryLecture.getModelsList().add(2,null);
 
 
         RepositoryPerson dataPerson = RepositoryPerson.getInstance();

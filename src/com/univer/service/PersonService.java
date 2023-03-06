@@ -127,8 +127,8 @@ public class PersonService {
         boolean mailControl = false;
         while (!mailControl) {
             test.validatorEmail(email);
-            if (!test.validatorEmail(email)) {
-                System.out.println("Ви ввели не вірний email, повторіть знову:");
+            if ((!test.validatorEmail(email))||(test.validatorEmailDuplicate(email))) {
+                System.out.println("Ви ввели не вірний email або ваш email збігається з введеним, повторіть знову:");
                 email = scanner.next();
             } else {
                 mailControl = true;

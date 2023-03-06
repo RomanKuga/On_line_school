@@ -4,11 +4,14 @@ import com.univer.errorMenuService.ValidationUtil;
 import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.log.LogWriter;
+import com.univer.models.Person;
+import com.univer.repository.RepositoryPerson;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,6 +26,11 @@ public class ServiceValidator {
         Pattern pattern = Pattern.compile("\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*\\.\\w{2,4}");
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
+    }
+    public boolean validatorEmailDuplicate(String email){
+        List tempPersonEmail = RepositoryPerson.getInstance().getModelsList();
+        List<Person> personEmail= tempPersonEmail;
+        return personEmail.stream().anyMatch(element -> element.getEmail().trim().contains(email));
     }
 
     public boolean validatorPhone(String phone) throws IOException {
