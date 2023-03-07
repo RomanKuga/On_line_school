@@ -338,3 +338,57 @@
  com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-06T19:09:45.593610700   null
  com.univer.service.ExitProgram  INFO  Перехід меню завершення програми   2023-03-06T19:10:59.744136   null
  com.univer.service.ExitProgram  INFO  Програма завершила роботу   2023-03-06T19:11:02.868337500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:28:09.046811100   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-07T14:28:11.661849600   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T14:28:11.661849600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:28:11.661849600   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T14:28:15.287044200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:28:15.302660500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:38:22.230259700   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-07T14:38:24.620012200   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T14:38:24.620012200   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:38:24.620012200   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T14:38:27.736500900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:38:27.736500900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:54:04.530290200   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-07T14:54:06.639437300   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T14:54:06.639437300   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:54:06.639437300   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:55:52.785722200   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-07T14:55:55.480906900   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T14:55:55.480906900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:55:55.480906900   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:56:24.982754400   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-07T14:56:28.225881500   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T14:56:28.225881500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:56:28.225881500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:56:47.269416600   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-07T14:56:49.336738   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T14:56:49.352319500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:56:49.352319500   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T14:56:52.253450100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T14:56:52.253450100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T15:35:31.757401900   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-07T15:35:34.712314300   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T15:35:34.712314300   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T15:35:34.712314300   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T15:35:38.137337800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T15:35:38.137337800   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T15:38:04.195722700   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-07T15:38:06.510411400   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T15:38:06.510411400   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T15:38:06.510411400   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T15:38:09.257048600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T15:38:09.257048600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T17:00:04.552180700   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-07T17:00:06.755209500   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T17:00:06.755209500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T17:00:06.755209500   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T17:00:10.244635600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T17:00:10.244635600   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T17:05:23.019218300   null
+ com.univer.Main  INFO  Внесення початкових даних   2023-03-07T17:05:25.190722200   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T17:05:25.191765100   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T17:05:25.192716900   null
+ com.univer.service.GlobalMenu  INFO  Перехід до загального меню програми   2023-03-07T17:05:27.659489500   null
+ com.univer.errorMenuService.ValidationUtil  DEBUG  Перевірка числа на вміст символа   2023-03-07T17:05:27.661450200   null

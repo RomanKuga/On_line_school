@@ -51,17 +51,17 @@ public class Main {
         RepositoryPerson dataPerson = RepositoryPerson.getInstance();
         dataPerson.getModelsList().add(new Person(1, 1, Role.Teacher, "Sfsdgg", "Sdggagas", "0991234567", "wert@gmail.com"));
         dataPerson.getModelsList().add(new Person(2, 1, Role.Teacher, "Hgkgkk", "Bvnc", "0502345678", "asdf@gmail.com"));
-        dataPerson.getModelsList().add(new Person(3, 1, Role.Teacher, "Sooiiiuu", "Lkjhg", "0502345328", "asd12f@gmail.com"));
-        dataPerson.getModelsList().add(new Person(4, 1, Role.Student, "Petro", "sdggagas", "0991234567", "wert@gmail.com"));
-        dataPerson.getModelsList().add(new Person(5, 1, Role.Student, "Ivan", "bvnc", "0502345678", "asdf@gmail.com"));
-        dataPerson.getModelsList().add(new Person(6, 1, Role.Student, "Vasil", "lkjhg", "0502345328", "asd12f@gmail.com"));
-        dataPerson.getModelsList().add(new Person(7, 1, Role.Student, "Oksana", "sdggagas", "0991234567", "wert@gmail.com"));
-        dataPerson.getModelsList().add(new Person(8, 1, Role.Student, "Roman", "bvnc", "0502345678", "asdf@gmail.com"));
-        dataPerson.getModelsList().add(new Person(9, 1, Role.Student, "Nataliya", "lkjhg", "0502345328", "asd12f@gmail.com"));
-        dataPerson.getModelsList().add(new Person(10, 1, Role.Student, "Olena", "sdggagas", "0991234567", "wert@gmail.com"));
-        dataPerson.getModelsList().add(new Person(11, 1, Role.Student, "Boris", "lkjhg", "0502345328", "asd12f@gmail.com"));
-        dataPerson.getModelsList().add(new Person(12, 1, Role.Student, "Misha", "lkjhg", "0502345328", "asd12f@gmail.com"));
-        dataPerson.getModelsList().add(new Person(13, 1, Role.Student, "Jana", "lkjhg", "0502345328", "asd12f@gmail.com"));
+        dataPerson.getModelsList().add(new Person(3, 1, Role.Teacher, "Sooiiiuu", "Lkjhg", "0502345328", "rasd12f@gmail.com"));
+        dataPerson.getModelsList().add(new Person(4, 1, Role.Student, "Petro", "sdggagas", "0991234567", "twert1@gmail.com"));
+        dataPerson.getModelsList().add(new Person(5, 1, Role.Student, "Ivan", "bvnc", "0502345678", "gasdf455555@gmail.com"));
+        dataPerson.getModelsList().add(new Person(6, 1, Role.Student, "Vasil", "lkjhg", "0502345328", "hasd12f1@gmail.com"));
+        dataPerson.getModelsList().add(new Person(7, 1, Role.Student, "Oksana", "sdggagas", "0991234567", "dwertsddf@gmail.com"));
+        dataPerson.getModelsList().add(new Person(8, 1, Role.Student, "Roman", "bvnc", "0502345678", "yasdfwer@gmail.com"));
+        dataPerson.getModelsList().add(new Person(9, 1, Role.Student, "Nataliya", "lkjhg", "0502345328", "basd12f1yutr@gmail.com"));
+        dataPerson.getModelsList().add(new Person(10, 1, Role.Student, "Olena", "sdggagas", "0991234567", "vwert233@gmail.com"));
+        dataPerson.getModelsList().add(new Person(11, 1, Role.Student, "Boris", "lkjhg", "0502345328", "zasd12f45@gmail.com"));
+        dataPerson.getModelsList().add(new Person(12, 1, Role.Student, "Misha", "lkjhg", "0502345328", "masd12f67@gmail.com"));
+        dataPerson.getModelsList().add(new Person(13, 1, Role.Student, "Jana", "lkjhg", "0502345328", "iasd12f9887@gmail.com"));
 
         RepositoryAddMaterial addMaterial = RepositoryAddMaterial.getInstance();
         addMaterial.getModelsList().add(new AddMaterial(3, "quadratic equations",1,ResourceType.BOOK));
