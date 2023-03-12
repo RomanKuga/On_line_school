@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class BackupCourseAndParameter  {
-    private static final String FILE_Backup="src/com/univer/backupCourse.txt";
+    private static final String FILE_Backup="src/main/java/com/univer/backupCourse.txt";
 
 
     public static void serializeLecture(List<Lecture> demoLecture, List<Person> personList, List<HomeWork> homeWorkList, List<AddMaterial> addMaterialList) throws IOException {

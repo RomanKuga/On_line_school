@@ -13,7 +13,7 @@ public class BlackListWriteRemove {
 
     private static final int B_SIZE = 1024;
 
-    private static final String BlackList_STORAGE_FILE = "src/com/univer/BlackList.txt";
+    private static final String BlackList_STORAGE_FILE = "src/main/java/com/univer/BlackList.txt";
 
     public static void writeBlackList(String BlackListIP) throws IOException {
 

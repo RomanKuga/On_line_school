@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class HomeWork29 {
-    private static final String EMAIL_STORAGE_FILE = "src/com/univer/email_Student.txt";
+    private static final String EMAIL_STORAGE_FILE = "src/main/java/com/univer/email_Student.txt";
 
     public void lectureGroupOfTeacher() {
         List tempListLecture = RepositoryLecture.getInstance().getModelsList();
