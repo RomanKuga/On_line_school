@@ -38,6 +38,7 @@ public class LogWriter {
                     }
                 }
             }
+            System.out.println(logAdjustment);
             if (!logAdjustment.equals("OFF")) {
                 if (logAdjustment.equals(LogLevel.DEBUG.name())) {
                     writer.write(log.toString());

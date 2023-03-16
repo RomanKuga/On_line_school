@@ -1,1 +1,1 @@
-DEBUG
+WARNING
