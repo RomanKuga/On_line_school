@@ -27,20 +27,23 @@ public class ServiceValidator {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
-    public boolean validatorEmailDuplicate(String email){
+
+    public boolean validatorEmailDuplicate(String email) {
         List tempPersonEmail = RepositoryPerson.getInstance().getModelsList();
-        List<Person> personEmail= tempPersonEmail;
+        List<Person> personEmail = tempPersonEmail;
         return personEmail.stream().anyMatch(element -> element.getEmail().trim().contains(email));
     }
 
     public boolean validatorPhone(String phone) throws IOException {
         LogCreateObject.logInfo(this.getClass().getName(), LogLevel.DEBUG.name(), "Провірка валідності номера телефона ", LocalDateTime.now());
-        if (phone.contains("[a-zA-Z]")) {
-            LogCreateObject.logInfo(this.getClass().getName(), LogLevel.ERROR.name(), "Помилка номера телефона ", LocalDateTime.now());
-            return false;
-        }
-        if (phone.length() == 10) {
-            return phone.matches("\\d{10}");
+        if (phone != null) {
+            if (phone.contains("[a-zA-Z]")) {
+                LogCreateObject.logInfo(this.getClass().getName(), LogLevel.ERROR.name(), "Помилка номера телефона ", LocalDateTime.now());
+                return false;
+            }
+            if (phone.length() == 10) {
+                return phone.matches("\\d{10}");
+            }
         }
         LogCreateObject.logInfo(this.getClass().getName(), LogLevel.ERROR.name(), "Помилка номера телефона ", LocalDateTime.now());
         return false;

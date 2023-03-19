@@ -225,3 +225,18 @@
  com.univer.log.LogWriterTest  INFO  Перехід до загального меню програми   2023-03-16T20:20:56.604591900   null
  com.univer.log.LogWriterTest  INFO  Перехід до загального меню програми   2023-03-16T20:20:56.604591900   null
  com.univer.log.LogWriterTest  ERROR  Перехід до загального меню програми   2023-03-16T20:22:13.021483   null
+ com.univer.service.ServiceValidator  ERROR  Помилка введення Email   2023-03-19T19:58:53.967408300   null
+ com.univer.service.ServiceValidator  ERROR  Помилка номера телефона   2023-03-19T20:20:22.763376900   null
+ com.univer.service.ServiceValidator  ERROR  Помилка номера телефона   2023-03-19T20:21:59.736952100   null
+ com.univer.service.ServiceValidator  ERROR  Помилка номера телефона   2023-03-19T20:22:50.277398600   null
+ com.univer.service.ServiceValidator  ERROR  Помилка номера телефона   2023-03-19T20:24:23.159382900   null
+ com.univer.service.ServiceValidator  ERROR  Помилка номера телефона   2023-03-19T20:24:23.175340400   null
+ com.univer.service.ServiceValidator  ERROR  Помилка введення Email   2023-03-19T20:26:44.938759200   null
+ com.univer.service.ServiceValidator  ERROR  Помилка номера телефона   2023-03-19T20:26:44.974665400   null
+ com.univer.service.ServiceValidator  ERROR  Помилка номера телефона   2023-03-19T20:26:44.975662300   null
+ com.univer.service.ServiceValidator  ERROR  Помилка введення Email   2023-03-19T20:28:23.006735200   null
+ com.univer.service.ServiceValidator  ERROR  Помилка номера телефона   2023-03-19T20:28:23.036655400   null
+ com.univer.service.ServiceValidator  ERROR  Помилка номера телефона   2023-03-19T20:28:23.038650100   null
+ com.univer.service.ServiceValidator  ERROR  Помилка введення Email   2023-03-19T22:20:36.072922300   null
+ com.univer.service.ServiceValidator  ERROR  Помилка номера телефона   2023-03-19T22:20:37.013917600   null
+ com.univer.service.ServiceValidator  ERROR  Помилка номера телефона   2023-03-19T22:20:37.014914600   null
