@@ -55,9 +55,6 @@ public class Lecture extends MasterModels implements Serializable {
         return super.getID();
     }
 
-    public void setCalcLecture() {
-        calc--;
-    }
 
     public  int getCourseIDLecture() {
 

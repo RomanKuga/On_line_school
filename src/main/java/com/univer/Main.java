@@ -25,7 +25,7 @@ public class Main {
         dataCourse.getCourseList().add(new Course(3,"Algebra"));
         dataCourse.getCourseList().add(new Course(4,"Geometry"));
 
-        Lecture lectureExample = new Lecture();
+
 
 
         HomeWork homeWork= (new HomeWork(1, 1, "test"));
