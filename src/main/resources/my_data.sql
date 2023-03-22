@@ -93,3 +93,47 @@ INSERT INTO `on_line_school`.`addmaterial` (`idaddMaterial`, `nameAddMaterial`, 
 INSERT INTO `on_line_school`.`addmaterial` (`idaddMaterial`, `nameAddMaterial`, `idLecture`, `resourseType`) VALUES (3, "text stor 11", 3, "URL")
 INSERT INTO `on_line_school`.`addmaterial` (`idaddMaterial`, `nameAddMaterial`, `idLecture`, `resourseType`) VALUES (4, "text stor 2", 4, "VIDEO")
 INSERT INTO `on_line_school`.`addmaterial` (`idaddMaterial`, `nameAddMaterial`, `idLecture`, `resourseType`) VALUES (5, "text vaa", 5, "BOOK")
+INSERT INTO `on_line_school`.`addmaterial` (`idaddMaterial`, `nameAddMaterial`, `idLecture`, `resourseType`) VALUES (6, "wertuyuf", 1, "VIDEO")
+
+1)SELECT * FROM on_line_school.person
+  where role="Student"
+  order by secondName;
+
+2)SELECT on_line_school.lecture.name,on_line_school.lecture.dateTime, count(on_line_school.addmaterial.idLecture) as NumberAddMaterial
+  FROM on_line_school.lecture
+  Inner join on_line_school.addmaterial on on_line_school.lecture.idLecture=on_line_school.addmaterial.idLecture
+  where date(dateTime)<"2023-01-01"
+  group by on_line_school.addmaterial.idLecture
+  order by dateTime;
+
+3) SELECT name, dateTime
+   FROM on_line_school.lecture
+   where dateTime=all(SELECT min(dateTime) from on_line_school.lecture);
+
+4) SELECT resourseType, count(*) as "Number" FROM on_line_school.addmaterial
+   group by resourseType;
+
+5)SELECT * FROM on_line_school.person
+  where role="Teacher" and secondName<'N%';
+
+6)SELECT secondName,firstname, count(*)
+  FROM on_line_school.person
+  where role="Student"
+  group by firstname, secondName
+  having count(*)=1
+  order by secondName;
+
+
+SELECT secondName,firstname, count(*)
+FROM on_line_school.person
+where role="Student"
+group by firstname, secondName
+having count(*)=2
+order by secondName;
+
+SELECT secondName,firstname, count(*)
+FROM on_line_school.person
+where role="Student"
+group by firstname, secondName
+having count(*)>2
+order by secondName;
