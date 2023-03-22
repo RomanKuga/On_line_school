@@ -137,3 +137,51 @@ where role="Student"
 group by firstname, secondName
 having count(*)>2
 order by secondName;
+
+
+MySQL Part 3
+
+    1)SELECT name, on_line_school.person.secondName,on_line_school.person.firstname, dateTime
+      FROM on_line_school.lecture
+               inner JOIN on_line_school.person on on_line_school.lecture.idPerson=on_line_school.person.idPerson
+      order by dateTime;
+
+    2) SELECT on_line_school.person.secondname, on_line_school.person.firstname, count(on_line_school.lecture.idPerson) as NumberPerson
+       FROM on_line_school.lecture
+                Inner join on_line_school.person on on_line_school.person.idPerson=on_line_school.lecture.idPerson
+       group by  on_line_school.lecture.idPerson;
+
+    3) SELECT on_line_school.person.idPerson, on_line_school.lecture.name, on_line_school.lecture.dateTime
+       FROM on_line_school.lecture
+                Inner join on_line_school.person on on_line_school.person.idPerson=on_line_school.lecture.idPerson
+       where on_line_school.person.idPerson=12
+       order by dateTime;
+
+    4)SELECT on_line_school.course.Course_name,
+             count(on_line_school.lecture.idCourse) as NumberLecture,
+             count(on_line_school.addmaterial.idLecture) as addmater,
+             count(on_line_school.homework.idLecture) as homework,
+             count(on_line_school.person.idCourse) as person
+      FROM on_line_school.course
+               Left join on_line_school.lecture on on_line_school.course.idCourse=on_line_school.lecture.idCourse
+               left join on_line_school.addmaterial on on_line_school.lecture.idLecture=on_line_school.addmaterial.idLecture
+               left join on_line_school.homework on on_line_school.lecture.idLecture=on_line_school.homework.idLecture
+               Left join on_line_school.person on on_line_school.course.idCourse=on_line_school.person.idCourse
+      group by on_line_school.course.Course_name, on_line_school.person.idCourse;
+
+    5) SELECT monthname(on_line_school.lecture.dateTime) as lectureMonth,
+              count(monthname(on_line_school.lecture.dateTime)) as numberLectureMonth
+       FROM on_line_school.lecture
+       group by monthname(on_line_school.lecture.dateTime);
+
+    6)select 'homework',
+             count(on_line_school.homework.idhomeWork)
+      FROM on_line_school.homework
+      having count(on_line_school.homework.idhomeWork)>(select count(on_line_school.addmaterial.idaddMaterial)
+                                                        FROM  on_line_school.addmaterial)
+      union
+      select 'addmaterial',
+             count(on_line_school.addmaterial.idaddMaterial)
+      FROM  on_line_school.addmaterial
+      having count(on_line_school.addmaterial.idaddMaterial)>(select count(on_line_school.homework.idhomeWork)
+                                                              FROM  on_line_school.homework);
