@@ -157,17 +157,18 @@ MySQL Part 3
        where on_line_school.person.idPerson=12
        order by dateTime;
 
-    4)SELECT on_line_school.course.Course_name,
-             count(on_line_school.lecture.idCourse) as NumberLecture,
-             count(on_line_school.addmaterial.idLecture) as addmater,
-             count(on_line_school.homework.idLecture) as homework,
-             count(on_line_school.person.idCourse) as person
+    4)SELECT  on_line_school.course.Course_name,
+              count(on_line_school.lecture.idCourse) as NumberLecture,
+              (select count(on_line_school.person.idCourse) from on_line_school.person where on_line_school.person.idCourse=on_line_school.course.idCourse and on_line_school.person.role='Student')  as Student,
+              (select count(on_line_school.person.idCourse) from on_line_school.person where on_line_school.person.idCourse=on_line_school.course.idCourse and on_line_school.person.role='Teacher')  as Teacher,
+              (select count(on_line_school.addmaterial.idLecture) from on_line_school.addmaterial where on_line_school.addmaterial.idLecture in (select on_line_school.lecture.idLecture from on_line_school.lecture ) ) as addmater,
+              count(on_line_school.homework.idLecture) as homework
+/*count(on_line_school.addmaterial.idLecture) as addmater*/
       FROM on_line_school.course
                Left join on_line_school.lecture on on_line_school.course.idCourse=on_line_school.lecture.idCourse
-               left join on_line_school.addmaterial on on_line_school.lecture.idLecture=on_line_school.addmaterial.idLecture
                left join on_line_school.homework on on_line_school.lecture.idLecture=on_line_school.homework.idLecture
-               Left join on_line_school.person on on_line_school.course.idCourse=on_line_school.person.idCourse
-      group by on_line_school.course.Course_name, on_line_school.person.idCourse;
+/*left join on_line_school.addmaterial on on_line_school.lecture.idLecture=on_line_school.addmaterial.idLecture*/
+      group by on_line_school.course.idCourse;
 
     5) SELECT monthname(on_line_school.lecture.dateTime) as lectureMonth,
               count(monthname(on_line_school.lecture.dateTime)) as numberLectureMonth
