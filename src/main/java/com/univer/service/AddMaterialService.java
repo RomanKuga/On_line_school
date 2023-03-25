@@ -3,14 +3,17 @@ package com.univer.service;
 import com.univer.errorMenuService.ValidationUtil;
 import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
-import com.univer.models.AddMaterial;
 import com.univer.models.MasterModels;
 import com.univer.models.ResourceType;
 import com.univer.repository.RepositoryAddMaterial;
+import com.univer.workBaseSQL.BaseRequestAddMaterial;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.List;
+import java.util.Scanner;
+import java.util.TreeSet;
 
 public class AddMaterialService {
     private RepositoryAddMaterial addMaterial;
@@ -43,32 +46,38 @@ public class AddMaterialService {
             ValidationUtil testing = new ValidationUtil();
             int numberPers = testing.testInt();
             AddMaterialService pt = new AddMaterialService();
-
+            BaseRequestAddMaterial request = new BaseRequestAddMaterial();
             switch (numberPers) {
                 case 1:
                     pt.addMaterialsServiceAdd(addMaterial);
                     break;
                 case 2:
-                    System.out.println("Ви вибрали відкрити персони, кількість персон-" + AddMaterial.getCalc() +
-                            " / ведіть номер персони від 0 до " + (AddMaterial.getCalc() - 1));
-                    numberPers = testing.testInt();
-                    System.out.println(addMaterial.getModelsList().get(numberPers));
+                    try {
+                        request.openBaseAddMaterialPrintLine();
+                    } catch (SQLException e) {
+                        System.out.println("Помилка запиту до бази");
+                    }
                     break;
                 case 3:
-                    System.out.println("Ви вибрали видалити персону, кількість персон-" + AddMaterial.getCalc() +
-                            " / ведіть номер персони від 0 до " + (AddMaterial.getCalc() - 1));
-                    numberPers = testing.testInt();
-                    this.addMaterial.getModelsList().remove(numberPers);
-                    pt.printArray(this.addMaterial.getModelsList());
+                    try {
+                        request.deleteBaseAddMaterialPrintLine();
+                    } catch (SQLException e) {
+                        System.out.println("Помилка запиту до бази");
+                    }
                     break;
                 case 4:
-                    Map<Integer,List <AddMaterial>> listMap =RepositoryAddMaterial.getInstance().createMapAddMaterial();
-                    Collection<List<AddMaterial>> ters =listMap.values();
-                    ters.forEach(System.out::println);
-
+                    try {
+                        request.sortBaseAddMaterialForLecture();
+                    } catch (SQLException e) {
+                        System.out.println("Помилка запиту до бази");
+                    }
                     break;
                 case 5:
-                    pt.printArray(this.addMaterial.findAll());
+                    try {
+                        request.baseAddMaterialPrintAll();
+                    } catch (SQLException e) {
+                        System.out.println("Помилка запиту до бази");
+                    }
                     break;
                 case 6:
                     int numberSort = 1;
@@ -78,12 +87,36 @@ public class AddMaterialService {
                         System.out.println("2. Сортувати за номером лекцій додаткові матеріали");
                         System.out.println("3. Сортувати за видом додаткові матеріали");
                         numberTestComperble = testing.testInt();
-                        if ((numberTestComperble > 0) && (numberTestComperble < 4)) {
-                            TreeSet<MasterModels> sortAddMaterialList = new TreeSet<>(addMaterial.getModelsList());
-                            pt.printTreeSet(sortAddMaterialList);
-                            numberSort = 2;
-                        } else {
-                            System.out.println("Спробуйте знову");}
+
+                        switch (numberTestComperble) {
+                            case 1:
+                                try {
+                                    request.sortBaseAddMaterialForID();
+                                    numberSort = 2;
+                                } catch (SQLException e) {
+                                    System.out.println("Помилка запиту до бази");
+                                }
+                                break;
+                            case 2:
+                                try {
+                                    request.sortBaseAddMaterialForLecture();
+                                    numberSort = 2;
+                                } catch (SQLException e) {
+                                    System.out.println("Помилка запиту до бази");
+                                }
+                                break;
+                            case 3:
+                                try {
+                                    request.sortBaseAddMaterialForResourseType();
+                                    numberSort = 2;
+                                } catch (SQLException e) {
+                                    System.out.println("Помилка запиту до бази");
+                                }
+                                break;
+                            default:
+                                System.out.println("Ви помилились при виборі номера");
+                                break;
+                        }
                     }
                     break;
                 case 7:
@@ -105,23 +138,13 @@ public class AddMaterialService {
 
     public void addMaterialsServiceAdd(RepositoryAddMaterial addMaterial) throws IOException {
         this.addMaterial = addMaterial;
-        int arrayNumber = 0;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("""
-                Добавити додаткові матеріали -                         1 
-                Добавити додаткові матеріали вказавши місце в масиві - 2""");
-        System.out.println("Розмір масива додаткові матеріали " + addMaterial.getModelsList().size());
-        ValidationUtil testing = new ValidationUtil();
-        int numberAdd = new ServiceValidator().validatorNumber();
 
-        if  (numberAdd == 2) {
-            System.out.println("Введіть номер в масиві");
-            arrayNumber = testing.testInt();
-        }
+        Scanner scanner = new Scanner(System.in);
+        ValidationUtil testing = new ValidationUtil();
         System.out.println("Введіть ID додаткових матеріалів");
         int addMaterialNumber = testing.testInt();
         System.out.println("Введіть назву додаткових матеріалів");
-        String name = scanner.next();
+        String name = scanner.nextLine();
         System.out.println("Введіть ID лекції");
         int lectureNumber = testing.testInt();
         System.out.println("""
@@ -136,7 +159,7 @@ public class AddMaterialService {
             int resourceNumber = testing.testInt();
 
             switch (resourceNumber) {
-                case 0 ->  temp = 2;
+                case 0 -> temp = 2;
 
                 case 1 -> {
                     resourceType = ResourceType.VIDEO;
@@ -146,17 +169,18 @@ public class AddMaterialService {
                     resourceType = ResourceType.BOOK;
                     temp = 2;
                 }
-                default ->  System.out.println("Такої категорії не існує");
+                default -> System.out.println("Такої категорії не існує");
 
             }
         }
-        if (numberAdd == 2) {
-            addMaterial.getModelsList().add(arrayNumber, new AddMaterial(addMaterialNumber, name, lectureNumber, resourceType));
+        try {
+
+            BaseRequestAddMaterial request = new BaseRequestAddMaterial();
+            request.addBaseAddMaterialForLecture(addMaterialNumber, name, lectureNumber, resourceType.name());
+        } catch (SQLException e) {
+            System.out.println("Помилка запиту до бази");
+
         }
 
-        addMaterial.getModelsList().add(new AddMaterial(addMaterialNumber, name, lectureNumber, resourceType));
     }
-
-
-
 }
