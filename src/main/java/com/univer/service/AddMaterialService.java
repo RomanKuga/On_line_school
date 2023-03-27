@@ -9,7 +9,6 @@ import com.univer.repository.RepositoryAddMaterial;
 import com.univer.workBaseSQL.BaseRequestAddMaterial;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
@@ -52,32 +51,18 @@ public class AddMaterialService {
                     pt.addMaterialsServiceAdd(addMaterial);
                     break;
                 case 2:
-                    try {
+
                         request.openBaseAddMaterialPrintLine();
-                    } catch (SQLException e) {
-                        System.out.println("Помилка запиту до бази");
-                    }
+
                     break;
                 case 3:
-                    try {
-                        request.deleteBaseAddMaterialPrintLine();
-                    } catch (SQLException e) {
-                        System.out.println("Помилка запиту до бази");
-                    }
+                    request.deleteBaseAddMaterialPrintLine();
                     break;
                 case 4:
-                    try {
-                        request.sortBaseAddMaterialForLecture();
-                    } catch (SQLException e) {
-                        System.out.println("Помилка запиту до бази");
-                    }
+                    request.sortBaseAddMaterialForLecture();
                     break;
                 case 5:
-                    try {
-                        request.baseAddMaterialPrintAll();
-                    } catch (SQLException e) {
-                        System.out.println("Помилка запиту до бази");
-                    }
+                    request.baseAddMaterialPrintAll();
                     break;
                 case 6:
                     int numberSort = 1;
@@ -90,28 +75,16 @@ public class AddMaterialService {
 
                         switch (numberTestComperble) {
                             case 1:
-                                try {
-                                    request.sortBaseAddMaterialForID();
-                                    numberSort = 2;
-                                } catch (SQLException e) {
-                                    System.out.println("Помилка запиту до бази");
-                                }
+                                request.sortBaseAddMaterialForID();
+                                numberSort = 2;
                                 break;
                             case 2:
-                                try {
-                                    request.sortBaseAddMaterialForLecture();
-                                    numberSort = 2;
-                                } catch (SQLException e) {
-                                    System.out.println("Помилка запиту до бази");
-                                }
+                                request.sortBaseAddMaterialForLecture();
+                                numberSort = 2;
                                 break;
                             case 3:
-                                try {
-                                    request.sortBaseAddMaterialForResourseType();
-                                    numberSort = 2;
-                                } catch (SQLException e) {
-                                    System.out.println("Помилка запиту до бази");
-                                }
+                                request.sortBaseAddMaterialForResourseType();
+                                numberSort = 2;
                                 break;
                             default:
                                 System.out.println("Ви помилились при виборі номера");
@@ -173,14 +146,9 @@ public class AddMaterialService {
 
             }
         }
-        try {
 
-            BaseRequestAddMaterial request = new BaseRequestAddMaterial();
-            request.addBaseAddMaterialForLecture(addMaterialNumber, name, lectureNumber, resourceType.name());
-        } catch (SQLException e) {
-            System.out.println("Помилка запиту до бази");
-
-        }
+        BaseRequestAddMaterial request = new BaseRequestAddMaterial();
+        request.addBaseAddMaterialForLecture(addMaterialNumber, name, lectureNumber, resourceType.name());
 
     }
 }
