@@ -1,5 +1,7 @@
 package com.univer.models;
 
+import java.util.Objects;
+
 public class Course extends MasterModels implements Comparable<Course>{
     private static int calc;
     private String name;
@@ -60,6 +62,16 @@ public class Course extends MasterModels implements Comparable<Course>{
         }
         return 0;
     }
-
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Course that = (Course) o;
+        return getCourseID() == that.getCourseID() && Objects.equals(name, that.name);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCourseID(), name);
+    }
 
 }
