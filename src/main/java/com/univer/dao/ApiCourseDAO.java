@@ -38,9 +38,8 @@ public class ApiCourseDAO {
 
 
     public void insertApiSection(Course course) {
-        //generate this method
         try (Connection connection = DatabaseConnection.getConnection()) {
-            String sql = "INSERT INTO course (id,title) VALUES (?, ?)";
+            String sql = "INSERT INTO course (idCourse,Course_name) VALUES (?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, course.getCourseID());
             statement.setString(2, course.getName());
@@ -48,5 +47,28 @@ public class ApiCourseDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    public List<Course> getApiCourseId(int courseSectionId) {
+        List<Course> apiCourse = new ArrayList<>();
+
+        try (Connection connection = DatabaseConnection.getConnection()) {
+            String sql = "SELECT * FROM course WHERE idCourse = ?";
+            PreparedStatement statement =  connection.prepareStatement(sql);
+            statement.setInt(1, courseSectionId);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("idCourse");
+                String title = resultSet.getString("Course_name");
+
+
+                Course apiSection = new Course(id, title);
+                apiCourse.add(apiSection);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return apiCourse;
     }
 }

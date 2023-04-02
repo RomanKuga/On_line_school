@@ -10,22 +10,24 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/secure/add_api_section")
-public class AddApiSectionController extends HttpServlet {
+@WebServlet(value ="/secure/add_api_section")
+public class AddCourseController extends HttpServlet {
 
     private ApiCourseDAO apiCourseDAO;
 
     public void init() {
         apiCourseDAO = new ApiCourseDAO();
     }
-
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.getRequestDispatcher("/WEB-INF/views/api_course/add_course.jsp").forward(request, response);
+    }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        int courseId= request.getIntHeader("id");
+        int courseId= Integer.parseInt(request.getParameter("id"));
         String title = request.getParameter("title");
- //       String description = request.getParameter("description");
 
         Course apiCourse = new Course(courseId,title);
         apiCourseDAO.insertApiSection(apiCourse);

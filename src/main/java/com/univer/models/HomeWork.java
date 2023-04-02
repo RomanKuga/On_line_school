@@ -2,6 +2,7 @@ package com.univer.models;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Objects;
 
 public class HomeWork extends MasterModels implements Serializable {
     @Serial
@@ -17,7 +18,10 @@ public class HomeWork extends MasterModels implements Serializable {
         this.task = task;
         calc++;
     }
-    public HomeWork(){}
+
+    public Integer getId() {
+        return id;
+    }
 
     public static int getCalc() {
         return calc;
@@ -38,6 +42,17 @@ public class HomeWork extends MasterModels implements Serializable {
 
     @Override
     public String toString() {
-        return "//  HomeWork id = " +  getID()  + "/ Lecture--  " + getLectureId() + "/ Опис--  " + getTask() + "//" + "\n";
+        return "//  HomeWork id = " +  id  + "/ Lecture--  " + lectureId + "/ Опис--  " + task + "//" + "\n";
+    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        HomeWork that = (HomeWork) o;
+//        return true;
+//    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, lectureId, task);
     }
 }

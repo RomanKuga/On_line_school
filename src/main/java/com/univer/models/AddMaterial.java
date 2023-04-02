@@ -4,6 +4,7 @@ import com.univer.service.AddMaterialService;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Objects;
 
 public  class AddMaterial extends MasterModels implements Comparable<AddMaterial>, Serializable {
     @Serial
@@ -13,6 +14,9 @@ private  Integer id;
     private String nameAddMaterials;
     private Integer lectureId;
     private ResourceType resourceType;
+    private String typeResource;
+    private String task;
+    private int numberResource;
 
     public AddMaterial(Integer id, String nameAddMaterials, Integer lectureId, ResourceType resourceType) {
         this.id=id;
@@ -20,6 +24,33 @@ private  Integer id;
         this.lectureId = lectureId;
         this.resourceType = resourceType;
         calc++;
+    }
+    public AddMaterial(Integer id, String nameAddMaterials, Integer lectureId, String typeResource, String task) {
+        this.id=id;
+        this.nameAddMaterials = nameAddMaterials;
+        this.lectureId = lectureId;
+        this.typeResource = typeResource;
+        this.task= task;
+
+    }
+    public AddMaterial( String typeResource, int numberResource) {
+
+        this.typeResource = typeResource;
+        this.numberResource=numberResource;
+    }
+
+    public int getNumberResource() {
+        return numberResource;
+    }
+
+    public String getTask() {
+        return task;
+    }
+
+
+
+    public String getTypeResource() {
+        return typeResource;
     }
 
     public static int getCalc() {
@@ -43,13 +74,13 @@ private  Integer id;
         return resourceType;
     }
 
-    public AddMaterial() {
-    }
+//    public AddMaterial() {
+//    }
 
     @Override
     public String toString() {
-        return "//  AddMaterials id = " + getID() + "/  Назва додаткових матеріалів--  " + getNameAddMaterials() +
-                "/ ID лекції-- " + getLectureId() + "/ Залучені типи додаткових завдань-- " + getResourceType() + "//"+ "\n";
+        return "//  AddMaterials id = " + id + "/  Назва додаткових матеріалів--  " + nameAddMaterials +
+                "/ ID лекції-- " + lectureId + "/ Залучені типи додаткових завдань-- " + typeResource + "//"+ "\n";
     }
 
     @Override
@@ -84,4 +115,15 @@ private  Integer id;
         }
 return 0;
   }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        AddMaterial that = (AddMaterial) o;
+//        return  Objects.equals(nameAddMaterials, that.nameAddMaterials);
+//    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nameAddMaterials, lectureId, typeResource,task);
+    }
 }

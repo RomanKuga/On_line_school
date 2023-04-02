@@ -5,16 +5,18 @@ import java.util.Objects;
 public class Course extends MasterModels implements Comparable<Course>{
     private static int calc;
     private String name;
-
+private  Integer courseID;
     public  Course(Integer courseID, String name){
         super(courseID);
         this.name=name;
+        this.courseID=courseID;
         calc++;
     }
 
-    public Course() {
+//    public Course() {
+//
+//    }
 
-    }
 
     @Override
     public Integer getLectureId() {
@@ -67,11 +69,11 @@ public class Course extends MasterModels implements Comparable<Course>{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Course that = (Course) o;
-        return getCourseID() == that.getCourseID() && Objects.equals(name, that.name);
+        return courseID.equals(that.courseID) && Objects.equals(name, that.name);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(getCourseID(), name);
+        return Objects.hash(courseID, name);
     }
 
 }

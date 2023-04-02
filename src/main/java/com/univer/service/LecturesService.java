@@ -31,7 +31,7 @@ public class LecturesService {
         this.repositoryLecture = dataMaster;
         this.dataPerson = dataPerson;
         this.homeWork = homeWork;
-        Lecture lectureExample = new Lecture();
+     //   Lecture lectureExample = new Lecture();
         int numberNext = 1;
         while (numberNext < 2) {
             LogCreateObject.logInfo(this.getClass().getName(), LogLevel.INFO.name(), "Перехід до меню Лекцій ", LocalDateTime.now());
@@ -53,32 +53,32 @@ public class LecturesService {
                     pt.lectureServiceAdd(repositoryLecture);
                     break;
                 case 2:
-                    System.out.println("Ви вибрали відкрити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
-                            " / ведіть номер лекції від 0 до " + (lectureExample.getCalcLecture() - 1));
-                    int numberLect = test.testInt();
-                    System.out.println(repositoryLecture.getModelsList().get(numberLect));
-                    if (repositoryLecture.getModelsList().get(numberLect) != null) {
-                        System.out.println(RepositoryHomeWork.getInstance().createMapHomeWork().get(numberLect + 1));
-                        System.out.println(RepositoryAddMaterial.getInstance().createMapAddMaterial().get(numberLect + 1));
-                    }
-                    break;
-                case 3:
-                    System.out.println("Ви вибрали видалити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
-                            " / ведіть номер лекції від 0 до " + (lectureExample.getCalcLecture() - 1));
-                    numberLect = test.testInt();
-                    repositoryLecture.getModelsList().remove(numberLect);
-                    for (int i = 0; i < addMaterial.getModelsList().size(); i++) {
-                        if ((numberLect + 1) == addMaterial.getModelsList().get(i).getLectureId()) {
-                            addMaterial.getModelsList().remove(i);
-                            i--;
-                        }
-                    }
-                    for (int i = 0; i < homeWork.getModelsList().size(); i++) {
-                        if ((numberLect + 1) == homeWork.getModelsList().get(i).getLectureId()) {
-                            homeWork.getModelsList().remove(i);
-                            i--;
-                        }
-                    }
+////                    System.out.println("Ви вибрали відкрити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
+////                            " / ведіть номер лекції від 0 до " + (lectureExample.getCalcLecture() - 1));
+////                    int numberLect = test.testInt();
+////                    System.out.println(repositoryLecture.getModelsList().get(numberLect));
+//                    if (repositoryLecture.getModelsList().get(numberLect) != null) {
+//                        System.out.println(RepositoryHomeWork.getInstance().createMapHomeWork().get(numberLect + 1));
+//                        System.out.println(RepositoryAddMaterial.getInstance().createMapAddMaterial().get(numberLect + 1));
+//                    }
+//                    break;
+//                case 3:
+//                    System.out.println("Ви вибрали видалити лекцію, кількість лекцій-" + lectureExample.getCalcLecture() +
+//                            " / ведіть номер лекції від 0 до " + (lectureExample.getCalcLecture() - 1));
+//                    numberLect = test.testInt();
+//                    repositoryLecture.getModelsList().remove(numberLect);
+//                    for (int i = 0; i < addMaterial.getModelsList().size(); i++) {
+//                        if ((numberLect + 1) == addMaterial.getModelsList().get(i).getLectureId()) {
+//                            addMaterial.getModelsList().remove(i);
+//                            i--;
+//                        }
+//                    }
+//                    for (int i = 0; i < homeWork.getModelsList().size(); i++) {
+//                        if ((numberLect + 1) == homeWork.getModelsList().get(i).getLectureId()) {
+//                            homeWork.getModelsList().remove(i);
+//                            i--;
+//                        }
+//                    }
                     pt.printArray(repositoryLecture.getModelsList());
                     break;
                 case 4:

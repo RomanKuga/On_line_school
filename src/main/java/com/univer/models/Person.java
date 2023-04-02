@@ -2,6 +2,7 @@ package com.univer.models;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Person extends MasterModels implements Comparable<Person>, Serializable {
 
@@ -11,13 +12,14 @@ public class Person extends MasterModels implements Comparable<Person>, Serializ
 
     private Integer courseId;
     private Role role;
+    private String roleString;
     private String firstName;
     private String secondName;
     private int personIDTmp;
     private String phone;
     private String email;
 
-    public Person(Integer personID, Integer courseId, Role role, String firstName, String secondName, String phone, String email) {
+    public Person(int personID, Integer courseId, Role role, String firstName, String secondName, String phone, String email) {
         super(personID);
         this.courseId = courseId;
         this.role = role;
@@ -28,6 +30,26 @@ public class Person extends MasterModels implements Comparable<Person>, Serializ
         calc++;
         personIDTmp = personID;
 
+    }
+    public Person(int personID, Integer courseId, String roleString, String firstName, String secondName, String phone, String email) {
+        super(personID);
+        this.courseId = courseId;
+        this.roleString = roleString;
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.phone = phone;
+        this.email = email;
+        calc++;
+        personIDTmp = personID;
+
+    }
+
+    public String getRoleString() {
+        return roleString;
+    }
+
+    public int getPersonIDTmp() {
+        return personIDTmp;
     }
 
     public Person() {
@@ -108,5 +130,16 @@ public class Person extends MasterModels implements Comparable<Person>, Serializ
             }
         }
         return 0;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person that = (Person) o;
+        return Objects.equals(personIDTmp,that.personIDTmp) && Objects.equals(courseId, that.courseId)&& Objects.equals(roleString, that.roleString)&& Objects.equals(firstName, that.firstName)&& Objects.equals(secondName, that.secondName) && Objects.equals(phone, that.phone)&& Objects.equals(email, that.email);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(personIDTmp, courseId, roleString, firstName, secondName, phone, email);
     }
 }

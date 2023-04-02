@@ -8,18 +8,22 @@
 </head>
 <body>
 <div class="container">
-    <h1>Welcome to the Servlet API Learning App</h1>
+    <h1>On line school </h1>
+    <h2>SECTION</h2>
     <p>
-        The Servlet API Learning App is a web application designed to help you learn about Java Servlets, JSP, and JSTL. This app provides a collection of examples and descriptions of the Servlet API and related technologies. By using this application, you will get a better understanding of how to build web applications using Java Servlets, JSP, and JSTL.
+        <a href="${pageContext.request.contextPath}/api-sections">Course</a>
     </p>
     <p>
-        To get started, you can either <a href="${pageContext.request.contextPath}/login">log in</a> or explore the <a href="${pageContext.request.contextPath}/api-sections">API sections</a> available. If you are a registered user, you will have access to additional functionality, such as adding new API sections and examples.
+        <a href="${pageContext.request.contextPath}/api_lecture">Lecture</a>
     </p>
     <p>
-        <a href="${pageContext.request.contextPath}/login">Login</a>
+        <a href="${pageContext.request.contextPath}/api_person">Person</a>
     </p>
     <p>
-        <a href="${pageContext.request.contextPath}/api-sections">API Sections</a>
+        <a href="${pageContext.request.contextPath}/api_add_material">Add material</a>
+    </p>
+    <p>
+        <a href="${pageContext.request.contextPath}/api_home_work">Home work</a>
     </p>
 </div>
 </body>
