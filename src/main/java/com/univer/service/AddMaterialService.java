@@ -45,7 +45,7 @@ public class AddMaterialService {
             ValidationUtil testing = new ValidationUtil();
             int numberPers = testing.testInt();
             AddMaterialService pt = new AddMaterialService();
-            BaseRequestAddMaterial request = new BaseRequestAddMaterial();
+            BaseRequestAddMaterial request= new BaseRequestAddMaterial();
             switch (numberPers) {
                 case 1:
                     pt.addMaterialsServiceAdd(addMaterial);

@@ -1,12 +1,13 @@
 package com.univer.repository;
 
 import com.univer.models.MasterModels;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component()
 public  class RepositoryCourse extends RepositoryMaster {
 
-    private static RepositoryCourse INSTANCE;
+    private  RepositoryCourse INSTANCE;
 
     private RepositoryCourse (){
 
@@ -21,7 +22,8 @@ public  class RepositoryCourse extends RepositoryMaster {
     public List<MasterModels> findAll() {
         return super.findAll();
     }
-    public static RepositoryCourse getInstance() {
+
+    public  RepositoryCourse getInstance() {
         if(INSTANCE == null) {
             INSTANCE = new RepositoryCourse();
         }

@@ -7,45 +7,51 @@ import com.univer.repository.*;
 import com.univer.serverANDclient.MenuServAndClient;
 import com.univer.service.GlobalMenu;
 import com.univer.service.ServiceValidator;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
 
+@ComponentScan({"repository"})
 public class Main {
+
     public static void main(String[] args) throws IOException, InterruptedException {
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Main.class);
 
-
-       MenuServAndClient menuServAndClient=new MenuServAndClient();
-     menuServAndClient.menuServAndClient();
+        MenuServAndClient menuServAndClient = new MenuServAndClient();
+        menuServAndClient.menuServAndClient();
 
         Course course = new Course(1, "History");
-        RepositoryCourse dataCourse = RepositoryCourse.getInstance();
-        dataCourse.getCourseList().add(course);
-        dataCourse.getCourseList().add(new Course(2,"Ukraine history"));
-        dataCourse.getCourseList().add(new Course(3,"Algebra"));
-        dataCourse.getCourseList().add(new Course(4,"Geometry"));
+
+        applicationContext.getBean(RepositoryCourse.class).getInstance();
+        applicationContext.getBean(RepositoryCourse.class).getCourseList().add(course);
+        applicationContext.getBean(RepositoryCourse.class).getCourseList().add(new Course(2, "Ukraine history"));
+        applicationContext.getBean(RepositoryCourse.class).getCourseList().add(new Course(3, "Algebra"));
+        applicationContext.getBean(RepositoryCourse.class).getCourseList().add(new Course(4, "Geometry"));
+        System.out.println(applicationContext.getBean(RepositoryCourse.class).getCourseList());
+
+        RepositoryCourse dataCourse =  applicationContext.getBean(RepositoryCourse.class);
 
 
-
-
-        HomeWork homeWork= (new HomeWork(1, 1, "test"));
-         RepositoryHomeWork tempHomeWork = RepositoryHomeWork.getInstance() ;
+        HomeWork homeWork = (new HomeWork(1, 1, "test"));
+        RepositoryHomeWork tempHomeWork = RepositoryHomeWork.getInstance();
         tempHomeWork.getModelsList().add(homeWork);
-         tempHomeWork.getModelsList().add(new HomeWork(2, 2, "test1"));
+        tempHomeWork.getModelsList().add(new HomeWork(2, 2, "test1"));
         tempHomeWork.getModelsList().add(new HomeWork(3, 1, "test2"));
         tempHomeWork.getModelsList().add(new HomeWork(4, 2, "test3"));
         tempHomeWork.getModelsList().add(new HomeWork(5, 1, "test4"));
-    
+
 
         RepositoryLecture repositoryLecture = RepositoryLecture.getInstance();
         repositoryLecture.getModelsList().add(new Lecture(1, course.getCourseID(), "quadratic equations", 1, "Wers1", tempHomeWork, new ServiceValidator().validatorTime("10.02.2022 12:30")));
-        repositoryLecture.getModelsList().add(new Lecture(2, course.getCourseID(), "equations", 1, "Wers2", null,new ServiceValidator().validatorTime("12.02.2022 12:30")));
-        repositoryLecture.getModelsList().add(new Lecture(3, course.getCourseID(), "line equations part 1", 12, "Wers3", null,new ServiceValidator().validatorTime("13.02.2022 12:30")));
-        repositoryLecture.getModelsList().add(new Lecture(4, course.getCourseID(), "line equations part 2", 11, "Wers4", null,new ServiceValidator().validatorTime("15.02.2022 12:30")));
-        repositoryLecture.getModelsList().add(new Lecture(5, course.getCourseID(), "line equations part 3", 2, "Wers5", null,new ServiceValidator().validatorTime("17.02.2022 12:30")));
-        repositoryLecture.getModelsList().add(new Lecture(6, course.getCourseID(), "line equations part 4", 2, "Wers6", null,new ServiceValidator().validatorTime("22.02.2022 12:30")));
+        repositoryLecture.getModelsList().add(new Lecture(2, course.getCourseID(), "equations", 1, "Wers2", null, new ServiceValidator().validatorTime("12.02.2022 12:30")));
+        repositoryLecture.getModelsList().add(new Lecture(3, course.getCourseID(), "line equations part 1", 12, "Wers3", null, new ServiceValidator().validatorTime("13.02.2022 12:30")));
+        repositoryLecture.getModelsList().add(new Lecture(4, course.getCourseID(), "line equations part 2", 11, "Wers4", null, new ServiceValidator().validatorTime("15.02.2022 12:30")));
+        repositoryLecture.getModelsList().add(new Lecture(5, course.getCourseID(), "line equations part 3", 2, "Wers5", null, new ServiceValidator().validatorTime("17.02.2022 12:30")));
+        repositoryLecture.getModelsList().add(new Lecture(6, course.getCourseID(), "line equations part 4", 2, "Wers6", null, new ServiceValidator().validatorTime("22.02.2022 12:30")));
 
-       // repositoryLecture.getModelsList().add(2,null);
 
 
         RepositoryPerson dataPerson = RepositoryPerson.getInstance();
@@ -64,17 +70,15 @@ public class Main {
         dataPerson.getModelsList().add(new Person(13, 1, Role.Student, "Jana", "lkjhg", "0502345328", "iasd12f9887@gmail.com"));
 
         RepositoryAddMaterial addMaterial = RepositoryAddMaterial.getInstance();
-        addMaterial.getModelsList().add(new AddMaterial(3, "quadratic equations",1,ResourceType.BOOK));
-        addMaterial.getModelsList().add(new AddMaterial(2, " equations",3,ResourceType.URL));
-        addMaterial.getModelsList().add(new AddMaterial(1, "quadratic equations 2",2,ResourceType.VIDEO));
-        addMaterial.getModelsList().add(new AddMaterial(1, "agssfs",2,ResourceType.VIDEO));
-        addMaterial.getModelsList().add(new AddMaterial(2, " aequations",3,ResourceType.URL));
+        addMaterial.getModelsList().add(new AddMaterial(3, "quadratic equations", 1, ResourceType.BOOK));
+        addMaterial.getModelsList().add(new AddMaterial(2, " equations", 3, ResourceType.URL));
+        addMaterial.getModelsList().add(new AddMaterial(1, "quadratic equations 2", 2, ResourceType.VIDEO));
+        addMaterial.getModelsList().add(new AddMaterial(1, "agssfs", 2, ResourceType.VIDEO));
+        addMaterial.getModelsList().add(new AddMaterial(2, " aequations", 3, ResourceType.URL));
         LogCreateObject.logInfo(Main.class.getName(), LogLevel.INFO.name(), "Внесення початкових даних ", LocalDateTime.now());
 
         GlobalMenu glMenu = new GlobalMenu();
-        glMenu.globalMenu(repositoryLecture, dataPerson,tempHomeWork,addMaterial, dataCourse);
-
-
+       glMenu.globalMenu(repositoryLecture, dataPerson, tempHomeWork, addMaterial, dataCourse);
 
 
     }

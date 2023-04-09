@@ -7,6 +7,7 @@ import com.univer.log.LogWriter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
@@ -15,15 +16,16 @@ import java.sql.*;
 import java.time.LocalDateTime;
 
 @Component
+@ComponentScan( {"workBaseSQL"})
 @PropertySource("classpath:application.properties")
 public class BaseRequestAddMaterial {
     ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BaseRequestAddMaterial.class);
     @Value("${db.url}")
-    private static String url;
+    private  String url;
     @Value("${db.username}")
-    private static String user;
+    private  String user;
     @Value("${db.password}")
-    private static String password;
+    private  String password;
 
     private Connection getConnection() throws SQLException {
         System.out.println(url);

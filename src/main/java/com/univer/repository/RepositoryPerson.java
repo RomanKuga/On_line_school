@@ -4,6 +4,7 @@ import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.models.MasterModels;
 import com.univer.models.Person;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.Serial;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Component
 public class RepositoryPerson extends RepositoryMaster implements Serializable {
 
     @Serial

@@ -4,6 +4,7 @@ import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.models.AddMaterial;
 import com.univer.models.MasterModels;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.Serial;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Component
 public class RepositoryAddMaterial extends RepositoryMaster implements Serializable {
 
     @Serial
