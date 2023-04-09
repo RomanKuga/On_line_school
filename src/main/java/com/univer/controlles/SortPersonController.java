@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "ApiSortPersonController", urlPatterns = {"/api-sortPerson"})
-public class ApiSortPersonController extends HttpServlet {
+public class SortPersonController extends HttpServlet {
     private final ApiPersonDAO apiExPersonDAO = new ApiPersonDAO();
 
     @Override

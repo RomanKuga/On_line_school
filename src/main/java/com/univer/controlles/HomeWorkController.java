@@ -1,7 +1,7 @@
 package com.univer.controlles;
 
-import com.univer.dao.ApiPersonDAO;
-import com.univer.models.Person;
+import com.univer.dao.ApiHomeWorkDAO;
+import com.univer.models.HomeWork;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,15 +11,15 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ApiPersonController", urlPatterns = {"/api_person"})
-public class ApiPersonController extends HttpServlet {
-    private final ApiPersonDAO apiPersonDAO = new ApiPersonDAO();
+@WebServlet(name = "ApiHomeWorkController", urlPatterns = {"/api_home_work"})
+public class HomeWorkController extends HttpServlet {
+    private final ApiHomeWorkDAO apiHomeWorkDAO = new ApiHomeWorkDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, IOException {
-        List<Person> apiPerson = apiPersonDAO.getAllApiLPerson();
-        request.setAttribute("personList", apiPerson);
-        request.getRequestDispatcher("/WEB-INF/views/api_person/person_all.jsp")
+        List<HomeWork> apiHomeWork = apiHomeWorkDAO.getAllApiHomeWork();
+        request.setAttribute("homeWorkList", apiHomeWork);
+        request.getRequestDispatcher("/WEB-INF/views/api_home_work/home_work_all.jsp")
                 .forward(request, response);
     }
 }

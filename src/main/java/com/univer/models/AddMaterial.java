@@ -74,8 +74,8 @@ private  Integer id;
         return resourceType;
     }
 
-//    public AddMaterial() {
-//    }
+    public AddMaterial() {
+    }
 
     @Override
     public String toString() {

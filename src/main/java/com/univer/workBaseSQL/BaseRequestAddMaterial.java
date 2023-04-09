@@ -4,29 +4,41 @@ import com.univer.errorMenuService.ValidationUtil;
 import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.log.LogWriter;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDateTime;
 
+@Component
+@PropertySource("classpath:application.properties")
 public class BaseRequestAddMaterial {
-    private static final String URL = "jdbc:mysql://localhost/on_line_school";
-    private static final String USER = "root";
-    private static final String PASSWORD = "qwerty123";
+    ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BaseRequestAddMaterial.class);
+    @Value("${db.url}")
+    private static String url;
+    @Value("${db.username}")
+    private static String user;
+    @Value("${db.password}")
+    private static String password;
 
-    private static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASSWORD);
+    private Connection getConnection() throws SQLException {
+        System.out.println(url);
+        return DriverManager.getConnection(url, user, password);
     }
 
-    public void baseAddMaterialPrintAll() throws  IOException {
+    public void baseAddMaterialPrintAll() throws IOException {
 
         String sql = "{call getBaseAllFields(?)}";
 
-        try (Connection connection = getConnection()) {
+        try (Connection connection = applicationContext.getBean(BaseRequestAddMaterial.class).getConnection()) {
 
             CallableStatement callableStatement = connection.prepareCall(sql);
 
-            callableStatement.setString(Types.CHAR,"addmaterial");
+            callableStatement.setString(Types.CHAR, "addmaterial");
 
 
             ResultSet resultSet = callableStatement.executeQuery();
@@ -45,11 +57,11 @@ public class BaseRequestAddMaterial {
         }
     }
 
-    public void openBaseAddMaterialPrintLine() throws  IOException {
+    public void openBaseAddMaterialPrintLine() throws IOException {
         ValidationUtil testing = new ValidationUtil();
         String sqlFirst = "SELECT COUNT(*) FROM on_line_school.addmaterial";
 
-        try (PreparedStatement statement = getConnection().prepareStatement(sqlFirst)) {
+        try (PreparedStatement statement = applicationContext.getBean(BaseRequestAddMaterial.class).getConnection().prepareStatement(sqlFirst)) {
 
             ResultSet resultSet = statement.executeQuery();
 
@@ -64,7 +76,7 @@ public class BaseRequestAddMaterial {
 
                 try (Connection connection = getConnection()) {
 
-                    CallableStatement callableStatement = connection.prepareCall(sql,ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);
+                    CallableStatement callableStatement = connection.prepareCall(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
                     callableStatement.setString(Types.CHAR, "addmaterial");
 
@@ -96,11 +108,11 @@ public class BaseRequestAddMaterial {
         }
     }
 
-        public void sortBaseAddMaterialForLecture() throws  IOException {
+    public void sortBaseAddMaterialForLecture() throws IOException {
 
         String sql = "SELECT * FROM on_line_school.addmaterial order by idLecture;";
 
-        try (PreparedStatement prepareStatement = getConnection().prepareStatement(sql)) {
+        try (PreparedStatement prepareStatement = applicationContext.getBean(BaseRequestAddMaterial.class).getConnection().prepareStatement(sql)) {
 
             ResultSet resultSet = prepareStatement.executeQuery();
 
@@ -118,11 +130,11 @@ public class BaseRequestAddMaterial {
         }
     }
 
-    public void sortBaseAddMaterialForID() throws  IOException {
+    public void sortBaseAddMaterialForID() throws IOException {
 
         String sql = "SELECT * FROM on_line_school.addmaterial order by idaddMaterial;";
 
-        try (PreparedStatement preparedStatement = getConnection().prepareStatement(sql)) {
+        try (PreparedStatement preparedStatement = applicationContext.getBean(BaseRequestAddMaterial.class).getConnection().prepareStatement(sql)) {
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -140,11 +152,11 @@ public class BaseRequestAddMaterial {
         }
     }
 
-    public void sortBaseAddMaterialForResourseType() throws  IOException {
+    public void sortBaseAddMaterialForResourseType() throws IOException {
 
         String sql = "SELECT * FROM on_line_school.addmaterial order by resourseType;";
 
-        try (PreparedStatement preparedStatement = getConnection().prepareStatement(sql)) {
+        try (PreparedStatement preparedStatement = applicationContext.getBean(BaseRequestAddMaterial.class).getConnection().prepareStatement(sql)) {
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -162,13 +174,12 @@ public class BaseRequestAddMaterial {
         }
     }
 
-    public void addBaseAddMaterialForLecture(int idAddMaterial, String nameAddMaterial, int idLecture, String resourseType) throws  IOException {
-
+    public void addBaseAddMaterialForLecture(int idAddMaterial, String nameAddMaterial, int idLecture, String resourseType) throws IOException {
 
 
         String sql = "SELECT * FROM on_line_school.addmaterial;";
 
-        try (PreparedStatement preparedStatement = getConnection().prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE)) {
+        try (PreparedStatement preparedStatement = applicationContext.getBean(BaseRequestAddMaterial.class).getConnection().prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -187,11 +198,11 @@ public class BaseRequestAddMaterial {
         }
     }
 
-    public void deleteBaseAddMaterialPrintLine() throws  IOException {
+    public void deleteBaseAddMaterialPrintLine() throws IOException {
         ValidationUtil testing = new ValidationUtil();
         String sqlFirst = "SELECT COUNT(*) FROM on_line_school.addmaterial";
 
-        try (PreparedStatement preparedStatement = getConnection().prepareStatement(sqlFirst,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE)) {
+        try (PreparedStatement preparedStatement = applicationContext.getBean(BaseRequestAddMaterial.class).getConnection().prepareStatement(sqlFirst, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
 
             ResultSet resultSet = preparedStatement.executeQuery();
 

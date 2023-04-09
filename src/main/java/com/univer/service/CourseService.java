@@ -24,7 +24,7 @@ public class CourseService {
 
     public void menuCourse(RepositoryCourse dataCourse) throws IOException {
         this.dataCourse = dataCourse;
-      //  Course courseExample = new Course();
+        Course courseExample = new Course();
         int numberNext = 1;
         while (numberNext < 2) {
 
@@ -45,27 +45,27 @@ public class CourseService {
                 case 1:
                     pt.courseServiceAdd(dataCourse);
                     break;
-//                case 2:
-//                    System.out.println("Ви вибрали відкрити курс, кількість курсів-" + courseExample.getCalcCourse() +
-//                            " / ведіть номер курсу від 0 до " + (courseExample.getCalcCourse() - 1));
-//                    numberPers = testing.testInt();
-//                    while  (numberPers > courseExample.getCalcCourse()-1) {
-//                        System.out.println("Ввели номер, який не є впроміжку номерів курсу, спробуйте ще");
-//                        numberPers = testing.testInt();
-//                    }
-//                    System.out.println(dataCourse.getModelsList().get(numberPers));
-//                    break;
-//                case 3:
-//                    System.out.println("Ви вибрали видалити курс, кількість курсів-" + courseExample.getCalcCourse() +
-//                            " / ведіть номер курсу від 0 до " + (courseExample.getCalcCourse() - 1));
-//                    numberPers = testing.testInt();
-//                    while  (numberPers > courseExample.getCalcCourse()-1) {
-//                        System.out.println("Ввели номер, який не є впроміжку номерів курсу, спробуйте ще");
-//                        numberPers = testing.testInt();
-//                    }
-             //       this.dataCourse.getModelsList().remove(numberPers);
-//                    pt.printArray(this.dataCourse.getModelsList());
- //                   break;
+                case 2:
+                    System.out.println("Ви вибрали відкрити курс, кількість курсів-" + courseExample.getCalcCourse() +
+                            " / ведіть номер курсу від 0 до " + (courseExample.getCalcCourse() - 1));
+                    numberPers = testing.testInt();
+                    while  (numberPers > courseExample.getCalcCourse()-1) {
+                        System.out.println("Ввели номер, який не є впроміжку номерів курсу, спробуйте ще");
+                        numberPers = testing.testInt();
+                    }
+                    System.out.println(dataCourse.getModelsList().get(numberPers));
+                    break;
+                case 3:
+                    System.out.println("Ви вибрали видалити курс, кількість курсів-" + courseExample.getCalcCourse() +
+                            " / ведіть номер курсу від 0 до " + (courseExample.getCalcCourse() - 1));
+                    numberPers = testing.testInt();
+                    while  (numberPers > courseExample.getCalcCourse()-1) {
+                        System.out.println("Ввели номер, який не є впроміжку номерів курсу, спробуйте ще");
+                        numberPers = testing.testInt();
+                    }
+                    this.dataCourse.getModelsList().remove(numberPers);
+                    pt.printArray(this.dataCourse.getModelsList());
+                    break;
                 case 4:
                     pt.printArray(this.dataCourse.findAll());
                     break;
@@ -78,13 +78,13 @@ public class CourseService {
 
                     break;
                 case 7:
-//                    System.out.println("Ви вибрали backup курсу, кількість курсів-" + courseExample.getCalcCourse() +
-//                            " / ведіть номер курсу від 1 до " + courseExample.getCalcCourse());
-//                    numberPers = testing.testInt();
-//                    while ((numberPers == 0) || (numberPers > courseExample.getCalcCourse())) {
-//                        System.out.println("Ввели номер, який не є впроміжку номерів курсу, спробуйте ще");
-//                        numberPers = testing.testInt();
-//                    }
+                    System.out.println("Ви вибрали backup курсу, кількість курсів-" + courseExample.getCalcCourse() +
+                            " / ведіть номер курсу від 1 до " + courseExample.getCalcCourse());
+                    numberPers = testing.testInt();
+                    while ((numberPers == 0) || (numberPers > courseExample.getCalcCourse())) {
+                        System.out.println("Ввели номер, який не є впроміжку номерів курсу, спробуйте ще");
+                        numberPers = testing.testInt();
+                    }
                     List<Lecture> tempLecture = RepositoryLecture.getInstance().createMapLecture().get(numberPers);
                     List<HomeWork> newTempHomeWork = new ArrayList<>();
                     List<AddMaterial> newTempAddMaterial = new ArrayList<>();

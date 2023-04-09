@@ -13,9 +13,9 @@ private  Integer courseID;
         calc++;
     }
 
-//    public Course() {
-//
-//    }
+    public Course() {
+
+    }
 
 
     @Override

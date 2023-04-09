@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "ApiSortAddMaterial", urlPatterns = {"/api-sortAddMaterial"})
-public class ApiSortAddMaterial extends HttpServlet {
+public class SortAddMaterial extends HttpServlet {
     private final ApiAddMaterial apiSortAddMaterialDAO = new ApiAddMaterial();
 
     @Override

@@ -13,11 +13,7 @@ public class PropertiesLoader {
     static {
         properties = new Properties();
 
-//            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-//            URI resurceURI = Objects.requireNonNull(classLoader.getResource("/application.properties")).toURI();
-//            Path path = Paths.get(resurceURI);
 
-        //ServletContext context = getServletContext();
 
         Path path = Paths.get("D:\\Java_Projects\\On_line_school\\src\\main\\webapp\\resources\\application.properties");
 

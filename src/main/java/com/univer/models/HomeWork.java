@@ -44,13 +44,7 @@ public class HomeWork extends MasterModels implements Serializable {
     public String toString() {
         return "//  HomeWork id = " +  id  + "/ Lecture--  " + lectureId + "/ Опис--  " + task + "//" + "\n";
     }
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        HomeWork that = (HomeWork) o;
-//        return true;
-//    }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, lectureId, task);

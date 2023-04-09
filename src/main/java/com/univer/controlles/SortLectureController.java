@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "ApiSortLectureController", urlPatterns = {"/api-sortLecture"})
-public class ApiSortLectureController extends HttpServlet {
+public class SortLectureController extends HttpServlet {
     private final ApiLectureDAO apiExLectureDAO = new ApiLectureDAO();
 
     @Override

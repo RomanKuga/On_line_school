@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "ApiAddMaterialController", urlPatterns = {"/api_add_material"})
-public class ApiAddMaterialController extends HttpServlet {
+public class MaterialAddController extends HttpServlet {
     private final ApiAddMaterial apiAddMaterialDAO = new ApiAddMaterial();
 
     @Override

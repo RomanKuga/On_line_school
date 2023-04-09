@@ -1,7 +1,7 @@
 package com.univer.controlles;
 
-import com.univer.dao.ApiPersonDAO;
-import com.univer.models.Person;
+import com.univer.dao.ApiCourseDAO;
+import com.univer.models.Course;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,15 +11,15 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ApiExPersonController", urlPatterns = {"/api-exPerson"})
-public class ApiExPersonController extends HttpServlet {
-    private final ApiPersonDAO apiExPersonDAO = new ApiPersonDAO();
+@WebServlet(name = "ApiExCourseController", urlPatterns = {"/api-exCourse"})
+public class RequestCourseController extends HttpServlet {
+    private final ApiCourseDAO apiExCourseDAO = new ApiCourseDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int sectionId = Integer.parseInt(request.getParameter("sectionId"));
-        List<Person> apiExPerson = apiExPersonDAO.getApiPersonId(sectionId);
-        request.setAttribute("apiExPerson", apiExPerson);
-        request.getRequestDispatcher("/WEB-INF/views/api_example/apiExPerson.jsp").forward(request, response);
+        List<Course> apiExCourse = apiExCourseDAO.getApiCourseId(sectionId);
+        request.setAttribute("apiExCourse", apiExCourse);
+        request.getRequestDispatcher("/WEB-INF/views/api_example/apiExCourse.jsp").forward(request, response);
     }
 }

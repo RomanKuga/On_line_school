@@ -47,8 +47,8 @@ public class Lecture extends MasterModels implements Serializable {
         return holdingTimeLecture;
     }
 
-    // public Lecture() {
-    //   }
+     public Lecture() {
+       }
     public Lecture(Integer id, String name, String holdingTimeString, int number) {
         this.id = id;
         this.name = name;
