@@ -24,8 +24,7 @@ public class ApiAddMaterial {
                 String nameAddMaterial = resultSet.getString("nameAddMaterial");
                 int idLecture = resultSet.getInt("idLecture");
                 String resourceType = resultSet.getString("resourseType");
-                String task = null;
-                AddMaterial addMaterial = new AddMaterial(idaddMaterial,nameAddMaterial, idLecture, resourceType,task);
+                AddMaterial addMaterial = new AddMaterial(idaddMaterial,nameAddMaterial, idLecture, resourceType,null);
 
                 apiAddMaterial.add(addMaterial);
             }
@@ -41,7 +40,7 @@ public class ApiAddMaterial {
 
         try (Connection connection = DatabaseConnection.getConnection()) {
             String sql = "SELECT  addmaterial.resourseType, count(*) as Number FROM addmaterial Group by resourseType;";
-            PreparedStatement statement = connection.prepareStatement(sql);
+            var statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {

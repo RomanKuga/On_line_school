@@ -25,9 +25,9 @@
 
   <c:forEach var="apiSection" items="${courseList}">
    <h4> <tr>
-      <td>${apiSection.courseID}</td>
-      <td>${apiSection.name}</td>
-      <td><a href="${pageContext.request.contextPath}/api-exLecturePerson?sectionId=${apiSection.courseID}">View Examples</a></td>
+      <td>${apiSection.idCourse}</td>
+      <td>${apiSection.courseName}</td>
+      <td><a href="${pageContext.request.contextPath}/api-exLecturePerson?sectionId=${apiSection.idCourse}">View Examples</a></td>
     </tr></h4>
   </c:forEach>
   </tbody>

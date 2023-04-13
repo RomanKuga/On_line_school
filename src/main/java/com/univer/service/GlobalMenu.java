@@ -9,6 +9,7 @@ import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.repository.*;
 import com.univer.serverANDclient.MenuServAndClient;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -17,7 +18,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
-
+@Component
 public class GlobalMenu {
 
 

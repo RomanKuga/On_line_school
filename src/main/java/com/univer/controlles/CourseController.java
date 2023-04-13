@@ -1,7 +1,7 @@
 package com.univer.controlles;
 
+import com.univer.baseEntity.CourseEntity;
 import com.univer.dao.ApiCourseDAO;
-import com.univer.models.Course;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,7 +18,7 @@ public class CourseController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, IOException {
-        List<Course> apiCourse = apiCourseDAO.getAllApiCourse();
+        List<CourseEntity> apiCourse =  apiCourseDAO.getAllApiCourse();
 
         request.setAttribute("courseList", apiCourse);
         request.getRequestDispatcher("/WEB-INF/views/api_course/course_all.jsp")

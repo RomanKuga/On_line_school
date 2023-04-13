@@ -5,10 +5,8 @@ import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.log.LogWriter;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -17,9 +15,9 @@ import java.time.LocalDateTime;
 
 @Component
 @ComponentScan( {"workBaseSQL"})
-@PropertySource("classpath:application.properties")
+//@PropertySource("classpath:application.properties")
 public class BaseRequestAddMaterial {
-    ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BaseRequestAddMaterial.class);
+    AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BaseRequestAddMaterial.class);
     @Value("${db.url}")
     private  String url;
     @Value("${db.username}")

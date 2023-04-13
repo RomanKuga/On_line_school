@@ -3,36 +3,38 @@ package com.univer;
 import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.models.*;
-import com.univer.repository.*;
+import com.univer.repository.RepositoryAddMaterial;
+import com.univer.repository.RepositoryHomeWork;
+import com.univer.repository.RepositoryLecture;
+import com.univer.repository.RepositoryPerson;
 import com.univer.serverANDclient.MenuServAndClient;
 import com.univer.service.GlobalMenu;
 import com.univer.service.ServiceValidator;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-@ComponentScan({"repository"})
+@ComponentScan({"serverANDclient","repository","workBaseSQL"})
 public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Main.class);
+        new MenuServAndClient().menuServAndClient() ;
 
-        MenuServAndClient menuServAndClient = new MenuServAndClient();
-        menuServAndClient.menuServAndClient();
-
-        Course course = new Course(1, "History");
-
-        applicationContext.getBean(RepositoryCourse.class).getInstance();
-        applicationContext.getBean(RepositoryCourse.class).getCourseList().add(course);
-        applicationContext.getBean(RepositoryCourse.class).getCourseList().add(new Course(2, "Ukraine history"));
-        applicationContext.getBean(RepositoryCourse.class).getCourseList().add(new Course(3, "Algebra"));
-        applicationContext.getBean(RepositoryCourse.class).getCourseList().add(new Course(4, "Geometry"));
-        System.out.println(applicationContext.getBean(RepositoryCourse.class).getCourseList());
-
-        RepositoryCourse dataCourse =  applicationContext.getBean(RepositoryCourse.class);
+//        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(RepositoryCourse.class);
+//      //  applicationContext.getBean(MenuServAndClient.class).menuServAndClient();
+//
+//
+       Course course = new Course(1, "History");
+//
+//        applicationContext.getBean(RepositoryCourse.class).getInstance();
+//        applicationContext.getBean(RepositoryCourse.class).getCourseList().add(course);
+//        applicationContext.getBean(RepositoryCourse.class).getCourseList().add(new Course(2, "Ukraine history"));
+//        applicationContext.getBean(RepositoryCourse.class).getCourseList().add(new Course(3, "Algebra"));
+//        applicationContext.getBean(RepositoryCourse.class).getCourseList().add(new Course(4, "Geometry"));
+//        System.out.println(applicationContext.getBean(RepositoryCourse.class).getCourseList());
+//
+//        RepositoryCourse dataCourse =  applicationContext.getBean(RepositoryCourse.class);
 
 
         HomeWork homeWork = (new HomeWork(1, 1, "test"));
@@ -78,7 +80,7 @@ public class Main {
         LogCreateObject.logInfo(Main.class.getName(), LogLevel.INFO.name(), "Внесення початкових даних ", LocalDateTime.now());
 
         GlobalMenu glMenu = new GlobalMenu();
-       glMenu.globalMenu(repositoryLecture, dataPerson, tempHomeWork, addMaterial, dataCourse);
+       glMenu.globalMenu(repositoryLecture, dataPerson, tempHomeWork, addMaterial, null);
 
 
     }

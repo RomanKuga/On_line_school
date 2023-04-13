@@ -85,7 +85,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>6.0.7</version>
+            <version>6.0.6</version>
         </dependency>
 
         <dependency>
@@ -105,6 +105,11 @@
             <version>2.1.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.1.7.Final</version>
+        </dependency>
 
 
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->

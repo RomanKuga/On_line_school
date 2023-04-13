@@ -1,7 +1,7 @@
 package com.univer.controlles;
 
+import com.univer.baseEntity.CourseEntity;
 import com.univer.dao.ApiCourseDAO;
-import com.univer.models.Course;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -29,7 +29,10 @@ public class AddCourseController extends HttpServlet {
         int courseId= Integer.parseInt(request.getParameter("id"));
         String title = request.getParameter("title");
 
-        Course apiCourse = new Course(courseId,title);
+        CourseEntity apiCourse = new CourseEntity();
+        apiCourse.setIdCourse(courseId);
+        apiCourse.setCourseName(title);
+        System.out.println(apiCourse);
         apiCourseDAO.insertApiSection(apiCourse);
 
         response.sendRedirect(request.getContextPath() + "/api-sections");

@@ -2,13 +2,14 @@ package com.univer.serverANDclient;
 
 import com.univer.errorMenuService.ValidationUtil;
 import com.univer.service.ServiceValidator;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.Scanner;
-
+@Component
 public class MenuServAndClient {
 
-    public void menuServAndClient() throws IOException {
+    public   MenuServAndClient menuServAndClient() throws IOException {
         int df = 1;
         while (df == 1) {
             System.out.println("""
@@ -36,7 +37,8 @@ public class MenuServAndClient {
                 default -> System.out.println("Такої категорії не існує");
             }
         }
-    }
+    return null;
+}
 
     public void menuBlackList() throws IOException {
         int df = 1;
