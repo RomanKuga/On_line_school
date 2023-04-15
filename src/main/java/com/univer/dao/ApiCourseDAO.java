@@ -63,27 +63,5 @@ public class ApiCourseDAO {
 
 
     }
-//    public List<Course> getApiCourseId(int courseSectionId) {
-//        List<Course> apiCourse = new ArrayList<>();
-//
-//        try (Connection connection = DatabaseConnection.getConnection()) {
-//            String sql = "SELECT * FROM course WHERE idCourse = ?";
-//            PreparedStatement statement = connection.prepareStatement(sql);
-//            statement.setInt(1, courseSectionId);
-//            ResultSet resultSet = statement.executeQuery();
-//
-//            while (resultSet.next()) {
-//                int id = resultSet.getInt("idCourse");
-//                String title = resultSet.getString("Course_name");
-//
-//
-//                Course apiSection = new Course(id, title);
-//                apiCourse.add(apiSection);
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return apiCourse;
-//    }
+
 }
