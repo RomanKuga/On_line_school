@@ -30,7 +30,7 @@ public class AddCourseController extends HttpServlet {
         String title = request.getParameter("title");
 
         CourseEntity apiCourse = new CourseEntity();
-        apiCourse.setIdCourse(courseId);
+       // apiCourse.setIdCourse(courseId);
         apiCourse.setCourseName(title);
         System.out.println(apiCourse);
         apiCourseDAO.insertApiSection(apiCourse);

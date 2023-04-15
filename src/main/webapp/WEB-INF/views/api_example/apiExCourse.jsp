@@ -24,8 +24,8 @@
 
   <c:forEach var="apiExCourse" items="${apiExCourse}">
     <h4> <tr>
-      <td>${apiExCourse.courseID}</td>
-      <td>${apiExCourse.name}</td>
+      <td>${apiExCourse.idCourse}</td>
+      <td>${apiExCourse.courseName}</td>
     </tr></h4>
   </c:forEach>
   </tbody>

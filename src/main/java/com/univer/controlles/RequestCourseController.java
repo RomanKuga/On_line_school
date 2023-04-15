@@ -1,7 +1,7 @@
 package com.univer.controlles;
 
+import com.univer.baseEntity.CourseEntity;
 import com.univer.dao.ApiCourseDAO;
-import com.univer.models.Course;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,7 +18,7 @@ public class RequestCourseController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int sectionId = Integer.parseInt(request.getParameter("sectionId"));
-        List<Course> apiExCourse = apiExCourseDAO.getApiCourseId(sectionId);
+        List<CourseEntity> apiExCourse = apiExCourseDAO.getApiCourseId(sectionId);
         request.setAttribute("apiExCourse", apiExCourse);
         request.getRequestDispatcher("/WEB-INF/views/api_example/apiExCourse.jsp").forward(request, response);
     }
