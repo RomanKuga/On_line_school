@@ -3,6 +3,7 @@ package com.univer.baseEntity;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -29,6 +30,33 @@ public class LectureEntity {
     @Basic
     @Column(name = "dateTime", nullable = false)
     private Timestamp dateTime;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idCourse")
+    private CourseEntity courseEntity;
+    public CourseEntity getCourseEntity() {
+        return courseEntity;
+    }
+    public void setCourseEntity(CourseEntity courseEntity) {
+        this.courseEntity = courseEntity;
+    }
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idLecture", cascade = CascadeType.ALL)
+    public List<AddmaterialEntity> addMaterialEntities;
+    public List<AddmaterialEntity> getAddMaterialEntities() {
+        return addMaterialEntities;
+    }
+
+    public void setAddMaterialEntities(List<AddmaterialEntity> addMaterialEntities) {
+        this.addMaterialEntities = addMaterialEntities;
+    }
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idLecture", cascade = CascadeType.ALL)
+    public List<HomeworkEntity> homeworkEntities;
+    public List<HomeworkEntity> getHomeworkEntities() {
+        return homeworkEntities;
+    }
+
+    public void setHomeworkEntities(List<HomeworkEntity> homeworkEntities) {
+        this.homeworkEntities = homeworkEntities;
+    }
 
     public int getIdLecture() {
         return idLecture;

@@ -2,6 +2,7 @@ package com.univer.baseEntity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -11,6 +12,26 @@ public class CourseEntity {
     @Id
     @Column(name = "idCourse", nullable = false)
     private int idCourse;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idCourse", cascade = CascadeType.ALL)
+    public List<LectureEntity> lectureEntities;
+    public List<LectureEntity> getLectureEntity() {
+        return lectureEntities;
+    }
+
+    public void setLectureEntities(List<LectureEntity> lectureEntities) {
+        this.lectureEntities = lectureEntities;
+    }
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idCourse", cascade = CascadeType.ALL)
+    public List<PersonEntity> personEntities;
+    public List<PersonEntity> getPersonEntities() {
+        return personEntities;
+    }
+
+    public void setPersonEntities(List<PersonEntity> personEntities) {
+        this.personEntities = personEntities;
+    }
+
     @Basic
     @Column(name = "Course_name", nullable = false, length = 100)
     private String courseName;

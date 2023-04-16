@@ -29,7 +29,15 @@ public class PersonEntity {
     @Basic
     @Column(name = "email", nullable = false, length = 45)
     private String email;
-
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idCourse")
+    private CourseEntity courseEntity;
+    public CourseEntity getCourseEntity() {
+        return courseEntity;
+    }
+    public void setCourseEntity(CourseEntity courseEntity) {
+        this.courseEntity = courseEntity;
+    }
     public int getIdPerson() {
         return idPerson;
     }

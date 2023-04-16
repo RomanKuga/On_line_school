@@ -17,6 +17,16 @@ public class HomeworkEntity {
     @Basic
     @Column(name = "task", nullable = false, length = 45)
     private String task;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idLecture")
+    private LectureEntity lectureEntity;
+    public LectureEntity getLectureEntity() {
+        return lectureEntity;
+    }
+
+    public void setLectureEntity(LectureEntity lectureEntity) {
+        this.lectureEntity = lectureEntity;
+    }
 
     public int getIdhomeWork() {
         return idhomeWork;

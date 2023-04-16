@@ -20,6 +20,16 @@ public class AddmaterialEntity {
     @Basic
     @Column(name = "resourseType", nullable = false, length = 45)
     private String resourseType;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idLecture")
+    private LectureEntity lectureEntity;
+    public LectureEntity getLectureEntity() {
+        return lectureEntity;
+    }
+
+    public void setLectureEntity(LectureEntity lectureEntity) {
+        this.lectureEntity = lectureEntity;
+    }
 
     public int getIdaddMaterial() {
         return idaddMaterial;
