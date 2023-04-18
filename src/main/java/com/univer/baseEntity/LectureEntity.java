@@ -14,8 +14,25 @@ public class LectureEntity {
     @Id
     @Column(name = "idLecture", nullable = false)
     private int idLecture;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idLecture", cascade = CascadeType.REMOVE)
+    public List<HomeworkEntity> homeworkEntities;
+    public List<HomeworkEntity> getHomeworkEntities() {
+        return homeworkEntities;
+    }
+    public void setHomeworkEntities(List<HomeworkEntity> homeworkEntities) {
+        this.homeworkEntities = homeworkEntities;
+    }
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idLecture", cascade = CascadeType.ALL)
+    public List<AddmaterialEntity> addMaterialEntities;
+    public List<AddmaterialEntity> getAddMaterialEntities() {
+        return addMaterialEntities;
+    }
+    public void setAddMaterialEntities(List<AddmaterialEntity> addMaterialEntities) {
+        this.addMaterialEntities = addMaterialEntities;
+    }
+
     @Basic
-    @Column(name = "idCourse", nullable = false)
+    @Column(name = "idCourse", nullable = false, insertable=false, updatable = false)
     private int idCourse;
     @Basic
     @Column(name = "name", nullable = false, length = 45)
@@ -39,24 +56,8 @@ public class LectureEntity {
     public void setCourseEntity(CourseEntity courseEntity) {
         this.courseEntity = courseEntity;
     }
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idLecture", cascade = CascadeType.ALL)
-    public List<AddmaterialEntity> addMaterialEntities;
-    public List<AddmaterialEntity> getAddMaterialEntities() {
-        return addMaterialEntities;
-    }
 
-    public void setAddMaterialEntities(List<AddmaterialEntity> addMaterialEntities) {
-        this.addMaterialEntities = addMaterialEntities;
-    }
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idLecture", cascade = CascadeType.ALL)
-    public List<HomeworkEntity> homeworkEntities;
-    public List<HomeworkEntity> getHomeworkEntities() {
-        return homeworkEntities;
-    }
 
-    public void setHomeworkEntities(List<HomeworkEntity> homeworkEntities) {
-        this.homeworkEntities = homeworkEntities;
-    }
 
     public int getIdLecture() {
         return idLecture;

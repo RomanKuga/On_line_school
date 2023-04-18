@@ -9,6 +9,7 @@
     <property name="connection.username">root</property>
     <property name="connection.password">qwerty123</property>
 
+
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
     <mapping class="com.univer.baseEntity.AddmaterialEntity"/>

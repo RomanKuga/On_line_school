@@ -9,10 +9,10 @@ import java.util.Objects;
 public class PersonEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "idPerson", nullable = false)
+    @Column(name = "idPerson", nullable = false,updatable = false)
     private int idPerson;
     @Basic
-    @Column(name = "idCourse", nullable = false)
+    @Column(name = "idCourse", nullable = false, insertable=false, updatable = false)
     private int idCourse;
     @Basic
     @Column(name = "role", nullable = false, length = 45)

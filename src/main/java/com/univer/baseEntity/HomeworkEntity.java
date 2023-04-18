@@ -12,13 +12,13 @@ public class HomeworkEntity {
     @Column(name = "idhomeWork", nullable = false)
     private int idhomeWork;
     @Basic
-    @Column(name = "idLecture", nullable = false)
+    @Column(name = "idLecture", nullable = false, insertable=false, updatable = false)
     private int idLecture;
     @Basic
     @Column(name = "task", nullable = false, length = 45)
     private String task;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "idLecture")
+//    @JoinColumn(name = "idLecture")
     private LectureEntity lectureEntity;
     public LectureEntity getLectureEntity() {
         return lectureEntity;

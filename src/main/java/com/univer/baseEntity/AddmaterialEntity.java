@@ -15,13 +15,13 @@ public class AddmaterialEntity {
     @Column(name = "nameAddMaterial", nullable = false, length = 45)
     private String nameAddMaterial;
     @Basic
-    @Column(name = "idLecture", nullable = false)
+    @Column(name = "idLecture", nullable = false, insertable=false, updatable = false)
     private int idLecture;
     @Basic
     @Column(name = "resourseType", nullable = false, length = 45)
     private String resourseType;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "idLecture")
+   @JoinColumn(name = "idLecture")
     private LectureEntity lectureEntity;
     public LectureEntity getLectureEntity() {
         return lectureEntity;
