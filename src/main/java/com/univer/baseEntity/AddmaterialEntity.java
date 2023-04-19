@@ -1,11 +1,15 @@
 package com.univer.baseEntity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "addmaterial", schema = "on_line_school")
+@Cacheable
+@org.hibernate.annotations.Cache(
+        usage = CacheConcurrencyStrategy.READ_WRITE)
 public class AddmaterialEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -20,7 +24,7 @@ public class AddmaterialEntity {
     @Basic
     @Column(name = "resourseType", nullable = false, length = 45)
     private String resourseType;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
    @JoinColumn(name = "idLecture")
     private LectureEntity lectureEntity;
     public LectureEntity getLectureEntity() {

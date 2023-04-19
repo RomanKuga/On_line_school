@@ -122,7 +122,12 @@
             <artifactId>hibernate-jcache</artifactId>
             <version>6.2.1.Final</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/org.ehcache.modules/ehcache-api -->
+        <dependency>
+            <groupId>org.ehcache.modules</groupId>
+            <artifactId>ehcache-api</artifactId>
+            <version>3.10.8</version>
+        </dependency>
 
 
         <dependency>

@@ -1,6 +1,7 @@
 package com.univer.baseEntity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -8,7 +9,9 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "lecture", schema = "on_line_school")
-@IdClass(LectureEntityPK.class)
+@Cacheable
+@org.hibernate.annotations.Cache(
+        usage = CacheConcurrencyStrategy.READ_WRITE)
 public class LectureEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -30,15 +33,14 @@ public class LectureEntity {
     public void setAddMaterialEntities(List<AddmaterialEntity> addMaterialEntities) {
         this.addMaterialEntities = addMaterialEntities;
     }
-
     @Basic
     @Column(name = "idCourse", nullable = false, insertable=false, updatable = false)
     private int idCourse;
     @Basic
     @Column(name = "name", nullable = false, length = 45)
     private String name;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
+
+    @Basic
     @Column(name = "idPerson", nullable = false)
     private int idPerson;
     @Basic

@@ -25,10 +25,7 @@ public class ApiCourseDAO {
                 tx.rollback();
             throw new RuntimeException("Помилка отримання всіх курсів", e);
         }
-
-
     }
-
 
     public void insertApiSection(CourseEntity courseEntity) {
         Transaction tx = null;

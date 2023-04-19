@@ -1,15 +1,19 @@
 package com.univer.baseEntity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "person", schema = "on_line_school")
+@Cacheable
+@org.hibernate.annotations.Cache(
+        usage = CacheConcurrencyStrategy.READ_WRITE)
 public class PersonEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "idPerson", nullable = false,updatable = false)
+    @Column(name = "idPerson", nullable = false)
     private int idPerson;
     @Basic
     @Column(name = "idCourse", nullable = false, insertable=false, updatable = false)

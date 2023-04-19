@@ -15,7 +15,6 @@ public class LectureEntityPK implements Serializable {
     private int idLecture;
     @Column(name = "idPerson", nullable = false)
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPerson;
 
     public int getIdLecture() {
