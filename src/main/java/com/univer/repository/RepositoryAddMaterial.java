@@ -4,7 +4,6 @@ import com.univer.log.LogCreateObject;
 import com.univer.log.LogLevel;
 import com.univer.models.AddMaterial;
 import com.univer.models.MasterModels;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.Serial;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-@Component
+
 public class RepositoryAddMaterial extends RepositoryMaster implements Serializable {
 
     @Serial
@@ -49,7 +48,7 @@ public class RepositoryAddMaterial extends RepositoryMaster implements Serializa
         return super.getModelsList();
     }
 
-    @Override
+   @Override
     public List<MasterModels> findAll() {
         return super.findAll();
     }

@@ -1,10 +1,9 @@
 package com.univer.repository;
 
 import com.univer.models.MasterModels;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
-@Component()
+
 public  class RepositoryCourse extends RepositoryMaster {
 
     private  RepositoryCourse INSTANCE;

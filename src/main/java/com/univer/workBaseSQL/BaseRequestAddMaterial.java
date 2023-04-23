@@ -6,15 +6,13 @@ import com.univer.log.LogLevel;
 import com.univer.log.LogWriter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDateTime;
 
-@Component
-@ComponentScan( {"workBaseSQL"})
+//@Component
+//@ComponentScan( {"workBaseSQL"})
 //@PropertySource("classpath:application.properties")
 public class BaseRequestAddMaterial {
     AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BaseRequestAddMaterial.class);

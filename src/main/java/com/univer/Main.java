@@ -9,19 +9,19 @@ import com.univer.service.GlobalMenu;
 import com.univer.service.ServiceValidator;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-@ComponentScan({"serverANDclient","repository","workBaseSQL"})
+//@ComponentScan({"serverANDclient","repository","workBaseSQL"})
 public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         new MenuServAndClient().menuServAndClient() ;
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(RepositoryCourse.class);
-        applicationContext.getBean(MenuServAndClient.class).menuServAndClient();
+ //       applicationContext.getBean(MenuServAndClient.class).menuServAndClient();
+        new MenuServAndClient().menuServAndClient();
 
 
        Course course = new Course(1, "History");
@@ -31,7 +31,7 @@ public class Main {
         applicationContext.getBean(RepositoryCourse.class).getCourseList().add(new Course(2, "Ukraine history"));
         applicationContext.getBean(RepositoryCourse.class).getCourseList().add(new Course(3, "Algebra"));
         applicationContext.getBean(RepositoryCourse.class).getCourseList().add(new Course(4, "Geometry"));
-        System.out.println(applicationContext.getBean(RepositoryCourse.class).getCourseList());
+
 
         RepositoryCourse dataCourse =  applicationContext.getBean(RepositoryCourse.class);
 
