@@ -7,7 +7,7 @@
 </head>
 <body>
 <h3>
-  <a href="${pageContext.request.contextPath}/api-sections">Course</a>      <a href="${pageContext.request.contextPath}/api_lecture">Lecture</a>     <a href="${pageContext.request.contextPath}/api_person">Person</a>
+  <a href="${pageContext.request.contextPath}/course_all">Course</a>      <a href="${pageContext.request.contextPath}/api_lecture">Lecture</a>     <a href="${pageContext.request.contextPath}/api_person">Person</a>
   <a href="${pageContext.request.contextPath}/api_add_material">Add material</a>  <a href="${pageContext.request.contextPath}/api_home_work">Home work</a>
 </h3>
 <h1>On line school - Course</h1>
@@ -22,12 +22,12 @@
   </thead> </h2>
   <tbody>
 
-  <c:forEach var="apiExCourse" items="${apiExCourse}">
+
     <h4> <tr>
       <td>${apiExCourse.idCourse}</td>
       <td>${apiExCourse.courseName}</td>
     </tr></h4>
-  </c:forEach>
+
   </tbody>
 </table>
 <h4><a href="${pageContext.request.contextPath}/index.jsp">Back to menu</a></h4>

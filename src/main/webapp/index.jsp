@@ -11,7 +11,7 @@
     <h1>On line school </h1>
     <h2>SECTION</h2>
     <p>
-        <a href="${pageContext.request.contextPath}/api-sections">Course</a>
+        <a href="${pageContext.request.contextPath}/course_all">Course</a>
     </p>
     <p>
         <a href="${pageContext.request.contextPath}/api_lecture">Lecture</a>

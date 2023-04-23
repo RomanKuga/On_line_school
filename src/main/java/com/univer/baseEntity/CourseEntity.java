@@ -15,7 +15,7 @@ public class CourseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "idCourse", nullable = false)
-    private int idCourse;
+    private Long idCourse;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idCourse", cascade = CascadeType.ALL)
     public List<LectureEntity> lectureEntities;
     public List<LectureEntity> getLectureEntity() {
@@ -40,11 +40,11 @@ public class CourseEntity {
     @Column(name = "Course_name", nullable = false, length = 100)
     private String courseName;
 
-    public int getIdCourse() {
+    public Long getIdCourse() {
         return idCourse;
     }
 
-    public void setIdCourse(int idCourse) {
+    public void setIdCourse(Long idCourse) {
         this.idCourse = idCourse;
     }
 

@@ -21,7 +21,7 @@
       <input type="submit" value="Add Section">
     </div>
   </form>
-  <a href="${pageContext.request.contextPath}/api-sections">Back to API Sections</a>
+  <a href="${pageContext.request.contextPath}/course_all">Back to API Sections</a>
 </div>
 </body>
 </html>

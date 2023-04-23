@@ -20,4 +20,12 @@ public class CourseSpringService {
     public List<CourseEntity> allCourse(){
     return courseSpringRepository.findAll();
     }
+    public CourseEntity findById(Long id) {
+        return courseSpringRepository.findById(id).orElse(null);
+    }
+
+    public CourseEntity addUser(CourseEntity user) {
+        return courseSpringRepository.save(user);
+    }
+
 }

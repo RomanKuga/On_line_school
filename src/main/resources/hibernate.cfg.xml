@@ -4,21 +4,21 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:mysql://localhost/on_line_school</property>
-    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="connection.username">root</property>
-    <property name="connection.password">qwerty123</property>
+<!--    <property name="connection.url">jdbc:mysql://localhost/on_line_school</property>-->
+<!--    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>-->
+<!--    <property name="connection.username">root</property>-->
+<!--    <property name="connection.password">qwerty123</property>-->
 
 
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+<!--    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>-->
 
-    <mapping class="com.univer.baseEntity.AddmaterialEntity"/>
-    <mapping class="com.univer.baseEntity.CourseEntity"/>
-    <mapping class="com.univer.baseEntity.HomeworkEntity"/>
-    <mapping class="com.univer.baseEntity.LectureEntity"/>
-    <mapping class="com.univer.baseEntity.PersonEntity"/>
-    <mapping class="com.univer.baseEntity.UserEntity"/>
-    <!-- DB schema will be updated if needed -->
-    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+<!--    <mapping class="com.univer.baseEntity.AddmaterialEntity"/>-->
+<!--    <mapping class="com.univer.baseEntity.CourseEntity"/>-->
+<!--    <mapping class="com.univer.baseEntity.HomeworkEntity"/>-->
+<!--    <mapping class="com.univer.baseEntity.LectureEntity"/>-->
+<!--    <mapping class="com.univer.baseEntity.PersonEntity"/>-->
+<!--    <mapping class="com.univer.baseEntity.UserEntity"/>-->
+<!--    &lt;!&ndash; DB schema will be updated if needed &ndash;&gt;-->
+<!--    &lt;!&ndash; <property name="hibernate.hbm2ddl.auto">update</property> &ndash;&gt;-->
   </session-factory>
 </hibernate-configuration>

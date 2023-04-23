@@ -14,16 +14,15 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ApiSectionController", urlPatterns = {"/api-sections"})
+@WebServlet(name = "SectionController", urlPatterns = {"/course_all"})
 public class CourseController extends HttpServlet {
-
-  //  private final ApiCourseDAO apiCourseDAO = new ApiCourseDAO();
-  ApplicationContext apc = new AnnotationConfigApplicationContext(AppConfig.class);
+   ApplicationContext apc = new AnnotationConfigApplicationContext(AppConfig.class);
     CourseSpringService css = apc.getBean(CourseSpringService.class);
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, IOException {
 
         List<CourseEntity> apiCourse =  css.allCourse();
+
 
         request.setAttribute("courseList", apiCourse);
         request.getRequestDispatcher("/WEB-INF/views/api_course/course_all.jsp")

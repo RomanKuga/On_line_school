@@ -8,7 +8,7 @@
 </head>
 <body>
 <h3>
-  <a href="${pageContext.request.contextPath}/api-sections">Course</a>      <a href="${pageContext.request.contextPath}/api_lecture">Lecture</a>     <a href="${pageContext.request.contextPath}/api_person">Person</a>
+  <a href="${pageContext.request.contextPath}/course_all">Course</a>      <a href="${pageContext.request.contextPath}/api_lecture">Lecture</a>     <a href="${pageContext.request.contextPath}/api_person">Person</a>
   <a href="${pageContext.request.contextPath}/api_add_material">Add material</a>  <a href="${pageContext.request.contextPath}/api_home_work">Home work</a>
 </h3>
 <h1>On line school - Lecture</h1>
@@ -37,7 +37,7 @@
       <td><a href="${pageContext.request.contextPath}/api-exPerson?sectionId=${apiLecture.personId}">${apiLecture.personId}</a></td>
       <td>${apiLecture.description}</td>
       <td>${apiLecture.holdingTimeString}</td>
-      <td><a href="${pageContext.request.contextPath}/api-exCourse?sectionId=${apiLecture.courseID}">View Examples</a></td>
+      <td><a href="${pageContext.request.contextPath}/requestCourse?sectionId=${apiLecture.courseID}">View Examples</a></td>
     </tr></h4>
   </c:forEach>
   </tbody>

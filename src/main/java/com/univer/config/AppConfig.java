@@ -27,7 +27,6 @@ public class AppConfig {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-
         dataSource.setUrl("jdbc:mysql://localhost/on_line_school");
         dataSource.setUsername("root");
         dataSource.setPassword("qwerty123");
@@ -37,14 +36,18 @@ public class AppConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource());
-        entityManagerFactoryBean.setPackagesToScan("repository", "baseEntity");
+
+        entityManagerFactoryBean.setPackagesToScan("com.univer.repository","com.univer.service", "com.univer.baseEntity");
+
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+
         return entityManagerFactoryBean;
     }
 
     @Bean
     public JpaTransactionManager transactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
+
         transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
         return transactionManager;
     }
