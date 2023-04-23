@@ -1,7 +1,6 @@
 package com.univer.baseEntity;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.List;
 import java.util.Objects;
@@ -9,9 +8,9 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "course", schema = "on_line_school")
-@Cacheable
-@org.hibernate.annotations.Cache(
-        usage = CacheConcurrencyStrategy.READ_WRITE)
+//@Cacheable
+//@org.hibernate.annotations.Cache(
+//        usage = CacheConcurrencyStrategy.READ_WRITE)
 public class CourseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

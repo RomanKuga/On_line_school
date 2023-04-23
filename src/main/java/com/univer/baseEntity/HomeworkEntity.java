@@ -22,7 +22,7 @@ public class HomeworkEntity {
     @Column(name = "task", nullable = false, length = 45)
     private String task;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "idLecture")
+   @JoinColumn(name = "idLecture")
     private LectureEntity lectureEntity;
     public LectureEntity getLectureEntity() {
         return lectureEntity;
