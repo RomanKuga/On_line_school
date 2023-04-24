@@ -1,28 +1,37 @@
 package com.univer.controlles;
 
 import com.univer.baseEntity.CourseEntity;
-import com.univer.config.AppConfig;
 import com.univer.service.CourseSpringService;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
-import java.io.IOException;
+//@WebServlet(name = "ExCourseController", urlPatterns = {"/requestCourse"})
+@Controller
+public class RequestCourseController  {
+//    ApplicationContext apc = new AnnotationConfigApplicationContext(AppConfig.class);
+  @Autowired
+   CourseSpringService css ;
 
-@WebServlet(name = "ExCourseController", urlPatterns = {"/requestCourse"})
-public class RequestCourseController extends HttpServlet {
-    ApplicationContext apc = new AnnotationConfigApplicationContext(AppConfig.class);
-    CourseSpringService css = apc.getBean(CourseSpringService.class);
+  @GetMapping ("/requestCourse")
+    public ModelAndView getCourse(@RequestParam("sectionId") String sectionId){
+    System.out.println(sectionId);
+    Long sect = Long.valueOf(sectionId);
+    System.out.println(sect);
+     CourseEntity apiExCourse = css.findById(sect);
+      ModelAndView mv = new ModelAndView();
+      mv.setViewName("api_example/apiExCourse");
+      mv.addObject("apiExCourse", apiExCourse);
+      return mv;
+  }
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long sectionId = Long.valueOf(request.getParameter("sectionId"));
-        CourseEntity apiExCourse = css.findById(sectionId);
-        request.setAttribute("apiExCourse", apiExCourse);
-        request.getRequestDispatcher("/WEB-INF/views/api_example/apiExCourse.jsp").forward(request, response);
-    }
+//    @Override
+//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        Long sectionId = Long.valueOf(request.getParameter("sectionId"));
+//        CourseEntity apiExCourse = css.findById(sectionId);
+//        request.setAttribute("apiExCourse", apiExCourse);
+//        request.getRequestDispatcher("/WEB-INF/views/api_example/apiExCourse.jsp").forward(request, response);
+//    }
 }

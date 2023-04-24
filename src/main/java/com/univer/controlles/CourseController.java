@@ -4,23 +4,26 @@ import com.univer.baseEntity.CourseEntity;
 import com.univer.service.CourseSpringService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 //@WebServlet(name = "SectionController", urlPatterns = {"/course_all"})
 @Controller
+
 public class CourseController  {
 //   ApplicationContext apc = new AnnotationConfigApplicationContext(AppConfig.class);
     @Autowired
     CourseSpringService css ;
-    @GetMapping( "/course_all")
-    public String products(Model model) {
+    @RequestMapping( "/course_all")
+    public ModelAndView products() {
         List<CourseEntity> apiCourse =  css.allCourse();
+        ModelAndView mv = new ModelAndView();
         System.out.println(apiCourse);
-        model.addAttribute("courseList", apiCourse);
-        return "courseList";
+        mv.setViewName("api_course/course_all");
+        mv.addObject("courseList", apiCourse);
+        return mv;
     }
 
 //    @Override

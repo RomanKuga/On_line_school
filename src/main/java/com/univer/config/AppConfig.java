@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 @EnableWebMvc
 @EnableJpaRepositories("com.univer.repository")
-@ComponentScan(basePackages = {"com.univer.repository", "com.univer.service", "com.univer.baseEntity","com.univer.controlles"})
+@ComponentScan(basePackages = {"com.univer.repository", "com.univer.service", "com.univer.baseEntity","com.univer.controlles","com.univer.config"})
 //@PropertySource("classpath:application.properties")
 public class AppConfig {
     @Autowired
