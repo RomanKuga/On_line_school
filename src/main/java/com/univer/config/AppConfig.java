@@ -11,18 +11,31 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
+@EnableWebMvc
 @EnableJpaRepositories("com.univer.repository")
-@ComponentScan(basePackages = {"com.univer.repository", "com.univer.service", "com.univer.baseEntity"})
+@ComponentScan(basePackages = {"com.univer.repository", "com.univer.service", "com.univer.baseEntity","com.univer.controlles"})
 //@PropertySource("classpath:application.properties")
 public class AppConfig {
     @Autowired
     Environment env;
     @Bean
+    public ViewResolver viewResolver() {
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        resolver.setPrefix("/WEB-INF/views/");
+        resolver.setSuffix(".jsp");
+        resolver.setExposeContextBeansAsAttributes(true);
+        return resolver;
+    }
+
+        @Bean
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
@@ -32,6 +45,7 @@ public class AppConfig {
         dataSource.setPassword("qwerty123");
         return dataSource;
     }
+
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();

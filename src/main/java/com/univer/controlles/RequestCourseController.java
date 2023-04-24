@@ -22,7 +22,6 @@ public class RequestCourseController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long sectionId = Long.valueOf(request.getParameter("sectionId"));
         CourseEntity apiExCourse = css.findById(sectionId);
-        System.out.println(apiExCourse);
         request.setAttribute("apiExCourse", apiExCourse);
         request.getRequestDispatcher("/WEB-INF/views/api_example/apiExCourse.jsp").forward(request, response);
     }
