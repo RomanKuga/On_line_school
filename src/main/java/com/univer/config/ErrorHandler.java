@@ -8,7 +8,6 @@ public class ErrorHandler {
 
     @ExceptionHandler(CustomException.class)
     public String handlerCustomException(){
-        System.out.println("привіт");
         return "/WEB-INF/error/404.jsp";
     }
 

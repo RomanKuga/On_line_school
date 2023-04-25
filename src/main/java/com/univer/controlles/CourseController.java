@@ -20,7 +20,6 @@ public class CourseController  {
     public ModelAndView products() {
         List<CourseEntity> apiCourse =  css.allCourse();
         ModelAndView mv = new ModelAndView();
-        System.out.println(apiCourse);
         mv.setViewName("api_course/course_all");
         mv.addObject("courseList", apiCourse);
         return mv;
