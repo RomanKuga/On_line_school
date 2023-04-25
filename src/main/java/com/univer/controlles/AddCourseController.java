@@ -4,7 +4,6 @@ import com.univer.baseEntity.CourseEntity;
 import com.univer.service.CourseSpringService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,7 +22,7 @@ public class AddCourseController {
     }
 
     @PostMapping("/secure/add_api_section")
-    public String addCourse(Model model, @RequestParam("title") String title) {
+    public String addCourse( @RequestParam("title") String title) {
         CourseEntity apiCourse = new CourseEntity();
         apiCourse.setCourseName(title);
         css.addUser(apiCourse);
