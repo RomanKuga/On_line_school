@@ -9,11 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-//@WebServlet(name = "SectionController", urlPatterns = {"/course_all"})
+
 @Controller
 
 public class CourseController  {
-//   ApplicationContext apc = new AnnotationConfigApplicationContext(AppConfig.class);
+
     @Autowired
     CourseSpringService css ;
     @RequestMapping( "/course_all")
@@ -24,17 +24,6 @@ public class CourseController  {
         mv.addObject("courseList", apiCourse);
         return mv;
     }
-
-//    @Override
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, IOException {
-//
-//        List<CourseEntity> apiCourse =  css.allCourse();
-//
-//
-//        request.setAttribute("courseList", apiCourse);
-//        request.getRequestDispatcher("/WEB-INF/views/api_course/course_all.jsp")
-//                .forward(request, response);
-//    }
 
 
 }

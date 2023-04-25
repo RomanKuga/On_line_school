@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 //@WebServlet(value ="/secure/add_api_section")
 @Controller
 public class AddCourseController {
-    //    ApplicationContext apc = new AnnotationConfigApplicationContext(AppConfig.class);
+
     @Autowired
     CourseSpringService css;
 
@@ -23,7 +23,6 @@ public class AddCourseController {
     }
 
     @PostMapping("/secure/add_api_section")
- //   @ResponseBody
     public String addCourse(Model model, @RequestParam("title") String title) {
         CourseEntity apiCourse = new CourseEntity();
         apiCourse.setCourseName(title);
@@ -31,34 +30,4 @@ public class AddCourseController {
         return "redirect:/course_all";
     }
 
-//    @ResponseBody
-//    public ModelAndView addCourse(@RequestParam("title") String title) {
-//        CourseEntity apiCourse = new CourseEntity();
-//        apiCourse.setCourseName(title);
-//        css.addUser(apiCourse);
-//        ModelAndView rt = new ModelAndView();
-//        rt.setViewName("api_course/course_all");
-//        return rt;
-//    }
-
-
-//    @Override
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        request.getRequestDispatcher("/WEB-INF/views/api_course/add_course.jsp").forward(request, response);
-//    }
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        int courseId= Integer.parseInt(request.getParameter("id"));
-//        String title = request.getParameter("title");
-//
-//        CourseEntity apiCourse = new CourseEntity();
-//
-//        apiCourse.setCourseName(title);
-//        css.addUser(apiCourse);
-//
-//
-//        response.sendRedirect(request.getContextPath() + "/course_all");
-//    }
 }

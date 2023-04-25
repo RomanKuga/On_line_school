@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-//@WebServlet(name = "ExCourseController", urlPatterns = {"/requestCourse"})
+
 @Controller
 public class RequestCourseController  {
-//    ApplicationContext apc = new AnnotationConfigApplicationContext(AppConfig.class);
+
   @Autowired
    CourseSpringService css ;
 
@@ -27,11 +27,5 @@ public class RequestCourseController  {
       return mv;
   }
 
-//    @Override
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        Long sectionId = Long.valueOf(request.getParameter("sectionId"));
-//        CourseEntity apiExCourse = css.findById(sectionId);
-//        request.setAttribute("apiExCourse", apiExCourse);
-//        request.getRequestDispatcher("/WEB-INF/views/api_example/apiExCourse.jsp").forward(request, response);
-//    }
+
 }
