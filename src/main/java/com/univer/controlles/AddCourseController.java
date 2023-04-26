@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-//@WebServlet(value ="/secure/add_api_section")
+
 @Controller
 public class AddCourseController {
 

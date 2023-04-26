@@ -2,7 +2,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.6</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
     <groupId>groupId</groupId>
     <artifactId>On_line_school</artifactId>
     <packaging>war</packaging>
@@ -39,7 +44,7 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.32</version>
         </dependency>
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api &ndash;&gt;-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api &ndash;&gt;-->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -53,7 +58,7 @@
             <version>3.1.1</version>
             <scope>provided</scope>
         </dependency>
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api &ndash;&gt;-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api &ndash;&gt;-->
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
@@ -83,28 +88,44 @@
             <version>2.0.6</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>6.0.6</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-            <version>6.0.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>6.0.6</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>6.0.6</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-context</artifactId>-->
+<!--            <version>6.0.6</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-beans</artifactId>-->
+<!--            <version>6.0.7</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-web</artifactId>-->
+<!--            <version>6.0.6</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-webmvc</artifactId>-->
+<!--            <version>6.0.6</version>-->
+<!--        </dependency>-->
 
 
         <!--        <dependency>-->
@@ -117,11 +138,11 @@
         <!--            <artifactId>log4j-core</artifactId>-->
         <!--            <version>2.20.0</version>-->
         <!--        </dependency>-->
-<!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
-<!--&lt;!&ndash;            <groupId>org.springframework</groupId>&ndash;&gt;-->
-<!--&lt;!&ndash;            <artifactId>spring-core</artifactId>&ndash;&gt;-->
-<!--&lt;!&ndash;            <version>6.0.7</version>&ndash;&gt;-->
-<!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
+        <!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
+        <!--&lt;!&ndash;            <groupId>org.springframework</groupId>&ndash;&gt;-->
+        <!--&lt;!&ndash;            <artifactId>spring-core</artifactId>&ndash;&gt;-->
+        <!--&lt;!&ndash;            <version>6.0.7</version>&ndash;&gt;-->
+        <!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
 
 
         <dependency>
@@ -133,11 +154,11 @@
 
 
         <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-jcache -->
-<!--        <dependency>-->
-<!--            <groupId>org.hibernate.orm</groupId>-->
-<!--            <artifactId>hibernate-jcache</artifactId>-->
-<!--            <version>6.2.1.Final</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.hibernate.orm</groupId>-->
+        <!--            <artifactId>hibernate-jcache</artifactId>-->
+        <!--            <version>6.2.1.Final</version>-->
+        <!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.ehcache.modules/ehcache-api -->
         <dependency>
             <groupId>org.ehcache.modules</groupId>
@@ -146,37 +167,42 @@
         </dependency>
 
 
+        <!--        <dependency>-->
+        <!--            <groupId>org.slf4j</groupId>-->
+        <!--            <artifactId>slf4j-api</artifactId>-->
+        <!--            <version>2.0.7</version>-->
+        <!--        </dependency>-->
 <!--        <dependency>-->
-<!--            <groupId>org.slf4j</groupId>-->
-<!--            <artifactId>slf4j-api</artifactId>-->
-<!--            <version>2.0.7</version>-->
+<!--            <groupId>org.springframework.data</groupId>-->
+<!--            <artifactId>spring-data-jpa</artifactId>-->
+<!--            <version>3.0.3</version>-->
 <!--        </dependency>-->
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>3.0.3</version>
-        </dependency>
 
 
     </dependencies>
-<build>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0</version>
-            <configuration>
-                <groups>UnitTest</groups>
-            </configuration>
-        </plugin>
+    <build>
+        <plugins>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <version>3.0.0</version>-->
+<!--                <configuration>-->
+<!--                    <groups>UnitTest</groups>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
 
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>3.3.2</version>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-war-plugin</artifactId>-->
+<!--                <version>3.3.2</version>-->
 
-        </plugin>
-    </plugins>
-</build>
+<!--            </plugin>-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
