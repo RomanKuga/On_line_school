@@ -1,6 +1,9 @@
 package com.univer.baseEntity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.sql.Timestamp;
@@ -35,19 +38,24 @@ public class LectureEntity {
     }
     @Basic
     @Column(name = "idCourse", nullable = false, insertable=false, updatable = false)
+    @NotNull(message = "Поле курс повино бути заповнене")
     private int idCourse;
     @Basic
     @Column(name = "name", nullable = false, length = 45)
+    @NotBlank(message = "Поле лекції повинно бути заповненим")
     private String name;
 
     @Basic
     @Column(name = "idPerson", nullable = false)
+    @NotNull
     private int idPerson;
     @Basic
     @Column(name = "description", nullable = true, length = 45)
+    @NotBlank
     private String description;
     @Basic
     @Column(name = "dateTime", nullable = false)
+    @PastOrPresent(message = "Дата повинна знаходитись в минулому або тепер")
     private Timestamp dateTime;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "idCourse")

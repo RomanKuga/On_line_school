@@ -1,6 +1,7 @@
 package com.univer.baseEntity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.Objects;
@@ -17,9 +18,11 @@ public class UserEntity {
     private int iduser;
     @Basic
     @Column(name = "username", nullable = false, length = 45)
+    @NotBlank(message = "Поле повинно містити логін користувача")
     private String username;
     @Basic
     @Column(name = "password", nullable = false, length = 45)
+    @NotBlank(message = "Поле повинно містити пароль користувача")
     private String password;
 
     public int getIduser() {

@@ -1,6 +1,8 @@
 package com.univer.baseEntity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.Objects;
@@ -17,9 +19,11 @@ public class HomeworkEntity {
     private int idhomeWork;
     @Basic
     @Column(name = "idLecture", nullable = false, insertable=false, updatable = false)
+    @NotNull
     private int idLecture;
     @Basic
     @Column(name = "task", nullable = false, length = 45)
+    @NotBlank
     private String task;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
    @JoinColumn(name = "idLecture")

@@ -1,6 +1,7 @@
 package com.univer.baseEntity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.List;
 import java.util.Objects;
@@ -38,6 +39,7 @@ public class CourseEntity {
 
     @Basic
     @Column(name = "Course_name", nullable = false, length = 100)
+    @NotBlank(message = "Поле повинно містити назву курсу")
     private String courseName;
 
     public Long getIdCourse() {

@@ -1,6 +1,9 @@
 package com.univer.baseEntity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.Objects;
@@ -17,13 +20,17 @@ public class AddmaterialEntity {
     private int idaddMaterial;
     @Basic
     @Column(name = "nameAddMaterial", nullable = false, length = 45)
+    @NotBlank(message = "Поле додаткові матеріали повинно бути заповнене")
     private String nameAddMaterial;
     @Basic
     @Column(name = "idLecture", nullable = false, insertable=false, updatable = false)
+    @NotNull
     private int idLecture;
     @Basic
     @Column(name = "resourseType", nullable = false, length = 45)
+    @NotEmpty(message = "Поле повино містити тип ресурсів")
     private String resourseType;
+
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
    @JoinColumn(name = "idLecture")
     private LectureEntity lectureEntity;

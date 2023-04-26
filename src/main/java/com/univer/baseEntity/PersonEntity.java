@@ -1,6 +1,7 @@
 package com.univer.baseEntity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.Objects;
@@ -17,21 +18,27 @@ public class PersonEntity {
     private int idPerson;
     @Basic
     @Column(name = "idCourse", nullable = false, insertable=false, updatable = false)
+    @NotNull(message ="Поле повинно містити номер курсу" )
     private int idCourse;
     @Basic
     @Column(name = "role", nullable = false, length = 45)
+    @NotEmpty(message = "Поле повино місти запис Teacher або Student")
     private String role;
     @Basic
     @Column(name = "firstname", nullable = false, length = 45)
+    @NotBlank
     private String firstname;
     @Basic
     @Column(name = "secondName", nullable = false, length = 45)
+    @NotBlank
     private String secondName;
     @Basic
     @Column(name = "phone", nullable = false, precision = 0)
+    @Size(max = 10, message = "В полі повинно бути 10 чисел - номер телефона без коду країни")
     private int phone;
     @Basic
     @Column(name = "email", nullable = false, length = 45)
+    @Email(message = "Поле повино містити поштову скриню email")
     private String email;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "idCourse")
