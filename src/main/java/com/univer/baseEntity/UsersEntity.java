@@ -1,29 +1,25 @@
 package com.univer.baseEntity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.Objects;
 
 @Entity
-@Table(name = "user", schema = "on_line_school")
-@Cacheable
-@org.hibernate.annotations.Cache(
-        usage = CacheConcurrencyStrategy.READ_WRITE)
-public class UserEntity {
+@Table(name = "users", schema = "on_line_school", catalog = "")
+public class UsersEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "iduser", nullable = false)
     private int iduser;
     @Basic
     @Column(name = "username", nullable = false, length = 45)
-    @NotBlank(message = "Поле повинно містити логін користувача")
     private String username;
     @Basic
     @Column(name = "password", nullable = false, length = 45)
-    @NotBlank(message = "Поле повинно містити пароль користувача")
     private String password;
+    @Basic
+    @Column(name = "role", nullable = false, length = 45)
+    private String role;
 
     public int getIduser() {
         return iduser;
@@ -49,16 +45,24 @@ public class UserEntity {
         this.password = password;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UserEntity that = (UserEntity) o;
-        return iduser == that.iduser && Objects.equals(username, that.username) && Objects.equals(password, that.password);
+        UsersEntity that = (UsersEntity) o;
+        return iduser == that.iduser && Objects.equals(username, that.username) && Objects.equals(password, that.password) && Objects.equals(role, that.role);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(iduser, username, password);
+        return Objects.hash(iduser, username, password, role);
     }
 }
